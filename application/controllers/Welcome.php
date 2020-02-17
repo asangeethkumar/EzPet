@@ -22,4 +22,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function index_image()
+	{
+		$this->load->view('image_upload');
+	}
 }
