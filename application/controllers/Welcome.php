@@ -27,4 +27,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('image_upload');
 	}
+	public function index_submenu()
+	{
+		$this->load->view('menu');
+	}
 }
