@@ -28,19 +28,19 @@
 	<div class="regisFrm">
 		<form action="" method="post">
 			<div class="form-group">
-				<input type="text" name="first_name" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<input type="text" name="first_name"   placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
 				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="last_name" placeholder="LAST NAME" value="<?php echo !empty($user['last_name'])?$user['last_name']:''; ?>" required>
+				<input type="text" name="last_name"  placeholder="LAST NAME" value="<?php echo !empty($user['last_name'])?$user['last_name']:''; ?>" required>
 				<?php echo form_error('last_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="email" name="email" placeholder="EMAIL" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" required>
+				<input type="email"name="email" placeholder="EMAIL"  pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" required>
 				<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="password" name="password" placeholder="PASSWORD" required>
+				<input type="password" name="password" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required>
 				<?php echo form_error('password','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
@@ -70,7 +70,8 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="text" name="phone" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="send-button">
