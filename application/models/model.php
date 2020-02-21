@@ -34,10 +34,11 @@ class Model  extends CI_Model {
 	
 	   public function mails($email)
     {
-        if ( !preg_match('[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$', $email)) 
+        if ( !preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i', $email)) 
         
         {
-            $this->form_validation->set_message('name', 'The %s field must not contain special characters');
+            $this->form_validation->set_message('mails', 'invalid email');
+			echo $email;
             return FALSE;
         }
         else

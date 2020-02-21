@@ -49,14 +49,19 @@ class Authentication extends REST_Controller {
             $this->response("Provide email and password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 	}
+	
+
 	public function registration_post() {
 		// Get the post data
 		$first_name = strip_tags($this->post('first_name'));
 		$fname=$this->model->name($first_name);
 		$last_name = strip_tags($this->post('last_name'));
 		$email = strip_tags($this->post('email'));
+		//$em=$this->model->mails($email);
 		$password = $this->post('password');
+		
 		$phone = strip_tags($this->post('phone'));
+		//$ph=$this->model->($phone);
 		
 		// Validate the post data
 		if(!empty($fname) && !empty($last_name) && !empty($email) && !empty($password)){
