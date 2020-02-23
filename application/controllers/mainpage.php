@@ -7,5 +7,5 @@ class Mainpage extends CI_Controller {
     {  
         $this->load->view('main');  
     }  
-}  
+ }  
 ?>  
