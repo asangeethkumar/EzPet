@@ -67,7 +67,7 @@ class Users extends CI_Controller {
 						'status' => 1
 					)
                 );
-                $checkLogin = $this->user->getRows($con);
+                $checkLogin = $this->user->getRows($con);//$checkLogin = $this->user->getRows($con);
                 if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
@@ -93,7 +93,7 @@ class Users extends CI_Controller {
         if($this->input->post('signupSubmit')){
             $this->form_validation->set_rules('first_name', 'First Name', 'required');
 			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_email_check');
+            $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|callback_email_check');
             $this->form_validation->set_rules('password', 'password', 'required');
             $this->form_validation->set_rules('conf_password', 'confirm password', 'required|matches[password]');
 
@@ -111,9 +111,10 @@ class Users extends CI_Controller {
                 if($insert){
                     $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.');
                     redirect('users/login');
-                }else{
-                    $data['error_msg'] = 'Some problems occured, please try again.';
                 }
+				/*else{
+                    $data['error_msg'] = 'Some problems occured, please try again.';
+                }*/
             }else{
 				$data['error_msg'] = 'Please fill all the mandatory fields.';
 			}
@@ -132,7 +133,7 @@ class Users extends CI_Controller {
         $this->session->unset_userdata('isUserLoggedIn');
         $this->session->unset_userdata('userId');
         $this->session->sess_destroy();
-        redirect('users/login/');
+        redirect('mainpage');
     }
     
     
