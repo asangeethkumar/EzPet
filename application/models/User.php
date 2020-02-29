@@ -45,6 +45,29 @@ class User extends CI_Model{
         // Return fetched data 
         return $result; 
     } 
+	
+	public function getData($data = array())
+	{
+		$curl = curl_init();
+$url = "http://localhost/EzPet/authentication/login";
+curl_setopt_array($curl, array(
+  CURLOPT_URL => $url,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => ""
+ 
+));
+print_r(curl);
+$response = curl_exec($curl);
+
+curl_close($curl);
+return "false";
+	}
+	
      
     /* 
      * Insert user data into the database 

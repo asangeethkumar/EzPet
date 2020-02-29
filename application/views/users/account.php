@@ -14,4 +14,5 @@
 	
 	 
 </div>-->
+
  <a href='<?php echo base_url()."index.php/users/logout"; ?>'>Logout</a> 
