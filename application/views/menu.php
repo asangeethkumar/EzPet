@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>PET</title>
+  <title>finding pet is now easier</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -262,15 +262,14 @@
 						My Account 
 					</a>
 						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Pet Information</a>
-								<a class="dropdown-item" href="#">Owner Information</a>
-								<a class="dropdown-item" href="#">Pet Veterinary Chart</a>
-								<a class="dropdown-item" href="#">Pet License</a>
-								<a class="dropdown-item" href="#">My Budget & Spending Statistics </a>
-								<a class="dropdown-item" href="#">My Orders</a>
-								 	<?php 
-$this->load->view('users/account'); 
-?>
+								<a class="dropdown-item" href="Pet/info">Pet Information</a>
+								<a class="dropdown-item" href="Pet/owner">Owner Information</a>
+								<a class="dropdown-item" href="Pet/veterinary">Pet Veterinary Chart</a>
+								<a class="dropdown-item" href="Pet/license">Pet License</a>
+								<a class="dropdown-item" href="user/budget">My Budget & Spending Statistics </a>
+								<a class="dropdown-item" href="user/orders">My Orders</a>
+								<a class ="dropdown-item" href="users/login">Login</a>
+	
 					
                 
 						</div>

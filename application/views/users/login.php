@@ -14,6 +14,7 @@
 
 <a class="btn btn-primary" href="<?php echo base_url('index.php/users/registration'); ?>" role="button">Register</a>
 <a class="btn btn-primary" href="<?php echo base_url('index.php/users/login'); ?>" role="button">Login</a>
+
 						
 <!--<p><a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a></p>-->
 
