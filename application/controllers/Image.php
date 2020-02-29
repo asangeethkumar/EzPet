@@ -14,13 +14,13 @@ class Image extends CI_Controller {
  public function add_image()
  {
   // CI form validation
-  $this->form_validation->set_rules('image_name', 'Image Name', 'required');
-  if ($this->form_validation->run() == FALSE){
-   $this->load->view('image_upload');
+ // $this->form_validation->set_rules('image_name', 'Image Name', 'required');
+  //if ($this->form_validation->run() == FALSE){
+   //$this->load->view('image_upload');
         }
   else {
    // configurations from upload library
-   $config['upload_path'] = './assets/images';
+   $config['upload_path'] = './upload';
    $config['allowed_types'] = 'gif|jpg|png|jpeg';
    $config['max_size'] = '2048000'; // max size in KB
    $config['max_width'] = '20000'; //max resolution width
@@ -45,9 +45,9 @@ class Image extends CI_Controller {
   }
  }
  // view images fetched from database
- public function view_images()
- {
-  $data['images'] = $this->Image_model->get_images();
-  $this->load->view('image_view', $data);
- }
-}
+// public function view_images()
+// {
+//  $data['images'] = $this->Image_model->get_images();
+ // $this->load->view('image_view', $data);
+ //}
+//}

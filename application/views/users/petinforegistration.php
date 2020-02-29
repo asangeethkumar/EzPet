@@ -14,14 +14,14 @@
     <div class="regisFrm">
         <form action="" method="post">
 		 
-			 <div class="form-group">
+			<!-- <div class="form-group">
                  <label>Image</label>
                    <!--input type="file" class="form-control" id="userfile" name="userfile"-->
-                   <input type="file" class="form-control" name="userfile"  value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" required>
+          <!--         <input type="file" class="form-control" name="userfile"  value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" required>
                 <?php echo form_error('userfile','<p class="help-block">','</p>'); ?>
                  
              <!--  <input type="submit" class="btn btn-primary" value="Upload">-->
-           </div>
+          <!-- </div> -->
 
 
              <div class="form-group">
@@ -56,6 +56,31 @@
                 <input type="number_format" name="Height" placeholder="Height" value="<?php echo !empty($user['Height'])?$user['Height']:''; ?>" required>
                 <?php echo form_error('Height','<p class="help-block">','</p>'); ?>
             </div> 
+
+			<div class="form-group">
+                <label>Microchiped or Tattooed </label>
+                <?php 
+                if(!empty($user['Microchiped_or_Tattooed']) && $user['Microchiped_or_Tattooed'] == 'no'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }else{ 
+                    $mcheck = 'checked="checked"'; 
+                    $fcheck = ''; 
+                } 
+                ?>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Microchiped_or_Tattooed" value="yes" <?php echo $mcheck; ?>>
+						yes
+                    </label>
+                    <label>
+                        <input type="radio" name="Microchiped_or_Tattooed" value="no" <?php echo $fcheck; ?>>
+                        no
+                    </label>
+                </div>
+            </div>
+
+
 			<div class="form-group">
                 <input type="text" name="Microchip_or_Tattoo" placeholder="Microchip or Tattoo" value="<?php echo !empty($user['Microchip_or_Tattoo'])?$user['Microchip_or_Tattoo']:''; ?>" >
                 <?php echo form_error('Microchip_or_Tattoo','<p class="help-block">','</p>'); ?>
@@ -95,14 +120,14 @@
                 <input type="email" name="email" placeholder="EMAIL" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" required>
                 <?php echo form_error('email','<p class="help-block">','</p>'); ?>
             </div>
-            <div class="form-group">
+          <!--   <div class="form-group">
                 <input type="password" name="password" placeholder="PASSWORD" required>
                 <?php echo form_error('password','<p class="help-block">','</p>'); ?>
             </div>
             <div class="form-group">
                 <input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" required>
                 <?php echo form_error('conf_password','<p class="help-block">','</p>'); ?>
-            </div>
+            </div>            -->
             <div class="form-group">
                 <label>Gender: </label>
                 <?php 
@@ -125,6 +150,71 @@
                     </label>
                 </div>
             </div>
+
+
+			<div class="form-group">
+                <label>Spayed or Neutered </label>
+                <?php 
+                if(!empty($user['Spayed_or_Neutered']) && $user['Spayed_or_Neutered'] == 'no'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }else{ 
+                    $mcheck = 'checked="checked"'; 
+                    $fcheck = ''; 
+                } 
+                ?>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="Spayed_or_Neutered" value="yes" <?php echo $mcheck; ?>>
+						yes
+                    </label>
+                    <label>
+                        <input type="radio" name="Spayed_or_Neutered" value="no" <?php echo $fcheck; ?>>
+                        no
+                    </label>
+                </div>
+            </div>
+
+
+				<div class="form-group">
+                <label>Special Status </label><br>
+				 <?php 
+                if(!empty($user['Special_Status']) && $user['Special_Status'] == ' Service Dog'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+
+					if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Emotional Support Animal'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }
+
+
+				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'K-9'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }
+					
+				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Other'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }
+
+                }else{ 
+                    $mcheck = 'checked="checked"'; 
+                    $fcheck = ''; 
+                } 
+                ?>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Service Dog<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>Emotional Support Animal<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="3"<?php echo $mcheck; ?>>K-9<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>Other<br>
+
+					 </label>
+                </div>            
+
+			
+
+
             <div class="form-group">
                 <input type="text" name="phone" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
                 <?php echo form_error('phone','<p class="help-block">','</p>'); ?>
@@ -134,6 +224,6 @@
                 <input type="submit" name="signupSubmit" value="SUBMIT">
             </div>
         </form>
-        <p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p>
+      <!--  <p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p> -->
     </div>
 </div>

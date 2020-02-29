@@ -269,7 +269,7 @@ class Users extends CI_Controller {
      
      
     // Existing email check during validation 
-    public function email_check($str){ 
+   /* public function email_check($str){ 
         $con = array( 
             'returnType' => 'count', 
             'conditions' => array( 
@@ -283,5 +283,5 @@ class Users extends CI_Controller {
         }else{ 
             return TRUE; 
         } 
-    }
+    }*/ 
 }
