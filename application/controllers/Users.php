@@ -67,7 +67,8 @@ class Users extends CI_Controller {
 						'status' => 1
 					)
                 );
-							$checkLogin = $this->model->getRows($con);
+
+					$checkLogin = $this->model->getRows($con);
 
                 if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
