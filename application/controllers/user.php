@@ -70,9 +70,4 @@ class User extends CI_Controller{
    return FALSE;
   }
  }
-
- public function validation()
- {
-	 return true;
- }
 }

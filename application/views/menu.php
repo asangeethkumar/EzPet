@@ -274,11 +274,11 @@
 					</a>
 						
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">	
-								<a class="dropdown-item" href="Pet/Emergency">Veterinary Emergency Rooms 24/7!</a>
-								<a class="dropdown-item" href="Pet/Consultation">Get Emergency Consultation!</a>
-								<a class="dropdown-item" href="Pet/CallHospital">Call Mobile Hospital!</a>
-								<a class="dropdown-item" href="Pet/Report">Report Cruelty on Animals!</a>
-								<a class="dropdown-item" href="Pet/LostPet">Lost and Found Pets</a>
+								<a class="dropdown-item" href="../Pet/Emergency">Veterinary Emergency Rooms 24/7!</a>
+								<a class="dropdown-item" href="../Pet/Consultation">Get Emergency Consultation!</a>
+								<a class="dropdown-item" href="../Pet/CallHospital">Call Mobile Hospital!</a>
+								<a class="dropdown-item" href="../Pet/Report">Report Cruelty on Animals!</a>
+								<a class="dropdown-item" href="../Pet/LostPet">Lost and Found Pets</a>
 								
 						</div>
 				</li>
@@ -307,13 +307,13 @@
 						My Account 
 					</a>
 						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="Pet/info">Pet Information</a>
-								<a class="dropdown-item" href="Pet/owner">Owner Information</a>
-								<a class="dropdown-item" href="Pet/veterinary">Pet Veterinary Chart</a>
-								<a class="dropdown-item" href="Pet/license">Pet License</a>
-								<a class="dropdown-item" href="users/budget">My Budget & Spending Statistics </a>
-								<a class="dropdown-item" href="users/orders">My Orders</a>
-								<a class ="dropdown-item" href="users/login">Login</a>
+								<a class="dropdown-item" href="../Pet/info">Pet Information</a>
+								<a class="dropdown-item" href="../Pet/owner">Owner Information</a>
+								<a class="dropdown-item" href="../Pet/veterinary">Pet Veterinary Chart</a>
+								<a class="dropdown-item" href="../Pet/license">Pet License</a>
+								<a class="dropdown-item" href="../users/budget">My Budget & Spending Statistics </a>
+								<a class="dropdown-item" href="../users/orders">My Orders</a>
+								<a class ="dropdown-item" href="../users/login">Login</a>
 	
 					
                 
