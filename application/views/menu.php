@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>finding pet is now easier</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -10,6 +12,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
  <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
   <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel='stylesheet' type='text/css' />
  
@@ -81,9 +85,17 @@
 	height:400px;
     box-sizing: border-box;
 }
+.showpets{
+		height:400px;
+		    background-color: white;
+
+		
+
+}
 .ml-auto{
 	margin-left: 0% !important;
 }
+
 
 
 #primary-menu ul li>a:after{
@@ -99,9 +111,42 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.buttoncolor {
+  background-color: black;
 
+}
+.button {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
 </style>
+
 
 
   <section id="title">
@@ -125,18 +170,18 @@
 						Get A pet
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Find A Pet For You</a>
-								<a class="dropdown-item" href="#">Pet Shelters (Adoption)</a>
-								<a class="dropdown-item" href="#">Breeders</a>
-								<a class="dropdown-item" href="#">International Puppy/Kitten Finder</a>
-								<a class="dropdown-item" href="#">Delivery & Transportation</a>
-								<a class="dropdown-item" href="#">Cost of Pet Ownership Estimation</a>
-								<a class="dropdown-item" href="#">Are You Comfortable to Own a Pet?</a>
-								<a class="dropdown-item" href="#">What Pet to Choose?</a>
-								<a class="dropdown-item" href="#">Initial Health Check & Vaccination</a>
-								<a class="dropdown-item" href="#">Early Adaptation – Build a pet-owner rapport</a>
-								<a class="dropdown-item" href="#">Transition Stage Nutrition </a>
-								<a class="dropdown-item" href="#">Initial Order for New Pet</a>
+								<a class="dropdown-item" href="Pet/FindAPet">Find A Pet For You</a>
+								<a class="dropdown-item" href="Pet/Schelter">Pet Shelters (Adoption)</a>
+								<a class="dropdown-item" href="Pet/Breeders">Breeders</a>
+								<a class="dropdown-item" href="Pet/KittenFinder">International Puppy/Kitten Finder</a>
+								<a class="dropdown-item" href="Pet/Delivery">Delivery & Transportation</a>
+								<a class="dropdown-item" href="Pet/EstimateOwnership">Cost of Pet Ownership Estimation</a>
+								<a class="dropdown-item" href="Pet/Confortable">Are You Comfortable to Own a Pet?</a>
+								<a class="dropdown-item" href="Pet/Choose">What Pet to Choose?</a>
+								<a class="dropdown-item" href="Pet/HealthCheckAndVaccination">Initial Health Check & Vaccination</a>
+								<a class="dropdown-item" href="Pet/Adaption">Early Adaptation – Build a pet-owner rapport</a>
+								<a class="dropdown-item" href="Pet/TransitionStageNutrition">Transition Stage Nutrition </a>
+								<a class="dropdown-item" href="Pet/InitialOrder">Initial Order for New Pet</a>
 						</div>
 				</li>
 			
@@ -148,13 +193,13 @@
 						Pet Health
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Get Veterinary Consultation Online</a>
-								<a class="dropdown-item" href="#">Schedule Veterinarian Appointment</a>
-								<a class="dropdown-item" href="#">Schedule Vaccination </a>
-								<a class="dropdown-item" href="#">Genetic Test</a>
-								<a class="dropdown-item" href="#">Laboratory Diagnostics</a>
-								<a class="dropdown-item" href="#">Ultrasound, X-ray, MRI</a>
-								<a class="dropdown-item" href="#">Get Pet Insurance</a>
+								<a class="dropdown-item" href="Pet/OnlineConsultation">Get Veterinary Consultation Online</a>
+								<a class="dropdown-item" href="Pet/ScheduleAppointment">Schedule Veterinarian Appointment</a>
+								<a class="dropdown-item" href="Pet/ScheduleVaccination">Schedule Vaccination </a>
+								<a class="dropdown-item" href="Pet/GeneticTest">Genetic Test</a>
+								<a class="dropdown-item" href="Pet/LabDiagnostics">Laboratory Diagnostics</a>
+								<a class="dropdown-item" href="Pet/Ultrasound">Ultrasound, X-ray, MRI</a>
+								<a class="dropdown-item" href="Pet/Insurance">Get Pet Insurance</a>
 								
 						</div>
 				</li>
@@ -167,14 +212,14 @@
 						Food&Pharmacy 
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Pet Food</a>
-								<a class="dropdown-item" href="#">OTC Medicines </a>
-								<a class="dropdown-item" href="#">Rx Medicines </a>
-								<a class="dropdown-item" href="#">Vitamins & Supplements</a>
-								<a class="dropdown-item" href="#">Prescription Diets</a>
-								<a class="dropdown-item" href="#">Treats & Chews </a>
-								<a class="dropdown-item" href="#">Dental Care</a>
-								<a class="dropdown-item" href="#">My Prescriptions</a>
+								<a class="dropdown-item" href="Pet/Food">Pet Food</a>
+								<a class="dropdown-item" href="Pet/Medicines">OTC Medicines </a>
+								<a class="dropdown-item" href="Pet/RxMedi">Rx Medicines </a>
+								<a class="dropdown-item" href="Pet/Suppliments">Vitamins & Supplements</a>
+								<a class="dropdown-item" href="Pet/Diet">Prescription Diets</a>
+								<a class="dropdown-item" href="Pet/Chews">Treats & Chews </a>
+								<a class="dropdown-item" href="Pet/Dental">Dental Care</a>
+								<a class="dropdown-item" href="Pet/Prescription">My Prescriptions</a>
 								
 						</div>
 				</li>
@@ -185,17 +230,17 @@
 						Pet  Services
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Grooming</a>
-								<a class="dropdown-item" href="#">Pet Sitters</a>
-								<a class="dropdown-item" href="#">Dog Walkers</a>
-								<a class="dropdown-item" href="#">Pet Daycare</a>
-								<a class="dropdown-item" href="#">Pet Hotels</a>
-								<a class="dropdown-item" href="#">Pet Taxi</a>
-								<a class="dropdown-item" href="#">Pet Clubs</a>
-								<a class="dropdown-item" href="#">Pet Training </a>
-								<a class="dropdown-item" href="#">Dog Playgrounds & Beaches</a>
-								<a class="dropdown-item" href="#">Global Pet - Travel With Pets</a>
-								<a class="dropdown-item" href="#">Funeral Services & Cemeteries</a>
+								<a class="dropdown-item" href="Pet/Grooming">Grooming</a>
+								<a class="dropdown-item" href="Pet/Sitters">Pet Sitters</a>
+								<a class="dropdown-item" href="Pet/Walkers">Dog Walkers</a>
+								<a class="dropdown-item" href="Pet/DayCare">Pet Daycare</a>
+								<a class="dropdown-item" href="Pet/Hotels">Pet Hotels</a>
+								<a class="dropdown-item" href="Pet/Taxi">Pet Taxi</a>
+								<a class="dropdown-item" href="Pet/Clubs">Pet Clubs</a>
+								<a class="dropdown-item" href="Pet/Trainings">Pet Training </a>
+								<a class="dropdown-item" href="Pet/Playground">Dog Playgrounds & Beaches</a>
+								<a class="dropdown-item" href="Pet/Travel">Global Pet - Travel With Pets</a>
+								<a class="dropdown-item" href="Pet/Funeral">Funeral Services & Cemeteries</a>
 						
 								
 						</div>
@@ -210,12 +255,12 @@
 						Pet  Merchandise
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Pet Fashion Outlet </a>
-								<a class="dropdown-item" href="#">Pet Toys</a>
-								<a class="dropdown-item" href="#">Diapers, Training Pads, etc.</a>
-								<a class="dropdown-item" href="#">Pet Bedding</a>
-								<a class="dropdown-item" href="#">Pet Safety</a>
-								<a class="dropdown-item" href="#">Accessories</a>
+								<a class="dropdown-item" href="Pet/FashionOutlet">Pet Fashion Outlet </a>
+								<a class="dropdown-item" href="Pet/Toys">Pet Toys</a>
+								<a class="dropdown-item" href="Pet/diapers">Diapers, Training Pads, etc.</a>
+								<a class="dropdown-item" href="Pet/Bedding">Pet Bedding</a>
+								<a class="dropdown-item" href="Pet/Safety">Pet Safety</a>
+								<a class="dropdown-item" href="Pet/Accessories">Accessories</a>
 								
 						</div>
 				</li>
@@ -229,11 +274,11 @@
 					</a>
 						
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">	
-								<a class="dropdown-item" href="#">Veterinary Emergency Rooms 24/7!</a>
-								<a class="dropdown-item" href="#">Get Emergency Consultation!</a>
-								<a class="dropdown-item" href="#">Call Mobile Hospital!</a>
-								<a class="dropdown-item" href="#">Report Cruelty on Animals!</a>
-								<a class="dropdown-item" href="#">Lost and Found Pets</a>
+								<a class="dropdown-item" href="Pet/Emergency">Veterinary Emergency Rooms 24/7!</a>
+								<a class="dropdown-item" href="Pet/Consultation">Get Emergency Consultation!</a>
+								<a class="dropdown-item" href="Pet/CallHospital">Call Mobile Hospital!</a>
+								<a class="dropdown-item" href="Pet/Report">Report Cruelty on Animals!</a>
+								<a class="dropdown-item" href="Pet/LostPet">Lost and Found Pets</a>
 								
 						</div>
 				</li>
@@ -266,8 +311,8 @@
 								<a class="dropdown-item" href="Pet/owner">Owner Information</a>
 								<a class="dropdown-item" href="Pet/veterinary">Pet Veterinary Chart</a>
 								<a class="dropdown-item" href="Pet/license">Pet License</a>
-								<a class="dropdown-item" href="user/budget">My Budget & Spending Statistics </a>
-								<a class="dropdown-item" href="user/orders">My Orders</a>
+								<a class="dropdown-item" href="users/budget">My Budget & Spending Statistics </a>
+								<a class="dropdown-item" href="users/orders">My Orders</a>
 								<a class ="dropdown-item" href="users/login">Login</a>
 	
 					
@@ -285,11 +330,46 @@
             </ul>
             </ul>
             </div>
+			
+		
         </nav>
 	</section>
 	<section>
-	<div class="bannerWrapper"><img src="<?php echo base_url('assets/images/mainBanner.jpg'); ?>">
+	<div class="bannerWrapper"><img src="<?php echo base_url('assets/images/mainBanner.jpg'); ?>"/>
 </div>
+  
+  
+    <div class="showpets">
+	
+	</br><br><br>
+ <table   align="center" >
+
+
+    <tr>
+	    	  <td><button class="button" onclick="plusDivs(-1)">&#10094;</button></td>
+
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/1.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/2.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/3.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/4.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/5.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/6.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+			
+			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/7.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
+  <td><button class="button" onclick="plusDivs(1)">&#10095;</button>
+</td>
+  	 </tr>
+        
+</table>
+	</br><br><br>
+	</br><br><br>
+
+
 	</section>
 	
 	<body>
