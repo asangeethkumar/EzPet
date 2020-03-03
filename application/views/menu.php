@@ -19,13 +19,16 @@
  
 </head>
 
- <a href='<?php echo base_url()."index.php/"; ?>'>Video Upload</a> 
+ <!--<a href='<?php echo base_url()."index.php/"; ?>'>Video Upload</a> -->
 
 <style>
 	.dropdown:hover>.dropdown-menu{
 	display:block;
 	
 	}
+	.dropdown-toggle::after {
+    display:none;
+}
 	 .dropdown-toggle::after { 
             content: none; 
 			display:none;
@@ -154,7 +157,7 @@
     <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg bg-light fixed-top navbar-light" id="primary-menu">
             <a class="navbar-brand" href="">
-			<img style="width:100px" src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
+			<img style="width:80px" src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
