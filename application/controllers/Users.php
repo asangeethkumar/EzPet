@@ -15,8 +15,8 @@ class Users extends CI_Controller {
 	
 	public function index(){
         if($this->isUserLoggedIn){
-			//redirect('users/account');
-			redirect('task/menu');
+			redirect('users/account');
+			//redirect('task/menu');
         }else{
             redirect('users/login');
         }
@@ -32,7 +32,7 @@ class Users extends CI_Controller {
             
 			// Pass the user data and load view
 			$this->load->view('elements/header', $data);
-			$this->load->view('menu');
+			$this->load->view('menus');
 			//$this->load->view('users/account', $data);
 			$this->load->view('elements/footer');
         }else{
@@ -131,7 +131,7 @@ class Users extends CI_Controller {
         $this->session->unset_userdata('isUserLoggedIn');
         $this->session->unset_userdata('userId');
         $this->session->sess_destroy();
-        redirect('users/login/');
+        redirect('dashboard');
     }
 	
 	

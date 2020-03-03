@@ -19,16 +19,13 @@
  
 </head>
 
- <!--<a href='<?php echo base_url()."index.php/"; ?>'>Video Upload</a> -->
+<!-- <a href='<?php echo base_url()."index.php/"; ?>'>Video Upload</a> -->
 
 <style>
 	.dropdown:hover>.dropdown-menu{
 	display:block;
 	
 	}
-	.dropdown-toggle::after {
-    display:none;
-}
 	 .dropdown-toggle::after { 
             content: none; 
 			display:none;
@@ -316,7 +313,7 @@
 								<a class="dropdown-item" href="../Pet/license">Pet License</a>
 								<a class="dropdown-item" href="../users/budget">My Budget & Spending Statistics </a>
 								<a class="dropdown-item" href="../users/orders">My Orders</a>
-								<a class ="dropdown-item" href="../users/login">Login</a>
+								<a class ="dropdown-item"  href='<?php echo base_url()."users/logout"; ?>'>Logout</a>
 	
 					
                 
