@@ -23,27 +23,41 @@ class Model  extends CI_Model {
         
         {
             $this->form_validation->set_message('name', 'The %s field must not contain special characters');
-            return FALSE;
+			$names="Invalid Name";
+			//echo $names;
+			//echo "<br>";
+			//echo "<br>";
+			/*$this->response([
+						'status' => false,
+						'message' => 'inval',
+					
+					], REST_Controller::HTTP_OK);
+          
+		   return response;*/
+		   return false;
         }
         else
         {
-            return TRUE;
+            return $first_name;
         }
     } 
 	
 	
 	   public function mails($email)
     {
-        if ( !preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i', $email)) 
+        if ( !preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
         
         {
             $this->form_validation->set_message('mails', 'invalid email');
-			echo $email;
+			$vars="Invalid Email";
+			//echo $vars;
+			//echo "<br>";
+			//echo "<br>";
             return FALSE;
         }
         else
         {
-            return TRUE;
+            return $email;
         }
     } 
 	 
@@ -55,14 +69,44 @@ class Model  extends CI_Model {
         
         {
             $this->form_validation->set_message('number', 'enter the valid number');
+			$var="Invalid Phone Number";
+			//echo $var;
+			//echo "<br>";
+			//echo "<br>";
             return FALSE;
         }
         else
         {
-            return TRUE;
+            return $phone;
         }
     }
-	 
+	 public function pass($password)
+	 {
+		 if(!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/',$password))
+			 {
+				 
+            $this->form_validation->set_message('password', 'enter the valid password');
+			$var="Invalid Password";
+			
+			/*echo $var;
+			echo "<br>";
+			echo "at least one lowercase char";
+			echo "<br>";
+echo"at least one uppercase char";
+echo "<br>";
+echo"at least one digit";
+echo "<br>";
+echo "at least one special sign of @#-_$%^&+=§!?";
+			echo "<br>";
+			echo "<br>";*/
+            return FALSE;
+        }
+        else
+        {
+            return $password;
+        }
+	
+	}
 	 
 	/* function name($first_name)
 	 {

@@ -54,17 +54,59 @@ class Authentication extends REST_Controller {
 	public function registration_post() {
 		// Get the post data
 		$first_name = strip_tags($this->post('first_name'));
-		$fname=$this->model->name($first_name);
+		$name=$this->model->name($first_name);
+		if($name==false)
+		{
+				// Set the response and exit
+				//BAD_REQUEST (400) being the HTTP response code
+				$this->response([
+						'status' => false,
+						'message' => 'ERROR1',
+					], REST_Controller::HTTP_BAD_REQUEST);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+		}
+		//$fname=$this->model->name($first_name);
 		$last_name = strip_tags($this->post('last_name'));
 		$email = strip_tags($this->post('email'));
-		//$em=$this->model->mails($email);
+		$em=$this->model->mails($email);
+		if($em==false)
+		{
+				// Set the response and exit
+				//BAD_REQUEST (400) being the HTTP response code
+				$this->response([
+						'status' => false,
+						'message' => 'ERROR2',
+					], REST_Controller::HTTP_BAD_REQUEST);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+		}
 		$password = $this->post('password');
+		$pas=$this->model->pass($password);
+		if($pas==false)
+		{
+				// Set the response and exit
+				//BAD_REQUEST (400) being the HTTP response code
+				$this->response([
+						'status' => false,
+						'message' => 'ERROR3',
+					], REST_Controller::HTTP_BAD_REQUEST);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+		}
 		
 		$phone = strip_tags($this->post('phone'));
-		//$ph=$this->model->($phone);
+		$ph=$this->model->number($phone);
+		if($ph==false)
+		{
+				// Set the response and exit
+				//BAD_REQUEST (400) being the HTTP response code
+				$this->response([
+						'status' => false,
+						'message' => 'ERROR4',
+					], REST_Controller::HTTP_OK);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+		}
 		
 		// Validate the post data
-		if(!empty($fname) && !empty($last_name) && !empty($email) && !empty($password)){
+		if(!empty($name) && !empty($last_name) && !empty($em) && !empty($pas)&& !empty($ph)){
 			
 			// Check if the given email already exists
 			$con['returnType'] = 'count';
@@ -79,11 +121,11 @@ class Authentication extends REST_Controller {
 			}else{
 				// Insert user data
 				$userData = array(
-					'first_name' => $fname,
+					'first_name' => $name,
 					'last_name' => $last_name,
 					'email' => $email,
-					'password' => md5($password),
-					'phone' => $phone
+					'password' => md5($pas),
+					'phone' => $ph
 				);
 				$insert = $this->model->insert($userData);
 				
