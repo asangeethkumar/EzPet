@@ -10,6 +10,6 @@
 }
 
 </style>
-
+</br></br></br>
 	<div class="bannerWrapper"><img src="<?php echo base_url('assets/images/mainBanner.jpg'); ?>"/>
 </div>

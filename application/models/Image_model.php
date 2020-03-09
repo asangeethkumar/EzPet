@@ -15,8 +15,17 @@ class Image_model extends CI_Model {
  public function get_images()
  {
   $this->db->select('*');
-  $this->db->order_by('image_id');
-  $query = $this->db->get('image_data');
+  $this->db->order_by('ID');
+  $query = $this->db->get('imageS');
   return $query->result();
  }
+ 
+ public function get_otherImages($data) 
+ {
+	 
+	 $query = $this->db->get_where('images', array('customer_id!=' => $data['user']['email']));
+	  return $query->result();
+
+ }
+ 
 }

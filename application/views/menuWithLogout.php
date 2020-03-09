@@ -5,45 +5,45 @@
   <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>finding pet is now easier</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>finding pet is now easier</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	
- <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
-  <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel='stylesheet' type='text/css' />
- 
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+	<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
 
-<!-- <a href='<?php echo base_url()."index.php/"; ?>'>Video Upload</a> -->
-
 <style>
-	.dropdown:hover>.dropdown-menu{
+.dropdown:hover>.dropdown-menu
+   {
 	display:block;
 	
 	}
-	 .dropdown-toggle::after { 
-            content: none; 
-			display:none;
-			border:0;
-			vertical-align: baseline;
-	 }
+.dropdown-toggle::after 
+   { 
+    content: none; 
+	display:none;
+	border:0;
+	vertical-align: baseline;
+	}
 
-.bg-light {
+.bg-light
+   {
     background-color: #fff!important;
-}
+	}
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item:focus, .dropdown-item:hover
+   {
     color: #16181b;
-	
-    text-decoration: none;
+	text-decoration: none;
     background-color: #f8f9fa;
-}
-.dropdown-item {
+   }
+.dropdown-item
+   {
     transition: margin 0.1s;
     display: block;
     width: 100%;
@@ -51,17 +51,18 @@
 	border-bottom:1px solid #ccc !important;
     clear: both;
     font-weight: 400;
-	 font-size: 13px;
+	font-size: 13px;
     color: #212529;
     text-align: inherit;
     white-space: nowrap;
     background-color: transparent;
     border: 0;
-}
+	}
 
-#primary-menu ul li:hover>a {
+#primary-menu ul li:hover>a 
+	{
     color: #1abc9c;
-}
+   }
 #primary-menu ul li>a {
     display: block;
     line-height: 22px;
@@ -147,24 +148,18 @@
 }
 </style>
 
-
-
   <section id="title">
 
     <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg bg-light fixed-top navbar-light" id="primary-menu">
             <a class="navbar-brand" href="">
-			<img style="width:80px" src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
+			<img style="width:100px" src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
             <ul class="navbar-nav ml-auto">
-			  
-			
-			
-			
 			  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Get A pet
@@ -184,10 +179,7 @@
 								<a class="dropdown-item" href="Pet/InitialOrder">Initial Order for New Pet</a>
 						</div>
 				</li>
-			
-			
-			
-					
+				
 			  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pet Health
@@ -203,11 +195,8 @@
 								
 						</div>
 				</li>
-			
-			
-			
-						
-			  <li class="nav-item dropdown">
+	
+				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Food&Pharmacy 
 					</a>
@@ -223,8 +212,7 @@
 								
 						</div>
 				</li>
-			
-			
+				
 				 <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pet  Services
@@ -274,11 +262,11 @@
 					</a>
 						
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">	
-								<a class="dropdown-item" href="../Pet/Emergency">Veterinary Emergency Rooms 24/7!</a>
-								<a class="dropdown-item" href="../Pet/Consultation">Get Emergency Consultation!</a>
-								<a class="dropdown-item" href="../Pet/CallHospital">Call Mobile Hospital!</a>
-								<a class="dropdown-item" href="../Pet/Report">Report Cruelty on Animals!</a>
-								<a class="dropdown-item" href="../Pet/LostPet">Lost and Found Pets</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/Emergency"?>">Veterinary Emergency Rooms 24/7!</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/Consultation"?>">Get Emergency Consultation!</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/CallHospital"?>">Call Mobile Hospital!</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/Report"?>">Report Cruelty on Animals!</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/LostPet"?>">Lost and Found Pets</a>
 								
 						</div>
 				</li>
@@ -307,25 +295,20 @@
 						My Account 
 					</a>
 						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="../Pet/info">Pet Information</a>
-								<a class="dropdown-item" href="../Pet/owner">Owner Information</a>
-								<a class="dropdown-item" href="../Pet/veterinary">Pet Veterinary Chart</a>
-								<a class="dropdown-item" href="../Pet/license">Pet License</a>
-								<a class="dropdown-item" href="../users/budget">My Budget & Spending Statistics </a>
-								<a class="dropdown-item" href="../users/orders">My Orders</a>
-								<a class ="dropdown-item"  href='<?php echo base_url()."users/logout"; ?>'>Logout</a>
-	
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/info"?>">Pet Information</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/owner" ?>" >Owner Information</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/veterinary" ?>">Pet Veterinary Chart</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/license" ?>" >Pet License</a>
+								<a class="dropdown-item" href="<?php echo base_url()."users/budget" ?>" >My Budget & Spending Statistics </a>
+								<a class="dropdown-item" href="<?php echo base_url()."users/orders" ?>" >My Orders</a>
+
+								<a class ="dropdown-item" href="<?php echo base_url()."users/logout" ?>" >LogOut</a>
+									
 					
                 
 						</div>
 				</li>
 			
-				
-					
-				 
-				
-	
-				
 				
             </ul>
             </ul>
@@ -335,39 +318,10 @@
         </nav>
 	</section>
 	<section>
-	<div class="bannerWrapper"><img src="<?php echo base_url('assets/images/mainBanner.jpg'); ?>"/>
-</div>
+
   
   
-    <div class="showpets">
-	
-	</br><br><br>
- <table   align="center" >
 
-
-    <tr>
-	    	  <td><button class="button" onclick="plusDivs(-1)">&#10094;</button></td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/1.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/2.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/3.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/4.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/5.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/6.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-			
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/7.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-  <td><button class="button" onclick="plusDivs(1)">&#10095;</button>
-</td>
-  	 </tr>
-        
-</table>
-	</br><br><br>
-	</br><br><br>
 
 
 	</section>

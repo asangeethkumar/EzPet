@@ -1,16 +1,4 @@
-<!--<ul class="navbar-nav ml-auto">
-			  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					</a>
-						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a>
-						
-						<a href="<?php echo base_url('index.php/users/login'); ?>">login</a>
-								
-							
-				</li>
 
-</ul>-->
 
 <a class="btn btn-primary" href="<?php echo base_url('index.php/users/registration'); ?>" role="button">Register</a>
 <a class="btn btn-primary" href="<?php echo base_url('index.php/users/login'); ?>" role="button">Login</a>

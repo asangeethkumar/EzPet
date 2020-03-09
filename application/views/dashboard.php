@@ -20,12 +20,19 @@
 
 .showpets{
 		height:400px;
-		    background-color: white;
+		    background-color: violet;
+}
+
+.showpe{
+		height:400px;
+		    background-color: violet;
 }
 .buttoncolor {
   background-color: black;
 
 }
+
+
 .button {
   background-color: #008CBA;
   border: none;
@@ -56,36 +63,48 @@
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
 }
+
+
+	
 </style>
 
-<div class="showpets">
 	
-	</br><br><br>
- <table   align="center" >
+<!--
+<div class="showpets">
+
+		    	  <td><button class="button nextimage" onclick="return myFunction()">&#10094;</button></td>
+
+	<?php  foreach ($data as $geth_index=>$geth) { ;
+  ?>
 
 
-    <tr>
-	    	  <td><button class="button" onclick="plusDivs(-1)">&#10094;</button></td>
+<td><img id="<?php echo $geth_index?>" class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $geth->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
 
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/1.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
 
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/2.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/3.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/4.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/5.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/6.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-			
-			<td>	<img class="zoom w3-circle" src="<?php echo base_url('assets/images/7.jpg'); ?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></img> </td>
-  <td><button class="button" onclick="plusDivs(1)">&#10095;</button>
-</td>
-  	 </tr>
-        
-</table>
-	</br><br><br>
-	</br><br><br>
+	<?php } ?> 
+  <td><button class="button nextimage" onclick="javascript: sav[i--]">&#10095;</button>
 
 </div>
+-->
+</br></br></br></br></br>
+
+<div class="showpet">
+<?php
+    function hello() {
+  echo 'alert(message successfully sent)';  //not showing an alert box.
+    }
+    echo '<td><button class="button nextimage" onclick="hello()">&#10094;</button></td>';
+?>
+		    	  
+
+	<?php  for ($i = 3; $i < 10 ;$i++) { 
+  ?>
+
+<td><img id="<?php echo $i?>" class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[$i]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
+
+	<?php } 
+    echo '<td><button class="button nextimage" onclick="hello()">&#10094;</button></td>';
+	?>
+
+</div>
+

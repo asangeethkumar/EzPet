@@ -8,6 +8,10 @@ class Users extends CI_Controller {
 		// Load form validation ibrary & user model
         $this->load->library('form_validation');
         $this->load->model('model');
+	   $this->load->model('image_model');
+	   
+
+
 		
 		// User login status
 		$this->isUserLoggedIn = $this->session->userdata('isUserLoggedIn');
@@ -18,7 +22,7 @@ class Users extends CI_Controller {
 			redirect('users/account');
 			//redirect('task/menu');
         }else{
-            redirect('users/login');
+            redirect('login');	
         }
     }
 
@@ -31,12 +35,14 @@ class Users extends CI_Controller {
             $data['user'] = $this->model->getRows($con);
             
 			// Pass the user data and load view
-			$this->load->view('elements/header', $data);
-			$this->load->view('menus');
-			//$this->load->view('users/account', $data);
-			$this->load->view('elements/footer');
+			//$this->load->view('elements/header', $data);
+			$this->load->view('menuWithLogout');
+			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
+						 
+			$this->load->view('users/account', $data2);
+			//$this->load->view('elements/footer');
         }else{
-            redirect('users/login');
+            redirect('login');
         }
     }
 
@@ -72,7 +78,11 @@ class Users extends CI_Controller {
                 if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
+
                     redirect('users/account/');
+
+
+					
                 }else{
                     $data['error_msg'] = 'Wrong email or password, please try again.';
                 }
@@ -83,7 +93,7 @@ class Users extends CI_Controller {
 		
 		// Load view
 		$this->load->view('elements/header', $data);
-		$this->load->view('users/login', $data);
+		$this->load->view('login', $data);
 		$this->load->view('elements/footer');
     }
 
@@ -111,7 +121,7 @@ class Users extends CI_Controller {
                 $insert = $this->model->insert($userData);
               
                     $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.');
-                    redirect('users/login');
+                    redirect('login');
                 
             }else{
 				$data['error_msg'] = 'Please fill all the mandatory fields.';
@@ -123,13 +133,16 @@ class Users extends CI_Controller {
 		
 		// Load view
 		$this->load->view('elements/header', $data);
-		$this->load->view('users/registration', $data);
+		$this->load->view('registration', $data);
 		$this->load->view('elements/footer');
     }
     
     public function logout(){
         $this->session->unset_userdata('isUserLoggedIn');
         $this->session->unset_userdata('userId');
+		 $this->session->set_userdata('isUserLoggedIn', FALSE);
+                    $this->session->set_userdata('userId', '');
+		
         $this->session->sess_destroy();
         redirect('dashboard');
     }
