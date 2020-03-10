@@ -121,7 +121,7 @@ class Users extends CI_Controller {
                 $insert = $this->model->insert($userData);
               
                     $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.');
-                    redirect('users/login');
+                    redirect('login');
                 
             }else{
 				$data['error_msg'] = 'Please fill all the mandatory fields.';

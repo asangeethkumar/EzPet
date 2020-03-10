@@ -185,6 +185,7 @@
 						Pet Health
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<<<<<<< HEAD
 								<a class="dropdown-item" href='<?php echo base_url()."users/getc"; ?>'>Get Veterinary Consultation Online</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/schedule"; ?>'>Schedule Veterinarian Appointment</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/vaccine"; ?>'>Schedule Vaccination </a>
@@ -192,6 +193,15 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/lab"; ?>'>Laboratory Diagnostics</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/ultra"; ?>'>Ultrasound, X-ray, MRI</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/insurance"; ?>'>Get Pet Insurance</a>
+=======
+								<a class="dropdown-item" href="Pet/OnlineConsultation">Get Veterinary Consultation Online</a>
+								<a class="dropdown-item" href="Pet/ScheduleAppointment">Schedule Veterinarian Appointment</a>
+								<a class="dropdown-item" href="Pet/ScheduleVaccination">Schedule Vaccination </a>
+								<a class="dropdown-item" href="Pet/GeneticTest">Genetic Test</a>
+								<a class="dropdown-item" href="Pet/LabDiagnostics">Laboratory Diagnostics</a>
+								<a class="dropdown-item" href="Pet/Ultrasound">Ultrasound, X-ray, MRI</a>
+								<a class="dropdown-item" href="Pet/Insurance">Get Pet Insurance</a>
+>>>>>>> 52245ee2b841a30afc7cd8388974658e3c64483d
 								
 						</div>
 				</li>
@@ -201,6 +211,7 @@
 						Food&Pharmacy 
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<<<<<<< HEAD
 								<a class="dropdown-item" href='<?php echo base_url()."users/food"; ?>'>Pet Food</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/otc"; ?>'>OTC Medicines </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/rx"; ?>'>Rx Medicines </a>
@@ -209,6 +220,16 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/treat"; ?>'>Treats & Chews </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dconsult"; ?>'>Dental Care</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/mypres"; ?>'>My Prescriptions</a>
+=======
+								<a class="dropdown-item" href="Pet/Food">Pet Food</a>
+								<a class="dropdown-item" href="Pet/Medicines">OTC Medicines </a>
+								<a class="dropdown-item" href="Pet/RxMedi">Rx Medicines </a>
+								<a class="dropdown-item" href="Pet/Suppliments">Vitamins & Supplements</a>
+								<a class="dropdown-item" href="Pet/Diet">Prescription Diets</a>
+								<a class="dropdown-item" href="Pet/Chews">Treats & Chews </a>
+								<a class="dropdown-item" href="Pet/Dental">Dental Care</a>
+								<a class="dropdown-item" href="Pet/Prescription">My Prescriptions</a>
+>>>>>>> 52245ee2b841a30afc7cd8388974658e3c64483d
 								
 						</div>
 				</li>
