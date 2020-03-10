@@ -8,6 +8,10 @@ class Users extends CI_Controller {
 		// Load form validation ibrary & user model
         $this->load->library('form_validation');
         $this->load->model('model');
+	   $this->load->model('image_model');
+	   
+
+
 		
 		// User login status
 		$this->isUserLoggedIn = $this->session->userdata('isUserLoggedIn');
@@ -18,7 +22,7 @@ class Users extends CI_Controller {
 			redirect('users/account');
 			//redirect('task/menu');
         }else{
-            redirect('users/login');
+            redirect('login');	
         }
     }
 
@@ -31,12 +35,14 @@ class Users extends CI_Controller {
             $data['user'] = $this->model->getRows($con);
             
 			// Pass the user data and load view
-			$this->load->view('elements/header', $data);
-			$this->load->view('menus');
-			//$this->load->view('users/account', $data);
-			$this->load->view('elements/footer');
+			//$this->load->view('elements/header', $data);
+			$this->load->view('menuWithLogout');
+			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
+						 
+			$this->load->view('users/account', $data2);
+			//$this->load->view('elements/footer');
         }else{
-            redirect('users/login');
+            redirect('login');
         }
     }
 
@@ -72,7 +78,11 @@ class Users extends CI_Controller {
                 if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
+
                     redirect('users/account/');
+
+
+					
                 }else{
                     $data['error_msg'] = 'Wrong email or password, please try again.';
                 }
@@ -83,7 +93,7 @@ class Users extends CI_Controller {
 		
 		// Load view
 		$this->load->view('elements/header', $data);
-		$this->load->view('users/login', $data);
+		$this->load->view('login', $data);
 		$this->load->view('elements/footer');
     }
 
@@ -123,61 +133,50 @@ class Users extends CI_Controller {
 		
 		// Load view
 		$this->load->view('elements/header', $data);
-		$this->load->view('users/registration', $data);
+		$this->load->view('registration', $data);
 		$this->load->view('elements/footer');
-    }
-	public function onlineconsulation(){
-        $data = $userData = array();
-		
-		// If registration request is submitted
-        if($this->input->post('signupSubmit')){
-
-
-            $userData = array(
-                'pet' => strip_tags($this->input->post('pet')),
-				'petname' => strip_tags($this->input->post('petname')),
-                'gender' => strip_tags($this->input->post('gender')),
-                'age' => md5($this->input->post('age')),
-                'question' => $this->input->post('question'),
-                'photos' => strip_tags($this->input->post('photos')),
-				 'category' => strip_tags($this->input->post('category'))
-            );
-
-            if($this->form_validation->run() == true){
-                $insert = $this->model->inserts($userData);
-              
-                    echo 'Your account registration has been successful';
-                    redirect('users/getc');
-                
-            }else{
-				$data['error_msg'] = 'Please fill all the mandatory fields.';
-			}
-        }
-		
-		// Posted data
-        $data['user'] = $userData;
-		
-		// Load view
-		//$this->load->view('elements/header', $data);
-		$this->load->view('users/getc', $data);
-		//$this->load->view('elements/footer');
     }
     
     public function logout(){
         $this->session->unset_userdata('isUserLoggedIn');
         $this->session->unset_userdata('userId');
-        $this->session->sess_destroy();
-       // redirect('dashboard');
-	   $this->load->view('menu');
-	   
-    }
-	
-	
-    public function vitamins()  
-    {  
-        $this->load->view('vitamins'); 
+		 $this->session->set_userdata('isUserLoggedIn', FALSE);
+                    $this->session->set_userdata('userId', '');
 		
-    } 
+        $this->session->sess_destroy();
+        redirect('dashboard');
+    }
+	public function food()
+	{
+		$this->load->view('food');
+
+	}
+	
+    public function otc()
+	{
+		$this->load->view('otc');
+	}
+	
+	public function rx()
+	{
+		$this->load->view('rx');
+	}
+	
+	public function treat()
+	{
+		$this->load->view('treat');
+	}
+	
+	public function dental()
+	{
+		$this->load->view('dental');
+	}
+	
+	public function mypres()
+	{
+		$this->load->view('mypres');
+	}
+	
 	public function getc()  
     {  
         $this->load->view('getc'); 
@@ -203,39 +202,34 @@ class Users extends CI_Controller {
     {  
         $this->load->view('insurance'); 
 		
+    }
+	public function vitamins()  
+    {  
+        $this->load->view('vitamins'); 
+		
+    } 
+	public function schedule()  
+    {  
+        $this->load->view('schedule'); 
+		
+    } 
+	public function dconsult()  
+    {  
+        $this->load->view('dconsult'); 
+		
+    } 
+	public function diet()  
+    {  
+        $this->load->view('diet'); 
+		
+    } 
+	public function vaccine()  
+    {  
+        $this->load->view('vaccine'); 
+		
     } 
 	
-	public function mypres()  
-    {  
-        $this->load->view('mypres'); 
-		
-    } 
- public function dental()  
-    {  
-        $this->load->view('dental'); 
-		
-    }  	
-	 public function treat()  
-    {  
-        $this->load->view('treat'); 
-		
-    }  
-	 public function rx()  
-    {  
-        $this->load->view('rx'); 
-		
-    }  
-	   
-    public function otc()  
-    {  
-        $this->load->view('otc'); 
-		
-    }  
-	 public function food()  
-    {  
-        $this->load->view('food'); 
-		
-    }  
+	
     
 	// Existing email check during validation
     public function email_check($str){
