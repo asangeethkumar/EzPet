@@ -25,8 +25,81 @@ class Users extends CI_Controller {
             redirect('login');	
         }
     }
+    public function submenu()
+    {
+        $this->load->view('Grooming');
+    }
+    public function submenu1()
+    {
+        $this->load->view('Petsitter');
+    }
+    public function submenu2()
+    {
+        $this->load->view('dogwalker');
+    }
+    public function submenu3()
+    {
+        $this->load->view('pet_day_care');
+    }
+    public function submenu4()
+    {
+        $this->load->view('pet_hostel');
+    }
+    public function submenu5()
+    {
+        $this->load->view('pet_taxi');
+    }
+    
 
-    public function account(){
+    public function submenu6()
+    {
+        $this->load->view('petclub');
+    }
+    public function submenu7()
+    {
+        $this->load->view('pet_training');
+    }
+    public function submenu8()
+    {
+        $this->load->view('dogplayground');
+    }
+    public function submenu9()
+    {
+        $this->load->view('globalpet');
+    }
+    
+    
+    public function submenu10()
+    {
+        $this->load->view('funeral');
+    }
+    public function submenu11()
+    {
+        $this->load->view('petfasionoutlet');
+    }
+    public function submenu12()
+    {
+        $this->load->view('pettoys');
+    }
+    public function submenu13()
+    {
+        $this->load->view('dia');
+    }
+    public function submenu14()
+    {
+        $this->load->view('petbedding');
+    }
+    public function submenu15()
+    {
+        $this->load->view('petsafety');
+    }
+    public function submenu16()
+    {
+        $this->load->view('accessories');
+    }
+    
+    
+        public function account(){
         $data = array();
         if($this->isUserLoggedIn){
 			$con = array(

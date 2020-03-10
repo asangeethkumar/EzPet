@@ -218,17 +218,17 @@
 						Pet  Services
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="Pet/Grooming">Grooming</a>
-								<a class="dropdown-item" href="Pet/Sitters">Pet Sitters</a>
-								<a class="dropdown-item" href="Pet/Walkers">Dog Walkers</a>
-								<a class="dropdown-item" href="Pet/DayCare">Pet Daycare</a>
-								<a class="dropdown-item" href="Pet/Hotels">Pet Hotels</a>
-								<a class="dropdown-item" href="Pet/Taxi">Pet Taxi</a>
-								<a class="dropdown-item" href="Pet/Clubs">Pet Clubs</a>
-								<a class="dropdown-item" href="Pet/Trainings">Pet Training </a>
-								<a class="dropdown-item" href="Pet/Playground">Dog Playgrounds & Beaches</a>
-								<a class="dropdown-item" href="Pet/Travel">Global Pet - Travel With Pets</a>
-								<a class="dropdown-item" href="Pet/Funeral">Funeral Services & Cemeteries</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu"; ?>'>Grooming</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu1"; ?>'>Pet Sitters</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu2"; ?>'>Dog Walkers</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu3"; ?>'>Pet Daycare</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu4"; ?>'>Pet Hotels</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu5"; ?>'>Pet Taxi</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu6"; ?>'>Pet Clubs</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu7"; ?>'>Pet Training </a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu8"; ?>'>Dog Playgrounds & Beaches</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu9"; ?>'>Global Pet - Travel With Pets</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu10"; ?>'>Funeral Services & Cemeteries</a>
 						
 								
 						</div>
@@ -243,12 +243,12 @@
 						Pet  Merchandise
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="Pet/FashionOutlet">Pet Fashion Outlet </a>
-								<a class="dropdown-item" href="Pet/Toys">Pet Toys</a>
-								<a class="dropdown-item" href="Pet/diapers">Diapers, Training Pads, etc.</a>
-								<a class="dropdown-item" href="Pet/Bedding">Pet Bedding</a>
-								<a class="dropdown-item" href="Pet/Safety">Pet Safety</a>
-								<a class="dropdown-item" href="Pet/Accessories">Accessories</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu11"; ?>'>Pet Fashion Outlet </a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu12"; ?>'>Pet Toys</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu13"; ?>'>Diapers, Training Pads, etc.</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu14"; ?>'>Pet Bedding</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu15"; ?>'>Pet Safety</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/submenu16"; ?>'>Accessories</a>
 								
 						</div>
 				</li>
