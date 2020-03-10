@@ -203,7 +203,21 @@ echo "at least one special sign of @#-_$%^&+=§!?";
 		//return the status
 		return $insert?$this->db->insert_id():false;
     }
-    
+      public function inserts($data){
+		//add created and modified date if not exists
+		if(!array_key_exists("created", $data)){
+			$data['created'] = date("Y-m-d H:i:s");
+		}
+		if(!array_key_exists("modified", $data)){
+			$data['modified'] = date("Y-m-d H:i:s");
+		}
+		
+		//insert user data to users table
+		$insert = $this->db->insert($this->getc, $data);
+		
+		//return the status
+		return $insert?$this->db->insert_id():false;
+    }
     
     /*
      * Delete user data

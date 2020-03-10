@@ -146,9 +146,90 @@ class Users extends CI_Controller {
         $this->session->sess_destroy();
         redirect('dashboard');
     }
+	public function food()
+	{
+		$this->load->view('food');
+
+	}
+	
+    public function otc()
+	{
+		$this->load->view('otc');
+	}
+	
+	public function rx()
+	{
+		$this->load->view('rx');
+	}
+	
+	public function treat()
+	{
+		$this->load->view('treat');
+	}
+	
+	public function dental()
+	{
+		$this->load->view('dental');
+	}
+	
+	public function mypres()
+	{
+		$this->load->view('mypres');
+	}
+	
+	public function getc()  
+    {  
+        $this->load->view('getc'); 
+		
+    } 
+	  public function lab()  
+    {  
+        $this->load->view('lab'); 
+		
+    } 
+	 public function genetic()  
+    {  
+        $this->load->view('genetic'); 
+		
+    } 
+	 public function ultra()  
+    {  
+        $this->load->view('ultra'); 
+		
+    }
+	
+	public function insurance()  
+    {  
+        $this->load->view('insurance'); 
+		
+    }
+	public function vitamins()  
+    {  
+        $this->load->view('vitamins'); 
+		
+    } 
+	public function schedule()  
+    {  
+        $this->load->view('schedule'); 
+		
+    } 
+	public function dconsult()  
+    {  
+        $this->load->view('dconsult'); 
+		
+    } 
+	public function diet()  
+    {  
+        $this->load->view('diet'); 
+		
+    } 
+	public function vaccine()  
+    {  
+        $this->load->view('vaccine'); 
+		
+    } 
 	
 	
-    
     
 	// Existing email check during validation
     public function email_check($str){
