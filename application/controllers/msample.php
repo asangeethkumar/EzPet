@@ -1,11 +1,11 @@
 <?php  
 defined('BASEPATH') OR exit('No direct script access allowed');  
   
-class Task extends CI_Controller {  
+class Msample extends CI_Controller {  
       
     public function index()  
     {  
-        $this->load->view('rx');  
+        $this->load->view('sample');  
     }  
 }  
 ?>  

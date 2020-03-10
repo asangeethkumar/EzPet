@@ -1,39 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="<?= base_url();?>css/bootstrap.css" rel="stylesheet">
-    <style>
-     .error{
-      color:red;
-     }
-    </style>
-</head>    
-<body>
- <div class="container">
-     <div class="row">
-         <div class="col-md-6">
-             <div class="row">
-                 <div class="col-md-12">
-                     <h3>Login In</h3>
-                  <form method="post" action="http://localhost/codeigniterexamples/index.php/signin">                                             
-                      <div class="form-group">                       
-                       <label for="userName">Username</label> <input type="text" class="form-control" id="userName" name="userName" value="<?php echo set_value('userName'); ?>">
-                       <?php echo form_error('userName'); ?>                       
-       </div>
-       
-       <div class="form-group">
-        <label for="password"> Password </label> <input type="password" class="form-control" id="password" name="password" value="<?php echo set_value('password'); ?>"> 
-        <?php echo form_error('password'); ?>
-        
-       </div>
-                   
-                   <button class="btn btn-success" type="submit">LOGIN</button>
-      
-      </form>
-     </div>
-             </div>
-         </div>               
-     </div>
- </div>        
-</body>
-</html> 
+
+
+<a class="btn btn-primary" href="<?php echo base_url('index.php/users/registration'); ?>" role="button">Register</a>
+<a class="btn btn-primary" href="<?php echo base_url('index.php/users/login'); ?>" role="button">Login</a>
+
+						
+<!--<p><a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a></p>-->
+
+<div class="container">
+	<h2>Login to Your Account</h2>
+	
+	<!-- Status message -->
+	<?php 
+		if(!empty($success_msg)){
+			echo '<p class="status-msg success">'.$success_msg.'</p>';
+		}elseif(!empty($error_msg)){
+			echo '<p class="status-msg error">'.$error_msg.'</p>';
+		}
+	?>
+	
+	<!-- Login form -->
+	<div class="regisFrm">
+		<form action="" method="post">
+			<div class="form-group">
+				<input type="email" name="email" placeholder="EMAIL" required="">
+				<?php echo form_error('email','<p class="help-block">','</p>'); ?>
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" placeholder="PASSWORD" required="">
+				<?php echo form_error('password','<p class="help-block">','</p>'); ?>
+			</div>
+			<div class="send-button">
+				<input type="submit"  onclick="change()" id="submit" name="loginSubmit" value="LOGIN">
+			</div>
+		</form>
+		<!--<p>Don't have an account? <a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a></p>-->
+		<p> <a href="<?php echo base_url('index.php/forms/forgot_pass'); ?>">Forgot Password?</a></p>
+	</div>
+</div>

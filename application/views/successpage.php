@@ -10,7 +10,7 @@
                  <div class="row">
                   <div class="col-md-12">
                       <h3>Login Successful <?=$this->session->userdata('FIRST_NAME')?> <?=$this->session->userdata('LAST_NAME')?></h3>
-                      <a href="<?= base_url();?>index.php/logout">Logout</a>                                               
+                      <a href="<?= base_url();?>/logout">Logout</a>                                               
                      </div>
                    </div>
                 </div>               

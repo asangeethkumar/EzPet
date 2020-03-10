@@ -302,19 +302,13 @@
 								<a class="dropdown-item" href="<?php echo base_url()."users/budget" ?>" >My Budget & Spending Statistics </a>
 								<a class="dropdown-item" href="<?php echo base_url()."users/orders" ?>" >My Orders</a>
 
-								<a class ="dropdown-item" href="<?php echo base_url()."users/login" ?>" >Login</a>
+								<a class ="dropdown-item" href="<?php echo base_url()."users/logout" ?>" >LogOut</a>
 									
 					
                 
 						</div>
 				</li>
 			
-				
-					
-				 
-				
-	
-				
 				
             </ul>
             </ul>

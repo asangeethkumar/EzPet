@@ -15,8 +15,8 @@ class Users extends CI_Controller {
 	
 	public function index(){
         if($this->isUserLoggedIn){
-			//redirect('users/account');
-			redirect('task/menu');
+			redirect('users/account');
+			//redirect('task/menu');
         }else{
             redirect('users/login');
         }
@@ -32,7 +32,7 @@ class Users extends CI_Controller {
             
 			// Pass the user data and load view
 			$this->load->view('elements/header', $data);
-			$this->load->view('menu');
+			$this->load->view('menus');
 			//$this->load->view('users/account', $data);
 			$this->load->view('elements/footer');
         }else{
@@ -126,16 +126,116 @@ class Users extends CI_Controller {
 		$this->load->view('users/registration', $data);
 		$this->load->view('elements/footer');
     }
+	public function onlineconsulation(){
+        $data = $userData = array();
+		
+		// If registration request is submitted
+        if($this->input->post('signupSubmit')){
+
+
+            $userData = array(
+                'pet' => strip_tags($this->input->post('pet')),
+				'petname' => strip_tags($this->input->post('petname')),
+                'gender' => strip_tags($this->input->post('gender')),
+                'age' => md5($this->input->post('age')),
+                'question' => $this->input->post('question'),
+                'photos' => strip_tags($this->input->post('photos')),
+				 'category' => strip_tags($this->input->post('category'))
+            );
+
+            if($this->form_validation->run() == true){
+                $insert = $this->model->inserts($userData);
+              
+                    echo 'Your account registration has been successful';
+                    redirect('users/getc');
+                
+            }else{
+				$data['error_msg'] = 'Please fill all the mandatory fields.';
+			}
+        }
+		
+		// Posted data
+        $data['user'] = $userData;
+		
+		// Load view
+		//$this->load->view('elements/header', $data);
+		$this->load->view('users/getc', $data);
+		//$this->load->view('elements/footer');
+    }
     
     public function logout(){
         $this->session->unset_userdata('isUserLoggedIn');
         $this->session->unset_userdata('userId');
         $this->session->sess_destroy();
-        redirect('users/login/');
+       // redirect('dashboard');
+	   $this->load->view('menu');
+	   
     }
 	
 	
-    
+    public function vitamins()  
+    {  
+        $this->load->view('vitamins'); 
+		
+    } 
+	public function getc()  
+    {  
+        $this->load->view('getc'); 
+		
+    } 
+	  public function lab()  
+    {  
+        $this->load->view('lab'); 
+		
+    } 
+	 public function genetic()  
+    {  
+        $this->load->view('genetic'); 
+		
+    } 
+	 public function ultra()  
+    {  
+        $this->load->view('ultra'); 
+		
+    }
+	
+	public function insurance()  
+    {  
+        $this->load->view('insurance'); 
+		
+    } 
+	
+	public function mypres()  
+    {  
+        $this->load->view('mypres'); 
+		
+    } 
+ public function dental()  
+    {  
+        $this->load->view('dental'); 
+		
+    }  	
+	 public function treat()  
+    {  
+        $this->load->view('treat'); 
+		
+    }  
+	 public function rx()  
+    {  
+        $this->load->view('rx'); 
+		
+    }  
+	   
+    public function otc()  
+    {  
+        $this->load->view('otc'); 
+		
+    }  
+	 public function food()  
+    {  
+        $this->load->view('food'); 
+		
+    }  
     
 	// Existing email check during validation
     public function email_check($str){
