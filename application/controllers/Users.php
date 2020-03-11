@@ -121,7 +121,7 @@ class Users extends CI_Controller {
                 $insert = $this->model->insert($userData);
               
                     $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.');
-                    redirect('login');
+                    redirect('users/login');
                 
             }else{
 				$data['error_msg'] = 'Please fill all the mandatory fields.';
@@ -149,6 +149,15 @@ class Users extends CI_Controller {
 	public function food()
 	{
 		$this->load->view('food');
+
+	}
+	public function redirect()
+	
+	{
+		echo "please login!";
+		redirect("users/login");
+		//$this->load->view('messsage');
+		
 
 	}
 	

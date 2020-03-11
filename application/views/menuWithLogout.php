@@ -165,18 +165,18 @@
 						Get A pet
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="Pet/FindAPet">Find A Pet For You</a>
-								<a class="dropdown-item" href="Pet/Schelter">Pet Shelters (Adoption)</a>
-								<a class="dropdown-item" href="Pet/Breeders">Breeders</a>
-								<a class="dropdown-item" href="Pet/KittenFinder">International Puppy/Kitten Finder</a>
-								<a class="dropdown-item" href="Pet/Delivery">Delivery & Transportation</a>
-								<a class="dropdown-item" href="Pet/EstimateOwnership">Cost of Pet Ownership Estimation</a>
-								<a class="dropdown-item" href="Pet/Confortable">Are You Comfortable to Own a Pet?</a>
-								<a class="dropdown-item" href="Pet/Choose">What Pet to Choose?</a>
-								<a class="dropdown-item" href="Pet/HealthCheckAndVaccination">Initial Health Check & Vaccination</a>
-								<a class="dropdown-item" href="Pet/Adaption">Early Adaptation – Build a pet-owner rapport</a>
-								<a class="dropdown-item" href="Pet/TransitionStageNutrition">Transition Stage Nutrition </a>
-								<a class="dropdown-item" href="Pet/InitialOrder">Initial Order for New Pet</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/FindAPet"; ?>'>Find A Pet For You</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Schelter"; ?>'>Pet Shelters (Adoption)</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Breeders"; ?>'>Breeders</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/KittenFinder"; ?>'>International Puppy/Kitten Finder</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Delivery"; ?>'>Delivery & Transportation</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/EstimateOwnership"; ?>'>Cost of Pet Ownership Estimation</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Confortable"; ?>'>Are You Comfortable to Own a Pet?</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Choose"; ?>'>What Pet to Choose?</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/HealthCheckAndVaccination"; ?>'>Initial Health Check & Vaccination</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Adaption"; ?>'>Early Adaptation – Build a pet-owner rapport</a>
+								<a class="dropdown-item" href= '<?php echo base_url()."Pet/TransitionStageNutrition"; ?>'>Transition Stage Nutrition </a>
+								<a class="dropdown-item" href= '<?php echo base_url()."Pet/InitialOrder"; ?>'>Initial Order for New Pet</a>
 						</div>
 				</li>
 				
@@ -185,7 +185,7 @@
 						Pet Health
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-<<<<<<< HEAD
+
 								<a class="dropdown-item" href='<?php echo base_url()."users/getc"; ?>'>Get Veterinary Consultation Online</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/schedule"; ?>'>Schedule Veterinarian Appointment</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/vaccine"; ?>'>Schedule Vaccination </a>
@@ -193,15 +193,7 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/lab"; ?>'>Laboratory Diagnostics</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/ultra"; ?>'>Ultrasound, X-ray, MRI</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/insurance"; ?>'>Get Pet Insurance</a>
-=======
-								<a class="dropdown-item" href="Pet/OnlineConsultation">Get Veterinary Consultation Online</a>
-								<a class="dropdown-item" href="Pet/ScheduleAppointment">Schedule Veterinarian Appointment</a>
-								<a class="dropdown-item" href="Pet/ScheduleVaccination">Schedule Vaccination </a>
-								<a class="dropdown-item" href="Pet/GeneticTest">Genetic Test</a>
-								<a class="dropdown-item" href="Pet/LabDiagnostics">Laboratory Diagnostics</a>
-								<a class="dropdown-item" href="Pet/Ultrasound">Ultrasound, X-ray, MRI</a>
-								<a class="dropdown-item" href="Pet/Insurance">Get Pet Insurance</a>
->>>>>>> 52245ee2b841a30afc7cd8388974658e3c64483d
+
 								
 						</div>
 				</li>
@@ -211,7 +203,6 @@
 						Food&Pharmacy 
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-<<<<<<< HEAD
 								<a class="dropdown-item" href='<?php echo base_url()."users/food"; ?>'>Pet Food</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/otc"; ?>'>OTC Medicines </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/rx"; ?>'>Rx Medicines </a>
@@ -220,18 +211,7 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/treat"; ?>'>Treats & Chews </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dconsult"; ?>'>Dental Care</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/mypres"; ?>'>My Prescriptions</a>
-=======
-								<a class="dropdown-item" href="Pet/Food">Pet Food</a>
-								<a class="dropdown-item" href="Pet/Medicines">OTC Medicines </a>
-								<a class="dropdown-item" href="Pet/RxMedi">Rx Medicines </a>
-								<a class="dropdown-item" href="Pet/Suppliments">Vitamins & Supplements</a>
-								<a class="dropdown-item" href="Pet/Diet">Prescription Diets</a>
-								<a class="dropdown-item" href="Pet/Chews">Treats & Chews </a>
-								<a class="dropdown-item" href="Pet/Dental">Dental Care</a>
-								<a class="dropdown-item" href="Pet/Prescription">My Prescriptions</a>
->>>>>>> 52245ee2b841a30afc7cd8388974658e3c64483d
-								
-						</div>
+	</div>
 				</li>
 				
 				 <li class="nav-item dropdown">
@@ -239,17 +219,17 @@
 						Pet  Services
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="Pet/Grooming">Grooming</a>
-								<a class="dropdown-item" href="Pet/Sitters">Pet Sitters</a>
-								<a class="dropdown-item" href="Pet/Walkers">Dog Walkers</a>
-								<a class="dropdown-item" href="Pet/DayCare">Pet Daycare</a>
-								<a class="dropdown-item" href="Pet/Hotels">Pet Hotels</a>
-								<a class="dropdown-item" href="Pet/Taxi">Pet Taxi</a>
-								<a class="dropdown-item" href="Pet/Clubs">Pet Clubs</a>
-								<a class="dropdown-item" href="Pet/Trainings">Pet Training </a>
-								<a class="dropdown-item" href="Pet/Playground">Dog Playgrounds & Beaches</a>
-								<a class="dropdown-item" href="Pet/Travel">Global Pet - Travel With Pets</a>
-								<a class="dropdown-item" href="Pet/Funeral">Funeral Services & Cemeteries</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Grooming"; ?>'>Grooming</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Sitters"; ?>'>Pet Sitters</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Walkers"; ?>'>Dog Walkers</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/DayCare"; ?>'>Pet Daycare</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Hotels"; ?>'>Pet Hotels</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Taxi"; ?>'>Pet Taxi</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Clubs"; ?>'>Pet Clubs</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Trainings"; ?>'>Pet Training </a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Playground"; ?>'>Dog Playgrounds & Beaches</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Travel"; ?>'>Global Pet - Travel With Pets</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Funeral"; ?>'>Funeral Services & Cemeteries</a>
 						
 								
 						</div>
@@ -264,12 +244,12 @@
 						Pet  Merchandise
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="Pet/FashionOutlet">Pet Fashion Outlet </a>
-								<a class="dropdown-item" href="Pet/Toys">Pet Toys</a>
-								<a class="dropdown-item" href="Pet/diapers">Diapers, Training Pads, etc.</a>
-								<a class="dropdown-item" href="Pet/Bedding">Pet Bedding</a>
-								<a class="dropdown-item" href="Pet/Safety">Pet Safety</a>
-								<a class="dropdown-item" href="Pet/Accessories">Accessories</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/FashionOutlet"; ?>'>Pet Fashion Outlet </a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Toys"; ?>'>Pet Toys</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/diapers"; ?>'>Diapers, Training Pads, etc.</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Bedding"; ?>'>Pet Bedding</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Safety"; ?>'>Pet Safety</a>
+								<a class="dropdown-item" href='<?php echo base_url()."Pet/Accessories"; ?>'>Accessories</a>
 								
 						</div>
 				</li>
