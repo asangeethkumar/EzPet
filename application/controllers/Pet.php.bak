@@ -65,8 +65,7 @@ if(isset($_FILES['image']))
  
 		        $this->load->view('petinfo');  
 
-    }	
-	}
+    }		
 
 }
 ?>
