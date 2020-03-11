@@ -238,6 +238,81 @@ class Users extends CI_Controller {
 		
     } 
 	
+// services & marchandish
+
+	 public function grooming()
+    {
+        $this->load->view('Grooming');
+    }
+    public function petsitter()
+    {
+        $this->load->view('Petsitter');
+    }
+    public function dogwalker()
+    {
+        $this->load->view('dogwalker');
+    }
+    public function petdaycare()
+    {
+        $this->load->view('pet_day_care');
+    }
+    public function pethostel()
+    {
+        $this->load->view('pet_hostel');
+    }
+    public function pettaxi()
+    {
+        $this->load->view('pet_taxi');
+    }
+    
+
+    public function petclub()
+    {
+        $this->load->view('petclub');
+    }
+    public function pettraining()
+    {
+        $this->load->view('pet_training');
+    }
+    public function petplayground()
+    {
+        $this->load->view('dogplayground');
+    }
+    public function globalpet()
+    {
+        $this->load->view('globalpet');
+    }
+    
+    
+    public function funeral()
+    {
+        $this->load->view('funeral');
+    }
+    public function petfashionoutlet()
+    {
+        $this->load->view('petfasionoutlet');
+    }
+    public function pettoys()
+    {
+        $this->load->view('pettoys');
+    }
+    public function dia()
+    {
+        $this->load->view('dia');
+    }
+    public function petbedding()
+    {
+        $this->load->view('petbedding');
+    }
+    public function petsafety()
+    {
+        $this->load->view('petsafety');
+    }
+    public function accessories()
+    {
+        $this->load->view('accessories');
+    }
+   
 	
     
 	// Existing email check during validation

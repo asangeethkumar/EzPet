@@ -219,17 +219,17 @@
 						Pet  Services
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Grooming"; ?>'>Grooming</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Sitters"; ?>'>Pet Sitters</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Walkers"; ?>'>Dog Walkers</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/DayCare"; ?>'>Pet Daycare</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Hotels"; ?>'>Pet Hotels</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Taxi"; ?>'>Pet Taxi</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Clubs"; ?>'>Pet Clubs</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Trainings"; ?>'>Pet Training </a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Playground"; ?>'>Dog Playgrounds & Beaches</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Travel"; ?>'>Global Pet - Travel With Pets</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Funeral"; ?>'>Funeral Services & Cemeteries</a>
+										<a class="dropdown-item" href='<?php echo base_url()."users/grooming"; ?>'>Grooming</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petsitter"; ?>'>Pet Sitters</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/dogwalker"; ?>'>Dog Walkers</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petdaycare"; ?>'>Pet Daycare</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/pethostel"; ?>'>Pet Hotels</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/pettaxi"; ?>'>Pet Taxi</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petclub"; ?>'>Pet Clubs</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/pettraining"; ?>'>Pet Training </a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/dogplayground"; ?>'>Dog Playgrounds & Beaches</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/globalpet"; ?>'>Global Pet - Travel With Pets</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/funeral"; ?>'>Funeral Services & Cemeteries</a>s
 						
 								
 						</div>
@@ -244,12 +244,12 @@
 						Pet  Merchandise
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/FashionOutlet"; ?>'>Pet Fashion Outlet </a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Toys"; ?>'>Pet Toys</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/diapers"; ?>'>Diapers, Training Pads, etc.</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Bedding"; ?>'>Pet Bedding</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Safety"; ?>'>Pet Safety</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Accessories"; ?>'>Accessories</a>
+										<a class="dropdown-item" href='<?php echo base_url()."users/petfashionoutlet"; ?>'>Pet Fashion Outlet </a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/pettoys"; ?>'>Pet Toys</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/dia"; ?>'>Diapers, Training Pads, etc.</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petbedding"; ?>'>Pet Bedding</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petsafety"; ?>'>Pet Safety</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/accessories"; ?>'>Accessories</a>
 								
 						</div>
 				</li>
