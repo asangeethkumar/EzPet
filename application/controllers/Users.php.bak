@@ -312,58 +312,6 @@ class Users extends CI_Controller {
     {
         $this->load->view('accessories');
     }
-
-//get a pet & my account
-
-
-	public function submenu(){
-		$this->load->view('petshelters');
-	}
-
-	
-
-	public function breeder(){
-		$this->load->view('breeders');
-	}
-
-	public function findapet(){
-		$this->load->view('findpet');
-	}
-	
-	public function petregistration(){
-		$this->load->view('petregistration');
-	}
-	public function customer(){
-		$this->load->view('customer');
-	}
-	public function estimation(){
-		$this->load->view('estimation');
-	}
-	public function puppy(){
-		$this->load->view('puppy');
-	}
-	public function healthvacination(){
-		$this->load->view('healthvacination');
-	}
-	public function dietchart(){
-		$this->load->view('dietchart');
-	}
-	public function orderpet(){
-		$this->load->view('orderpet');
-	}
-	public function delv(){
-		$this->load->view('delivery');
-	}
-	public function petchoose(){
-		$this->load->view('petchoose');
-	}
-		public function expenses(){
-		$this->load->view('expenses');
-	}
-	public function myorders(){
-		$this->load->view('myorders');
-	}
-	
    
 	
     
