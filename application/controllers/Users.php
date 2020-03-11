@@ -274,7 +274,7 @@ class Users extends CI_Controller {
     {
         $this->load->view('pet_training');
     }
-    public function petplayground()
+    public function dogplayground()
     {
         $this->load->view('dogplayground');
     }
