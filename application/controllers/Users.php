@@ -319,6 +319,7 @@ class Users extends CI_Controller {
 	public function submenu(){
 		$this->load->view('petshelters');
 	}
+	
 
 	
 
@@ -362,6 +363,15 @@ class Users extends CI_Controller {
 	}
 	public function myorders(){
 		$this->load->view('myorders');
+	}
+	public function petlicense(){
+		$this->load->view('petlicense');
+	}
+	public function petchart(){
+		$this->load->view('petchart');
+	}
+	public function ownpet(){
+		$this->load->view('ownpet');
 	}
 	
    

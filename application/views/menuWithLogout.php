@@ -171,7 +171,7 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/puppy"; ?>'>International Puppy/Kitten Finder</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/delv"; ?>'>Delivery & Transportation</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/estimation"; ?>'>Cost of Pet Ownership Estimation</a>
-								<a class="dropdown-item" href='<?php echo base_url()."Pet/Confortable"; ?>'>Are You Comfortable to Own a Pet?</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/ownpet"; ?>'>Are You Comfortable to Own a Pet?</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/petchoose"; ?>'>What Pet to Choose?</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/healthvacination"; ?>'>Initial Health Check & Vaccination</a>
 								<a class="dropdown-item" href='<?php echo base_url()."Pet/Adaption"; ?>'>Early Adaptation – Build a pet-owner rapport</a>
@@ -298,8 +298,8 @@
 						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href='<?php echo base_url()."users/petregistration"; ?>'>Pet Information</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/customer"; ?>' >Owner Information</a>
-								<a class="dropdown-item" href="<?php echo base_url()."Pet/veterinary" ?>">Pet Veterinary Chart</a>
-								<a class="dropdown-item" href="<?php echo base_url()."Pet/license" ?>" >Pet License</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petchart" ?>'>Pet Veterinary Chart</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petlicense" ?>' >Pet License</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/expenses"; ?>' >My Budget & Spending Statistics </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/myorders"; ?>' >My Orders</a>
 
