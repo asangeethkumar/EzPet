@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+
+<?php
+include_once "menuWithLogout.php";
+?><br><br>
 <html lang="en">  
 <head>
 <title>PET SHELTERS FORM</title>
@@ -12,10 +16,11 @@
 </head>
 <body>
 
-<h1>PET SHELTERS</h1>
+
 
 
 <div class="container">
+<h1>PET SHELTERS</h1>
     <h2>Fill the Details</h2>
 	
     <!-- Status message -->
