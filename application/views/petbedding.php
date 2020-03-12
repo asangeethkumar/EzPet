@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include_once "menuWithLogout.php";
+?><br><br>
 <html lang="en">  
 <head>
 <title>PETBEDDING</title>
