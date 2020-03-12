@@ -1,7 +1,15 @@
+
+
 <!DOCTYPE html>
+<?php
+include_once "menuWithLogout.php";
+?><br><br>
+
+
 <html lang="en">  
 <head>
 <title>BREEDERS</title>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -10,12 +18,14 @@
 <!-- Stylesheet file -->
 <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
-<body>
+<body><br>
+<br>
 
-<h1>BREEDERS</h1>
+
 
 
 <div class="container">
+<h1>BREEDERS</h1>
     <h2>Fill the Details</h2>
 	
     <!-- Status message -->
