@@ -229,7 +229,7 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/pettraining"; ?>'>Pet Training </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dogplayground"; ?>'>Dog Playgrounds & Beaches</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/globalpet"; ?>'>Global Pet - Travel With Pets</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/funeral"; ?>'>Funeral Services & Cemeteries</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/funeral"; ?>'>Funeral Services & Cemeteries</a>s
 						
 								
 						</div>
@@ -298,8 +298,8 @@
 						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href='<?php echo base_url()."users/petregistration"; ?>'>Pet Information</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/customer"; ?>' >Owner Information</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/petchart" ?>'>Pet Veterinary Chart</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/petlicense" ?>' >Pet License</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/veterinary" ?>">Pet Veterinary Chart</a>
+								<a class="dropdown-item" href="<?php echo base_url()."Pet/license" ?>" >Pet License</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/expenses"; ?>' >My Budget & Spending Statistics </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/myorders"; ?>' >My Orders</a>
 

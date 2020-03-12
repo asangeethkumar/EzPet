@@ -274,7 +274,7 @@ class Users extends CI_Controller {
     {
         $this->load->view('pet_training');
     }
-    public function dogplayground()
+    public function petplayground()
     {
         $this->load->view('dogplayground');
     }
@@ -370,10 +370,6 @@ class Users extends CI_Controller {
 	public function petchart(){
 		$this->load->view('petchart');
 	}
-	public function ownpet(){
-		$this->load->view('ownpet');
-	}
-	
    
 	
     
