@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+<?php
+include_once "menuWithLogout.php";
+?><br><br>
 <html lang="en">  
 <head>
-<title>PetSitter</title>
+<title>Pettoys</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +18,7 @@
 <h1>  </h1>	
 <div class="container">
 
-	<h2>PetSitter</h2>
+	<h2>Pettoys</h2>
 	
 	<!-- Status message -->
 	<?php 
