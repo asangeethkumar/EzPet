@@ -1,5 +1,8 @@
 	
 <!DOCTYPE html>
+<?php
+include_once "menuWithLogout.php";
+?>
 <html lang="en">  
 <head>
 <title>RX MEDICINE</title>

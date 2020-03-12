@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include_once "menuWithLogout.php";
+?>
 <html lang="en">  
 <head>
 <title>online consultation</title>
@@ -9,8 +12,11 @@
 
 <!-- Stylesheet file -->
 <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+<link href="<?php echo base_url('menuWithLogout.php'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
+<br>
+<br>
 <div class="container">
 
 	<h2>ONLINE CONSULTATION</h2>
