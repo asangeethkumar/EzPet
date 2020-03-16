@@ -1,5 +1,6 @@
 <html lang="en">  
 <head>
+	<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 <title>loginsss</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,6 +33,7 @@
 	<!-- Login form -->
 	<div class="regisFrm">
 		<form action="" method="post">
+			
 			<div class="form-group">
 				<input type="email" name="email" placeholder="EMAIL" required="">
 				<?php echo form_error('email','<p class="help-block">','</p>'); ?>
@@ -40,9 +42,12 @@
 				<input type="password" name="password" placeholder="PASSWORD" required="">
 				<?php echo form_error('password','<p class="help-block">','</p>'); ?>
 			</div>
+			  <div class="g-recaptcha" data-sitekey="6Ld0cOEUAAAAAINESH673iOmsp24ab4-U9gP1nSl"></div>
 			<div class="send-button">
 				<input type="submit" name="loginSubmit" value="LOGIN">
 			</div>
+
+
 		</form>
 		<!--<p>Don't have an account? <a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a></p>-->
 		<p> <a href="<?php echo base_url('index.php/forms/forgot_pass'); ?>">Forgot Password?</a></p>

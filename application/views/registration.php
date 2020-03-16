@@ -11,11 +11,12 @@
 
 
 <div class="container">
-
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 	<h2>Create a New Account</h2>
 	
 	<!-- Status message -->
 	<?php 
+	
 		if(!empty($success_msg)){
 			echo '<p class="status-msg success">'.$success_msg.'</p>';
 		}elseif(!empty($error_msg)){
@@ -74,6 +75,7 @@
        title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>
+			<div class="g-recaptcha" data-sitekey="6Ld0cOEUAAAAAINESH673iOmsp24ab4-U9gP1nSl"></div>
 			<div class="send-button">
 				<input type="submit" name="signupSubmit" value="CREATE ACCOUNT">
 			</div>
