@@ -10,7 +10,9 @@
 	<h2>Login to Your Account</h2>
 	
 	<!-- Status message -->
+	<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 	<?php 
+
 		if(!empty($success_msg)){
 			echo '<p class="status-msg success">'.$success_msg.'</p>';
 		}elseif(!empty($error_msg)){
@@ -27,6 +29,7 @@
 			</div>
 			<div class="form-group">
 				<input type="password" name="password" placeholder="PASSWORD" required="">
+				<div class="g-recaptcha" data-sitekey="6Ld0cOEUAAAAAINESH673iOmsp24ab4-U9gP1nSl"></div>
 				<?php echo form_error('password','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="send-button">
