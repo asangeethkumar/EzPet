@@ -27,11 +27,11 @@
         if(isset($_POST['g-recaptcha-response'])){
           $captcha=$_POST['g-recaptcha-response'];
         }
-        if(!$captcha){
+        if(!isset($captcha)){
           echo '<h2>Please check the the captcha form.</h2>';
           exit;
         }
-        $secretKey = "Put your secret key here";
+        $secretKey = "6LeUYeIUAAAAALGLJbPXpRBvRnmKjrzInXFxw_hD";
         $ip = $_SERVER['REMOTE_ADDR'];
         // post request to server
         $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
@@ -43,7 +43,7 @@
         } else {
                 echo '<h2>You are spammer ! Get the @$%K out</h2>';
         }
-?>
+?>	
 <style>
 .dropdown:hover>.dropdown-menu
    {
