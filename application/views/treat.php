@@ -2,6 +2,11 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
+<br>
+
 <html lang="en">  
 <head>
 <title>TREATS</title>
@@ -35,37 +40,62 @@ include_once "menuWithLogout.php";
 			</div>
 			
 			<div class="form-group ">
-					  <label for="inputState">SELECT YOUR PET</label>
-					  <select id="inputState" class="form-control" required >
+					  <label for="inputState"> PET</label>
+					  <select name="pet" id="inputState" class="form-control" required >
+					  				  <option> SELECT</option>
 						<option >DOG</option>
 						<option>CAT</option>
 						<option>FISH</option>
 						<option>BIRDS</option>
 					  </select>
 			</div>
-			<div class="radio">
-
-					<label>SELECT PET AGE</label>
-						<input type="radio" name="gender" value="Male" >
+			<div class="form-group">
+				<label>Pet Age: </label>
+				<?php
+				if(!empty($user['age']) && $user['age'] == 'Kitten'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="radio">
+					<label>
+						<input type="radio" name="age" value="adult" <?php echo $mcheck; ?> required>
 						Adult
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" >
-						Kitten
+						<input type="radio" name="age" value="kitten" <?php echo $fcheck; ?> required>
+						Kitten 
 					</label>
+				</div>
 			</div>
 				
-			<div class="form-group col-md-3">
-				  <label for="inputState"><b>CHOOSE PRODUCT<b></label>
-				  <select id="inputState" class="form-control">
+			<div class="form-group">
+				  <label for="inputState">CHOOSE PRODUCT</label>
+				  <select name="choose" id="inputState" class="form-control">
+				  <option> SELECT</option>
 					<option >Veg</option>
 					<option>Non-veg</option>
 				  </select>
 			</div>
+					<div class="form-group">
+				  <label for="inputState">QUANTITY </label>
+				  
+				  <select name="quantity" id="inputState" class="form-control"required >
+				  <option>SELECT</option>
+					<option >1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				  </select>
+			</div>
  
 			<div class="form-group">
-				  <label for="inputState">SELECT DELIVERY</label>
-				  <select id="inputState" class="form-control" required >
+				  <label for="inputState"> DELIVERY</label>
+				  <select name="delivery" id="inputState" class="form-control" required >
+				  	 <option> SELECT</option>
 					<option >delivery for one time </option>
 					<option>delivery every month</option>
 					<option>delivery for every two months</option>
@@ -74,12 +104,15 @@ include_once "menuWithLogout.php";
 					<option>delivery for every four  months</option>
 				  </select>
 			</div>
-			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="ENTER THE ADDRESS" value="" required>
+			
+			
+		<div class="form-group">
+				<input type="text" name="address"   placeholder="ENTER THE ADDRESS" value="" required>	
 			</div>
 			<div class="form-group">
-				  <label >SELECT PAYMENT TYPE</label>
-				  <select id="inputState" class="form-control" required >
+				  <label >PAYMENT TYPE</label>
+				  <select name="payment" id="inputState" class="form-control" required >
+				  				  <option> SELECT</option>
 					<option >CREDIT/DEBIT CARD </option>
 					<option>NET BANKING</option>
 					<option>CASH ON DELIVERY</option>

@@ -3,6 +3,11 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
+<br>
+
 <html lang="en">  
 <head>
 <title>RX MEDICINE</title>
@@ -37,7 +42,8 @@ include_once "menuWithLogout.php";
 			
 			<div class="form-group">
 				  <label for="inputState">QUNATITY</label>
-				  <select id="inputState" class="form-control" required >
+				  <select  name="quantity" id="inputState" class="form-control" required >
+				    <option> SELECT </option>
 					<option >1</option>
 					<option>2</option>
 					<option>3</option>
@@ -46,11 +52,12 @@ include_once "menuWithLogout.php";
 			</div>
 			<div class="form-group">
 				<label for="exampleFormControlFile1">UPLOAD PRESCRIPTION</label>
-				<input type="file" class="form-control-file" id="exampleFormControlFile1" required >
+				<input type="file" name="upload" class="form-control-file" id="exampleFormControlFile1" required >
 			</div>
 			<div class="form-group">
-				  <label for="inputState">SELECT QUANTITY ml</label>
-				  <select id="inputState" class="form-control"required >
+				  <label for="inputState">QUANTITY ml</label>
+				  <select name="quant" id="inputState" class="form-control"required >
+				    <option> SELECT </option>
 					<option >15 ml</option>
 					<option>20 ml</option>
 					<option>30 ml</option>
@@ -58,8 +65,9 @@ include_once "menuWithLogout.php";
 				  </select>
 			</div>
 			<div class="form-group">
-					<label for="inputState">SELECT DELIVERY</label>
-				  <select id="inputState" class="form-control" required >
+					<label for="inputState">DELIVERY</label>
+				  <select  name="delivery" id="inputState" class="form-control" required >
+				    <option> SELECT </option>
 					<option >delivery for one time </option>
 					<option>delivery every month</option>
 					<option>delivery for every two months</option>
@@ -69,12 +77,13 @@ include_once "menuWithLogout.php";
 				  </select>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="ENTER THE ADDRESS" value="" required>
+				<input type="text" name="address"   placeholder="ENTER THE ADDRESS" value="" required>
 			</div>
 
 			<div class="form-group">
-				  <label for="inputState" >SELECT PAYMENT TYPE</label>
-				  <select id="inputState" class="form-control" required >
+				  <label for="inputState" > PAYMENT TYPE</label>
+				  <select name="payment"  id="inputState" class="form-control" required >
+				    <option> SELECT </option>
 					<option >CREDIT/DEBIT CARD </option>
 					<option>NET BANKING</option>
 					<option>CASH ON DELIVERY</option>

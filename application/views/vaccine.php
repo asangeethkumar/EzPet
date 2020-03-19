@@ -2,6 +2,11 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
+<br>
+
 <html lang="en">  
 <head>
 <title>vaccine</title>
@@ -48,16 +53,27 @@ include_once "menuWithLogout.php";
 			<div class="form-group">
 				<input type="text" name="first_name"   placeholder="ENTER PET NAME" value="" required>
 			</div>
-			 <div class="radio">
-
-					<label>SELECT PET AGE</label>
-						<input type="radio" name="gender" value="Male" >
+		<div class="form-group">
+				<label>Pet Age: </label>
+				<?php
+				if(!empty($user['age']) && $user['age'] == 'Female'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="radio">
+					<label>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
 						Adult
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" >
-						Kitten
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
+						Kitten 
 					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<input type="text" name="first_name"   placeholder="ENTER PET PROBLEM" value="" required>
