@@ -20,31 +20,23 @@ include_once "menuWithLogout.php";
 
 	<h2>Diapers_Training_pads</h2>
 	
-	<!-- Status message -->
-	<?php 
-		if(!empty($success_msg)){
-			echo '<p class="status-msg success">'.$success_msg.'</p>';
-		}elseif(!empty($error_msg)){
-			echo '<p class="status-msg error">'.$error_msg.'</p>';
-		}
-	?>
+	<form action="" method="POST">
 	
 				
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_name"   placeholder="PET NAME"required>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_breed"   placeholder="PET Breed" required>
 			</div>
 		
 				<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET Size" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_age"   placeholder="PET age"required>
 			</div>
-
-				<h3>Payment</h3>
+			<div class="form-group">
+				<input type="text" name="size"   placeholder="DIPER SIZE"required>
+			</div>
+				<!--h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
@@ -60,7 +52,7 @@ include_once "menuWithLogout.php";
                 <label for="cvv"></label>
                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
               </div>
-          </div>
+          </div-->
 
 		
 			<div class="send-button">

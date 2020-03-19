@@ -19,47 +19,36 @@ include_once "menuWithLogout.php";
 <div class="container">
 
 	<h2>Accessories</h2>
-	
-	<!-- Status message -->
-	<?php 
-		if(!empty($success_msg)){
-			echo '<p class="status-msg success">'.$success_msg.'</p>';
-		}elseif(!empty($error_msg)){
-			echo '<p class="status-msg error">'.$error_msg.'</p>';
-		}
-	?>
-	
+	<form action="" method="POST">
 				
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_name"   placeholder="PET NAME" required>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_breed"   placeholder="PET Breed"required>
 			</div>
 			<h3>
-			<form action="/action_page.php">
-  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-  <label for="vehicle1">belt</label><br>
-  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-  <label for="vehicle2">pet house</label><br>
-  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-  <label for="vehicle3">pet mat</label><br>
+			<!--form action="/action_page.php">
+  <input type="checkbox" id="belt" name="belt" value="belt">
+  <label for="belt">belt</label><br>
+  <input type="checkbox" id="pet_house" name="pet_house" value="pet_house">
+  <label for="pet_house">pet house</label><br>
+  <input type="checkbox" id="pet_mat" name="pet_mat" value="pet_mat">
+  <label for="pet_mat">pet mat</label><br>
   <form action="/action_page.php">
-  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-  <label for="vehicle1"> pet toys</label><br>
-  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-  <label for="vehicle2">pet bed</label>
+  <input type="checkbox" id="pet_toys" name="pet_toys" value="pet_toys">
+  <label for="pet_toys"> pet toys</label><br>
+  <input type="checkbox" id="pet_bed" name="pet_bed" value="pet_bed">
+  <label for="pet_bed">pet bed</label>
   
-</form>
+</form-->
 
 
-				<h3>Payment</h3>
+				<!--h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="Credit/Debit card number">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="Credit/Debit card number" required="">
             <label for="expmonth"></label>
             <input type="text" id="expmonth" name="expmonth" placeholder="Exp Month"><ensp>
             <div class="">
@@ -71,7 +60,7 @@ include_once "menuWithLogout.php";
                 <label for="cvv"></label>
                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
               </div>
-          </div>
+          </div-->
 
 		
 			<div class="send-button">

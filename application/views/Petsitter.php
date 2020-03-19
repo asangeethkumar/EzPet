@@ -22,15 +22,7 @@
 
 	<h2>PetSitter</h2>
 	
-	<!-- Status message -->
-	<?php 
-		if(!empty($success_msg)){
-			echo '<p class="status-msg success">'.$success_msg.'</p>';
-		}elseif(!empty($error_msg)){
-			echo '<p class="status-msg error">'.$error_msg.'</p>';
-		}
-	?>
-	
+	<form action="" method="POST">
 	
 	<!-- Registration form 
 	<div class="regisFrm">
@@ -55,30 +47,47 @@
       </select>
 </div> -->
 <div class="form-group">
-				<input type="text" name="first_name"   placeholder="OWNER NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="first_name"   placeholder="OWNER NAME" required>
+			
 			</div>
 			<div class="form-group">
 				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
-				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER">
+				
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="Email" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="email"   placeholder="Email"  required>
+				
 			</div>
 			<div class="form-group">
-				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="Emergency Contact number" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
-				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+				<input type="text" name="ephone" pattern="[6-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="Emergency Contact number" required>
+				
 			</div>			
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_name"   placeholder="PET NAME"  required>
+			
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_breed"   placeholder="PET Breed" required>
+				
+			</div>
+			<label for="address">Address</label>
+
+				<textarea id="address" name="address" rows="4" cols="50">
+				</textarea>
+				<p>
+					If your reside in an apartment ,please advise if there are any special check-in procedures.
+
+				</p><br>
+				<br>
+				<p>Does your home have any alarm:
+
+				</p><br>
+				<div class="form-group">
+				<input type="text" name="alarm_de_code"   placeholder="ALARM DEACTVATION CODE" >
+				<div class="form-group">
+				<input type="text" name="alarm_ac_code"   placeholder="ALARM ACTVATION CODE" >
 			</div>
 		<!--
 <form>
@@ -111,7 +120,7 @@
         </div>
         <h3>Payment</h3>
 
-</form>	-->
+</form>	
 			<h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
@@ -130,7 +139,7 @@
               </div>
           </div>
 
-			
+-->			
 			<div class="send-button">
 				<input type="submit" name="signupSubmit" value="SUBMIT">
 			</div>

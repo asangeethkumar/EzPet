@@ -242,75 +242,570 @@ class Users extends CI_Controller {
 
 	 public function grooming()
     {
-        $this->load->view('Grooming');
+
+       
+
+         $data = $userData = array(); 
+         
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit'))
+
+        {
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'), 
+                'phone' => $this->input->post('phone'),
+
+                    //checkbox
+                                 'cardname' => $this->input->post('cardname'),
+                 'cardnumber' => $this->input->post('cardnumber'),
+                   'expmonth' => $this->input->post('expmonth'),
+                 'expyear' => $this->input->post('expyear'),
+                'cvv' => $this->input->post('cvv')
+                
+            );
+        
+            print  $userData;
+                var_dump($userData);
+    
+          }
+            $this->load->view('Grooming');    
+    
+            //$this->db->insert('grooming',$userdata);
+               
+
     }
+
+
+
+
+
+
+
+
     public function petsitter()
     {
+        
+
+                
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit'))
+        {
+             $data = $userData = array(); 
+
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'ephone' => $this->input->post('ephone'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'), 
+                'address' => $this->input->post('address'), 
+                    'alarm_de_code' => $this->input->post('alarm_de_code'), 
+                    'alarm_ac_code' => $this->input->post('alarm_ac_code')
+
+                
+           
+
+
+
+            );
+        
+            print  $userData;
+                var_dump($userData);
+                
+              $this->db->insert('petsitter  ',$userData);
+        
+        }
         $this->load->view('Petsitter');
+         
+
+
+
     }
     public function dogwalker()
     {
-        $this->load->view('dogwalker');
+        
+
+          
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' =>$this->input->post('phone'),
+                 'email' =>$this->input->post('email'),
+                 'ephone' =>$this->input->post('ephone'),
+                'pet_name' =>$this->input->post('pet_name'),
+                'pet_breed' =>$this->input->post('pet_breed'),
+                'pet_age' =>$this->input->post('pet_age'),
+                'color' =>$this->input->post('color'), 
+               // 'address' =>$this->input->post('address'), 
+                
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                
+               
+                    $this->db->insert('dogwalker',$userData);
+        
+                }
+                $this->load->view('dogwalker');
+
+
+
+
     }
     public function petdaycare()
     {
-        $this->load->view('pet_day_care');
+       
+
+         
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+              $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'ephone' => $this->input->post('ephone'),
+                 'address' => $this->input->post('address'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'gender' => $this->input->post('gender'), 
+                'pet_food_type' => $this->input->post('pet_food_type'), 
+                'pet_food_quantity' => $this->input->post('pet_food_quantity'), 
+                 
+                
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                $this->db->insert('pet_day_care',$userData);
+        
+                }
+
+                 $this->load->view('pet_day_care');
+
+
     }
     public function pethostel()
     {
-        $this->load->view('pet_hostel');
+       
+                 
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+              $data = $userData = array(); 
+         
+             $userData = array(
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'gender' => $this->input->post('gender'),
+                
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'date_j' => $this->input->post('date_j'),
+                 'date_l' => $this->input->post('date_l'),
+                 
+                 
+                
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                $this->db->insert('pethostel',$userData);
+        
+                }
+
+                 $this->load->view('pet_hostel');
+
+
+
+
     }
     public function pettaxi()
     {
-        $this->load->view('pet_taxi');
+       
+          
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'ephone' => $this->input->post('ephone'),
+                 
+                'pet_name' => $this->input->post('pet_name'),
+                'paddress' => $this->input->post('paddress'),
+                'daddress' => $this->input->post('daddress'),
+                                    );
+        
+            print  $userData;
+                var_dump($userData);
+                 $this->db->insert('pettaxi',$userData);
+        
+                
+        }
+         $this->load->view('pet_taxi');
+
+
+
+
+
     }
     
 
     public function petclub()
     {
-        $this->load->view('petclub');
+      
+
+                 
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+          $data = $userData = array(); 
+         
+             $userData = array(
+                'pet_name' => $this->input->post('pet_name'),
+                        'pet_breed' => $this->input->post('pet_breed'),
+                        'food' => $this->input->post('food'),
+                            'pet_food_quantity' => $this->input->post('pet_food_quantity'),
+                            'gender' => $this->input->post('gender'),
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+
+                 $this->db->insert('petclub',$userData);
+        
+                    }
+                      $this->load->view('petclub');
+
+                
     }
     public function pettraining()
     {
-        $this->load->view('pet_training');
+       
+
+                
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'ephone' => $this->input->post('ephone'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'), 
+                'level' => $this->input->post('level'), 
+                 
+                 
+                
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                 $this->db->insert('pet_training',$userData);
+        
+            }
+             $this->load->view('pet_training');
+
+                
+
+
+
     }
     public function dogplayground()
     {
-        $this->load->view('dogplayground');
+        
+
+                
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit'))
+        {
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'pet_age' => $this->input->post('pet_age'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'area' => $this->input->post('area'),
+                 
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                
+                     $this->db->insert('dogplayground',$userData);
+        
+
+            }
+            $this->load->view('dogplayground');
+
+
+
     }
     public function globalpet()
     {
-        $this->load->view('globalpet');
+        
+                
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'ephone' => $this->input->post('ephone'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'passport' => $this->input->post('passport'),
+                 
+                'location' => $this->input->post('location'),
+
+                'dest' => $this->input->post('dest'),
+                   
+                 
+               
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                     $this->db->insert('globalpet',$userData);
+        
+                
+            }
+            $this->load->view('globalpet');
+
+
+
+
+
     }
     
     
     public function funeral()
     {
-        $this->load->view('funeral');
+       
+
+                
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+
+
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                
+                'birth' => $this->input->post('birth'),
+
+                'death' => $this->input->post('death'),
+
+                               
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                     $this->db->insert('funeral',$userData);
+        
+            }
+
+             $this->load->view('funeral');
+
+                
+
+
     }
     public function petfashionoutlet()
     {
+        
+
+
+                
+        // If registration request is submitted 
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+
+                 'email' => $this->input->post('email'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'pet_size' => $this->input->post('pet_size'),
+                //'pet_breed' => $this->input->post('pet_breed'),
+                'costume_type' => $this->input->post('costume_type'),
+                'costume_name' => $this->input->post('costume_name'),
+                
+                 
+               
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                 $this->db->insert('petfashion',$userData);
+        
+
+                
+                
+
+
+        }
         $this->load->view('petfasionoutlet');
+
+
     }
     public function pettoys()
     {
-        $this->load->view('pettoys');
+       
+         if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'pet_toy' => $this->input->post('pet_toy'),
+                 
+               'type' => $this->input->post('type'),
+                 
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                 $this->db->insert('petfashion',$userData);
+        
+            }
+
+               $this->load->view('pettoys');
+  
+                
     }
     public function dia()
     {
-        $this->load->view('dia');
+        
+
+         if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'pet_age' => $this->input->post('pet_age'),
+                'size' => $this->input->post('size'),
+                 
+               
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                 $this->db->insert('dia',$userData);
+        
+            }
+            $this->load->view('dia');
+
     }
     public function petbedding()
     {
-        $this->load->view('petbedding');
+       
+
+         if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                'pet_size' => $this->input->post('pet_size'),
+                'color' => $this->input->post('color'),
+                 
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+                $this->db->insert('dia',$userData);
+        
+            }
+             $this->load->view('petbedding');
+
+
+
     }
     public function petsafety()
     {
-        $this->load->view('petsafety');
+       
+
+        if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                 'ephone' => $this->input->post('ephone'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                   );
+        
+            print  $userData;
+                var_dump($userData);
+            }
+             $this->load->view('petsafety');
+
     }
     public function accessories()
     {
-        $this->load->view('accessories');
+        
+         if($this->input->post('signupSubmit')){
+             $data = $userData = array(); 
+         
+             $userData = array(
+                 'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'),
+                //check box
+
+                'cardname' => $this->input->post('cardname'),
+                 'cardnumber' => $this->input->post('cardnumber'),
+                   'expmonth' => $this->input->post('expmonth'),
+                 'expyear' => $this->input->post('expyear'),
+                'cvv' => $this->input->post('cvv'),
+                 
+               
+
+                    );
+        
+            print  $userData;
+                var_dump($userData);
+            }
+            $this->load->view('accessories');
+
+
+             
+       
     }
 
 //get a pet & my account
