@@ -45,23 +45,23 @@ include_once "menuWithLogout.php";
           <!-- </div> -->
 
 		   <div class="form-group">
-                <input type="text" name="income" placeholder="INCOME" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="income" placeholder="INCOME" value="<?php echo !empty($user['income'])?$user['income']:''; ?>" required>
+                <?php echo form_error('income','<p class="help-block">','</p>'); ?>
             </div>
 
 			 <div class="form-group">
-                <input type="text" name="expenses" placeholder="EXPENSES" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="expenses" placeholder="EXPENSES" value="<?php echo !empty($user['expenses'])?$user['expenses']:''; ?>" required>
+                <?php echo form_error('expenses','<p class="help-block">','</p>'); ?>
             </div>
 
 			 <div class="form-group">
-                <input type="text" name="savings" placeholder="SAVINGS" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="savings" placeholder="SAVINGS" value="<?php echo !empty($user['savings'])?$user['savings']:''; ?>" required>
+                <?php echo form_error('savings','<p class="help-block">','</p>'); ?>
             </div>
 
 			 <div class="form-group">
-                <input type="text" name="total" placeholder="total" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="total" placeholder="total" value="<?php echo !empty($user['total'])?$user['total']:''; ?>" required>
+                <?php echo form_error('total','<p class="help-block">','</p>'); ?>
             </div>
 			<div class="send-button">
                 <input type="submit" name="signupSubmit" value="SUBMIT">

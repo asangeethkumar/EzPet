@@ -51,8 +51,8 @@ include_once "menuWithLogout.php";
           <!-- </div> -->
 
 		   <div class="form-group">
-                <input type="text" name="Full Name" placeholder="Full NAME" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Full_Name" placeholder="Full NAME" value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" required>
+                <?php echo form_error('Full_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
@@ -61,42 +61,42 @@ include_once "menuWithLogout.php";
             </div>
 
 			<div class="form-group">
-                <input type="text" name="breeder phone" placeholder="BREEDER PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
-                <?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+                <input type="text" name="breeder_phone" placeholder="BREEDER PHONE NUMBER" value="<?php echo !empty($user['breeder_phone'])?$user['breeder_phone']:''; ?>">
+                <?php echo form_error('breeder_phone','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="address" placeholder="FEMALE BREEDING ADDRESS" value="<?php echo !empty($user['address'])?$user['address']:''; ?>" required>
-                <?php echo form_error('address','<p class="help-block">','</p>'); ?>
+                <input type="text" name="address_female" placeholder="FEMALE BREEDING ADDRESS" value="<?php echo !empty($user['address_female'])?$user['address_female']:''; ?>" required>
+                <?php echo form_error('address_female','<p class="help-block">','</p>'); ?>
             </div>
 				
 				<div class="form-group">
-                <input type="text" name="address" placeholder="STUD DOG  ADDRESS" value="<?php echo !empty($user['address'])?$user['address']:''; ?>" required>
-                <?php echo form_error('address','<p class="help-block">','</p>'); ?>
+                <input type="text" name="address_stud" placeholder="STUD DOG  ADDRESS" value="<?php echo !empty($user['address_stud'])?$user['address_stud']:''; ?>" required>
+                <?php echo form_error('address_stud','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="Veterinary Doctor Name" placeholder="Veterinary Doctor NAME" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Veterinary_Doctor_Name" placeholder="Veterinary Doctor NAME" value="<?php echo !empty($user['Veterinary_Doctor_Name'])?$user['Veterinary_Doctor_Name']:''; ?>" required>
+                <?php echo form_error('Veterinary_Doctor_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="Veterinary Doctor ADDRESS " placeholder="Veterinary Doctor ADDRESS" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Veterinary_Doctor_ADDRESS" placeholder="Veterinary Doctor ADDRESS" value="<?php echo !empty($user['Veterinary_Doctor_ADDRESS'])?$user['Veterinary_Doctor_ADDRESS']:''; ?>" required>
+                <?php echo form_error('Veterinary_Doctor_ADDRESS','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="Veterinary Doctor phone number " placeholder="Veterinary Doctor phone number" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Veterinary_Doctor_phone_number" placeholder="Veterinary Doctor phone number" value="<?php echo !empty($user['Veterinary_Doctor_phone_number'])?$user['Veterinary_Doctor_phone_number']:''; ?>" required>
+                <?php echo form_error('Veterinary_Doctor_phone_number','<p class="help-block">','</p>'); ?>
             </div>
 			<div class="form-group">
-                <input type="text" name="Microchip" placeholder="Microchip " value="<?php echo !empty($user['Microchip'])?$user['Microchip']:''; ?>" >
-                <?php echo form_error('Microchip_or_Tattoo','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Microchip" placeholder="Microchip" value="<?php echo !empty($user['Microchip'])?$user['Microchip']:''; ?>" >
+                <?php echo form_error('Microchip','<p class="help-block">','</p>'); ?>
             </div> 
 
 			 <div class="form-group">
-                <input type="text" name="Pet breed" placeholder="Pet breed" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
-                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Pet_breed" placeholder="Pet breed" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
+                <?php echo form_error('Pet_breed','<p class="help-block">','</p>'); ?>
             </div> 
 
             
@@ -135,26 +135,26 @@ include_once "menuWithLogout.php";
             </div>
 
 			<div class="form-group">
-                <input type="text" name="Body Markings" placeholder="Body Markings" value="<?php echo !empty($user['color'])?$user['color']:''; ?>" required>
-                <?php echo form_error('color','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Body_Markings" placeholder="Body Markings" value="<?php echo !empty($user['Body_Markings'])?$user['Body_Markings']:''; ?>" required>
+                <?php echo form_error('Body_Markings','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
 			<label>Date of last rabies vaccination</label><br>
-                <input type="date" name="DOB" placeholder="	Date of last rabies vaccination" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" required>
-                <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
+                <input type="date" name="DOB_rabies" placeholder="Date of last rabies vaccination" value="<?php echo !empty($user['DOB_rabies'])?$user['DOB_rabies']:''; ?>" required>
+                <?php echo form_error('DOB_rabies','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
 			<label>Date of last 7 in 1 vaccination</label><br>
-                <input type="date" name="DOB" placeholder="Date of last 7 in 1 vaccination" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" required>
-                <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
+                <input type="date" name="DOB_last" placeholder="Date of last 7 in 1 vaccination" value="<?php echo !empty($user['DOB_last'])?$user['DOB_last']:''; ?>" required>
+                <?php echo form_error('DOB_last','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
 			<label>Date of last De-worming</label><br>
-                <input type="date" name="DOB" placeholder="Date of last De-worming" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" required>
-                <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
+                <input type="date" name="DOB_deworming" placeholder="Date of last De-worming" value="<?php echo !empty($user['DOB_deworming'])?$user['DOB_deworming']:''; ?>" required>
+                <?php echo form_error('DOB_deworming','<p class="help-block">','</p>'); ?>
     
 
 
