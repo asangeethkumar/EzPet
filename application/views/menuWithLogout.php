@@ -18,6 +18,8 @@
 </head>
 <?php
         $email;$comment;$captcha;
+        if($captcha)
+     {
         if(isset($_POST['email'])){
           $email=$_POST['email'];
         }
@@ -27,11 +29,12 @@
         if(isset($_POST['g-recaptcha-response'])){
           $captcha=$_POST['g-recaptcha-response'];
         }
-        if(!isset($captcha)){
+    }
+        if(!$captcha){
           echo '<h2>Please check the the captcha form.</h2>';
           exit;
         }
-        $secretKey = "6LeUYeIUAAAAALGLJbPXpRBvRnmKjrzInXFxw_hD";
+        $secretKey = "";
         $ip = $_SERVER['REMOTE_ADDR'];
         // post request to server
         $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
