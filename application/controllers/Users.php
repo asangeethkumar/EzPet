@@ -318,10 +318,11 @@ class Users extends CI_Controller {
 
 	public function submenu(){
 		$this->load->view('petshelters');
-		 $data = $userData = array(); 
+		  
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')) {
+			$data = $userData = array();
 			 $userData = array(
 									 'Perspective_Pet_Parent' => strip_tags($this->input->post('Perspective_Pet_Parent')), 
 			'pet_name_adopted' => strip_tags($this->input->post('pet_name_adopted')),
@@ -340,9 +341,10 @@ class Users extends CI_Controller {
 					 );
 					 print  $userData;
 				var_dump($userData);
-				
-			//	$this->db->insert('petregistration',$userData);
 		
+				
+			$this->db->insert('petshelter',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
@@ -357,14 +359,16 @@ class Users extends CI_Controller {
 		 $data = $userData = array(); 
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+
+			 $data = $userData = array();
 			 $userData = array(
 									 'Full_Name' => strip_tags($this->input->post('Full_Name')), 
                 'address' => strip_tags($this->input->post('address')),
 				'breeder_phone' => strip_tags($this->input->post('breeder_phone')),	
 				 'address_female' => strip_tags($this->input->post('address_female')),
 				 'Height' => strip_tags($this->input->post('Height')),
-				'Special_Status' => strip_tags($this->input->post('Special_Status')),
+				
 			'address_stud' => strip_tags($this->input->post('address_stud')), 
 			'Veterinary_Doctor_Name' => strip_tags($this->input->post('Veterinary_Doctor_Name')), 
 			'Veterinary_Doctor_ADDRESS' => strip_tags($this->input->post('Veterinary_Doctor_ADDRESS')), 
@@ -384,7 +388,9 @@ class Users extends CI_Controller {
 			  print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
+				$this->db->insert('breeders',$userData);
+
+		}
 		
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
@@ -396,17 +402,19 @@ class Users extends CI_Controller {
 		$this->load->view('findpet');
 
 
-		 $data = $userData = array(); 
+		 
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+
+			 $data = $userData = array(); 
 			 $userData = array(
 									 'Pet_breed' => strip_tags($this->input->post('Pet_breed')), 
                 'gender' => strip_tags($this->input->post('gender')),
 				'color' => strip_tags($this->input->post('color')),	
 				 'weight' => strip_tags($this->input->post('weight')),
 				 'Height' => strip_tags($this->input->post('Height')),
-				'Special_Status' => strip_tags($this->input->post('Special_Status')),
+				'Purpose_Of_Pet' => strip_tags($this->input->post('Purpose_Of_Pet')),
 			'phone' => strip_tags($this->input->post('phone')), 
 			'Cost' => strip_tags($this->input->post('Cost')), 
 			  );
@@ -414,7 +422,8 @@ class Users extends CI_Controller {
 			print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
+			$this->db->insert('petfind',$userData);
+		}
 		
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
@@ -426,10 +435,11 @@ class Users extends CI_Controller {
 	public function petregistration(){
 		$this->load->view('petregistration');
 
-		 $data = $userData = array(); 
-         
+		 
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')) {
+			 $data = $userData = array(); 
+        
 			 $userData = array(
 									 'AIN' => strip_tags($this->input->post('AIN')), 
                 'Pet_Name' => strip_tags($this->input->post('Pet_Name')),
@@ -461,6 +471,7 @@ class Users extends CI_Controller {
 				var_dump($userData);
 				
 				$this->db->insert('petinfo',$userData);
+	}
 		
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
@@ -472,10 +483,11 @@ class Users extends CI_Controller {
 	public function customer(){
 		$this->load->view('customer');
 
-		 $data = $userData = array(); 
+		 
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+			 $data = $userData = array(); 
 
 		$userData = array( 
                 'first_name' => strip_tags($this->input->post('first_name')), 
@@ -487,6 +499,7 @@ class Users extends CI_Controller {
 				'billing_address' => strip_tags($this->input->post('billing_address')),
                 'email' => strip_tags($this->input->post('email')), 
                 'password' => md5($this->input->post('password')), 
+					'conf_password' => md5($this->input->post('conf_password')),
                 'gender' => $this->input->post('gender'), 
                 'phone' => strip_tags($this->input->post('phone')) 
             ); 
@@ -494,8 +507,8 @@ class Users extends CI_Controller {
 				print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('customer',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 		  
@@ -504,7 +517,8 @@ class Users extends CI_Controller {
 	
 	public function estimation(){
 		$this->load->view('estimation');
-		 if($this->input->post('signupSubmit'))
+		 if($this->input->post('signupSubmit')){
+			   $data = $userData = array(); 
 
 			$userData = array(
 			'budget' => strip_tags($this->input->post('budget')), 
@@ -515,8 +529,8 @@ class Users extends CI_Controller {
 			print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('estimation',$userData);
+		 }
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
 
@@ -524,11 +538,13 @@ class Users extends CI_Controller {
 	}
 	public function puppy(){
 		$this->load->view('puppy');
-		 if($this->input->post('signupSubmit'))
+		 if($this->input->post('signupSubmit')){
+
+			  $data = $userData = array(); 
 
 			$userData = array(
 			'adopt_pet_finder' => strip_tags($this->input->post('adopt_pet_finder')), 
-				'Special_tuStas' => strip_tags($this->input->post('Special_tuStas')),
+				'Special_Status' => strip_tags($this->input->post('Special_Status')),
                 'Pet_breed' => strip_tags($this->input->post('Pet_breed')),
 				'age' => strip_tags($this->input->post('age')),
 					'featured_pets' => strip_tags($this->input->post('featured_pets')),
@@ -538,8 +554,8 @@ class Users extends CI_Controller {
 			print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+				$this->db->insert('puppy',$userData);
+		 }
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
@@ -547,10 +563,11 @@ class Users extends CI_Controller {
 	}
 	public function healthvacination(){
 		$this->load->view('healthvacination');
-			if($this->input->post('signupSubmit'))
+			if($this->input->post('signupSubmit')){
+				$data = $userData = array();
 
 			$userData = array(
-			'petinfo' => strip_tags($this->input->post('petinfo')), 
+			'petname' => strip_tags($this->input->post('petname')), 
 				'DOB' => strip_tags($this->input->post('DOB')),
                 'DOB_vacination' => strip_tags($this->input->post('DOB_vacination')),
 				'Monitoring' => strip_tags($this->input->post('Monitoring')),
@@ -562,8 +579,8 @@ class Users extends CI_Controller {
 		print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('healthvacination',$userData);
+			}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
@@ -574,7 +591,8 @@ class Users extends CI_Controller {
 	
 	public function dietchart(){
 		$this->load->view('dietchart');
-		if($this->input->post('signupSubmit'))
+		if($this->input->post('signupSubmit')){
+				$data = $userData = array();
 
 			$userData = array(
 			'diet_chart' => strip_tags($this->input->post('diet_chart')), 
@@ -584,8 +602,8 @@ class Users extends CI_Controller {
 		print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('dietchart',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
@@ -593,10 +611,11 @@ class Users extends CI_Controller {
 	}
 	public function orderpet(){
 		$this->load->view('orderpet');
-		if($this->input->post('signupSubmit'))
+		if($this->input->post('signupSubmit')){
+				$data = $userData = array();
 
 			$userData = array(
-			'diet_chart' => strip_tags($this->input->post('diet_chart')), 
+			
 				'Special_Status' => strip_tags($this->input->post('Special_Status')),
 				'images' => strip_tags($this->input->post('images')),
                 'Cost' => strip_tags($this->input->post('Cost')),
@@ -606,14 +625,15 @@ class Users extends CI_Controller {
 		print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('orderpet',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  
 		}
 	public function delv(){
 		$this->load->view('delivery');
-		 if($this->input->post('signupSubmit'))
+		 if($this->input->post('signupSubmit')){
+			  $data = $userData = array(); 
 
 			$userData = array(
 			'Full_Name' => strip_tags($this->input->post('Full_Name')), 
@@ -627,8 +647,8 @@ class Users extends CI_Controller {
 		print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+				$this->db->insert('delivery',$userData);
+		 }
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
@@ -640,10 +660,11 @@ class Users extends CI_Controller {
 		public function expenses()
 			{
 		$this->load->view('expenses');
-		$data = $userData = array(); 
+		
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+			$data = $userData = array(); 
 
 			$userData = array(
 			'income' => strip_tags($this->input->post('income')), 
@@ -654,8 +675,8 @@ class Users extends CI_Controller {
 		print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('expenses',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
@@ -666,10 +687,11 @@ class Users extends CI_Controller {
 	public function myorders(){
 		$this->load->view('myorders');
 	
-		$data = $userData = array(); 
+		 
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+			$data = $userData = array();
 				$userData = array(
 			'Full_Name' => strip_tags($this->input->post('Full_Name')), 
 				'email' => strip_tags($this->input->post('email')),
@@ -682,8 +704,8 @@ class Users extends CI_Controller {
 			print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+				$this->db->insert('myorders',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
@@ -691,10 +713,11 @@ class Users extends CI_Controller {
 	}
 	public function petlicense(){
 		$this->load->view('petlicense');
-		$data = $userData = array(); 
+		 
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+			$data = $userData = array();
 				$userData = array( 
                 'License_No' => strip_tags($this->input->post('License_No')), 
 				'Year' => strip_tags($this->input->post('Year')),
@@ -721,18 +744,20 @@ class Users extends CI_Controller {
 			print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('petlicense',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 	
 	public function petchart(){
 		$this->load->view('petchart');
-		$data = $userData = array(); 
+		 
          
         // If registration request is submitted 
-        if($this->input->post('signupSubmit'))
+        if($this->input->post('signupSubmit')){
+				$data = $userData = array(); 
+         
 
 		$userData = array( 
                 'Pet_Name' => strip_tags($this->input->post('Pet_Name')), 
@@ -748,8 +773,8 @@ class Users extends CI_Controller {
 				print  $userData;
 				var_dump($userData);
 				
-			//	$this->db->insert('petregistration',$userData);
-		
+			$this->db->insert('petchart',$userData);
+		}
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 		  
