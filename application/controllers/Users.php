@@ -533,9 +533,7 @@ class Users extends CI_Controller {
 		 }
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
-
-
-	}
+		}
 	public function puppy(){
 		$this->load->view('puppy');
 		 if($this->input->post('signupSubmit')){
