@@ -42,7 +42,7 @@
 				<input type="password" name="password" placeholder="PASSWORD" required="">
 				<?php echo form_error('password','<p class="help-block">','</p>'); ?>
 			</div>
-			  <div class="g-recaptcha" data-sitekey="6LeUYeIUAAAAAF_GwBgZFLeIYYWpuB3PUwBdbtq4"></div>
+			  <div class="g-recaptcha" name='g-recaptcha' data-sitekey="6LeUYeIUAAAAAF_GwBgZFLeIYYWpuB3PUwBdbtq4 " required=""></div>
 			<div class="send-button">
 				<input type="submit" name="loginSubmit" value="LOGIN">
 			</div>
