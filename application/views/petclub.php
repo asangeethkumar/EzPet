@@ -21,30 +21,48 @@
 <div class="container">
 
 	<h2>PetClub</h2>
-	
-	<!-- Status message -->
-	<?php 
-		if(!empty($success_msg)){
-			echo '<p class="status-msg success">'.$success_msg.'</p>';
-		}elseif(!empty($error_msg)){
-			echo '<p class="status-msg error">'.$error_msg.'</p>';
-		}
-	?>
+		<form action="" method="POST">
+  
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_name"   placeholder="PET NAME" required>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="pet_breed"  placeholder="PET Breed" required>
 			</div>
 				<div class="form-group">
-				<input type="text" name="first_name"   placeholder="PET food type" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<input type="text" name="food"   placeholder="PET food type"  required>
 			</div>
+
+			
+		<div class="form-group">
+				<input type="text" name="pet_food_quantity"   placeholder="PET FOOD QUANTITY"  required>
+			</div>
+				 <div class="form-group">
+                <label>Gender: </label>
+                <?php 
+                if(!empty($user['gender']) && $user['gender'] == 'Female'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }else{ 
+                    $mcheck = 'checked="checked"'; 
+                    $fcheck = ''; 
+                } 
+                ?>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
+						Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
+                        Female
+                    </label>
+                </div>
+            </div>
+			
 		
 		
-			<h3>Payment</h3>
+			<!--h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
@@ -60,7 +78,7 @@
                 <label for="cvv"></label>
                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
               </div>
-          </div>
+          </div-->
 
 			
 			<div class="send-button">
