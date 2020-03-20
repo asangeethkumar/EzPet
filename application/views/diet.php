@@ -2,6 +2,11 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
+<br>
+
 <html lang="en">  
 <head>
 <title>pescription diet</title>
@@ -37,8 +42,9 @@ include_once "menuWithLogout.php";
 			</div>
 			
 			<div class="form-group ">
-				  <label for="inputState">SELECT YOUR PET</label>
-				  <select id="inputState" class="form-control" required >
+				  <label for="inputState"> YOUR PET</label>
+				  <select name="pet" id="inputState" class="form-control" required >
+				  <option>select</option>
 					<option >DOG</option>
 					<option>CAT</option>
 					<option>FISH</option>
@@ -46,21 +52,32 @@ include_once "menuWithLogout.php";
 				  </select>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="ENTER PET NAME" value="" required>
+				<input type="text" name="petname"   placeholder="ENTER PET NAME" value="" required>
 			</div>
-			 <div class="radio">
-
-					<label>SELECT PET AGE</label>
-						<input type="radio" name="gender" value="Male" >
-						Adult
+	<div class="form-group">
+				<label>Gender: </label>
+				<?php
+				if(!empty($user['gender']) && $user['gender'] == 'Female'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="radio">
+					<label>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
+						Male
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" >
-						Kitten
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
+						Female
 					</label>
+				</div>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="ENTER PET PROBLEM" value="" required>
+				<input type="text" name="problem"   placeholder="ENTER PET PROBLEM" value="" required>
 			</div>
 			<tr>
 							<LABEL>PESCRIPTION</LABEL>
@@ -80,36 +97,29 @@ include_once "menuWithLogout.php";
 							
 							<tr>
 							<td>1</td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
+							<td><input type="text" name="a" maxlength="30" /></td>
+							<td><input type="text" name="b" maxlength="30" /></td>
+							<td><input type="text" name="c" maxlength="30" /></td>
+							<td><input type="text" name="d" maxlength="30" /></td>
 							</tr>
 							 
 							<tr>
 							<td>2</td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
+							<td><input type="text" name="e" maxlength="30" /></td>
+							<td><input type="text" name="f" maxlength="30" /></td>
+							<td><input type="text" name="g" maxlength="30" /></td>
+							<td><input type="text" name="h" maxlength="30" /></td>
 							</tr>
 							 
 							<tr>
 							<td>3</td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
+							<td><input type="text" name="i" maxlength="30" /></td>
+							<td><input type="text" name="j" maxlength="30" /></td>
+							<td><input type="text" name="k" maxlength="30" /></td>
+							<td><input type="text" name="l" maxlength="30" /></td>
 							</tr>
 							 
-							<tr>
-							<td>4</td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							<td><input type="text" name="" maxlength="30" /></td>
-							</tr>
-							 
+						
 
 							</table>
 							 
