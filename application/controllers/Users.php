@@ -63,7 +63,7 @@ class Users extends CI_Controller {
         if($this->input->post('loginSubmit')){
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('password', 'password', 'required');
-			$this->form_validation->set_rules('g-recaptcha', 'required');
+			
             if($this->form_validation->run() == true){
                 $con = array(
 					'returnType' => 'single',
@@ -73,32 +73,19 @@ class Users extends CI_Controller {
 						'status' => 1
 					)
                 );
-					$captcha; $checkLogin;		
-         
-          $captcha=$this->input->post('g-recaptcha');
-          
-          if($captcha==null)
-          {
-          $data['error_msg'] = 'Please check the Captcha.';
-          echo '404';
-        }
-        else
-        {
-                            $checkLogin = $this->model->getRows($con);
-                             if($checkLogin){
+							$checkLogin = $this->model->getRows($con);
+
+                if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
 
                     redirect('users/account/');
 
 
-                    
+					
                 }else{
                     $data['error_msg'] = 'Wrong email or password, please try again.';
                 }
-        }
-
-               
             }else{
 				$data['error_msg'] = 'Please fill all the mandatory fields.';
 			}

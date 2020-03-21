@@ -16,7 +16,6 @@
 	<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 	<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
-
 <?php
         //$email;$comment;$captcha;
 		$email = $password = $captcha = NULL;
@@ -46,7 +45,6 @@
                 echo '<h2>You are spammer ! Get the @$%K out</h2>';
         }
 ?>	
-
 <style>
 .dropdown:hover>.dropdown-menu
    {
