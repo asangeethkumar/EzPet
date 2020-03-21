@@ -2,6 +2,11 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
+<br>
+
 <html lang="en">  
 <head>
 <title>DIAGONSTIC</title>
@@ -20,25 +25,24 @@ include_once "menuWithLogout.php";
 	<div class="regisFrm">
 		<form action="" method="post">
 			<div class="form-group ">
-				<label for="inputState">SELECT YOUR TEST</label>
-						<select id="inputState" class="form-control" required >
-							<option >HEMATOLOGY & COAGULATION</option>
-							<option>BIOCHEMISTRY</option>
-							<option>CLINICAL PATH & URINE BIOCHEMISTRY</option>
-							<option>KIT BASED TEST</option>
-							<option>SEROLOGY</option>
-							<option>CYTOLOGY & HISTOPATHOLOGY</option>
-							<option>MICROBIOLOGY</option>
-							<option>HORMONE ANALYSIS</option>
-							<option>SPECIALISED TEST</option>
-							<option>PANELS</option>
-							<option>LIVE STOCK HERD HEALTH SCREENING TEST</option>
-							<option>EXPORT TESTING SERVICES (PET TRAVEL TO ABROAD)</option>
-							<option>LAB ANIMAL HEALTH MONITORING AND CLINICAL TRIAL TESTING</option>
-						 </select>
+				<label for="inputState"> TEST</label><br>
+						
+						 <input type="checkbox" id="checkItem" name="check[]" value="1">HEMATOLOGY & COAGULATION<br>
+	<input type="checkbox" id="checkItem" name="check[]" value="2">BIOCHEMISTRY<br>
+	<input type="checkbox" id="checkItem" name="check[]" value="3">CLINICAL PATH & URINE BIOCHEMISTRY<br>
+		<input type="checkbox" id="checkItem" name="check[]" value="4">KIT BASED TEST<br>
+			<input type="checkbox" id="checkItem" name="check[]" value="5">SEROLOGY<br>
+				<input type="checkbox" id="checkItem" name="check[]" value="6">CYTOLOGY & HISTOPATHOLOGY<br>
+					<input type="checkbox" id="checkItem" name="check[]" value="7">MICROBIOLOGY<br>
+						<input type="checkbox" id="checkItem" name="check[]" value="8">HORMONE ANALYSIS<br>
+							<input type="checkbox" id="checkItem" name="check[]" value="9">SPECIALISED TEST<br>
+								<input type="checkbox" id="checkItem" name="check[]" value="10">PANELS<br>	
+								<input type="checkbox" id="checkItem" name="check[]" value="11">LIVE STOCK HERD HEALTH SCREENING TEST<br>	
+								<input type="checkbox" id="checkItem" name="check[]" value="12">LAB ANIMAL HEALTH MONITORING AND CLINICAL TRIAL TESTING<br>
+								<input type="checkbox" id="checkItem" name="check[]" value="13">EXPORT TESTING SERVICES (PET TRAVEL TO ABROAD)<br>
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="ENTER DOCTOR NAME" value="" required>
+				<input type="text" name="dname"   placeholder="ENTER DOCTOR NAME" value="" required>
 			</div>
 			<div class="form-group">
 				<input type="text" name="first_name"   placeholder="ENTER YOUR  NAME" value="" required>
@@ -47,11 +51,12 @@ include_once "menuWithLogout.php";
 				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}"  title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="">
 			</div>
 			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="LOCATION" value="" required>
+				<input type="text" name="location"   placeholder="LOCATION" value="" required>
 			</div>
 			<div class="form-group ">
-			  <label for="inputState">SELECT YOUR PET</label>
-				<select id="inputState" class="form-control" required >
+			  <label for="inputState">PET</label>
+				<select name="pet" id="inputState" class="form-control" required >
+				<option>SELECT </option>
 					<option >DOG</option>
 					<option>CAT</option>
 					<option>FISH</option>
@@ -59,38 +64,46 @@ include_once "menuWithLogout.php";
 				</select>
 			</div>
 			<br>
-			<div class="radio">
-
-					<label>SELECT PET GENDER</label>
-						<input type="radio" name="gender" value="Male" >
+		<div class="form-group">
+				<label>Gender: </label>
+				<?php
+				if(!empty($user['gender']) && $user['gender'] == 'Female'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="radio">
+					<label>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
 						Male
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" >
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
 						Female
 					</label>
+				</div>
 			</div>
-				<br>
-					
-			 <div class="radio">
 
-					<label>SELECT PET AGE</label>
-						<input type="radio" name="gender" value="Male" >
-						Adult
-					</label>
-					<label>
-						<input type="radio" name="gender" value="Female" >
-						Kitten
-					</label>
-			</div>
 				
-					<br>
- 
+				
+				
+					
+		
+					<div class="form-group">
+						<input type="text" name="age"   placeholder="PET AGE" value="" required>
+					</div>
+
+				
+		
 
 
 		<div class="form-group">
-			  <label for="inputState" >SELECT PAYMENT TYPE</label>
-			  <select id="inputState" class="form-control" required >
+			  <label for="inputState" > PAYMENT TYPE</label>
+			  <select name="payment" id="inputState" class="form-control" required >
+			  <option>SELECT </option>
 				<option >CREDIT/DEBIT CARD </option>
 				<option>NET BANKING</option>
 				<option>CASH ON DELIVERY</option>

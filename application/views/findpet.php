@@ -46,8 +46,8 @@ include_once "menuWithLogout.php";
 
 
              <div class="form-group">
-                <input type="text" name="Pet breed" placeholder="Pet breed" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
-                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Pet_breed" placeholder="Pet breed" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
+                <?php echo form_error('Pet_breed','<p class="help-block">','</p>'); ?>
             </div> 
 			 <div class="form-group">
                 <label>Gender: </label>
@@ -103,24 +103,24 @@ include_once "menuWithLogout.php";
 			
 
 				<div class="form-group">
-                <label> Purpose Of Pet</label><br>
+                <label>Purpose_Of_Pet</label><br>
 				 <?php 
-                if(!empty($user['Special_Status']) && $user['Special_Status'] == ' Service Dog'){ 
+                if(!empty($user['Purpose_Of_Pet']) && $user['Purpose_Of_Pet'] == 'Service Dog'){ 
                     $fcheck = 'checked="checked"'; 
                     $mcheck = ''; 
 
-					if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Emotional Support Animal'){ 
+					if(!empty($user['Purpose_Of_Pet']) && $user['Purpose_Of_Pet'] == 'Emotional Support Animal'){ 
                     $fcheck = 'checked="checked"'; 
                     $mcheck = ''; 
                 }
 
 
-				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'K-9'){ 
+				if(!empty($user['Purpose_Of_Pet']) && $user['Purpose_Of_Pet'] == 'K-9'){ 
                     $fcheck = 'checked="checked"'; 
                     $mcheck = ''; 
                 }
 					
-				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'homely'){ 
+				if(!empty($user['Purpose_Of_Pet']) && $user['Purpose_Of_Pet'] == 'homely'){ 
                     $fcheck = 'checked="checked"'; 
                     $mcheck = ''; 
                 }
@@ -130,10 +130,10 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Service Dog<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>Emotional Support Animal<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="3"<?php echo $mcheck; ?>>K-9<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>homely<br>
+					<input type="checkbox" id="checkItem" name="Purpose_Of_Pet" value="1"<?php echo $mcheck; ?>>Service Dog<br>
+					<input type="checkbox" id="checkItem" name="Purpose_Of_Pet" value="2"<?php echo $mcheck; ?>>Emotional Support Animal<br>
+					<input type="checkbox" id="checkItem" name="Purpose_Of_Pet" value="3"<?php echo $mcheck; ?>>K-9<br>
+					<input type="checkbox" id="checkItem" name="Purpose_Of_Pet" value="4"<?php echo $mcheck; ?>>homely<br>
 
 					 </label>
                 </div>            
@@ -147,7 +147,7 @@ include_once "menuWithLogout.php";
             </div>
 			<div class="form-group">
                 <input type="text" name="Cost" placeholder="Cost" value="<?php echo !empty($user['Cost'])?$user['Cost']:''; ?>">
-                <?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+                <?php echo form_error('Cost','<p class="help-block">','</p>'); ?>
             </div>
 			
             <div class="send-button">

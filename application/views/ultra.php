@@ -2,6 +2,11 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
+<br>
+
 <html lang="en">  
 <head>
 <title>Ultrascan</title>
@@ -26,8 +31,9 @@ include_once "menuWithLogout.php";
 		<form action="" method="post">
 
 		<div class="form-group ">
-			  <label for="inputState">SELECT YOUR TEST</label>
+			  <label for="inputState"> TEST</label>
 			  <select id="inputState" class="form-control" required >
+			  <option>SELECT </option>
 				<option >Ultrasacn</option>
 				<option>X-Ray</option>
 				<option>MRI</option>
@@ -47,41 +53,48 @@ include_once "menuWithLogout.php";
 			<input type="text" name="first_name"   placeholder="LOCATION" value="" required>
 		</div>
 		<div class="form-group ">
-			  <label for="inputState">SELECT YOUR PET</label>
+			  <label for="inputState">PET</label>
 			  <select id="inputState" class="form-control" required >
+			  <option>SELECT </option>
 				<option >DOG</option>
 				<option>CAT</option>
 				<option>FISH</option>
 				<option>BIRDS</option>
 			  </select>
 		</div>
-		<div class="radio">
-				<label>SELECT PET GENDER</label>
-					<input type="radio" name="gender" value="Male" >
+		<div class="form-group">
+				<label>Gender: </label>
+				<?php
+				if(!empty($user['gender']) && $user['gender'] == 'Female'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="radio">
+					<label>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
 						Male
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" >
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
 						Female
 					</label>
-		</div>	
-		<br>
-		<div class="radio">
-					<label>SELECT PET AGE</label>
-						<input type="radio" name="gender" value="Male" >
-						Adult
-					</label>
-					<label>
-						<input type="radio" name="gender" value="Female" >
-						Kitten
-					</label>
 				</div>
-				<br>
+			</div>
+
+		<div class="form-group">
+						<input type="text" name="age"   placeholder="PET AGE" value="" required>
+					</div>
+
 				
 
 		<div class="form-group">
-			  <label for="inputState" >SELECT PAYMENT TYPE</label>
+			  <label for="inputState" >PAYMENT TYPE</label>
 			  <select id="inputState" class="form-control" required >
+			  <option>SELECT </option>
 				<option >CREDIT/DEBIT CARD </option>
 				<option>NET BANKING</option>
 				<option>CASH ON DELIVERY</option>

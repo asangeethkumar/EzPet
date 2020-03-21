@@ -71,7 +71,7 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Dog<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>>Dog<br>
 					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>cat<br>
 					
 					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>birds<br>
@@ -80,8 +80,8 @@ include_once "menuWithLogout.php";
 					 </label>
                 </div>  
 				 <div class="form-group">
-                <input type="text" name="images" placeholder="images" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="images" placeholder="images" value="<?php echo !empty($user['images'])?$user['images']:''; ?>" required>
+                <?php echo form_error('images','<p class="help-block">','</p>'); ?>
             </div>
 				<div class="form-group">
                  <label>Images of pet</label>
@@ -93,18 +93,18 @@ include_once "menuWithLogout.php";
            </div>
 
 		   <div class="form-group">
-                <input type="text" name="Cost" placeholder="Cost" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Cost" placeholder="Cost" value="<?php echo !empty($user['Cost'])?$user['Cost']:''; ?>" required>
+                <?php echo form_error('Cost','<p class="help-block">','</p>'); ?>
             </div>
 
 			 <div class="form-group">
-                <input type="text" name="Adopton pets" placeholder="Adoption pets" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Adopton_pets" placeholder="Adoption pets" value="<?php echo !empty($user['Adopton_pets'])?$user['Adopton_pets']:''; ?>" required>
+                <?php echo form_error('Adopton_pets','<p class="help-block">','</p>'); ?>
             </div>
 
 			 <div class="form-group">
-                <input type="text" name="Status" placeholder="Status" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Status" placeholder="Status" value="<?php echo !empty($user['Status'])?$user['Status']:''; ?>" required>
+                <?php echo form_error('Status','<p class="help-block">','</p>'); ?>
             </div>
 
 

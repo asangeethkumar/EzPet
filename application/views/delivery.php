@@ -44,8 +44,8 @@ include_once "menuWithLogout.php";
           <!-- </div> -->
 
 		   <div class="form-group">
-                <input type="text" name="Full Name" placeholder="Full NAME" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
-                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Full_Name" placeholder="Full NAME" value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" required>
+                <?php echo form_error('Full_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
@@ -65,17 +65,17 @@ include_once "menuWithLogout.php";
 
 
 			<div class="form-group">
-                <input type="text" name="address" placeholder="SHIPPING ADDRESS" value="<?php echo !empty($user['address'])?$user['address']:''; ?>" required>
-                <?php echo form_error('address','<p class="help-block">','</p>'); ?>
+                <input type="text" name="shipping_address" placeholder="SHIPPING ADDRESS" value="<?php echo !empty($user['shipping_address'])?$user['shipping_address']:''; ?>" required>
+                <?php echo form_error('shipping_address','<p class="help-block">','</p>'); ?>
             </div>
 			<div class="form-group">
-                <input type="text" name="address" placeholder="ALTERNATIVE ADDRESS" value="<?php echo !empty($user['address'])?$user['address']:''; ?>" required>
-                <?php echo form_error('address','<p class="help-block">','</p>'); ?>
+                <input type="text" name="alt_address" placeholder="ALTERNATIVE ADDRESS" value="<?php echo !empty($user['alt_address'])?$user['alt_address']:''; ?>" required>
+                <?php echo form_error('alt_address','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="delivery charges" placeholder="DELIVERY CHARGES" value="<?php echo !empty($user['address'])?$user['address']:''; ?>" required>
-                <?php echo form_error('address','<p class="help-block">','</p>'); ?>
+                <input type="text" name="delivery_charges" placeholder="DELIVERY CHARGES" value="<?php echo !empty($user['delivery_charges'])?$user['delivery_charges']:''; ?>" required>
+                <?php echo form_error('delivery_charges','<p class="help-block">','</p>'); ?>
             </div>
 			
 			 <div class="form-group">

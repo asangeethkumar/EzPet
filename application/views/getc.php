@@ -2,6 +2,9 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
+<br>
+<br>
+<br>
 <html lang="en">  
 <head>
 <title>online consultation</title>
@@ -12,7 +15,6 @@ include_once "menuWithLogout.php";
 
 <!-- Stylesheet file -->
 <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
-<link href="<?php echo base_url('menuWithLogout.php'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
 <br>
@@ -26,8 +28,9 @@ include_once "menuWithLogout.php";
 	<div class="regisFrm">
 		<form action="" method="post">
 		<div class="form-group ">
-				  <label for="inputState">SELECT YOUR PET</label>
-				  <select id="inputState"  name="pet" class="form-control" required >
+				  <label for="inputState"> PET</label>
+				  <select name="pet" id="inputState"  name="pet" class="form-control" required >
+					<option></option>
 					<option >DOG</option>
 					<option>CAT</option>
 					<option>FISH</option>
@@ -38,46 +41,55 @@ include_once "menuWithLogout.php";
 			<input type="text" name="petname"   placeholder="PET NAME" value="" required>
 		</div>
 			
-		
-			
-		<div class="radio">
-
-				<label>SELECT PET GENDER</label>
-						<input type="radio" name="gender" value="Male" >
+	<div class="form-group">
+				<label>Gender: </label>
+				<?php
+				if(!empty($user['gender']) && $user['gender'] == 'Female'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="radio">
+					<label>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
 						Male
 					</label>
-				<label>
-						<input type="radio" name="gender" value="Female" >
+					<label>
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
 						Female
 					</label>
-		</div>
-				<br>
-					
-		<div class="radio">
+				</div>
+			</div>
 
-				<label>SELECT PET AGE</label>
-						<input type="radio" name="gender" value="Male" >
-						Adult
-					</label>
-				<label>
-						<input type="radio" name="gender" value="Female" >
-						Kitten
-					</label>
+				
+				
+				
+		<div class="form-group">
+			<input type="text" name="petage"   placeholder="PET AGE" value="" required>
 		</div>
+			
+			
+			
+
+
 		<div class="form-group">
 			<input type="text" name="question"   placeholder="TYPE YOUR QUESTION?" value="" required>
 		</div>
 		<div class="form-group">
 			<label>UPLOAD PHOTOS</label>
-			<input type="file" class="form-control-file" id="exampleFormControlFile1" name="photos" required >
+			<input name="upload"  type="file" class="form-control-file" id="exampleFormControlFile1" name="photos"  >
 		</div>
 		<div class="form-group ">
-			  <label for="inputState">SELECT CATEGORY</label>
-			  <select id="inputState" class="form-control" name="category" required >
-				<option >enquiry</option>
-				<option>disease</option>
-				<option>infection</option>
-				<option>operation</option>
+			  <label for="inputState">CATEGORY</label>
+			  <select name="category" id="inputState" class="form-control" name="category" required >
+			  <option></option>
+				<option >Enquiry</option>
+				<option>Disease</option>
+				<option>Infection</option>
+				<option>Operation</option>
 			  </select>
 		</div>
 					
