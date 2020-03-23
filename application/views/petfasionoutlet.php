@@ -18,38 +18,45 @@ include_once "menuWithLogout.php";
 <h1>  </h1>	
 <div class="container">
 
-	<h2>PET FASHION :</h2>
-	<form action="" method="POST">
+	<h2>PetFashionout</h2>
 	
-				<div class="form-group">
-				<input type="text" name="first_name"   placeholder="OWNER NAME" required>
+	<!-- Status message -->
+	<?php 
+		if(!empty($success_msg)){
+			echo '<p class="status-msg success">'.$success_msg.'</p>';
+		}elseif(!empty($error_msg)){
+			echo '<p class="status-msg error">'.$error_msg.'</p>';
+		}
+	?>
+	
+	<div class="form-group">
+				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+			</div>
+			<div class="form-group">
+				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+			</div>
+			<div class="form-group">
+				<input type="text" name="first_name"   placeholder="PET SIZE" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+			</div>
+	
+<div class="form-group">
+				<input type="text" name="first_name"   placeholder="OWNER NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
 				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" >
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="email"   placeholder="Email" >
+				<input type="text" name="first_name"   placeholder="Email" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
-<h2> COSTUME DETAILS:</h2>
-
-	<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_size"   placeholder="PET SIZE" required>
-			</div>
-	
-				<div class="form-group">
-				<input type="text" name="costume_type"   placeholder="COSTUME TYPE" >
-			</div>
-				<div class="form-group">
-				<input type="text" name="costume_name"   placeholder="COSTUME NAME" >
-			</div>
-			<!--h3>Payment</h3>
+			
+			<h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
@@ -65,7 +72,7 @@ include_once "menuWithLogout.php";
                 <label for="cvv"></label>
                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
               </div>
-          </div-->
+          </div>
 
 			
 			<div class="send-button">

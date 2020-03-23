@@ -22,70 +22,62 @@
 
 	<h2>PET HOSTEL</h2>
 	
-<form action="" method="POST">
-  
+	<!-- Status message -->
+	<?php 
+		if(!empty($success_msg)){
+			echo '<p class="status-msg success">'.$success_msg.'</p>';
+		}elseif(!empty($error_msg)){
+			echo '<p class="status-msg error">'.$error_msg.'</p>';
+		}
+	?>	
 
 	<h3>PET INFORMATION</h3>		
 			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
+				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed"  required>
-
+				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
-
-			 <div class="form-group">
-                <label>Gender: </label>
-                <?php 
-                if(!empty($user['gender']) && $user['gender'] == 'Female'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }else{ 
-                    $mcheck = 'checked="checked"'; 
-                    $fcheck = ''; 
-                } 
-                ?>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
-						Male
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
-                        Female
-                    </label>
-                </div>
-            </div>
 			
-
-<h3>OWNER INFORMATION</h3>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+		<h3>OWNER INFORMATION</h3>
 	
 	
 <div class="form-group">
-				<input type="text" name="first_name"   placeholder="OWNER NAME" required>
+				<input type="text" name="first_name"   placeholder="OWNER NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
 				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" >
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="email"   placeholder="Email" required>
+				<input type="text" name="first_name"   placeholder="Email" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
-		
-					
 			<div class="form-group">
-				Date of joining:<input type="date" name="date_j"   required>
-
-			</div>
-
+				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="Emergency Contact number" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+			</div>			
 			<div class="form-group">
-				Date of Leaving:<input type="date" name="date_l"   required>
-
+				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+			</div>
+			<div class="form-group">
+				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 		
 
 		
-			<!--h3>HOSTEL PAYMENT</h3>
+			<h3>HOSTEL PAYMENT</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
@@ -101,7 +93,7 @@
                 <label for="cvv"></label>
                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
               </div>
-          </div-->
+          </div>
 
 			
 			<div class="send-button">

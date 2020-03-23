@@ -6,7 +6,7 @@
   <br>
 <html lang="en">  
 <head>
-<title>Pet_day_care</title>
+<title>DogWalker</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,84 +20,54 @@
 <h1>  </h1>	
 <div class="container">
 
-	<h2>Pet_day_care</h2>
+	<h2>Dog Walkers</h2>
 	
-
+	<!-- Status message -->
+	<?php 
+		if(!empty($success_msg)){
+			echo '<p class="status-msg success">'.$success_msg.'</p>';
+		}elseif(!empty($error_msg)){
+			echo '<p class="status-msg error">'.$error_msg.'</p>';
+		}
+	?>
 	
-	<form action="" method="POST">
-  
+	
 <div class="form-group">
-				<input type="text" name="first_name"   placeholder="OWNER NAME" required>
+				<input type="text" name="first_name"   placeholder="OWNER NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
 				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" >
-
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="email"   placeholder="Email"  required>
+				<input type="text" name="first_name"   placeholder="Email" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="ephone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="Emergency Contact number" >
+				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="Emergency Contact number" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>	
 			<label for="address">Address</label>
 
-<textarea id="address" name="address" rows="4" cols="50">
+<textarea id="address" rows="4" cols="50">
 </textarea>
 			<h3>PET INFORMATION</h3>		
 			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME"  required>
+				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed"  required>
+				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
-			GENDER:
-			<br>
-
-
-				 <div class="form-group">
-                <label>Gender: </label>
-                <?php 
-                if(!empty($user['gender']) && $user['gender'] == 'Female'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }else{ 
-                    $mcheck = 'checked="checked"'; 
-                    $fcheck = ''; 
-                } 
-                ?>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
-						Male
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
-                        Female
-                    </label>
-                </div>
-            </div>
 			
-				
-
-
-
-
-
-
- 			
-
-
-
-
-
-			<div class="form-group">
-				<input type="text" name="pet_food_type"   placeholder="PET FOOD"  required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_food_quantity"   placeholder="PET FOOD QUANTITY"  required>
-			</div>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
 			
 			
 		<!--	<h3>Payment</h3>

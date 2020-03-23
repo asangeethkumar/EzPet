@@ -20,23 +20,34 @@ include_once "menuWithLogout.php";
 
 	<h2>PETBEDDING</h2>
 	
-	<form action="" method="POST">
+	<!-- Status message -->
+	<?php 
+		if(!empty($success_msg)){
+			echo '<p class="status-msg success">'.$success_msg.'</p>';
+		}elseif(!empty($error_msg)){
+			echo '<p class="status-msg error">'.$error_msg.'</p>';
+		}
+	?>
 	
 				
 			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
+				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed" required>
+				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 		
 				<div class="form-group">
-				<input type="text" name="bed_size"   placeholder="Bed Size" required>
+				<input type="text" name="first_name"   placeholder="Bed Size" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 					<div class="form-group">
-				<input type="text" name="color"   placeholder="color" required>
+				<input type="text" name="first_name"   placeholder="color" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
-				<!--h3>Payment</h3>
+				<h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
@@ -52,7 +63,7 @@ include_once "menuWithLogout.php";
                 <label for="cvv"></label>
                 <input type="text" id="cvv" name="cvv" placeholder="CVV">
               </div>
-          </div-->
+          </div>
 
 		
 			<div class="send-button">

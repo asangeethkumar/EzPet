@@ -43,8 +43,8 @@ include_once "menuWithLogout.php";
              <!--  <input type="submit" class="btn btn-primary" value="Upload">-->
           <!-- </div> -->
 		  <div class="form-group">
-                <input type="text" name="petname" placeholder="petname" value="<?php echo !empty($user['petname'])?$user['petname']:''; ?>" required>
-                <?php echo form_error('petname','<p class="help-block">','</p>'); ?>
+                <input type="text" name="petinfo" placeholder="petinfo" value="<?php echo !empty($user['budget'])?$user['budget']:''; ?>" required>
+                <?php echo form_error('budget','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
@@ -55,8 +55,8 @@ include_once "menuWithLogout.php";
 
 			<div class="form-group">
 			<label>Date of last 7 in 1 vaccination</label><br>
-                <input type="date" name="DOB_vacination" placeholder="Date of last 7 in 1 vaccination" value="<?php echo !empty($user['DOB_vacination'])?$user['DOB_vacination']:''; ?>" required>
-                <?php echo form_error('DOB_vacination','<p class="help-block">','</p>'); ?>
+                <input type="date" name="DOB" placeholder="Date of last 7 in 1 vaccination" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" required>
+                <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
@@ -76,27 +76,27 @@ include_once "menuWithLogout.php";
 
 
 	<div class="form-group">
-                <input type="text" name="Monitoring" placeholder="Monitoring" value="<?php echo !empty($user['Monitoring'])?$user['Monitoring']:''; ?>" required>
-                <?php echo form_error('Monitoring','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Monitoring" placeholder="Monitoring" value="<?php echo !empty($user['budget'])?$user['budget']:''; ?>" required>
+                <?php echo form_error('budget','<p class="help-block">','</p>'); ?>
             </div>
 
 
 	<div class="form-group">
 		<label>Slot booking for vaccination</label><br>
-                <input type="date" name="DOB_bookvac" placeholder="Date of last 7 in 1 vaccination" value="<?php echo !empty($user['DOB_bookvac'])?$user['DOB_bookvac']:''; ?>" required>
-                <?php echo form_error('DOB_bookvac','<p class="help-block">','</p>'); ?>
+                <input type="date" name="DOB" placeholder="Date of last 7 in 1 vaccination" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" required>
+                <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
             </div>
 
 
 			
 			<div class="form-group">
-                <input type="text" name="preferred_Doctor" placeholder="preferred Doctor" value="<?php echo !empty($user['preferred_Doctor'])?$user['preferred_Doctor']:''; ?>" required>
-                <?php echo form_error('preferred_Doctor','<p class="help-block">','</p>'); ?>
+                <input type="text" name="preferred Doctor" placeholder="preferred Doctor" value="<?php echo !empty($user['budget'])?$user['budget']:''; ?>" required>
+                <?php echo form_error('budget','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="hospital_preferred" placeholder="hospital preferred" value="<?php echo !empty($user['hospital_preferred'])?$user['hospital_preferred']:''; ?>" required>
-                <?php echo form_error('hospital_preferred','<p class="help-block">','</p>'); ?>
+                <input type="text" name="hospital preferred" placeholder="hospital preferred" value="<?php echo !empty($user['budget'])?$user['budget']:''; ?>" required>
+                <?php echo form_error('budget','<p class="help-block">','</p>'); ?>
             </div>
 
 
