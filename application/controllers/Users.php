@@ -315,7 +315,7 @@ class Users extends CI_Controller {
             print  $userData;
                 var_dump($userData);
                 
-              $this->db->insert('petsitter  ',$userData);
+              $this->db->insert('petsitter',$userData);
         
         }
         $this->load->view('Petsitter');
@@ -739,7 +739,7 @@ class Users extends CI_Controller {
              $userData = array(
                 'pet_name' => $this->input->post('pet_name'),
                 'pet_breed' => $this->input->post('pet_breed'),
-                'pet_size' => $this->input->post('pet_size'),
+                'bed_size' => $this->input->post('bed_size'),
                 'color' => $this->input->post('color'),
                  
 

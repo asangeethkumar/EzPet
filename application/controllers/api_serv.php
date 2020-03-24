@@ -265,7 +265,7 @@ class api_serv extends REST_Controller
           }
   
 
-           public function dogplayground()
+           public function dogplayground_post()
            {
         
 
@@ -302,7 +302,7 @@ class api_serv extends REST_Controller
           }
         
                 
-           public function globalpet()
+           public function globalpet_post()
     {
         
                 $this->load->view('globalpet');
@@ -341,7 +341,7 @@ class api_serv extends REST_Controller
              }
 
           }
-            public function funeral()
+            public function funeral_post()
              {
        
               $this->load->view('funeral');
@@ -382,7 +382,7 @@ class api_serv extends REST_Controller
 
           }
 
-           public function petfashionoutlet()
+           public function petfashionoutlet_post    ()
     {
         
          $this->load->view('petfasionoutlet');
@@ -429,7 +429,7 @@ class api_serv extends REST_Controller
           //pet toys
 
 
-            public function dia()
+            public function dia_post()
     {
         
               $this->load->view('dia');
@@ -470,7 +470,7 @@ class api_serv extends REST_Controller
              $userData = array(
                 'pet_name' => $this->input->post('pet_name'),
                 'pet_breed' => $this->input->post('pet_breed'),
-                'pet_size' => $this->input->post('pet_size'),
+                'bed_size' => $this->input->post('bed_size'),
                 'color' => $this->input->post('color')
 
                     );
