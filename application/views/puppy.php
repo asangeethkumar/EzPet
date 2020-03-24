@@ -42,8 +42,8 @@ include_once "menuWithLogout.php";
              <!--  <input type="submit" class="btn btn-primary" value="Upload">-->
           <!-- </div> -->
 		  <div class="form-group">
-                <input type="text" name="adopt_pet_finder" placeholder="adopt pet finder" value="<?php echo !empty($user['adopt_pet_finder'])?$user['adopt_pet_finder']:''; ?>" required>
-                <?php echo form_error('adopt_pet_finder','<p class="help-block">','</p>'); ?>
+                <input type="text" name="adopt pet finder" placeholder="adopt pet finder" value="<?php echo !empty($user['AIN'])?$user['AIN']:''; ?>" required>
+                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
             </div> 
 
 			<div class="form-group">
@@ -74,7 +74,7 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>>Dog<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Dog<br>
 					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>cat<br>
 					
 					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>birds<br>
@@ -83,23 +83,23 @@ include_once "menuWithLogout.php";
 					 </label>
                 </div>  
 				 <div class="form-group">
-                <input type="text" name="Pet_breed" placeholder="Pet_breed" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
-                <?php echo form_error('Pet_breed','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Pet breed" placeholder="Pet breed" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
+                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
             </div> 
 
 			<div class="form-group">
-                <input type="text" name="age" placeholder="age" value="<?php echo !empty($user['age'])?$user['age']:''; ?>" required>
-                <?php echo form_error('age','<p class="help-block">','</p>'); ?>
+                <input type="text" name="age" placeholder="age" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
+                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
             </div> 
 
 			<div class="form-group">
-                <input type="text" name="featured_pets" placeholder="featured pets" value="<?php echo !empty($user['featured_pets'])?$user['featured_pets']:''; ?>" required>
-                <?php echo form_error('featured_pets','<p class="help-block">','</p>'); ?>
+                <input type="text" name="featured pets" placeholder="featured pets" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
+                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
             </div> 
 
 			<div class="form-group">
-                <input type="text" name="search_results" placeholder="search results" value="<?php echo !empty($user['search_results'])?$user['search_results']:''; ?>" required>
-                <?php echo form_error('search_results','<p class="help-block">','</p>'); ?>
+                <input type="text" name="search results" placeholder="search results" value="<?php echo !empty($user['Pet_breed'])?$user['Pet_breed']:''; ?>" required>
+                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
             </div> 
 
 			<div class="form-group">

@@ -45,8 +45,8 @@ include_once "menuWithLogout.php";
           <!-- </div> -->
 
 		  <div class="form-group">
-                <input type="text" name="Full_Name" placeholder="Full NAME" value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" required>
-                <?php echo form_error('Full_Name','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Full Name" placeholder="Full NAME" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			 <div class="form-group">
@@ -55,29 +55,29 @@ include_once "menuWithLogout.php";
             </div>
 
 			 <div class="form-group">
-                <input type="text" name="Contact_number" placeholder="CONTACT NUMBER" value="<?php echo !empty($user['Contact_number'])?$user['Contact_number']:''; ?>" required>
-                <?php echo form_error('Contact_number','<p class="help-block">','</p>'); ?>
+                <input type="text" name="Contact number" placeholder="CONTACT NUMBER" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="my_products" placeholder="my products" value="<?php echo !empty($user['my_products'])?$user['my_products']:''; ?>" required>
-                <?php echo form_error('my_products','<p class="help-block">','</p>'); ?>
+                <input type="text" name="my productsr" placeholder="my products" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="total" placeholder="TOTAL" value="<?php echo !empty($user['total'])?$user['total']:''; ?>" required>
-                <?php echo form_error('total','<p class="help-block">','</p>'); ?>
+                <input type="text" name="total" placeholder="TOTAL" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
-                <input type="text" name="billing_address" placeholder="BILLING ADDRESS" value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" required>
-                <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
+                <input type="text" name="billing address" placeholder="BILLING ADDRESS" value="<?php echo !empty($user['Name'])?$user['Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
                 <label>	Is shipping address same as billing address?</label>
                 <?php 
-                if(!empty($user['Shipping_address']) && $user['Shipping_address'] == 'no'){ 
+                if(!empty($user['Spayed_or_Neutered']) && $user['Spayed_or_Neutered'] == 'no'){ 
                     $fcheck = 'checked="checked"'; 
                     $mcheck = ''; 
                 }else{ 
@@ -87,11 +87,11 @@ include_once "menuWithLogout.php";
                 ?>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="Shipping_address" value="yes" <?php echo $mcheck; ?>>
+                        <input type="radio" name="Spayed_or_Neutered" value="yes" <?php echo $mcheck; ?>>
 						yes
                     </label>
                     <label>
-                        <input type="radio" name="Shipping_address" value="no" <?php echo $fcheck; ?>>
+                        <input type="radio" name="Spayed_or_Neutered" value="no" <?php echo $fcheck; ?>>
                         no
                     </label>
                 </div>

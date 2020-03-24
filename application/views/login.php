@@ -1,7 +1,7 @@
 
 
-<a class="btn btn-primary" href="<?php echo base_url('index.php/users/registration'); ?>" role="button">Register</a>
-<a class="btn btn-primary" href="<?php echo base_url('index.php/users/login'); ?>" role="button">Login</a>
+<a class="btn btn-primary" href="<?php echo base_url('users/registration'); ?>" role="button">Register</a>
+<a class="btn btn-primary" href="<?php echo base_url('users/login'); ?>" role="button">Login</a>
 <!--<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />-->
 						
 <!--<p><a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a></p>-->

@@ -45,8 +45,8 @@ include_once "menuWithLogout.php";
           <!-- </div> -->
 
 			<div class="form-group">
-                <input type="text" name="diet_chart" placeholder="diet chart" value="<?php echo !empty($user['diet_chart'])?$user['diet_chart']:''; ?>" required>
-                <?php echo form_error('diet_chart','<p class="help-block">','</p>'); ?>
+                <input type="text" name="diet chart" placeholder="diet chart" value="<?php echo !empty($user['Pet_Name'])?$user['Pet_Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 			<div class="form-group">
@@ -77,8 +77,8 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>>Puppies and kitten<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>Adult pets (7yrs old)<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>>	Puppies and kitten<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>	Adult pets (7yrs old)<br>
 					<input type="checkbox" id="checkItem" name="Special_Status" value="3"<?php echo $mcheck; ?>>senior pets(14yrs old)<br>
 					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>Other<br>
 
@@ -86,8 +86,8 @@ include_once "menuWithLogout.php";
                 </div>       
 				
 				<div class="form-group">
-                <input type="text" name="online_booking" placeholder="online booking" value="<?php echo !empty($user['online_booking'])?$user['online_booking']:''; ?>" required>
-                <?php echo form_error('online_booking','<p class="help-block">','</p>'); ?>
+                <input type="text" name="online booking" placeholder="online booking" value="<?php echo !empty($user['Pet_Name'])?$user['Pet_Name']:''; ?>" required>
+                <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
             </div>
 
 

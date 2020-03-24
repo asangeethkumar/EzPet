@@ -102,7 +102,7 @@ include_once "menuWithLogout.php";
 			<div class="form-group">
 				<label>Customer Gender: </label>
 				<?php
-				if(!empty($user['gender']) && $user['gender'] == 'Female'){
+				if(!empty($user['age']) && $user['age'] == 'Kitten'){
 					$fcheck = 'checked="checked"';
 					$mcheck = '';
 				}else{
@@ -112,11 +112,11 @@ include_once "menuWithLogout.php";
 				?>
 				<div class="radio">
 					<label>
-						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
+						<input type="radio" name="age" value="adult" <?php echo $mcheck; ?> required>
 						Male
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
+						<input type="radio" name="age" value="kitten" <?php echo $fcheck; ?> required>
 						Female
 					</label>
 				</div>

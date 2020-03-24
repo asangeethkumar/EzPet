@@ -2,8 +2,8 @@
 
 						<!--<a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a>
 						<a href="<?php echo base_url('index.php/users/login'); ?>">login</a>-->
-						<a class="btn btn-primary" href="<?php echo base_url('index.php/users/registration'); ?>" role="button">Register</a>
-						<a class="btn btn-primary" href="<?php echo base_url('index.php/users/login'); ?>" role="button">Login</a>
+						<a class="btn btn-primary" href="<?php echo base_url('users/registration'); ?>" role="button">Register</a>
+						<a class="btn btn-primary" href="<?php echo base_url('users/login'); ?>" role="button">Login</a>
 						
 						
 								
@@ -80,6 +80,6 @@
 				<input type="submit" name="signupSubmit" value="CREATE ACCOUNT">
 			</div>
 		</form>
-		<p>Already have an account? <a href="<?php echo base_url('index.php/users/login'); ?>">Login here</a></p>
+		<p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p>
 	</div>
 </div>

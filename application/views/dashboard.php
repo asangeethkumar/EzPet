@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+
 	<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 	<link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
@@ -67,44 +69,51 @@
 
 	
 </style>
+<script type="text/javascript">
+// Call carousel manually
+$('#myCarouselCustom').carousel();
+
+// Go to the previous item
+$("#prevBtn").click(function(){
+	$("#myCarouselCustom").carousel("prev");
+});
+// Go to the previous item
+$("#nextBtn").click(function(){
+	$("#myCarouselCustom").carousel("next");
+});
+</script>
 
 	
-<!--
-<div class="showpets">
 
-		    	  <td><button class="button nextimage" onclick="return myFunction()">&#10094;</button></td>
-
-	<?php  foreach ($data as $geth_index=>$geth) { ;
-  ?>
-
-
-<td><img id="<?php echo $geth_index?>" class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $geth->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-
-
-	<?php } ?> 
-  <td><button class="button nextimage" onclick="javascript: sav[i--]">&#10095;</button>
-
-</div>
--->
 </br></br></br></br></br>
 
 <div class="showpet">
-<?php
-    function hello() {
-  echo 'alert(message successfully sent)';  //not showing an alert box.
-    }
-    echo '<td><button class="button nextimage" onclick="hello()">&#10094;</button></td>';
-?>
-		    	  
-
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	        <div class="carousel-inner" >
+			
 	<?php  for ($i = 3; $i < 10 ;$i++) { 
   ?>
 
 <td><img id="<?php echo $i?>" class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[$i]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
 
 	<?php } 
-    echo '<td><button class="button nextimage" onclick="hello()">&#10094;</button></td>';
 	?>
+	
+	
+	
+
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+		    	  
+
+	
 
 </div>
-

@@ -22,31 +22,45 @@
 
 	<h2>PLAY GROUND</h2>
 	
-	<form action="" method="POST">
-  
+	<!-- Status message -->
+	<?php 
+		if(!empty($success_msg)){
+			echo '<p class="status-msg success">'.$success_msg.'</p>';
+		}elseif(!empty($error_msg)){
+			echo '<p class="status-msg error">'.$error_msg.'</p>';
+		}
+	?>
+	
 	
 <div class="form-group">
-				<input type="text" name="first_name"   placeholder="OWNER NAME" required>
+				<input type="text" name="first_name"   placeholder="OWNER NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
 				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" >
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="email"   placeholder="Email" required>
+				<input type="text" name="first_name"   placeholder="Email" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="pet_age"   placeholder="PET AGE" required>
+				<input type="text" name="first_name"   placeholder="PET AGE" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 					
 			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
+				<input type="text" name="first_name"   placeholder="PET NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed"  required>
+				<input type="text" name="first_name"   placeholder="PET Breed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 			<div class="form-group">
-				<input type="text" name="area"   placeholder="Play Ground area"  required>
+				<input type="text" name="first_name"   placeholder="Play Ground area" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 			</div>
 		
 		<!--	<h3>Payment</h3>
