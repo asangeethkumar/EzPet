@@ -1,85 +1,82 @@
-<!--<p><a href="<?php echo base_url('index.php/users/login'); ?>">Login here</a></p>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
-						<!--<a href="<?php echo base_url('index.php/users/registration'); ?>">Register</a>
-						<a href="<?php echo base_url('index.php/users/login'); ?>">login</a>-->
-						<a class="btn btn-primary" href="<?php echo base_url('users/registration'); ?>" role="button">Register</a>
-						<a class="btn btn-primary" href="<?php echo base_url('users/login'); ?>" role="button">Login</a>
-						
-						
-								
-							
+    <!-- Font Icon -->
+    <link rel="stylesheet"  href="<?php echo base_url('assets/fonts/material-icon/css/material-design-iconic-font.min.css'); ?>">
 
+    <link rel="stylesheet"  href="<?php echo base_url('assets/vendor/nouislider/nouislider.min.css'); ?>">
 
-<div class="container">
-<script src='https://www.google.com/recaptcha/api.js' async defer></script>
-	<h2>Create a New Account</h2>
-	
-	<!-- Status message -->
-	<?php 
-	
-		if(!empty($success_msg)){
-			echo '<p class="status-msg success">'.$success_msg.'</p>';
-		}elseif(!empty($error_msg)){
-			echo '<p class="status-msg error">'.$error_msg.'</p>';
-		}
-	?>
-	
-	
-	<!-- Registration form -->
-	<div class="regisFrm">
-		<form action="" method="post">
-			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
-				<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
-			</div>
-			<div class="form-group">
-				<input type="text" name="last_name"  placeholder="LAST NAME" value="<?php echo !empty($user['last_name'])?$user['last_name']:''; ?>" required>
-				<?php echo form_error('last_name','<p class="help-block">','</p>'); ?>
-			</div>
-			<div class="form-group">
-				<input type="email"name="email" placeholder="EMAIL"  pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" required>
-				<?php echo form_error('email','<p class="help-block">','</p>'); ?>
-			</div>
-			<div class="form-group">
-				<input type="password" name="password" placeholder="PASSWORD" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required>
-				<?php echo form_error('password','<p class="help-block">','</p>'); ?>
-			</div>
-			<div class="form-group">
-				<input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" required>
-				<?php echo form_error('conf_password','<p class="help-block">','</p>'); ?>
-			</div>
-			<div class="form-group">
-				<label>Gender: </label>
-				<?php
-				if(!empty($user['gender']) && $user['gender'] == 'Female'){
-					$fcheck = 'checked="checked"';
-					$mcheck = '';
-				}else{
-					$mcheck = 'checked="checked"';
-					$fcheck = '';
-				}
-				?>
-				<div class="radio">
-					<label>
-						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
-						Male
-					</label>
-					<label>
-						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
-						Female
-					</label>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
-				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
-			</div>
-			<div class="g-recaptcha" data-sitekey="6LeUYeIUAAAAAF_GwBgZFLeIYYWpuB3PUwBdbtq4"></div>
-			<div class="send-button">
-				<input type="submit" name="signupSubmit" value="CREATE ACCOUNT">
-			</div>
-		</form>
-		<p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p>
-	</div>
-</div>
+    <!-- Main css -->
+    <link rel="stylesheet"  href="<?php echo base_url('assets/css/register.css'); ?>">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="<?php echo base_url('assets/images/22.jpg'); ?>" alt="">
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p>get your loved Pets !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="last_name" id="last_name" />
+                                </div>
+                               
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phone_number" id="phone_number" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+
+                                   
+                                </div>
+                              
+                               
+                            </div>
+                        </div>
+                       
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script  src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>" ></script>
+    <script  src="<?php echo base_url('assets/vendor/nouislider/nouislider.min.js'); ?>"  ></script>
+    <script  src="<?php echo base_url('assets/vendor/wnumb/wNumb.js'); ?>"  ></script>
+    <script  src="<?php echo base_url('assets/vendor/jquery-validation/dist/jquery.validate.min.js'); ?>" ></script>
+    <script src="<?php echo base_url('assets/vendor/jquery-validation/dist/additional-methods.min.js'); ?>"  ></script>
+    <script  src="<?php echo base_url('assets/js/register.js'); ?>"  ></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

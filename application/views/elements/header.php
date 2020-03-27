@@ -11,5 +11,3 @@
 <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
-
-<h1> USER LOGIN/REGISTRATION </h1>

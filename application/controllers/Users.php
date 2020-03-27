@@ -42,7 +42,7 @@ class Users extends CI_Controller {
 			$this->load->view('account', $data2);
 			//$this->load->view('elements/footer');
         }else{
-            redirect('login');
+            //redirect('login');
         }
     }
 
