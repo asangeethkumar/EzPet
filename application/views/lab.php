@@ -10,62 +10,108 @@ include_once "menuWithLogout.php";
 <html lang="en">  
 <head>
 <title>DIAGONSTIC</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css" media="all">
-
-<!-- Stylesheet file -->
-<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icons/favicon.ico'); ?>"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/animate/animate.css'); ?>">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/main.css'); ?>">
+<!--===============================================================================================-->
 </head>
 <body>
-<div class="container">
-	<h1> DIAGONSTIC </h1>	
-	<!-- Registration form -->
-	<div class="regisFrm">
-		<form action="" method="post">
-			<div class="form-group ">
-				<label for="inputState"> TEST</label><br>
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				
+				<form class="login100-form validate-form"  action="" method="post" >
+						<h1 align="center" >DIAGONSTIC</h1>
+						<br>
+						<br>
 						
-						 <input type="checkbox" id="checkItem" name="check[]" value="1">HEMATOLOGY & COAGULATION<br>
-	<input type="checkbox" id="checkItem" name="check[]" value="2">BIOCHEMISTRY<br>
-	<input type="checkbox" id="checkItem" name="check[]" value="3">CLINICAL PATH & URINE BIOCHEMISTRY<br>
-		<input type="checkbox" id="checkItem" name="check[]" value="4">KIT BASED TEST<br>
-			<input type="checkbox" id="checkItem" name="check[]" value="5">SEROLOGY<br>
-				<input type="checkbox" id="checkItem" name="check[]" value="6">CYTOLOGY & HISTOPATHOLOGY<br>
-					<input type="checkbox" id="checkItem" name="check[]" value="7">MICROBIOLOGY<br>
-						<input type="checkbox" id="checkItem" name="check[]" value="8">HORMONE ANALYSIS<br>
-							<input type="checkbox" id="checkItem" name="check[]" value="9">SPECIALISED TEST<br>
-								<input type="checkbox" id="checkItem" name="check[]" value="10">PANELS<br>	
-								<input type="checkbox" id="checkItem" name="check[]" value="11">LIVE STOCK HERD HEALTH SCREENING TEST<br>	
-								<input type="checkbox" id="checkItem" name="check[]" value="12">LAB ANIMAL HEALTH MONITORING AND CLINICAL TRIAL TESTING<br>
-								<input type="checkbox" id="checkItem" name="check[]" value="13">EXPORT TESTING SERVICES (PET TRAVEL TO ABROAD)<br>
-			</div>
-			<div class="form-group">
-				<input type="text" name="dname"   placeholder="ENTER DOCTOR NAME" value="" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="first_name"   placeholder="ENTER YOUR  NAME" value="" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}"  title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER" value="">
-			</div>
-			<div class="form-group">
-				<input type="text" name="location"   placeholder="LOCATION" value="" required>
-			</div>
-			<div class="form-group ">
-			  <label for="inputState">PET</label>
-				<select name="pet" id="inputState" class="form-control" required >
-				<option>SELECT </option>
-					<option >DOG</option>
-					<option>CAT</option>
-					<option>FISH</option>
-					<option>BIRDS</option>
-				</select>
-			</div>
-			<br>
-		<div class="form-group">
-				<label>Gender: </label>
+						
+						
+						
+						
+						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
+								<span class="focus-input100"></span>
+								<label for="inputState"> TEST</label>
+								<select id="inputState"  class="input100" name="test">
+						   
+							<option>BIOCHEMISTRY</option>
+							<option>CLINICAL PATH & URINE BIOCHEMISTRY</option>
+							<option>KIT BASED TEST</option>
+							<option>SEROLOGY</option>
+							<option>CYTOLOGY & HISTOPATHOLOGY</option>
+							<option>MICROBIOLOGY</option>
+							<option>HORMONE ANALYSIS</option>
+							<option>SPECIALISED TEST</option>
+							<option>PANELS</option>
+							<option>LIVE STOCK HERD HEALTH SCREENING TEST</option>
+							<option>EXPORT TESTING SERVICES (PET TRAVEL TO ABROAD)</option>
+							<option>LAB ANIMAL HEALTH MONITORING AND CLINICAL TRIAL TESTING</option>
+						  </select>
+		</div>
+		
+		<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+								<label for="inputState"> </label>
+								<input type="text" name="dname"   class="input100"  placeholder="ENTER DOCTOR NAME" value="" >
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">	
+								</span>
+						</div>
+						
+						
+						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+								<label for="inputState"> </label>
+								<input type="text" name="name"   class="input100"  placeholder="ENTER YOUR NAME" value="" >
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">	
+								</span>
+						</div>
+						
+						
+						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+						
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</span>
+						</div>
+						
+						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+								<label for="inputState"> </label>
+								<input type="text" name="address"  class="input100" placeholder="YOUR LOCATION" value="" required>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									
+								</span>
+						</div>
+						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
+								<span class="focus-input100"></span>
+								<label for="inputState">PET SPECIES</label>
+								<select name="pet" class='input100' id="inputState"  required >
+									<option>SELECT</option>
+									<option >DOG</option>
+									<option>CAT</option>
+									<option>FISH</option>
+									<option>BIRDS</option>
+								</select>
+						</div>
+							<div class="input-radio100">
+				<label>Pet Gender: </label>
 				<?php
 				if(!empty($user['gender']) && $user['gender'] == 'Female'){
 					$fcheck = 'checked="checked"';
@@ -75,51 +121,86 @@ include_once "menuWithLogout.php";
 					$fcheck = '';
 				}
 				?>
-				<div class="radio">
+				<div class="input-radio100">
 					<label>
-						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> required>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> >
 						Male
 					</label>
 					<label>
-						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?> required>
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
 						Female
 					</label>
 				</div>
 			</div>
-
-				
-				
-				
+							<br>
+							
+							
+						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+								<label for="inputState"> </label>
+								<input type="text" name="petage"  class="input100" placeholder="PETAGE" value="" required>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									
+								</span>
+						</div>
+							
+							
+							<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
+						<span class="focus-input100"></span>
+						<label for="inputState" >PAYMENT TYPE</label>
+						<select  name="payment" id="inputState" class='input100' required >
+									<option>SELECT </option>
+									<option >CREDIT/DEBIT CARD </option>
+									<option>NET BANKING</option>
+									<option>CASH ON DELIVERY</option>
+									<option>GOOGLE PAY</option>
+									<option>PHONE PAY</option>
+									<option>PAY PAL</option>
+					  </select>
+				</div>
+						
+						
+						
+						
+						
+		
+		
+						
 					
-		
-					<div class="form-group">
-						<input type="text" name="age"   placeholder="PET AGE" value="" required>
-					</div>
+						
+						
+						
+					
 
-				
-		
-
-
-		<div class="form-group">
-			  <label for="inputState" > PAYMENT TYPE</label>
-			  <select name="payment" id="inputState" class="form-control" required >
-			  <option>SELECT </option>
-				<option >CREDIT/DEBIT CARD </option>
-				<option>NET BANKING</option>
-				<option>CASH ON DELIVERY</option>
-				<option>GOOGLE PAY</option>
-				<option>PHONE PAY</option>
-				<option>PAY PAL</option>
-			  </select>
-		</div>
-
+				<div class="container-login100-form-btn">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
+							submit
+						</button>
+				</div>
 			
 			
-			<div class="send-button">
-				<input type="submit" name="signupSubmit" value="SUBMIT">
-			</div>
 		</form>
 	</div>
 </div>
+
+
+
+<!--===============================================================================================-->	
+	<script src="<?php echo base_url('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>" ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/bootstrap/js/popper.js'); ?>"  ></script>
+	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/select2/select2.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"  ></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/js/main.js'); ?>"  ></script>
+
 </body>
 </html>

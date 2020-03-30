@@ -92,11 +92,10 @@ class Users extends CI_Controller {
         }
 		
 		// Load view
-		$this->load->view('elements/header', $data);
+		//$this->load->view('elements/header', $data);
 		$this->load->view('login', $data);
-		$this->load->view('elements/footer');
+	//	$this->load->view('elements/footer');
     }
-
     public function registration(){
         $data = $userData = array();
 		
@@ -132,9 +131,9 @@ class Users extends CI_Controller {
         $data['user'] = $userData;
 		
 		// Load view
-		$this->load->view('elements/header', $data);
+		//$this->load->view('elements/header', $data);
 		$this->load->view('registration', $data);
-		$this->load->view('elements/footer');
+		//$this->load->view('elements/footer');
     }
     
     public function logout(){
@@ -164,8 +163,8 @@ class Users extends CI_Controller {
 					   'payment' => $this->input->post('payment')
 			   );
 			
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+				//var_dump($userData);
 				
 				$this->db->insert('food',$userData);
 		
@@ -202,8 +201,8 @@ class Users extends CI_Controller {
 					   'payment' => $this->input->post('payment')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+				//var_dump($userData);
 				$this->db->insert('otc',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -225,8 +224,8 @@ class Users extends CI_Controller {
 					   'payment' => $this->input->post('payment')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+				//var_dump($userData);
 				$this->db->insert('rx',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -251,8 +250,8 @@ class Users extends CI_Controller {
 					   'payment' => $this->input->post('payment')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+				//var_dump($userData);
 				$this->db->insert('treat',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -276,8 +275,8 @@ class Users extends CI_Controller {
 					   'payment' => $this->input->post('payment')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+			//	var_dump($userData);
 				$this->db->insert('dental',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -332,11 +331,12 @@ public function mypres()
 				  'category' => $this->input->post('category')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+				//var_dump($userData);
 				$this->db->insert('getc',$userData);
+			
 		
-				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+				echo "<h3 style='color:red'>Your data submitted successfully</h3>";
 		  }
 	
         $this->load->view('getc'); 
@@ -387,6 +387,32 @@ public function mypres()
 	
 	public function insurance()  
     {  
+		
+		 $data = $userData = array();
+		  if($this->input->post('signupSubmit')){
+			   $userData = array( 'first_name' => $this->input->post('first_name'),
+			   'email' => strip_tags($this->input->post('email')),
+			    'phone' => $this->input->post('phone'),
+				 'age' => $this->input->post('age'),
+				  'address' => $this->input->post('address'),
+				  'product' => $this->input->post('product'),
+				   'range' => $this->input->post('range'),
+				    'pet' => $this->input->post('pet'),
+					 'brand' => $this->input->post('brand'),
+					  'delivery' => $this->input->post('delivery'),
+					   'payment' => $this->input->post('payment')
+			   );
+			
+				print  $userData;
+				var_dump($userData);
+				
+				$this->db->insert('food',$userData);
+		
+		echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		  }
+	
+	
+		
         $this->load->view('insurance'); 
 		
     }
@@ -404,8 +430,8 @@ public function mypres()
 					   'payment' => $this->input->post('payment')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+				//var_dump($userData);
 				$this->db->insert('vitamin',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -455,8 +481,8 @@ public function mypres()
 		'location'=>$this->input->post('location'),
 		'payment'=>$this->input->post('payment')
 		);
-		print  $userData;
-				var_dump($userData);
+		//print  $userData;
+			//	var_dump($userData);
 				$this->db->insert('dconsult',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
