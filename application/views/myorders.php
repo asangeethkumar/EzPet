@@ -6,75 +6,81 @@ include_once "menuWithLogout.php";
 <html lang="en">  
 <head>
 <title>MY ORDERS</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css" media="all">
-
-<!-- Stylesheet file -->
-<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icons/favicon.ico'); ?>"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/animate/animate.css'); ?>">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
+<!--===============================================================================================-->
 </head>
 <body>
 
-<h1>MY ORDERS</h1>
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				
+				<form class="login100-form validate-form"  action="" method="post" >
+						<h1 align="center" >My Orders </h1>
+						<br>
+						<br>
 
 
-<div class="container">
-    <h2>Fill the Details</h2>
-	
-    <!-- Status message -->
-    <?php  
-        if(!empty($success_msg)){ 
-            echo '<p class="status-msg success">'.$success_msg.'</p>'; 
-        }elseif(!empty($error_msg)){ 
-            echo '<p class="status-msg error">'.$error_msg.'</p>'; 
-        } 
-    ?>
-	
-    <!-- Registration form -->
-    <div class="regisFrm">
-        <form action="" method="post">
-		 
-			<!-- <div class="form-group">
-                 <label>Image</label>
-                   <!--input type="file" class="form-control" id="userfile" name="userfile"-->
-          <!--         <input type="file" class="form-control" name="userfile"  value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" required>
-                <?php echo form_error('userfile','<p class="help-block">','</p>'); ?>
-                 
-             <!--  <input type="submit" class="btn btn-primary" value="Upload">-->
-          <!-- </div> -->
-
-		  <div class="form-group">
-                <input type="text" name="Full_Name" placeholder="Full NAME" value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" required>
+		  <div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="Full_Name" placeholder="Full NAME"  class="input100"value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" >
                 <?php echo form_error('Full_Name','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</span>
             </div>
 
-			 <div class="form-group">
-                <input type="email" name="email" placeholder="EMAIL" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" required>
-                <?php echo form_error('email','<p class="help-block">','</p>'); ?>
-            </div>
+			 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
+								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
+						</div>
+		
 
-			 <div class="form-group">
-                <input type="text" name="Contact_number" placeholder="CONTACT NUMBER" value="<?php echo !empty($user['Contact_number'])?$user['Contact_number']:''; ?>" required>
+			 <div class="wrap-input100 validate-input" data-validate = "valid phone is required">
+                <input type="text" name="Contact_number" placeholder="CONTACT NUMBER"  class="input100"value="<?php echo !empty($user['Contact_number'])?$user['Contact_number']:''; ?>" >
                 <?php echo form_error('Contact_number','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</span>
             </div>
 
-			<div class="form-group">
-                <input type="text" name="my_products" placeholder="my products" value="<?php echo !empty($user['my_products'])?$user['my_products']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="my_products" placeholder="my products"  class="input100"value="<?php echo !empty($user['my_products'])?$user['my_products']:''; ?>" >
                 <?php echo form_error('my_products','<p class="help-block">','</p>'); ?>
             </div>
 
-			<div class="form-group">
-                <input type="text" name="total" placeholder="TOTAL" value="<?php echo !empty($user['total'])?$user['total']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid number is required">
+                <input type="text" name="total" placeholder="TOTAL"  class="input100"value="<?php echo !empty($user['total'])?$user['total']:''; ?>" >
                 <?php echo form_error('total','<p class="help-block">','</p>'); ?>
             </div>
 
-			<div class="form-group">
-                <input type="text" name="billing_address" placeholder="BILLING ADDRESS" value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid address is required">
+                <input type="text" name="billing_address" placeholder="BILLING ADDRESS"  class="input100"value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" >
                 <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
             </div>
 
-			<div class="form-group">
+			<div class="input-radio100">
                 <label>	Is shipping address same as billing address?</label>
                 <?php 
                 if(!empty($user['Shipping_address']) && $user['Shipping_address'] == 'no'){ 
@@ -85,7 +91,7 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-                <div class="radio">
+                <div class="input-radio100">
                     <label>
                         <input type="radio" name="Shipping_address" value="yes" <?php echo $mcheck; ?>>
 						yes
@@ -97,12 +103,30 @@ include_once "menuWithLogout.php";
                 </div>
             </div>
 
-			  <div class="send-button">
-                <input type="submit" name="signupSubmit" value="SUBMIT">
-            </div>
+			 <div class="container-login100-form-btn">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
+							submit
+						</button>
+				</div>
         </form>
       <!--  <p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p> -->
     </div>
 </div>
+<!--===============================================================================================-->	
+	<script src="<?php echo base_url('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>" ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/bootstrap/js/popper.js'); ?>"  ></script>
+	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/select2/select2.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"  ></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/js/main.js'); ?>"  ></script>
 </body>
 </html>

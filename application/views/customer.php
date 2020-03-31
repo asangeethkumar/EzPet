@@ -5,70 +5,110 @@ include_once "menuWithLogout.php";
 <html lang="en">  
 <head>
 <title>CUSTODIAN FORM</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css" media="all">
-
-<!-- Stylesheet file -->
-<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icons/favicon.ico'); ?>"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/animate/animate.css'); ?>">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
+<!--===============================================================================================-->
 </head>
 <body>
-
-<h1>CUSTODIAN FORM</h1>
-
-<div class="container">
-    <h2>Fill The Details</h2>
-	
-    <!-- Status message -->
-    <?php  
-        if(!empty($success_msg)){ 
-            echo '<p class="status-msg success">'.$success_msg.'</p>'; 
-        }elseif(!empty($error_msg)){ 
-            echo '<p class="status-msg error">'.$error_msg.'</p>'; 
-        } 
-    ?>
-	
-    <!-- Registration form -->
-    <div class="regisFrm">
-        <form action="" method="post">
-            <div class="form-group">
-                <input type="text" name="first_name" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" required>
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				
+				<form class="login100-form validate-form"  action="" method="post" >
+						<h1 align="center" >CUSTODIAN FORM </h1>
+						<br>
+						<br
+	<form class="login100-form validate-form"  action="" method="post" >
+            <div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="first_name" placeholder="FIRST NAME" class="input100"value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
                 <?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</span>
             </div>
-			<div class="form-group">
-                <input type="text" name="middle_name" placeholder="MIDDLE NAME" value="<?php echo !empty($user['middle_name'])?$user['middle_name']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="middle_name" placeholder="MIDDLE NAME"class="input100" value="<?php echo !empty($user['middle_name'])?$user['middle_name']:''; ?>" >
                 <?php echo form_error('middle_name','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</span>
             </div>
-            <div class="form-group">
-                <input type="text" name="last_name" placeholder="LAST NAME" value="<?php echo !empty($user['last_name'])?$user['last_name']:''; ?>" required>
+            <div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="last_name" placeholder="LAST NAME" class="input100"value="<?php echo !empty($user['last_name'])?$user['last_name']:''; ?>" >
                 <?php echo form_error('last_name','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</span>
             </div>
-			<div class="form-group">
-                <input type="date" name="DOB" placeholder="DOB" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid date is required">
+			<label>DOB </label>
+                <input type="date" name="DOB" placeholder="DOB" class="input100"value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" >
                 <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-DOB" aria-hidden="true"></i>
+								</span>
             </div>
-			<div class="form-group">
-                <input type="text" name="address" placeholder="ADDRESS" value="<?php echo !empty($user['address'])?$user['address']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid address is required">
+                <input type="text" name="address" placeholder="ADDRESS" class="input100"value="<?php echo !empty($user['address'])?$user['address']:''; ?>" >
                 <?php echo form_error('address','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-address" aria-hidden="true"></i>
+								</span>
             </div>
-			<div class="form-group">
-                <input type="text" name="billing_address" placeholder="BILLING ADDRESS" value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" required>
+			<div class="wrap-input100 validate-input" data-validate = "valid billing address is required">
+                <input type="text" name="billing_address" placeholder="BILLING ADDRESS" class="input100"value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" >
                 <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-address" aria-hidden="true"></i>
+								</span>
             </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="EMAIL" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" required>
+           <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
+                <input type="email" name="email" placeholder="EMAIL" class="input100"value="<?php echo !empty($user['email'])?$user['email']:''; ?>">
                 <?php echo form_error('email','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
             </div>
-            <div class="form-group">
-                <input type="password" name="password" placeholder="PASSWORD" required>
+           <div class="wrap-input100 validate-input" data-validate = "Password is required : As@!@">
+                <input type="password" name="password" placeholder="PASSWORD" class="input100"> 
                 <?php echo form_error('password','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-lock" aria-hidden="true"></i>
+								</span>
             </div>
-            <div class="form-group">
-                <input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" required>
+           <div class="wrap-input100 validate-input" data-validate = "Password is required : As@!@">
+                <input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" class="input100">
                 <?php echo form_error('conf_password','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-lock" aria-hidden="true"></i>
+								</span>
             </div>
-            <div class="form-group">
+            <div class="input-radio100">
                 <label>Gender: </label>
                 <?php 
                 if(!empty($user['gender']) && $user['gender'] == 'Female'){ 
@@ -79,7 +119,7 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-                <div class="radio">
+                <div class="input-radio100">
                     <label>
                         <input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
 						Male
@@ -90,16 +130,38 @@ include_once "menuWithLogout.php";
                     </label>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="text" name="phone" placeholder="PHONE NUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
-                <?php echo form_error('phone','<p class="help-block">','</p>'); ?>
-            </div>
-            <div class="send-button">
-                <input type="submit" name="signupSubmit" value="SUBMIT">
-            </div>
+            <div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+						
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</span>
+						</div>
+           <div class="container-login100-form-btn">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
+							submit
+						</button>
+				</div>
         </form>
-        <p> <a href=""></a></p>
     </div>
-</div>
+  </div>
+<!--===============================================================================================-->	
+	<script src="<?php echo base_url('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>" ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/bootstrap/js/popper.js'); ?>"  ></script>
+	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/select2/select2.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"  ></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/js/main.js'); ?>"  ></script>
 </body>
 </html>
