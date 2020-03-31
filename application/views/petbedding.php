@@ -1,41 +1,86 @@
+
 <!DOCTYPE html>
 <?php
 include_once "menuWithLogout.php";
-?><br><br>
+?>
+<br>
+<br>
+<br>
+<br>
 <html lang="en">  
 <head>
-<title>PETBEDDING</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css" media="all">
-
-<!-- Stylesheet file -->
-<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+<title>pet food</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icons/favicon.ico'); ?>"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/animate/animate.css'); ?>">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
+<!--===============================================================================================-->
 </head>
 <body>
 
-<h1>  </h1>	
-<div class="container">
+<div class="limiter">
 
-	<h2>PETBEDDING</h2>
-	
-	<form action="" method="POST">
-	
+		<div class="container-login100">
+			<div class="wrap-login100">
 				
-			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed" required>
-			</div>
-		
-				<div class="form-group">
-				<input type="text" name="bed_size"   placeholder="Bed Size" required>
-			</div>
-					<div class="form-group">
-				<input type="text" name="color"   placeholder="color" required>
-			</div>
+
+
+						<form class="login100-form validate-form"  action="" method="post" >
+						<h1 align="center" >PET BEDDING </h1>
+						<br>
+						<br>
+				
+								<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>"  >
+								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</span>
+								</div>
+
+
+
+								<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+						
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</span>
+								</div>
+				
+				<div class="wrap-input100 validate-input" data-validate = "valid bed size is required">
+								<input type="text" name="bed_size"  class="input100" placeholder="BED SIZE" value="<?php echo !empty($user['bed_size'])?$user['bed_size']:''; ?>"  >
+								<?php echo form_error('bed_size','<p class="help-block">','</p>'); ?>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									
+								</span>
+								</div>
+									<div class="wrap-input100 validate-input" data-validate = "valid color is required">
+								<input type="text" name="color"  class="input100" placeholder="COLOR" value="<?php echo !empty($user['color'])?$user['color']:''; ?>"  >
+								<?php echo form_error('color','<p class="help-block">','</p>'); ?>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									
+								</span>
+								</div>
+				
 				<!--h3>Payment</h3>
 			<label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
@@ -54,12 +99,34 @@ include_once "menuWithLogout.php";
               </div>
           </div-->
 
-		
-			<div class="send-button">
-				<input type="submit" name="signupSubmit" value="SUBMIT">
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
+							submit
+						</button>
 			</div>
 		</form>
 	</div>
 </div>
+
+
+<!--===============================================================================================-->	
+	<script src="<?php echo base_url('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>" ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/bootstrap/js/popper.js'); ?>"  ></script>
+	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/select2/select2.min.js'); ?>"  ></script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"  ></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script  src="<?php echo base_url('assets/js/main.js'); ?>"  ></script>
+
+
+
 </body>
 </html>
