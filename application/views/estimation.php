@@ -5,69 +5,54 @@ include_once "menuWithLogout.php";
 <html lang="en">  
 <head>
 <title>COST ESTIMATION</title>
-<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icons/favicon.ico'); ?>"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/animate/animate.css'); ?>">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
-<!--===============================================================================================-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css" media="all">
+
+<!-- Stylesheet file -->
+<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
-<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				
-				<form class="login100-form validate-form"  action="" method="post" >
-						<h1 align="center" >COST ESTIMATION </h1>
-						<br>
-						<br>
 
-
+<h1>COST ESTIMATION</h1>
  
- 
+ <div class="container">
+    <h2>Fill the Details</h2>
+	
+    <!-- Status message -->
+    <?php  
+        if(!empty($success_msg)){ 
+            echo '<p class="status-msg success">'.$success_msg.'</p>'; 
+        }elseif(!empty($error_msg)){ 
+            echo '<p class="status-msg error">'.$error_msg.'</p>'; 
+        } 
+    ?>
+	
+    <!-- Registration form -->
+    <div class="regisFrm">
+        <form action="" method="post">
+		 
+			<!-- <div class="form-group">
+                 <label>Image</label>
+                   <!--input type="file" class="form-control" id="userfile" name="userfile"-->
+          <!--         <input type="file" class="form-control" name="userfile"  value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" required>
+                <?php echo form_error('userfile','<p class="help-block">','</p>'); ?>
+                 
+             <!--  <input type="submit" class="btn btn-primary" value="Upload">-->
+          <!-- </div> -->
 
-		   <div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
-								<span class="focus-input100"></span>
-								<label for="inputState">Budget</label>
-									<select name="range" id="inputState" class='input100'>
-										<option>SELECT</option>
-										<option >0-500</option>
-										<option>500-1000</option>
-										<option>1000-1500</option>
-										<option>1500-2000</option>
-								  </select>
-						</div>
+		   <div class="form-group">
+                <input type="text" name="budget" placeholder="budget" value="<?php echo !empty($user['budget'])?$user['budget']:''; ?>" required>
+                <?php echo form_error('budget','<p class="help-block">','</p>'); ?>
+            </div>
 
+			<div class="form-group">
+                <input type="text" name="range" placeholder="range" value="<?php echo !empty($user['range'])?$user['range']:''; ?>" required>
+                <?php echo form_error('range','<p class="help-block">','</p>'); ?>
+            </div>
 
-						 <div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
-								<span class="focus-input100"></span>
-								<label for="inputState">Price Range</label>
-									<select name="range" id="inputState" class='input100'>
-										<option>SELECT</option>
-										<option >0-500</option>
-										<option>500-1000</option>
-										<option>1000-1500</option>
-										<option>1500-2000</option>
-										<option>2000-5000</option>
-										<option>5000-10000</option>
-								  </select>
-						</div>
-
-
-			
-			<div class="input-checkbox100">
+			<div class="form-group">
                 <label>  Pet selection</label><br>
 				 <?php 
                 if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Dog'){ 
@@ -103,7 +88,7 @@ include_once "menuWithLogout.php";
 
 					 </label>
                 </div>  
-				 <div class="input-radio100">
+				 <div class="form-group">
                 <label>availability </label>
                 <?php 
                 if(!empty($user['availability']) && $user['availability'] == 'no'){ 
@@ -114,7 +99,7 @@ include_once "menuWithLogout.php";
                     $fcheck = ''; 
                 } 
                 ?>
-                <div class="input-radio100">
+                <div class="radio">
                     <label>
                         <input type="radio" name="availability" value="yes" <?php echo $mcheck; ?>>
 						yes
@@ -125,31 +110,12 @@ include_once "menuWithLogout.php";
                     </label>
                 </div>
             </div>
-			<div class="container-login100-form-btn">
-						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
-							submit
-						</button>
-				</div>
+			 <div class="send-button">
+                <input type="submit" name="signupSubmit" value="SUBMIT">
+            </div>
         </form>
       <!--  <p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p> -->
     </div>
 </div>
-<!--===============================================================================================-->	
-	<script src="<?php echo base_url('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>" ></script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/vendor/bootstrap/js/popper.js'); ?>"  ></script>
-	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"  ></script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/vendor/select2/select2.min.js'); ?>"  ></script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"  ></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/js/main.js'); ?>"  ></script>
-
 </body>
 </html>

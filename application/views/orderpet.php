@@ -6,38 +6,44 @@ include_once "menuWithLogout.php";
 <html lang="en">  
 <head>
 <title>Initial Order for New Pet</title>
-<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="<?php echo base_url('assets/images/icons/favicon.ico'); ?>"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/animate/animate.css'); ?>">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
-<!--===============================================================================================-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" 	type="text/css" media="all">
+
+<!-- Stylesheet file -->
+<link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
-<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				
-				<form class="login100-form validate-form"  action="" method="post" >
-						<h1 align="center" >Initial Order for New Pet</h1>
-						<br>
-						<br>
+
+<h1>Initial Order for New Pet</h1>
 
 
-
-		  <div class="input-checkbox100">
+<div class="container">
+    <h2>Fill the Details</h2>
+	
+    <!-- Status message -->
+    <?php  
+        if(!empty($success_msg)){ 
+            echo '<p class="status-msg success">'.$success_msg.'</p>'; 
+        }elseif(!empty($error_msg)){ 
+            echo '<p class="status-msg error">'.$error_msg.'</p>'; 
+        } 
+    ?>
+	
+    <!-- Registration form -->
+    <div class="regisFrm">
+        <form action="" method="post">
+		 
+			<!-- <div class="form-group">
+                 <label>Image</label>
+                   <!--input type="file" class="form-control" id="userfile" name="userfile"-->
+          <!--         <input type="file" class="form-control" name="userfile"  value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" required>
+                <?php echo form_error('userfile','<p class="help-block">','</p>'); ?>
+                 
+             <!--  <input type="submit" class="btn btn-primary" value="Upload">-->
+          <!-- </div> -->
+		  <div class="form-group">
                 <label>  Pet type</label><br>
 				 <?php 
                 if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Dog'){ 
@@ -73,62 +79,41 @@ include_once "menuWithLogout.php";
 
 					 </label>
                 </div>  
-				 <div class="wrap-input100 validate-input" data-validate = "valid image is required">
-                <input type="text" name="images" placeholder="images" class="input100"value="<?php echo !empty($user['images'])?$user['images']:''; ?>" >
+				 <div class="form-group">
+                <input type="text" name="images" placeholder="images" value="<?php echo !empty($user['images'])?$user['images']:''; ?>" required>
                 <?php echo form_error('images','<p class="help-block">','</p>'); ?>
             </div>
-
-
-				<div class="wrap-input100 validate-input" data-validate = "valid file is required">
+				<div class="form-group">
                  <label>Images of pet</label>
                    <!--input type="file" class="form-control" id="userfile" name="userfile"-->
-                   <input type="file" class="form-control" name="userfile"  class="input100"value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" >
+                   <input type="file" class="form-control" name="userfile"  value="<?php echo !empty($user['userfile'])?$user['userfile']:''; ?>" required>
                 <?php echo form_error('userfile','<p class="help-block">','</p>'); ?>
                  
              <input type="submit" class="btn btn-primary" value="Upload">
            </div>
 
-		   <div class="wrap-input100 validate-input" data-validate = "valid number is required">
-                <input type="text" name="Cost" placeholder="Cost" class="input100"value="<?php echo !empty($user['Cost'])?$user['Cost']:''; ?>" >
+		   <div class="form-group">
+                <input type="text" name="Cost" placeholder="Cost" value="<?php echo !empty($user['Cost'])?$user['Cost']:''; ?>" required>
                 <?php echo form_error('Cost','<p class="help-block">','</p>'); ?>
             </div>
 
-			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Adopton_pets" placeholder="Adoption pets" class="input100"value="<?php echo !empty($user['Adopton_pets'])?$user['Adopton_pets']:''; ?>" >
+			 <div class="form-group">
+                <input type="text" name="Adopton_pets" placeholder="Adoption pets" value="<?php echo !empty($user['Adopton_pets'])?$user['Adopton_pets']:''; ?>" required>
                 <?php echo form_error('Adopton_pets','<p class="help-block">','</p>'); ?>
             </div>
 
-			 <div class="wrap-input100 validate-input" data-validate = "valid status is required">
-                <input type="text" name="Status" placeholder="Status" class="input100"value="<?php echo !empty($user['Status'])?$user['Status']:''; ?>" >
+			 <div class="form-group">
+                <input type="text" name="Status" placeholder="Status" value="<?php echo !empty($user['Status'])?$user['Status']:''; ?>" required>
                 <?php echo form_error('Status','<p class="help-block">','</p>'); ?>
             </div>
 
 
-			  <div class="container-login100-form-btn">
-						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
-							submit
-						</button>
-				</div>
+			  <div class="send-button">
+                <input type="submit" name="signupSubmit" value="SUBMIT">
+            </div>
         </form>
       <!--  <p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p> -->
     </div>
 </div>
-<!--===============================================================================================-->	
-	<script src="<?php echo base_url('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>" ></script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/vendor/bootstrap/js/popper.js'); ?>"  ></script>
-	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"  ></script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/vendor/select2/select2.min.js'); ?>"  ></script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/vendor/tilt/tilt.jquery.min.js'); ?>"  ></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script  src="<?php echo base_url('assets/js/main.js'); ?>"  ></script>
-
 </body>
 </html>
