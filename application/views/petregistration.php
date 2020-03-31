@@ -311,7 +311,10 @@ include_once "menuWithLogout.php";
 								</span>
             </div>
 
-			
+			<div class="wrap-input100 validate-input" data-validate ="Pet Image is required"> 
+			    <input class="input100" type="file" name="image" />
+
+			</div>
 			
 				<div class="container-login100-form-btn">
 						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">

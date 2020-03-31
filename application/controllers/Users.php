@@ -1227,7 +1227,41 @@ public function mypres()
         // If registration request is submitted 
         if($this->input->post('signupSubmit')) {
 			 $data = $userData = array(); 
-        
+             $image1  = strip_tags($this->input->post('image')) ;
+			     $allowed_ext= array('jpg','jpeg','png','gif');
+				     $file_ext = strtolower( end(explode('.',$image1)));
+  $file_name =$_FILES['image'];
+    $file_ext = strtolower( end(explode('.',$file_name)));
+
+
+    $file_size=$_FILES['image']['size'];
+    $file_tmp= $_FILES['image']['tmp_name'];
+
+    $file_size=$_FILES['image']['size'];
+    $file_tmp= $_FILES['image']['tmp_name'];
+ if(in_array($file_ext,$allowed_ext) === false)
+    {
+        $errors[]='Extension not allowed';
+    }
+
+    if($file_size > 2097152)
+    {
+        $errors[]= 'File size must be under 2mb';
+
+    }
+
+			  $file_ext = strtolower( end(explode('.',$file_name)));
+
+
+    $file_size=$_FILES['image']['size'];
+    $file_tmp= $_FILES['image']['tmp_name'];
+    echo $file_tmp;echo "<br>";
+
+    $type = pathinfo($file_tmp, PATHINFO_EXTENSION);
+    $data = file_get_contents($file_tmp);
+    $base64 = 'data:image/' . $type . ';base64,' . md5($data);
+    echo "Base64 is ".$base64;
+
 			 $userData = array(
 									 'AIN' => strip_tags($this->input->post('AIN')), 
                 'Pet_Name' => strip_tags($this->input->post('Pet_Name')),
@@ -1251,14 +1285,26 @@ public function mypres()
 					'Spayed_or_Neutered' => $this->input->post('Spayed_or_Neutered'), 
 					'Special_Status' => $this->input->post('Special_Status'), 
 				
-                'phone' => strip_tags($this->input->post('phone')) ,			
+                'phone' => strip_tags($this->input->post('phone')) ,
+                'image' => strip_tags($this->input->post('image')) ,			
+				
                
                   );
 		
-			print  $userData;
+			print_r($userData);
 				var_dump($userData);
 				
 				$this->db->insert('petinfo',$userData);
+				  if(empty($errors))
+    {
+		$filenamekey = md5(uniqid($_FILES["image"]["name"], true)); 
+
+       if( move_uploaded_file($file_tmp, 'C:/xampp/htdocs/EzPet/assets/images/'.$filenamekey));
+       {
+        echo 'File uploaded';
+       }
+    }
+				
 	}
 		
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
