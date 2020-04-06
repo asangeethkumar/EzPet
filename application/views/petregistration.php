@@ -299,6 +299,42 @@ include_once "menuWithLogout.php";
 					 </label>
                 </div>            
 
+			<div class="input-check100">
+                <label>Special Status </label><br>
+				 <?php 
+                if(!empty($user['Special_Status']) && $user['Special_Status'] == ' Service Dog'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+
+					if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Emotional Support Animal'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }
+
+
+				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'K-9'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }
+					
+				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Other'){ 
+                    $fcheck = 'checked="checked"'; 
+                    $mcheck = ''; 
+                }
+
+                }else{ 
+                    $mcheck = 'checked="checked"'; 
+                    $fcheck = ''; 
+                } 
+                ?>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Service Dog<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>Emotional Support Animal<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="3"<?php echo $mcheck; ?>>K-9<br>
+					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>Other<br>
+
+					 </label>
+                </div>            
+
 			
 
 

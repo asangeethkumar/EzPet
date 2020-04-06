@@ -93,6 +93,11 @@ class api_getc extends REST_Controller
 		
 
 
+
+
+
+
+
 	public function food_post()
 
 	{
@@ -430,6 +435,214 @@ class api_getc extends REST_Controller
 				}
 		
     } 
+	
+	
+	 public function ultra_post()  {
+      
+			$this->load->view('ultra'); 
+		$userData = array('check'=>$this->input->post('check'),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		
+				$insert=$this->db->insert('ultra',$userData);
+		
+		
+	if($insert)
+				{
+					// Set the response and exit
+					$this->response([
+						'status' => TRUE,
+						'message' => 'The user has been added successfully.'
+					], REST_Controller::HTTP_OK);
+				}
+				else
+				{
+					// Set the response and exit
+					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+				}
+	
+	
+	
+        
+		
+    }
+	
+	 public function genetic_post()  {
+      
+			$this->load->view('genetic'); 
+		
+		$userData = array('check'=>$this->input->post('check'),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		 'petage' => $this->input->post('petage'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		
+				$insert=$this->db->insert('genetic',$userData);
+		
+		
+	if($insert)
+				{
+					// Set the response and exit
+					$this->response([
+						'status' => TRUE,
+						'message' => 'The user has been added successfully.'
+					], REST_Controller::HTTP_OK);
+				}
+				else
+				{
+					// Set the response and exit
+					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+				}
+	
+	
+	
+        
+		
+    }
+	 public function lab_post()  {
+      
+			$this->load->view('lab'); 
+		
+		 $userData = array('check'=>$this->input->post('check'),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		 'petage' => $this->input->post('petage'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		
+				$insert=$this->db->insert('lab',$userData);
+		
+		
+	if($insert)
+				{
+					// Set the response and exit
+					$this->response([
+						'status' => TRUE,
+						'message' => 'The user has been added successfully.'
+					], REST_Controller::HTTP_OK);
+				}
+				else
+				{
+					// Set the response and exit
+					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+				}
+	
+	
+	
+        
+		
+    }
+	
+	public function insurance_post()  
+    {  
+		 $this->load->view('insurance'); 
+		
+			   $userData = array( 'amount' => $this->input->post('amount'),
+			    'pet' => $this->input->post('pet'),
+				'gender' => $this->input->post('gender'),
+				'cname' => $this->input->post('cname'),
+				'cgender' => $this->input->post('cgender'),
+			   'email' => strip_tags($this->input->post('email')),
+			    'phone' => $this->input->post('phone'),
+				 'address' => $this->input->post('address'),
+					 'identification' => $this->input->post('identification'),
+					  'dob' => $this->input->post('dob'),
+					   'insurance' => $this->input->post('insurance')
+			   );
+			
+			
+				$insert=$this->db->insert('insurance',$userData);
+		
+				
+	if($insert)
+				{
+					// Set the response and exit
+					$this->response([
+						'status' => TRUE,
+						'message' => 'The user has been added successfully.'
+					], REST_Controller::HTTP_OK);
+				}
+				else
+				{
+					// Set the response and exit
+					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+				}
+	
+	
+	
+        
+		
+    }
+	public function vaccine()  
+    {  
+				 $this->load->view('vaccine'); 
+		
+			   $userData = array( 'first_name' => $this->input->post('first_name'),
+			   'email' => strip_tags($this->input->post('email')),
+			    'phone' => $this->input->post('phone'),
+				 'pet' => $this->input->post('pet'),
+				  'petname' => $this->input->post('petname'),
+				 'age' => $this->input->post('age'),
+				 'problem' => $this->input->post('problem'),
+				  'a' => $this->input->post('a'),
+				    'b' => $this->input->post('b'),
+					  'c' => $this->input->post('c'),
+					    'd' => $this->input->post('d'),
+						  'e' => $this->input->post('e'),
+						    'f' => $this->input->post('f'),
+							  'g' => $this->input->post('g'),
+							    'h' => $this->input->post('h'),
+								  'i' => $this->input->post('i'),
+								    'j' => $this->input->post('j'),
+									  'k' => $this->input->post('k'),  'l' => $this->input->post('l')
+			   );
+			  
+				
+				$insert=$this->db->insert('vaccine',$userData);
+				
+				
+				
+				if($insert)
+				{
+					// Set the response and exit
+					$this->response([
+						'status' => TRUE,
+						'message' => 'The user has been added successfully.'
+					], REST_Controller::HTTP_OK);
+				}
+				else
+				{
+					// Set the response and exit
+					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+				}
+		
+				
+		  }
+	
+	
+	
+		
+       
+		
+ 
+	
+	
+	
 		
 }
 		

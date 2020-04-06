@@ -41,7 +41,7 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
 								<label>SELECT THE DATE</label>
-								<input type="date" name="date"    value="">
+								<input type="date" name="date" pattern ="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" class='input100'  value="">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -51,7 +51,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState"> SLOT</label>
 								<select name="slot"  id="inputState"  class='input100' >
-										<option>SELECT</option>
+										<option disabled selected>SELECT</option>
 										<option >8:00AM to 12:00 pm </option>
 										<option>1:00PM to 4:00 pm</option>
 										<option>5:00PM to 6:00 pm</option>
@@ -104,7 +104,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">PET SPECIES</label>
 								<select name="pet" class='input100' id="inputState"  required >
-									<option>SELECT</option>
+									<option disabled selected>SELECT</option>
 									<option >DOG</option>
 									<option>CAT</option>
 									<option>FISH</option>
@@ -174,7 +174,7 @@ include_once "menuWithLogout.php";
 						<span class="focus-input100"></span>
 						<label for="inputState" >PAYMENT TYPE</label>
 						<select  name="payment" id="inputState" class='input100'>
-									<option>SELECT </option>
+									<option disabled selected>SELECT </option>
 									<option >CREDIT/DEBIT CARD </option>
 									<option>NET BANKING</option>
 									<option>CASH ON DELIVERY</option>

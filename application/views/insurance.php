@@ -60,7 +60,7 @@ include_once "menuWithLogout.php";
 					
 					<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="inurance"   class="input100"  placeholder="ENTER INSURANCE NAME" value="" >
+								<input type="text" name="insurance"   class="input100"  placeholder="ENTER INSURANCE NAME" value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
 								</span>

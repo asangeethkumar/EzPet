@@ -184,6 +184,18 @@ echo "at least one special sign of @#-_$%^&+=§!?";
         //return fetched data
         return $result;
     }
+	
+	
+	public function display_records()
+	{
+		$this->db->select("*");
+		$this->db->from('petinfo');
+		$query=$this->db->get();
+	//$query=$this->db->query("select * from petinfo");
+	return $query->result();
+	
+	
+	}
     
     /*
      * Insert user data

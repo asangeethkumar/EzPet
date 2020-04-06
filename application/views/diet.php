@@ -53,7 +53,7 @@ include_once "menuWithLogout.php";
 				
 				
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email"  pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$"	 placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -64,7 +64,8 @@ include_once "menuWithLogout.php";
 		
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" pattern="[6-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -77,7 +78,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">PET SPECIES</label>
 								<select name="pet" class='input100' id="inputState"  >
-									<option>SELECT</option>
+									<option  disabled selected>SELECT</option>
 									<option >DOG</option>
 									<option>CAT</option>
 									<option>FISH</option>
@@ -155,26 +156,26 @@ include_once "menuWithLogout.php";
 							
 							<tr>
 							<td>1</td>
-							<td><input type="text" name="a" maxlength="30" /></td>
-							<td><input type="text" name="b" maxlength="30" /></td>
-							<td><input type="text" name="c" maxlength="30" /></td>
-							<td><input type="text" name="d" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="a" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="b" maxlength="30" /></td>
+							<td><input type="text"  class="input100"name="c" maxlength="30" /></td>
+							<td><input type="text"   class="input100" name="d" maxlength="30" /></td>
 							</tr>
 							 
 							<tr>
 							<td>2</td>
-							<td><input type="text" name="e" maxlength="30" /></td>
-							<td><input type="text" name="f" maxlength="30" /></td>
-							<td><input type="text" name="g" maxlength="30" /></td>
-							<td><input type="text" name="h" maxlength="30" /></td>
+							<td><input type="text"  class="input100"name="e" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="f" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="g" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="h" maxlength="30" /></td>
 							</tr>
 							 
 							<tr>
 							<td>3</td>
-							<td><input type="text" name="i" maxlength="30" /></td>
-							<td><input type="text" name="j" maxlength="30" /></td>
-							<td><input type="text" name="k" maxlength="30" /></td>
-							<td><input type="text" name="l" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="i" maxlength="30" /></td>
+							<td><input type="text" class="input100" name="j" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="k" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="l" maxlength="30" /></td>
 							</tr>
 							 
 							
