@@ -42,9 +42,9 @@ include_once "menuWithLogout.php";
 						
 						
 						
-						<div class="input-check100">
+						<div class="input-check100 validate-check100" data-validate = "  valid test is required" required>
                 <label>TEST </label><br>
-			 <input type="checkbox" id="checkItem" name="check[]" value="HEMATOLOGY & COAGULATION">HEMATOLOGY & COAGULATION<br>
+			 <input type="checkbox" id="checkItem" name="check[]"value="HEMATOLOGY & COAGULATION">HEMATOLOGY & COAGULATION<br>
 	<input type="checkbox" id="checkItem" name="check[]" value="BIOCHEMISTRY">BIOCHEMISTRY<br>
 	<input type="checkbox" id="checkItem" name="check[]" value="CLINICAL PATH & URINE BIOCHEMISTRY">CLINICAL PATH & URINE BIOCHEMISTRY<br>
 		<input type="checkbox" id="checkItem" name="check[]" value="KIT BASED TEST">KIT BASED TEST<br>
@@ -59,9 +59,9 @@ include_once "menuWithLogout.php";
 								<input type="checkbox" id="checkItem" name="check[]" value="EXPORT TESTING SERVICES (PET TRAVEL TO ABROAD)">EXPORT TESTING SERVICES (PET TRAVEL TO ABROAD)<br>
 			</div>
 		
-		<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+		<div class="wrap-input100 validate-input" data-validate = "  valid dr name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="dname"   class="input100"  placeholder="ENTER DOCTOR NAME" value="" >
+								<input type="text" name="dname"   class="input100"  pattern="[A-Za-z.]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" placeholder="ENTER DOCTOR NAME" value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
 								</span>
@@ -70,7 +70,7 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="name"   class="input100"  placeholder="ENTER YOUR NAME" value="" >
+								<input type="text" name="name"   class="input100" pattern="[A-Za-z.]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32"   placeholder="ENTER YOUR NAME" value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
 								</span>
@@ -78,7 +78,8 @@ include_once "menuWithLogout.php";
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"pattern="[6-9]{1}[0-9]{9}" 
+									title="Phone number with 7-9 and remaing 9 digit with 0-9"  value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -87,9 +88,9 @@ include_once "menuWithLogout.php";
 								</span>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid address is required">
 								<label for="inputState"> </label>
-								<input type="text" name="location"  class="input100" placeholder="YOUR LOCATION" value="" required>
+								<input type="text" name="location"  class="input100" placeholder="YOUR LOCATION" value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -131,9 +132,9 @@ include_once "menuWithLogout.php";
 							<br>
 							
 							
-						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid petage  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petage"  class="input100" placeholder="PETAGE" value="" required>
+								<input type="text" name="petage"  class="input100" placeholder="PETAGE" value="">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									

@@ -41,7 +41,7 @@ include_once "menuWithLogout.php";
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name" pattern="[A-Za-z]{1,32}" title="white spaces and special characters are not allowed"  maxlength="32" class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -53,7 +53,7 @@ include_once "menuWithLogout.php";
 				
 				
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email"  pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$"placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -64,7 +64,8 @@ include_once "menuWithLogout.php";
 		
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"   pattern="[6-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -76,8 +77,8 @@ include_once "menuWithLogout.php";
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
 								<span class="focus-input100"></span>
 								<label for="inputState">PET SPECIES</label>
-								<select name="pet" class='input100' id="inputState"  required >
-									<option>SELECT</option>
+								<select name="pet" class='input100' id="inputState" >
+									<option >SELECT</option>
 									<option >DOG</option>
 									<option>CAT</option>
 									<option>FISH</option>
@@ -85,16 +86,16 @@ include_once "menuWithLogout.php";
 								</select>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid petname  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petname"   class="input100"  placeholder="ENTER PET NAME" value="" >	
+								<input type="text" name="petname"   class="input100"  pattern="[A-Za-z]{1,32}" title="white spaces and special characters are not allowed"  maxlength="32" placeholder="ENTER PET NAME" value="" >	
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
 								</span>
 						</div>
 						
-						
+						<br>
 						<div class="input-radio100">
 							<label>PET AGE: </label>
 							<?php
@@ -108,16 +109,16 @@ include_once "menuWithLogout.php";
 							?>
 							<div class="input-radio100">
 								<label>
-									<input type="radio" name="age" value="adult" <?php echo $mcheck; ?> required>
+									<input type="radio" name="age" value="adult" <?php echo $mcheck; ?> >
 									Adult
 								</label>
 								<label>
-									<input type="radio" name="age" value="kitten" <?php echo $fcheck; ?> required>
+									<input type="radio" name="age" value="kitten" <?php echo $fcheck; ?> >
 									Kitten 
 								</label>
 							</div>
 						</div>
-							<br>
+							
 							
 							
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
@@ -138,19 +139,19 @@ include_once "menuWithLogout.php";
 							<table>
 							 
 							<tr>
-							<td align="center"><b>Sl.No.</b></td>
-							<td align="center"><b>MEDICINE NAME</b></td>
-							<td align="center"><b>BREAKFAST</b></td>
-							<td align="center"><b>LUNCH</b></td>
-							<td align="center"><b>DINNER</b></td>
+							<td align="center" ><b>Sl.No.</b></td>
+							<td align="center"><b>ENTER_MEDICINENAME</b></td>
+							<td align="center"><b>(BEFORE/AFTER)BREAKFAST</b></td>
+							<td align="center"><b>(BEFORE/AFTER)LUNCH</b></td>
+							<td align="center"><b>(BEFORE/AFTER)DINNER</b></td>
 							</tr>
 							 
 							<tr>
 							<td>1</td>
-							<td><input type="text" class="input100"  name="a" maxlength="30" /></td>
-							<td><input type="text" class="input100"  name="b" maxlength="30" /></td>
-							<td><input type="text"class="input100"  name="c" maxlength="30" /></td>
-							<td><input type="text" class="input100" name="d" maxlength="30" /></td>
+							<td><input type="text" class="input100"  name="a" maxlength="30"  /></td>
+							<td><input type="text" class="input100"  name="b" maxlength="30"  /></td>
+							<td><input type="text"class="input100"  name="c" maxlength="30"   /></td>
+							<td><input type="text" class="input100" name="d" maxlength="30"  /></td>
 							</tr>
 							 
 							<tr>

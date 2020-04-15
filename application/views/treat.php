@@ -41,7 +41,7 @@ include_once "menuWithLogout.php";
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME"  pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32"value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -78,7 +78,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">PET SPECIES</label>
 								<select name="pet" class='input100' id="inputState" >
-									<option disabled selected>SELECT</option>
+									<option >SELECT</option>
 									<option >DOG</option>
 									<option>CAT</option>
 									<option>FISH</option>
@@ -114,7 +114,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">CHOOSE PRODUCT</label>
 									<select name="choose"id="inputState" class='input100'>
-										<option disabled selected>SELECT</option>
+										<option>SELECT</option>
 										<option >Veg</option>
 										<option>Non-Veg</option>
 								    </select>
@@ -131,7 +131,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">QUNATITY</label>
 								<select  name="quantity" id="inputState" class='input100' >
-									<option disabled selected> SELECT </option>
+									<option> SELECT </option>
 									<option >1</option>
 									<option>2</option>
 									<option>3</option>
@@ -153,7 +153,7 @@ include_once "menuWithLogout.php";
 							<span class="focus-input100"></span>
 							<label for="inputState"> DELIVERY</label>
 							<select name="delivery"  id="inputState" class='input100'>
-									<option disabled selected>SELECT </option>
+									<option>SELECT </option>
 									<option >delivery for one time </option>
 									<option>delivery every month</option>
 									<option>delivery for every two months</option>
@@ -177,7 +177,7 @@ include_once "menuWithLogout.php";
 						<span class="focus-input100"></span>
 						<label for="inputState" >PAYMENT TYPE</label>
 						<select  name="payment" id="inputState" class='input100'>
-									<option disabled selected>SELECT </option>
+									<option>SELECT </option>
 									<option >CREDIT/DEBIT CARD </option>
 									<option>NET BANKING</option>
 									<option>CASH ON DELIVERY</option>

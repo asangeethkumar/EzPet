@@ -28,6 +28,7 @@ include_once "menuWithLogout.php";
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
 	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/main.css'); ?>">
 <!--===============================================================================================-->
+<!--<a data-config="commands=*;size=14;status=off;theme=logo;language=en;bgcolor=#2a92f3" id="skaip-buttons" href="http://www.skaip.org/">Skype</a><script src="//apps.skaip.org/buttons/widget/core.min.js" defer="defer"></script>-->
 </head>
 <body>
 <div class="limiter">
@@ -39,11 +40,14 @@ include_once "menuWithLogout.php";
 						<h1 align="center" >PET DETAILS </h1>
 						<br>
 						<br>
+	<!--<a href="skype:<username>?<action>">SKYPE VIDEO CALL</a>-->
+	<!--<a href="skype:.cid.77ef5a40faa38ab8">skype</a>-->
 	
+	<a  href="<?php echo base_url('users/video'); ?>""> video</a>
 						
 					
 						<?php
-						print_r ($data);
+						//print_r ($data);
 						foreach ($data as $geth_index=>$geth) {  
 							 
 						 

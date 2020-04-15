@@ -54,7 +54,7 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petname"   class="input100"  placeholder="ENTER PET NAME" value="" >	
+								<input type="text" name="petname"   class="input100"   pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32"placeholder="ENTER PET NAME" value="" >	
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -90,7 +90,7 @@ include_once "menuWithLogout.php";
 						<br>
 						
 						
-						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+						<div class="wrap-input100 validate-input" data-validate = "valid petageis required">
 						 <label  class="required"> PETAGE</label>
 			<input type="text" name="petage"  placeholder="PETAGE" class="input100" value="" >
 								<span class="focus-input100"></span>
@@ -99,7 +99,7 @@ include_once "menuWithLogout.php";
 								</span>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid vitamin name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid question  is required">
 								<label for="inputState"> </label>
 								<input type="text" name="question"    class="input100"   placeholder=" YOUR QUESTION" value="">
 								
@@ -112,7 +112,7 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = " valid option is required">
 								<label>UPLOAD PHOTO</label>
-								<input type="file" name="upload" class="input100"  >
+								<input type="file" name="upload"  accept="image/*"class="input100"  >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									

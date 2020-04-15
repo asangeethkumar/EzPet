@@ -18,6 +18,7 @@
 
 							<td> <a href="<?php echo base_url('users/details'); ?>"><img id="<?php echo $geth_index?>" class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $geth->image_path));?>" alt="" border=3 height=500 width=200 style="padding:0 15px 0 15px;"></td>
 							</a>
+							
 
 	<?php } ?> 
 	

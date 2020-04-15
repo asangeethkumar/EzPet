@@ -124,7 +124,7 @@ class Authentication extends REST_Controller {
 				$userData = array(
 					'first_name' => $name,
 					'last_name' => $last_name,
-					'email' => $email,
+					'email' => $em,
 					'password' => md5($pas),
 					'phone' => $ph
 				);

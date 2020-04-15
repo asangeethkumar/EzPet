@@ -35,13 +35,13 @@ include_once "menuWithLogout.php";
 			<div class="wrap-login100">
 				
 				<form class="login100-form validate-form"  action="" method="post" >
-						<h1 align="center" >OTC Medicine</h1>
+						<h1 align="center" >RX Medicine</h1>
 						<br>
 						<br>
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -65,7 +65,7 @@ include_once "menuWithLogout.php";
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
 								<input type="text" name="phone"    pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9"class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								title="Phone number with 7-9 and remaing 9 digit with 0-9"class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -77,7 +77,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">QUNATITY</label>
 								<select  name="quantity" id="inputState" class='input100' >
-									<option disabled selected> SELECT </option>
+									<option> SELECT </option>
 									<option >1</option>
 									<option>2</option>
 									<option>3</option>
@@ -90,7 +90,7 @@ include_once "menuWithLogout.php";
 						
 						
 						
-						<div class="wrap-input100 validate-input" data-validate = " valid option is required">
+						<div class="wrap-input100 validate-input" data-validate = " valid file  is required">
 								<label>UPLOAD PRESCRIPTION</label>
 								<input type="file" name="upload"  accept="image/*" class="input100"  >
 								<span class="focus-input100"></span>
@@ -104,7 +104,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">QUANTITY ml</label>
 								<select name="quant" id="inputState" class='input100'  >
-									<option disabled selected> SELECT </option>
+									<option> SELECT </option>
 									<option >15 ml</option>
 									<option>20 ml</option>
 									<option>30 ml</option>
@@ -117,7 +117,7 @@ include_once "menuWithLogout.php";
 							<span class="focus-input100"></span>
 							<label for="inputState"> DELIVERY</label>
 							<select name="delivery"  id="inputState" class='input100'>
-									<option disabled selected>SELECT </option>
+									<option>SELECT </option>
 									<option >delivery for one time </option>
 									<option>delivery every month</option>
 									<option>delivery for every two months</option>
@@ -141,7 +141,7 @@ include_once "menuWithLogout.php";
 						<span class="focus-input100"></span>
 						<label for="inputState" >PAYMENT TYPE</label>
 						<select  name="payment" id="inputState" class='input100' required >
-									<option  disabled selected>SELECT </option>
+									<option>SELECT </option>
 									<option >CREDIT/DEBIT CARD </option>
 									<option>NET BANKING</option>
 									<option>CASH ON DELIVERY</option>

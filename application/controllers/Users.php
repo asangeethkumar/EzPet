@@ -160,6 +160,10 @@ class Users extends CI_Controller {
 				 	   		// $data2['data'] =  $this->image_model->details($data);
 			$this->load->view('details',$data2);
 	}
+	public function video()
+	{
+		$this->load->view('video');
+	}
 
 	public function food()
 
@@ -336,8 +340,9 @@ public function mypres()
 	
 	public function getc()  
     {  
-	 $data = $userData = array();
-		  if($this->input->post('signupSubmit')){
+			$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
 			   $userData = array( 'pet' => $this->input->post('pet'),
 			   'petname' => strip_tags($this->input->post('petname')),
 			    'gender' => $this->input->post('gender'),
@@ -349,38 +354,59 @@ public function mypres()
 			  
 				//print  $userData;
 				//var_dump($userData);
-				$this->db->insert('getc',$userData);
+				$insert=$this->db->insert('getc',$userData);
 			
 		
-				echo "<h3 style='color:red'>Your data submitted successfully</h3>";
-		  }
-	
-        $this->load->view('getc'); 
+				$this->load->view('getc'); 
+				if($insert)
+				{
 		
-    } 
+					echo "<h3 style='color:red'>Your data submitted successfully</h3>";
+				}
+				else
+				{
+					echo "error occured";
+				}
+		
+			} 
+	
+	}
 	  public function lab() 	  
     {  
-		$data = $userData = array();
-			if($this->input->post('signupSubmit')){
-		  $userData = array('check'=>implode("|",$this->input->post('check')),
-		'dname'=>$this->input->post('dname'),
-		'name' => $this->input->post('name'),
-		'phone'=>$this->input->post('phone'),
-		 'location' => $this->input->post('location'),
-		'pet'=>$this->input->post('pet'),
-		 'petage' => $this->input->post('petage'),
-		'gender'=>$this->input->post('gender'),
-		'payment'=>$this->input->post('payment')
-		);
-		print  $userData;
+			$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
+				$userData = array('check'=>implode("|",$this->input->post('check')),
+				'dname'=>$this->input->post('dname'),
+				'name' => $this->input->post('name'),
+				'phone'=>$this->input->post('phone'),
+				 'location' => $this->input->post('location'),
+				'pet'=>$this->input->post('pet'),
+				 'petage' => $this->input->post('petage'),
+				'gender'=>$this->input->post('gender'),
+				'payment'=>$this->input->post('payment')
+				);
+				print  $userData;
 				var_dump($userData);
-				$this->db->insert('lab',$userData);
+				$insert=$this->db->insert('lab',$userData);
 		
-				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+				//echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
 		
-	}
+			}
 	
-        $this->load->view('lab'); 
+				$insert=$this->load->view('lab'); 
+				if($insert)
+					{
+				
+						echo "<h3 style='color:red'>Your data submitted successfully</h3>";
+					}
+					else
+					{
+						
+						echo "error occured";
+					}
+				
+			 
 		
     } 
 	 public function genetic()  
@@ -523,7 +549,21 @@ public function mypres()
 	public function dconsult()  
     {   if($this->input->post('signupSubmit')){
 		
-		$userData = array('date'=>$this->input->post('date'),
+		
+		
+		//$first_name = strip_tags($this->post('first_name'));
+		$date=$this->input->post('date');
+		$slot=$this->input->post('slot');
+		$confirm=$this->input->post('confirm');
+		$email=$this->input->post('email');
+		$phone=$this->input->post('phone');
+		$pet=$this->input->post('pet');
+		$gender=$this->input->post('gender');
+		$question=$this->input->post('question');
+		$location=$this->input->post('location');
+		$payment=$this->input->post('payment');
+		
+		/*$userData = array('date'=>$this->input->post('date'),
 		'slot'=>$this->input->post('slot'),
 		'confirm'=>$this->input->post('confirm'),
 		'email'=>$this->input->post('email'),
@@ -533,9 +573,25 @@ public function mypres()
 		'question'=>$this->input->post('question'),
 		'location'=>$this->input->post('location'),
 		'payment'=>$this->input->post('payment')
-		);
+		);*/
 		//print  $userData;
 			//	var_dump($userData);
+			
+				$userData = array(
+					'date' => $date,
+					'slot' => $slot,
+					'confirm' => $confirm,
+					'email' => $email,
+					'phone' => $phone,
+					'pet' => $pet,
+					'gender' => $gender,
+					'question' => $question,
+					'location' => $location,
+					'payment' => $payment,
+				);
+			$this->load->library('calendar', $date);
+			//echo $this->calendar->generate();
+			
 				$this->db->insert('dconsult',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";

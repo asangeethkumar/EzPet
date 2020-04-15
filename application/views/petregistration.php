@@ -43,8 +43,8 @@ include_once "menuWithLogout.php";
 
 		   <div class="wrap-input100 validate-input" data-validate = "valid AIN is required">
 		   <label for="inputState">AIN</label>
-                <input type="number_format" name="AIN" class="input100" placeholder="AIN" value="<?php echo !empty($user['AIN'])?$user['AIN']:''; ?>" >
-                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
+                <input type="number_format" name="AIN" class="input100"  placeholder="1XXCDMGSHHF453761" title="1XXCDMGSHHF453761" required pattern="[a-zA-Z0-9]{17}" maxlength="17" >
+               
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa fa-AIN" aria-hidden="true"></i>

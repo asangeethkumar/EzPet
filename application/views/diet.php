@@ -41,7 +41,7 @@ include_once "menuWithLogout.php";
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME"  pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32"value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -65,7 +65,7 @@ include_once "menuWithLogout.php";
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
 								<input type="text" name="phone"  class="input100" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+									title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -78,7 +78,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState">PET SPECIES</label>
 								<select name="pet" class='input100' id="inputState"  >
-									<option  disabled selected>SELECT</option>
+									<option>SELECT</option>
 									<option >DOG</option>
 									<option>CAT</option>
 									<option>FISH</option>
@@ -148,10 +148,10 @@ include_once "menuWithLogout.php";
 							 
 							<tr>
 							<td align="center"><b>Sl.No.</b></td>
-							<td align="center"><b>FOOD</b></td>
-							<td align="center"><b>BREAKFAST</b></td>
-							<td align="center"><b>LUNCH</b></td>
-							<td align="center"><b>DINNER</b></td>
+							<td align="center"><b>FOODNAME(qunatity)</b></td>
+							<td align="center"><b>(BEFORE/AFTER)BREAKFAST</b></td>
+							<td align="center"><b>(BEFORE/AFTER)LUNCH</b></td>
+							<td align="center"><b>(BEFORE/AFTER)DINNER</b></td>
 							</tr>
 							
 							<tr>
