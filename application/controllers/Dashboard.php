@@ -14,12 +14,17 @@ class Dashboard extends CI_Controller {
     public function index()  
     {  
 			$this->load->view('menu');
+			?>
+			</br>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+<?php
  			$this->load->view('banner');
 
 		  $data1['data'] =  $this->image_model->get_images();
 				$this->load->view('dashboard', $data1);
 				
-			$this -> load -> view('elements/footer');
+			$this -> load -> view('elements/footer1');
 
         		
     }  
