@@ -67,44 +67,63 @@ include_once "menuWithLogout.php";
     <option>LAB ANIMAL HEALTH MONITORING AND CLINICAL TRIAL TESTING</option>
       </select>
 </div> -->
-<div class="form-group">
-        <input type="text" name="first_name"   placeholder="OWNER NAME" required>
-        
-      </div>
+  
+                  <div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="first_name"  class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>"  >
+                <?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                </div>
+                  <div class="wrap-input100 validate-input" data-validate = "valid pet name is required">
+                <input type="text" name="pet_name"  class="input100" placeholder="PET NAME"pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['PET_name'])?$user['PET_name']:''; ?>" >
+                <?php echo form_error('pet_name','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
 
-        <div class="form-group">
-        <input type="text" name="pet_name"   placeholder="PET NAME" required>
-        
-      </div>
-      <div class="form-group">
-        <input type="text" name="pet_breed"   placeholder="PET Breed"  required>
-    
-      </div>
-      <div class="form-group">
-        <input type="text" name="phone" pattern="[6-9]{1}[0-9]{9}" 
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" placeholder="PHONE NUMBER">
-      
-      </div>
-      <h2>SERVICES:</h2>
+                <div class="wrap-input100 validate-input" data-validate = "valid pet breed is required">
+                <input type="text" name="pet_breed"  class="input100" placeholder="PET BREED" value="<?php echo !empty($user['pet_breed'])?$user['pet_breed']:''; ?>" >
+                <?php echo form_error('pet_breed','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
+              
+                <div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
+                <input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" pattern="[6-9]{1}[0-9]{9}" title="Enter valid phone number"value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+                <?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+            
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                </span>
+                </div>
+  
+                     <h2>SERVICES:</h2>
              
-      <form action="/action_page.php">
-  <input type="checkbox" id="brushing" name="brushing" value="brushing">
+      
+  <input type="checkbox" id="brushing" name="services[]" value="brushing">
   <label for="brushing">BRUSHING</label><br>
-  <input type="checkbox" id="cutting" name="cutting" value="cutting">
+  <input type="checkbox" id="cutting" name="services[]" value="cutting">
   <label for="cutting">Cutting the fur</label><br>
-  <input type="checkbox" id="clipping" name="clipping" value="clipping">
+  <input type="checkbox" id="clipping" name="services[]" value="clipping">
   <label for="clipping">Clipping nails</label><br>
-  <form action="/action_page.php">
-  <input type="checkbox" id="cleaning" name="cleaning" value="cleaning">
+  
+  <input type="checkbox" id="cleaning" name="services[]" value="cleaning">
   <label for="cleaning"> Cleaning ears</label><br>
-  <input type="checkbox" id="bathing" name="bathing" value="bathing">
+  <input type="checkbox" id="bathing" name="services[]" value="bathing">
   <label for="bathing">Bathing</label><br>
-  <input type="checkbox" id="drying" name="drying" value="drying">
+  <input type="checkbox" id="drying" name="services[]" value="drying">
   <label for="drying"> Drying</label><br>
-  <input type="checkbox" id="styling" name="styling" value="styling">
+  <input type="checkbox" id="styling" name="services[]" value="styling">
   <label for="styling">Styling</label><br>
   
-</form>
+
       
       <!--h2>Payment</h2>
       <label for="cname"></label>
