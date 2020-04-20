@@ -39,7 +39,7 @@ class Users extends CI_Controller {
 			$this->load->view('menuWithLogout');
 			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
 						 
-			//$this->load->view('users/account', $data2);
+			$this->load->view('users/account', $data2);
 			//$this->load->view('elements/footer');
         }else{
             redirect('login');
@@ -79,7 +79,7 @@ class Users extends CI_Controller {
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
 
-                   // redirect('users/account/');
+                    redirect('users/account/');
 
 
 					
@@ -101,11 +101,12 @@ class Users extends CI_Controller {
 		
 		// If registration request is submitted
         if($this->input->post('signupSubmit')){
-            $this->form_validation->set_rules('first_name', 'First Name', 'required');
-			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+            $this->form_validation->set_rules('first_name', 'First Name', 'required|regex_match[~^[a-zA-Z0_&\-]+$~]');
+			$this->form_validation->set_rules('last_name', 'Last Name', 'required|regex_match[~^[a-zA-Z_&\-]+$~]');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|callback_email_check');
-            $this->form_validation->set_rules('password', 'password', 'required');
+            $this->form_validation->set_rules('password', 'password', 'required|callback_pass');
             $this->form_validation->set_rules('conf_password', 'confirm password', 'required|matches[password]');
+			$this->form_validation->set_rules('phone', 'phone', 'required|regex_match[/[6-9]{1}[0-9]{9}/]');
 
             $userData = array(
                 'first_name' => strip_tags($this->input->post('first_name')),
@@ -135,6 +136,37 @@ class Users extends CI_Controller {
 		$this->load->view('registration', $data);
 		//$this->load->view('elements/footer');
     }
+	
+	 public function mails($str)
+    {
+        if ( !preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i",$str)) 
+        
+        {
+           
+			$this->form_validation->set_message('mails', 'INVALID EMAIL.');
+            return FALSE;
+        }
+        else
+        {
+            return true;
+        }
+    } 
+	
+	
+	public function pass($password)
+	{
+		 if(!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/",$password))
+	    {
+				 
+            $this->form_validation->set_message('pass', 'enter the valid password');
+            return FALSE;
+        }
+        else
+        {
+            return true;
+        }
+	
+	}
     
     public function logout(){
         $this->session->unset_userdata('isUserLoggedIn');
@@ -145,6 +177,26 @@ class Users extends CI_Controller {
         $this->session->sess_destroy();
         redirect('dashboard');
     }
+	
+	public function details()
+	{
+			//$query=$this->model->display_records();
+		/*	$data['QUERY']=null;
+			if($query)
+			{
+				$data['QUERY']= $query;
+			}*/
+	//$this->load->view('display_records',$result);*/
+	 $data2['data'] =  $this->image_model->get_otherImages($data);
+	// print_r ($data2);
+				 	   		// $data2['data'] =  $this->image_model->details($data);
+			$this->load->view('details',$data2);
+	}
+	public function video()
+	{
+		$this->load->view('video');
+	}
+
 	public function food()
 
 	{
@@ -319,9 +371,19 @@ public function mypres()
 	}
 	
 	public function getc()  
-    {  
-	 $data = $userData = array();
-		  if($this->input->post('signupSubmit')){
+    {  		
+    
+			
+			//$this->load->view('getc'); 
+			$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
+				
+				
+				$this->form_validation->set_rules('petname', 'Pet Name', 'required|regex_match[~^[a-zA-Z_&\-]+$~]');
+				// $this->form_validation->set_rules('petage', 'Pet Age', 'required|regex_match[~^[a-zA-Z0-9_&\-]+$~]');
+				
+
 			   $userData = array( 'pet' => $this->input->post('pet'),
 			   'petname' => strip_tags($this->input->post('petname')),
 			    'gender' => $this->input->post('gender'),
@@ -330,57 +392,128 @@ public function mypres()
 				   'upload' => $this->input->post('upload'),
 				  'category' => $this->input->post('category')
 			   );
-			  
-				//print  $userData;
-				//var_dump($userData);
-				$this->db->insert('getc',$userData);
+
+				
+				
+				if($this->form_validation->run() == true)
+				{
+					$insert=$this->db->insert('getc',$userData);
+                //$insert = $this->user->insert($userData);
+					if($insert)
+					{
+                   // $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.');
+                   // redirect('users/login');
+						$this->session->set_flashdata('msg', 'YOUR DATA IS SUBMITED!');
+						redirect('users/getc');
+					}   
+			    }
+				else
+				{
+				//
+					$this->session->set_flashdata('msg', 'please fill all fields');
+				//$data['error_msg'] = 'Please fill all the mandatory fields.';
+				}
+            }
 			
-		
-				echo "<h3 style='color:red'>Your data submitted successfully</h3>";
-		  }
 	
-        $this->load->view('getc'); 
+	    
+		//$data['user'] = $userData;
 		
-    } 
+		// Load view
+		//$this->load->view('elements/header', $data);
+		$this->load->view('getc');
+		//$this->load->view('elements/footer');
+	
+	}
 	  public function lab() 	  
     {  
-		$data = $userData = array();
-		  if($this->input->post('signupSubmit'))
-		  {
-			  
-			/*	$checkbox = $_POST['check']; 
-				for($i=0;$i<count($checkbox);$i++){
-					$category_id = $checkbox[$i];
-				}*/
-
-
-			   $userData = array( 'checkbox' => $this->input->post('check'),
-			   'dname' => strip_tags($this->input->post('dname')),
-			   'first_name'=>$this->input->post('first_name'),
-			    'phone' => $this->input->post('phone'),
+			$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
+				$userData = array('check'=>implode("|",$this->input->post('check')),
+				'dname'=>$this->input->post('dname'),
+				'name' => $this->input->post('name'),
+				'phone'=>$this->input->post('phone'),
 				 'location' => $this->input->post('location'),
-				  'pet' => $this->input->post('pet'),
-				  'gender' => $this->input->post('gender'),
-				   'age' => $this->input->post('age'),
-					   'payment' => $this->input->post('payment')
-			   );
-			  
+				'pet'=>$this->input->post('pet'),
+				 'petage' => $this->input->post('petage'),
+				'gender'=>$this->input->post('gender'),
+				'payment'=>$this->input->post('payment')
+				);
 				print  $userData;
 				var_dump($userData);
-				//$this->db->insert('otc',$userData);
+				$insert=$this->db->insert('lab',$userData);
 		
-				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
-		  }
-        $this->load->view('lab'); 
+				//echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		
+			}
+	
+				$insert=$this->load->view('lab'); 
+				if($insert)
+					{
+				
+						echo "<h3 style='color:red'>Your data submitted successfully</h3>";
+					}
+					else
+					{
+						
+						echo "error occured";
+					}
+				
+			 
 		
     } 
 	 public function genetic()  
     {  
+		if($this->input->post('signupSubmit')){
+				
+		
+		$userData = array('check'=>implode("|",$this->input->post('check')),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		 'petage' => $this->input->post('petage'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		print  $userData;
+				var_dump($userData);
+				$this->db->insert('genetic',$userData);
+		
+				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		
+	}
+	
+		
         $this->load->view('genetic'); 
 		
     } 
 	 public function ultra()  
     {  
+			if($this->input->post('signupSubmit')){
+				
+		
+		$userData = array('check'=>implode("|",$this->input->post('check')),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		print  $userData;
+				var_dump($userData);
+				$this->db->insert('ultra',$userData);
+		
+				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		
+	}
+	
+	
+	
         $this->load->view('ultra'); 
 		
     }
@@ -390,23 +523,23 @@ public function mypres()
 		
 		 $data = $userData = array();
 		  if($this->input->post('signupSubmit')){
-			   $userData = array( 'first_name' => $this->input->post('first_name'),
+			   $userData = array( 'amount' => $this->input->post('amount'),
+			    'pet' => $this->input->post('pet'),
+				'gender' => $this->input->post('gender'),
+				'cname' => $this->input->post('cname'),
+				'cgender' => $this->input->post('cgender'),
 			   'email' => strip_tags($this->input->post('email')),
 			    'phone' => $this->input->post('phone'),
-				 'age' => $this->input->post('age'),
-				  'address' => $this->input->post('address'),
-				  'product' => $this->input->post('product'),
-				   'range' => $this->input->post('range'),
-				    'pet' => $this->input->post('pet'),
-					 'brand' => $this->input->post('brand'),
-					  'delivery' => $this->input->post('delivery'),
-					   'payment' => $this->input->post('payment')
+				 'address' => $this->input->post('address'),
+					 'identification' => $this->input->post('identification'),
+					  'dob' => $this->input->post('dob'),
+					   'insurance' => $this->input->post('insurance')
 			   );
 			
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+			//	var_dump($userData);
 				
-				$this->db->insert('food',$userData);
+				$this->db->insert('insurance',$userData);
 		
 		echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
 		  }
@@ -442,7 +575,8 @@ public function mypres()
 	public function schedule()  
     {  
 	
-		if($this->input->post('signupSubmit')){
+		if($this->input->post('signupSubmit'))
+		{
 		
 		$userData = array('date'=>$this->input->post('date'),
 		'slot'=>$this->input->post('slot'),
@@ -457,6 +591,71 @@ public function mypres()
 		'question'=>$this->input->post('question'),
 		'payment'=>$this->input->post('payment')
 		);
+		/*$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
+
+		$date=$this->input->post('date');
+		$dat=$this->model->isDate($date);
+		if($dat==false)
+		{
+				echo "date errror";
+		}
+		$slot=$this->input->post('slot');
+		$confirm=$this->input->post('confirm');
+		$con=$this->model->name($confirm);
+		if($con==false)
+		{
+				echo "confirm errror";
+		}
+		$first_name = $this->input->post('first_name');
+		$name=$this->model->name($first_name);
+		if($name==false)
+		{
+			echo "name error";
+		}
+		$email=$this->input->post('email');
+		$em=$this->model->mails($email);
+		if($em==false)
+		{
+				echo "email error";
+		}
+		$phone=$this->input->post('phone');
+		$ph=$this->model->number($phone);
+		if($ph==false)
+		{
+				echo "phone number error";
+		}
+		
+		$pet=$this->input->post('pet');
+		$petname=$this->input->post('petname');
+		$pname=$this->model->name($petname);
+		if($pname==false)
+		{
+				echo "petname error";
+				
+		}
+		
+		$gender=$this->input->post('gender');
+		$concern=$this->input->post('concern');
+		$question=$this->input->post('question');
+		$payment=$this->input->post('payment');
+	//	);
+	$userData = array(
+					'date' =>$dat,
+					'slot' =>$slot,
+					'confirm' =>$con,
+					'first_name' =>$name,
+					'email' =>$em,
+					'phone'=>$ph,
+					'pet' =>$pet,
+					'petname' => $pname,
+					'gender' => $gender,
+					'concern' =>$concern ,
+					'question' =>  $question,
+					'payment' => $payment
+				);*/
+		
 		print  $userData;
 				var_dump($userData);
 				$this->db->insert('schedule',$userData);
@@ -470,7 +669,21 @@ public function mypres()
 	public function dconsult()  
     {   if($this->input->post('signupSubmit')){
 		
-		$userData = array('date'=>$this->input->post('date'),
+		
+		
+		//$first_name = strip_tags($this->post('first_name'));
+		$date=$this->input->post('date');
+		$slot=$this->input->post('slot');
+		$confirm=$this->input->post('confirm');
+		$email=$this->input->post('email');
+		$phone=$this->input->post('phone');
+		$pet=$this->input->post('pet');
+		$gender=$this->input->post('gender');
+		$question=$this->input->post('question');
+		$location=$this->input->post('location');
+		$payment=$this->input->post('payment');
+		
+		/*$userData = array('date'=>$this->input->post('date'),
 		'slot'=>$this->input->post('slot'),
 		'confirm'=>$this->input->post('confirm'),
 		'email'=>$this->input->post('email'),
@@ -480,9 +693,25 @@ public function mypres()
 		'question'=>$this->input->post('question'),
 		'location'=>$this->input->post('location'),
 		'payment'=>$this->input->post('payment')
-		);
+		);*/
 		//print  $userData;
 			//	var_dump($userData);
+			
+				$userData = array(
+					'date' => $date,
+					'slot' => $slot,
+					'confirm' => $confirm,
+					'email' => $email,
+					'phone' => $phone,
+					'pet' => $pet,
+					'gender' => $gender,
+					'question' => $question,
+					'location' => $location,
+					'payment' => $payment,
+				);
+			$this->load->library('calendar', $date);
+			//echo $this->calendar->generate();
+			
 				$this->db->insert('dconsult',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -527,6 +756,37 @@ public function mypres()
     } 
 	public function vaccine()  
     {  
+		$data = $userData = array();
+		  if($this->input->post('signupSubmit')){
+			   $userData = array( 'first_name' => $this->input->post('first_name'),
+			   'email' => strip_tags($this->input->post('email')),
+			    'phone' => $this->input->post('phone'),
+				 'pet' => $this->input->post('pet'),
+				  'petname' => $this->input->post('petname'),
+				 'age' => $this->input->post('age'),
+				 'problem' => $this->input->post('problem'),
+				  'a' => $this->input->post('a'),
+				    'b' => $this->input->post('b'),
+					  'c' => $this->input->post('c'),
+					    'd' => $this->input->post('d'),
+						  'e' => $this->input->post('e'),
+						    'f' => $this->input->post('f'),
+							  'g' => $this->input->post('g'),
+							    'h' => $this->input->post('h'),
+								  'i' => $this->input->post('i'),
+								    'j' => $this->input->post('j'),
+									  'k' => $this->input->post('k'),  'l' => $this->input->post('l')
+			   );
+			  
+				print  $userData;
+				var_dump($userData);
+				$this->db->insert('vaccine',$userData);
+		
+				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		  }
+		
+	
+	
         $this->load->view('vaccine'); 
 		
     } 
@@ -1623,7 +1883,7 @@ public function mypres()
 	
     
 	// Existing email check during validation
-    public function email_check($str){
+   /* public function email_check($str){
         $con = array(
 			'returnType' => 'count',
 			'conditions' => array(
@@ -1636,6 +1896,33 @@ public function mypres()
             return FALSE;
         }else{
             return TRUE;
+        }
+    }*/
+	 
+	// Existing email check during validation
+    public function email_check($str){
+        $con = array(
+			'returnType' => 'count',
+			'conditions' => array(
+				'email' => $str
+			)
+		);
+        $checkEmail = $this->model->getRows($con);
+        if($checkEmail > 0){
+            $this->form_validation->set_message('email_check', 'The given email already exists.');
+            return FALSE;
+        }else{
+            if ( !preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i",$str)) 
+        
+        {
+           
+			$this->form_validation->set_message('email_check', 'INVALID EMAIL.');
+            return FALSE;
+        }
+        else
+        {
+            return true;
+        }
         }
     }
 }

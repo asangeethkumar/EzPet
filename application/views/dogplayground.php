@@ -45,18 +45,19 @@ include_once "menuWithLogout.php";
 						<br>
   
 				
-					<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>"  >
+								<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>"  >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa fa-user" aria-hidden="true"></i>
 								</span>
 								</div>
-						
+
+
 
 								<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" pattern="[6-9]{1}[0-9]{9}" title="Enter valid phone number"value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -67,7 +68,7 @@ include_once "menuWithLogout.php";
 				
 
 								<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">

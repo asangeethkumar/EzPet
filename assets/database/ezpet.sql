@@ -25,9 +25,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dia`
 --
 
-
+CREATE TABLE `dia` (
+  `id` int(10) NOT NULL,
+  `pet_name` varchar(255) NOT NULL,
+  `pet_breed` varchar(255) NOT NULL,
+  `pet_age` int(15) NOT NULL,
+  `size` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -316,8 +323,10 @@ INSERT INTO `pet_training` (`id`, `first_name`, `phone`, `email`, `ephone`, `pet
 --
 
 --
+-- Indexes for table `dia`
 --
-
+ALTER TABLE `dia`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `dogplayground`

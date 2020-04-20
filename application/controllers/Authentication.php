@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // Load the Rest Controller library
@@ -61,7 +62,7 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR1',
+						'message' => 'ERROR1-invalid name',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -75,7 +76,7 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR2',
+						'message' => 'ERROR2-invalid email',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -87,7 +88,7 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR3',
+						'message' => 'ERROR3-invalid passowrd',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -100,7 +101,7 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4',
+						'message' => 'ERROR4-invalid phone number',
 					], REST_Controller::HTTP_OK);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -123,7 +124,7 @@ class Authentication extends REST_Controller {
 				$userData = array(
 					'first_name' => $name,
 					'last_name' => $last_name,
-					'email' => $email,
+					'email' => $em,
 					'password' => md5($pas),
 					'phone' => $ph
 				);

@@ -10,10 +10,10 @@ class Forms extends CI_Controller
 		$this->load->library('session');
 		/*load Model*/
 		$this->load->helper('url');
-		$this->load->model('user');
+		$this->load->model('model');
 	}
 	
-   public function forgot_pass()
+  /* public function forgot_pass()
 	{
 		if($this->input->post('forgot_pass'))
 		{
@@ -24,11 +24,11 @@ class Forms extends CI_Controller
 			if((!strcmp($email, $user_email))){
 			$pass=$row->password;
 				/*Mail Code*/
-				$to = $user_email;
+			/*	$to = $user_email;
 				$subject = "Password";
 				$txt = "Your password is $pass .";
-				$headers = "From: password@example.com" . "\r\n" .
-				"CC: ifany@example.com";
+				$headers = "From: sai.vcemanu@gmail.com" . "\r\n" .
+				"CC: sai.vcemanu@gmail.com";
 
 				mail($to,$subject,$txt,$headers);
 				}
@@ -40,8 +40,31 @@ Invalid Email ID !
 		
 	}
 	   $this->load->view('forgot_pass',@$data);	
-   }
+   }*/
+   
+   public function  forgot_pass()
+{	
 
+	if($this->input->post('forgot_pass'))
+		{
+			$email = $this->input->post('email');
+			$findemail = $this->model->ForgotPassword($email);
+			if ($findemail)
+			{
+					$this->model->sendpassword($findemail);
+			}
+			else 
+			{
+					echo "<script>alert(' $email not found, please enter correct email id')</script>";
+					redirect(base_url() . 'forms/forgot_pass', 'refresh');
+			}
+		}
+		$this->load->view('forgot_pass');
+	
+} 
+	
+    
+	
 
 	            
 }

@@ -60,7 +60,7 @@ include_once "menuWithLogout.php";
 					
 					<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="inurance"   class="input100"  placeholder="ENTER INSURANCE NAME" value="" >
+								<input type="text" name="insurance"   class="input100"   pattern="[A-Za-z.]{1,32}" title="digits ,whitespaces and special characters are not allowed" placeholder="ENTER INSURANCE NAME" value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
 								</span>
@@ -78,9 +78,9 @@ include_once "menuWithLogout.php";
 								</select>
 						</div>
 						
-					<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+					<div class="wrap-input100 validate-input" data-validate = "  valid date  is required">
 								<label for="inputState">PET DOB </label>
-								<input type="date" name="dob"   class="input100"  value="" >
+								<input type="date" name="dob"   class="input100"   pattern="/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/" max="2021-12-31"  min="2020-01-02"  value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
 								</span>
@@ -121,7 +121,7 @@ include_once "menuWithLogout.php";
 							
 							<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="cname"  class="input100"   placeholder="Customer Name" value="">
+								<input type="text" name="cname"  class="input100"   pattern="[A-Za-z.]{1,32}" title="digits ,whitespaces and special characters are not allowed"  placeholder="Customer Name" value="">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
 								</span>
@@ -154,7 +154,7 @@ include_once "menuWithLogout.php";
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email"  pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -162,7 +162,7 @@ include_once "menuWithLogout.php";
 								</span>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid address is required">
 								<label for="inputState"> </label>
 								<input type="text" name="address"  class="input100" placeholder="Address" value="">
 								<span class="focus-input100"></span>
@@ -171,7 +171,8 @@ include_once "menuWithLogout.php";
 								</span>
 						</div>
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"  pattern="[6-9]{1}[0-9]{9}" 
+									title="Phone number with 7-9 and remaing 9 digit with 0-9" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
