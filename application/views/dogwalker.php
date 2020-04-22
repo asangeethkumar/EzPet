@@ -109,7 +109,7 @@ include_once "menuWithLogout.php";
 
 
 								<div class="wrap-input100 validate-input" data-validate = "valid pet age is required">
-								<input type="text" name="pet_age"  class="input100" placeholder="PET BREED" value="<?php echo !empty($user['pet_age'])?$user['pet_age']:''; ?>" >
+								<input type="text" name="pet_age"  class="input100" placeholder="PET AGE" value="<?php echo !empty($user['pet_age'])?$user['pet_age']:''; ?>" >
 								<?php echo form_error('pet_age','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
