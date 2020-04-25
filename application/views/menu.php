@@ -152,8 +152,8 @@
 
     <!-- Nav Bar -->
         <nav class="navbar navbar-expand-lg bg-light fixed-top navbar-light" id="primary-menu">
-            <a class="navbar-brand" href="">
-			<img style="width:100px" src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
+            <a class="navbar-brand" href="<?php echo base_url('dashboard'); ?>">
+			<img style="width:85px" src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
