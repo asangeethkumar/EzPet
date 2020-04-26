@@ -43,16 +43,14 @@ include_once "menuWithLogout.php";
 						<br>
 						<br>
 			
-				
-								<div class="wrap-input100 validate-input" data-validate = "valid pet name is required">
-								<input type="text" name="pet_name"  class="input100" placeholder="PET NAME" value="<?php echo !empty($user['PET_name'])?$user['PET_name']:''; ?>" >
-								<?php echo form_error('PET_name','<p class="help-block">','</p>'); ?>
+							<div class="wrap-input100 validate-input" data-validate = "valid pet name is required">
+								<input type="text" name="pet_name"  class="input100" placeholder="PET NAME"pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['PET_name'])?$user['PET_name']:''; ?>" >
+								<?php echo form_error('pet_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
 								</span>
 								</div>
-
 								<div class="wrap-input100 validate-input" data-validate = "valid pet breed is required">
 								<input type="text" name="pet_breed"  class="input100" placeholder="PET BREED" value="<?php echo !empty($user['pet_breed'])?$user['pet_breed']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>

@@ -44,18 +44,56 @@ include_once "menuWithLogout.php";
 						<br>
 			
 
-			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_type"   placeholder="PET Type" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="type"   placeholder="Toy type" required>
-			</div>
+                  <div class="wrap-input100 validate-input" data-validate = "valid name is required">
+                <input type="text" name="first_name"  class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>"  >
+                <?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                </div>
+                  <div class="wrap-input100 validate-input" data-validate = "valid pet name is required">
+                <input type="text" name="pet_name"  class="input100" placeholder="PET NAME"pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['PET_name'])?$user['PET_name']:''; ?>" >
+                <?php echo form_error('pet_name','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "valid pet breed is required">
+                <input type="text" name="pet_breed"  class="input100" placeholder="PET BREED" value="<?php echo !empty($user['pet_breed'])?$user['pet_breed']:''; ?>" >
+                <?php echo form_error('pet_breed','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
+                 <div class="wrap-input100 validate-input" data-validate = "valid pet breed is required">
+                <input type="text" name="type"  class="input100" placeholder="TOY Type" value="<?php echo !empty($user['pet_breed'])?$user['pet_breed']:''; ?>" >
+                <?php echo form_error('pet_breed','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
+		
+
+			<h3>Toys:</h3>
+			<br>
+  <input type="checkbox" id="Benebone" name="toys[]" value="Benebone">
+  <label for="Benebone">Benebone</label><br>
+  <input type="checkbox" id="Haute Diggity Dog" name="toys[]" value="Haute Diggity Dog">
+  <label for="Haute Diggity Dog">Haute Diggity Dog</label><br>
+  <input type="checkbox" id="Chuckit" name="toys[]" value="Chuckit">
+  <label for="Chuckit">Chuckit</label><br>
+  
+  <input type="checkbox" id="KONG Rubber Dog Chew Toy" name="toys[]" value="KONG Rubber Dog Chew Toy">
+  <label for="KONG Rubber Dog Chew Toy"> KONG Rubber Dog Chew Toy</label><br>
+  <input type="checkbox" id="Nylabone Dental Dinosaur" name="toys[]" value="Nylabone Dental Dinosaur">
+  <label for="Nylabone Dental Dinosaur">Nylabone Dental Dinosaur</label><br>
+  <input type="checkbox" id="Outward Hound Hide-A-Squirrel Dog Toy" name="toys[]" value="Outward Hound Hide-A-Squirrel Dog Toy">
+  <label for="Outward Hound Hide-A-Squirrel Dog Toy"> Outward Hound Hide-A-Squirrel Dog Toy</label><br>
 
 
 			<!--multiple check box -->

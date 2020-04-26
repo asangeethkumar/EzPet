@@ -39,7 +39,7 @@ class Users extends CI_Controller {
 			$this->load->view('menuWithLogout');
 			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
 						 
-			$this->load->view('users/account', $data2);
+			//$this->load->view('users/account', $data2);
 			//$this->load->view('elements/footer');
         }else{
             redirect('login');
@@ -79,7 +79,7 @@ class Users extends CI_Controller {
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
 
-                    redirect('users/account/');
+                   // redirect('users/account/');
 
 
 					
