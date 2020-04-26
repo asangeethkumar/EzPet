@@ -1,5 +1,4 @@
 <?php
-<?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // Load the Rest Controller library
@@ -124,7 +123,7 @@ class Authentication extends REST_Controller {
 				$userData = array(
 					'first_name' => $name,
 					'last_name' => $last_name,
-					'email' => $em,
+					'email' => $email,
 					'password' => md5($pas),
 					'phone' => $ph
 				);

@@ -41,6 +41,12 @@ include_once "menuWithLogout.php";
 						
 						
 						
+						<?php if($this->session->flashdata('msg')): ?>
+						<p><?php echo $this->session->flashdata('msg'); ?></p>
+						<?php else : ?>
+						<p><?php echo $this->session->flashdata('error'); ?></p>
+						<?php endif; ?>
+						<br>
 						
 			
 						
@@ -65,25 +71,31 @@ include_once "menuWithLogout.php";
 		
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="dname"   class="input100"    pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"    maxlength="32" placeholder="ENTER DOCTOR NAME" value="" >
+								<input type="text" name="dname"   class="input100"    title="digits  and special characters are not allowed"  placeholder="ENTER DOCTOR NAME"  value="<?php echo !empty($user['dname'])?$user['dname']:''; ?>" >
+								<?php echo form_error('dname','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
+								<br>
 								<span class="symbol-input100">	
+								<i class="fa fa-user-md" aria-hidden="true"></i>
 								</span>
 						</div>
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="name"   class="input100"  pattern="[A-Za-z.]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32"placeholder="ENTER YOUR NAME" value="" >
+								<input type="text" name="name"   class="input100"  title="digits and special characters are not allowed" placeholder="ENTER YOUR NAME"  value="<?php echo !empty($user['name'])?$user['name']:''; ?>">
+								<?php echo form_error('name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
+								<br>
 								<span class="symbol-input100">	
+								<i class="fa fa-user" aria-hidden="true"></i>
 								</span>
 						</div>
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"  pattern="[6-9]{1}[0-9]{9}" 
-									title="Phone number with 7-9 and remaing 9 digit with 0-9" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"  
+									title="Phone number with 6-9 and remaing 9 digit with 0-9" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -96,8 +108,9 @@ include_once "menuWithLogout.php";
 								<label for="inputState"> </label>
 								<input type="text" name="location"  class="input100" placeholder="YOUR LOCATION" value="">
 								<span class="focus-input100"></span>
+								<br>
 								<span class="symbol-input100">
-									
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
 								</span>
 						</div>
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
@@ -138,7 +151,8 @@ include_once "menuWithLogout.php";
 							
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petage"  class="input100" placeholder="PETAGE" value="" >
+								<input type="text" name="petage"  class="input100" placeholder="PETAGE" value="<?php echo !empty($user['petage'])?$user['petage']:''; ?>" >
+								<?php echo form_error('petage','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
