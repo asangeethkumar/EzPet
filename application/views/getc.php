@@ -9,7 +9,7 @@ include_once "menuWithLogout.php";
 
 <html lang="en">  
 <head>
-<title>GET CONSULTATION</title>
+<title>>DENTAL</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -35,18 +35,15 @@ include_once "menuWithLogout.php";
 			<div class="wrap-login100">
 				
 				<form class="login100-form validate-form"  action="" method="post" >
-						<h1 align="center" >Online Consultation</h1>
+						<h1 align="center" >online consultation</h1>
+						<br>
 						<br>
 						
-						<?php if($this->session->flashdata('msg')): ?>
-						<p><?php echo $this->session->flashdata('msg'); ?></p>
-						<?php else : ?>
-						<p><?php echo $this->session->flashdata('error'); ?></p>
-						<?php endif; ?>
-						<br>
+						
+						
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
 								<span class="focus-input100"></span>
-								<label class="required" >PET SPECIES</label>
+								<label for="inputState">PET SPECIES</label>
 								<select name="pet" class='input100' id="inputState"  >
 									<option>SELECT</option>
 									<option >DOG</option>
@@ -54,60 +51,61 @@ include_once "menuWithLogout.php";
 									<option>FISH</option>
 									<option>BIRDS</option>
 								</select>
-								<br>
-								<span class="symbol-input100">
-								</span>
 						</div>
+						
+						
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petname"   class="input100"  title="digits  and special characters are not allowed"  placeholder="ENTER PET NAME" value="<?php echo !empty($user['petname'])?$user['petname']:''; ?>" >
-								<?php echo form_error('petname','<p class="help-block">','</p>'); ?>
-								<span class="focus-input100"></span>
-								<br>
-								<span class="symbol-input100">
-								
-									<i class="fa fa-paw" aria-hidden="true"></i>
-								</span>
-						</div>
-			
-						<div class="input-radio100">
-							<label>Gender: </label>
-							<?php
-							if(!empty($user['gender']) && $user['gender'] == 'Female'){
-								$fcheck = 'checked="checked"';
-								$mcheck = '';
-							}else{
-								$mcheck = 'checked="checked"';
-								$fcheck = '';
-							}
-							?>
-							<div class="input-radio100">
-								<label>
-									<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> >
-									Male
-								</label>
-								<label>
-									<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
-									Female
-								</label>
-							</div>
-					    </div>
-					
-						
-						<div class="wrap-input100 validate-input" data-validate = "valid petage is required">
-							<label  class="required"> PET AGE</label>
-							<input type="text" name="petage"  placeholder="PET AGE" class="input100" value="<?php echo !empty($user['petage'])?$user['petage']:''; ?>" >
-							<?php echo form_error('petage','<p class="help-block">','</p>'); ?>
+								<input type="text" name="petname"   class="input100"  placeholder="ENTER PET NAME" value="" >	
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
 								</span>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid question  is required">
+						
+						
+						
+						<div class="input-radio100">
+				<label>Gender: </label>
+				<?php
+				if(!empty($user['gender']) && $user['gender'] == 'Female'){
+					$fcheck = 'checked="checked"';
+					$mcheck = '';
+				}else{
+					$mcheck = 'checked="checked"';
+					$fcheck = '';
+				}
+				?>
+				<div class="input-radio100">
+					<label>
+						<input type="radio" name="gender" value="Male" <?php echo $mcheck; ?> >
+						Male
+					</label>
+					<label>
+						<input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
+						Female
+					</label>
+				</div>
+			</div>
+						
+						
+						
+						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+						 <label  class="required"> PETAGE</label>
+			<input type="text" name="petage"  id="petage"  class="input100" value="" >
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									
+								</span>
+						</div>
+						
+						<div class="wrap-input100 validate-input" data-validate = "  valid vitamin name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="question"    class="input100"   placeholder=" YOUR QUESTION?" value="">
+								<input type="text" name="question"    class="input100"   placeholder=" YOUR QUESTION" value="">
+								
+								
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -116,7 +114,7 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = " valid option is required">
 								<label>UPLOAD PHOTO</label>
-								<input type="file" name="upload"  accept="image/*" class="input100"  >
+								<input type="file" name="upload" class="input100"  >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -124,21 +122,26 @@ include_once "menuWithLogout.php";
 						</div>
 						
 						<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
-								<span class="focus-input100"></span>
-								 <label for="inputState">SELECT CATEGORY</label>
-								  <select name="category"  id="inputState" class='input100' >
-									<option >ENQUIRY</option>
-									<option>DAILY VISIT</option>
-									<option>DISEASE</option>
-									<option>OPERATION</option>
-								  </select>
-						</div>
+						<span class="focus-input100"></span>
+      <label for="inputState">SELECT CATEGORY</label>
+      <select name="category"  id="inputState" class='input100' >
+        <option >ENQUIRY</option>
+        <option>DAILY VISIT</option>
+		<option>DISEASE</option>
+		<option>OPERATION</option>
+      </select>
+</div>
 						
-						<div class="container-login100-form-btn">
-								<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
-									submit
-								</button>
-					    </div>
+				
+				
+				
+						
+
+				<div class="container-login100-form-btn">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
+							submit
+						</button>
+				</div>
 			
 			
 		</form>

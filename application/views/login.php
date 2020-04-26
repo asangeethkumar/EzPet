@@ -80,7 +80,7 @@
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="<?php echo base_url('forms/forgot_pass'); ?>">
+						<a class="txt2" href="#">
 							Username / Password?
 						</a>
 					</div>

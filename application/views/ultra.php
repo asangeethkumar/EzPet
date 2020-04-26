@@ -40,52 +40,41 @@ include_once "menuWithLogout.php";
 						<br>
 						
 						
-						<?php if($this->session->flashdata('msg')): ?>
-						<p><?php echo $this->session->flashdata('msg'); ?></p>
-						<?php else : ?>
-						<p><?php echo $this->session->flashdata('error'); ?></p>
-						<?php endif; ?>
-						<br>
-			            
-<div class="input-check100">
-                <label>TEST</label><br>
-			 <input type="checkbox" id="checkItem" name="check[]" value="ctscan" >CTSCAN<br>
-	<input type="checkbox" id="checkItem" name="check[]" value="x-ray" >X_RAY<br>
-	<input type="checkbox" id="checkItem" name="check[]" value="mri" >MRI<br>
-		<input type="checkbox" id="checkItem" name="check[]" value="ultrascan" >ULTRASCAN<br>
-			
-			</div>
-		
 						
 						
+						
+						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
+								<span class="focus-input100"></span>
+								<label for="inputState"> TEST</label>
+			  <select id="inputState"  class="input100" name="test">
+			  <option>SELECT </option>
+				<option >Ultrasacn</option>
+				<option>X-Ray</option>
+				<option>MRI</option>
+				<option>Ctscan</option>
+			  </select>
+		</div>
 		
 		<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="dname"   class="input100"  title="digits and special characters are not allowed"   placeholder="ENTER DOCTOR NAME"  value="<?php echo !empty($user['dname'])?$user['dname']:''; ?>">
-								<?php echo form_error('dname','<p class="help-block">','</p>'); ?>
+								<input type="text" name="dname"   class="input100"  placeholder="ENTER DOCTOR NAME" value="" >
 								<span class="focus-input100"></span>
-								<br>
 								<span class="symbol-input100">	
-								<i class="fa fa-user-md" aria-hidden="true"></i>
 								</span>
 						</div>
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="name"   class="input100"   title="digits and special characters are not allowed"  placeholder="ENTER YOUR NAME" value="<?php echo !empty($user['name'])?$user['name']:''; ?>">
-								<?php echo form_error('name','<p class="help-block">','</p>'); ?>
+								<input type="text" name="name"   class="input100"  placeholder="ENTER YOUR NAME" value="" >
 								<span class="focus-input100"></span>
-								<br>
 								<span class="symbol-input100">	
-								<i class="fa fa-user" aria-hidden="true"></i>
 								</span>
 						</div>
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" 
-									title="Phone number with 6-9 and remaing 9 digit with 0-9"  value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -94,13 +83,12 @@ include_once "menuWithLogout.php";
 								</span>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid address is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="location"  class="input100" placeholder="YOUR LOCATION" value="">
+								<input type="text" name="address"  class="input100" placeholder="YOUR LOCATION" value="" required>
 								<span class="focus-input100"></span>
-								<br>
 								<span class="symbol-input100">
-									<i class="fa fa-map-marker" aria-hidden="true"></i>
+									
 								</span>
 						</div>
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
