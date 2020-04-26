@@ -71,7 +71,7 @@ body {
     <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[0]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
 
-     <button type="button" onclick="alert('Hello world!')" class="button button2">Jimmy</button>
+
 	
     </div>
   </div>

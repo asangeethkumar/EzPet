@@ -120,6 +120,16 @@ echo "at least one special sign of @#-_$%^&+=§!?";
 			}
 	 }*/
 	 
+	 public function dates($date)
+    {
+		if ( preg_match('/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', $date) ) {
+      list($year , $month , $day) = explode('-',$date);
+      return true;
+   } else {
+      return false;
+   }
+	}
+	 
 	 function getRules($params=array())
 	 {
 		    $this->form_validation->set_rules('first_name', 'First Name', 'required'); 
@@ -184,6 +194,18 @@ echo "at least one special sign of @#-_$%^&+=§!?";
         //return fetched data
         return $result;
     }
+	
+	
+	public function display_records()
+	{
+		$this->db->select("*");
+		$this->db->from('petinfo');
+		$query=$this->db->get();
+	//$query=$this->db->query("select * from petinfo");
+	return $query->result();
+	
+	
+	}
     
     /*
      * Insert user data

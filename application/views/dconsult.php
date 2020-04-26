@@ -39,9 +39,9 @@ include_once "menuWithLogout.php";
 						<br>
 						<br>
 						
-						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+						<div class="wrap-input100 validate-input" data-validate = "valid date is required">
 								<label>SELECT THE DATE</label>
-								<input type="date" name="date"    value="">
+								<input type="date" name="date" pattern="/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/" max="2021-12-31"  min="2020-01-02" class='input100'  value="">
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -51,7 +51,7 @@ include_once "menuWithLogout.php";
 								<span class="focus-input100"></span>
 								<label for="inputState"> SLOT</label>
 								<select name="slot"  id="inputState"  class='input100' >
-										<option>SELECT</option>
+										<option >SELECT</option>
 										<option >8:00AM to 12:00 pm </option>
 										<option>1:00PM to 4:00 pm</option>
 										<option>5:00PM to 6:00 pm</option>
@@ -61,14 +61,14 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
 								<label> PLEASE CONFIRM THAT YOU WOULD LIKE TO REQUEST THE FOLLOWING  APPOINTMENT</label>
-								<input type="text" name="confirm"  class="input100"  placeholder="" value="" required>
+								<input type="text" name="confirm"  class="input100"  placeholder="" value="">
 						</div>
 		
 		
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -80,7 +80,7 @@ include_once "menuWithLogout.php";
 				
 				
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email"   pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -91,7 +91,8 @@ include_once "menuWithLogout.php";
 		
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"   pattern="[6-9]{1}[0-9]{9}" 
+									title="Phone number with 7-9 and remaing 9 digit with 0-9"value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -111,9 +112,9 @@ include_once "menuWithLogout.php";
 									<option>BIRDS</option>
 								</select>
 						</div>
-						<div class="wrap-input100 validate-input" data-validate = "  valid vitamin name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petname"  class="input100"   placeholder="ENTER PET  NAME" value="" required>
+								<input type="text" name="petname"  class="input100"   placeholder="ENTER PET  NAME" value="" >
 								
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -149,18 +150,18 @@ include_once "menuWithLogout.php";
 							<br>
 							
 							
-							<div class="wrap-input100 validate-input" data-validate = "  valid vitamin name  is required">
+							<div class="wrap-input100 validate-input" data-validate = "  valid concern  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="question"   class="input100" placeholder=" TYPE YOUR CONCERN" value="" required>
+								<input type="text" name="question"   class="input100" placeholder=" TYPE YOUR CONCERN" value="" >
 		
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
 								</span>
 						</div>
-						<div class="wrap-input100 validate-input" data-validate = "  valid vitamin name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid address  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="location"    class="input100"   placeholder=" YOUR LOCATION" value="" required>
+								<input type="text" name="location"    class="input100"   placeholder=" YOUR LOCATION" value="">
 								
 								
 								<span class="focus-input100"></span>

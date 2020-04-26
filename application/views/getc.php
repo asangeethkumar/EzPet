@@ -35,15 +35,11 @@ include_once "menuWithLogout.php";
 			<div class="wrap-login100">
 				
 				<form class="login100-form validate-form"  action="" method="post" >
-						<h1 align="center" >online consultation</h1>
+						<h1 align="center" >Online Consultation</h1>
 						<br>
-						<br>
-						
-						
-						
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
 								<span class="focus-input100"></span>
-								<label for="inputState">PET SPECIES</label>
+								<label class="required" >PET SPECIES</label>
 								<select name="pet" class='input100' id="inputState"  >
 									<option>SELECT</option>
 									<option >DOG</option>
@@ -51,13 +47,14 @@ include_once "menuWithLogout.php";
 									<option>FISH</option>
 									<option>BIRDS</option>
 								</select>
+								<br>
+								<span class="symbol-input100">
+								</span>
 						</div>
-						
-						
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petname"   class="input100"  placeholder="ENTER PET NAME" value="" >	
+								<input type="text" name="petname"   class="input100"   pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32"placeholder="ENTER PET NAME" value="" >	
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -65,7 +62,7 @@ include_once "menuWithLogout.php";
 						</div>
 						
 						
-						
+						<br>
 						
 						<div class="input-radio100">
 				<label>Gender: </label>
@@ -90,18 +87,19 @@ include_once "menuWithLogout.php";
 				</div>
 			</div>
 						
+						<br>
 						
 						
-						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
+						<div class="wrap-input100 validate-input" data-validate = "valid petageis required">
 						 <label  class="required"> PETAGE</label>
-			<input type="text" name="petage"  id="petage"  class="input100" value="" >
+			<input type="text" name="petage"  placeholder="PETAGE" class="input100" value="" >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
 								</span>
 						</div>
 						
-						<div class="wrap-input100 validate-input" data-validate = "  valid vitamin name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid question  is required">
 								<label for="inputState"> </label>
 								<input type="text" name="question"    class="input100"   placeholder=" YOUR QUESTION" value="">
 								
@@ -114,7 +112,7 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = " valid option is required">
 								<label>UPLOAD PHOTO</label>
-								<input type="file" name="upload" class="input100"  >
+								<input type="file" name="upload"  accept="image/*"class="input100"  >
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									
@@ -122,21 +120,15 @@ include_once "menuWithLogout.php";
 						</div>
 						
 						<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
-						<span class="focus-input100"></span>
-      <label for="inputState">SELECT CATEGORY</label>
-      <select name="category"  id="inputState" class='input100' >
-        <option >ENQUIRY</option>
-        <option>DAILY VISIT</option>
-		<option>DISEASE</option>
-		<option>OPERATION</option>
-      </select>
-</div>
-						
-				
-				
-				
-						
-
+								<span class="focus-input100"></span>
+								 <label for="inputState">SELECT CATEGORY</label>
+								  <select name="category"  id="inputState" class='input100' >
+									<option >ENQUIRY</option>
+									<option>DAILY VISIT</option>
+									<option>DISEASE</option>
+									<option>OPERATION</option>
+								  </select>
+						</div>
 				<div class="container-login100-form-btn">
 						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
 							submit

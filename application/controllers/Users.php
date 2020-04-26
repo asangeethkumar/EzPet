@@ -145,6 +145,26 @@ class Users extends CI_Controller {
         $this->session->sess_destroy();
         redirect('dashboard');
     }
+	
+	public function details()
+	{
+			//$query=$this->model->display_records();
+		/*	$data['QUERY']=null;
+			if($query)
+			{
+				$data['QUERY']= $query;
+			}*/
+	//$this->load->view('display_records',$result);*/
+	 $data2['data'] =  $this->image_model->get_otherImages($data);
+	// print_r ($data2);
+				 	   		// $data2['data'] =  $this->image_model->details($data);
+			$this->load->view('details',$data2);
+	}
+	public function video()
+	{
+		$this->load->view('video');
+	}
+
 	public function food()
 
 	{
@@ -320,8 +340,9 @@ public function mypres()
 	
 	public function getc()  
     {  
-	 $data = $userData = array();
-		  if($this->input->post('signupSubmit')){
+			$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
 			   $userData = array( 'pet' => $this->input->post('pet'),
 			   'petname' => strip_tags($this->input->post('petname')),
 			    'gender' => $this->input->post('gender'),
@@ -333,54 +354,112 @@ public function mypres()
 			  
 				//print  $userData;
 				//var_dump($userData);
-				$this->db->insert('getc',$userData);
+				$insert=$this->db->insert('getc',$userData);
 			
 		
-				echo "<h3 style='color:red'>Your data submitted successfully</h3>";
-		  }
-	
-        $this->load->view('getc'); 
+				$this->load->view('getc'); 
+				if($insert)
+				{
 		
-    } 
+					echo "<h3 style='color:red'>Your data submitted successfully</h3>";
+				}
+				else
+				{
+					echo "error occured";
+				}
+		
+			} 
+	
+	}
 	  public function lab() 	  
     {  
-		$data = $userData = array();
-		  if($this->input->post('signupSubmit'))
-		  {
-			  
-			/*	$checkbox = $_POST['check']; 
-				for($i=0;$i<count($checkbox);$i++){
-					$category_id = $checkbox[$i];
-				}*/
-
-
-			   $userData = array( 'checkbox' => $this->input->post('check'),
-			   'dname' => strip_tags($this->input->post('dname')),
-			   'first_name'=>$this->input->post('first_name'),
-			    'phone' => $this->input->post('phone'),
+			$data = $userData = array();
+			if($this->input->post('signupSubmit'))
+			{
+				$userData = array('check'=>implode("|",$this->input->post('check')),
+				'dname'=>$this->input->post('dname'),
+				'name' => $this->input->post('name'),
+				'phone'=>$this->input->post('phone'),
 				 'location' => $this->input->post('location'),
-				  'pet' => $this->input->post('pet'),
-				  'gender' => $this->input->post('gender'),
-				   'age' => $this->input->post('age'),
-					   'payment' => $this->input->post('payment')
-			   );
-			  
+				'pet'=>$this->input->post('pet'),
+				 'petage' => $this->input->post('petage'),
+				'gender'=>$this->input->post('gender'),
+				'payment'=>$this->input->post('payment')
+				);
 				print  $userData;
 				var_dump($userData);
-				//$this->db->insert('otc',$userData);
+				$insert=$this->db->insert('lab',$userData);
 		
-				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
-		  }
-        $this->load->view('lab'); 
+				//echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		
+			}
+	
+				$insert=$this->load->view('lab'); 
+				if($insert)
+					{
+				
+						echo "<h3 style='color:red'>Your data submitted successfully</h3>";
+					}
+					else
+					{
+						
+						echo "error occured";
+					}
+				
+			 
 		
     } 
 	 public function genetic()  
     {  
+		if($this->input->post('signupSubmit')){
+				
+		
+		$userData = array('check'=>implode("|",$this->input->post('check')),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		 'petage' => $this->input->post('petage'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		print  $userData;
+				var_dump($userData);
+				$this->db->insert('genetic',$userData);
+		
+				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		
+	}
+	
+		
         $this->load->view('genetic'); 
 		
     } 
 	 public function ultra()  
     {  
+			if($this->input->post('signupSubmit')){
+				
+		
+		$userData = array('check'=>implode("|",$this->input->post('check')),
+		'dname'=>$this->input->post('dname'),
+		'name' => $this->input->post('name'),
+		'phone'=>$this->input->post('phone'),
+		 'location' => $this->input->post('location'),
+		'pet'=>$this->input->post('pet'),
+		'gender'=>$this->input->post('gender'),
+		'payment'=>$this->input->post('payment')
+		);
+		print  $userData;
+				var_dump($userData);
+				$this->db->insert('ultra',$userData);
+		
+				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		
+	}
+	
+	
+	
         $this->load->view('ultra'); 
 		
     }
@@ -390,23 +469,23 @@ public function mypres()
 		
 		 $data = $userData = array();
 		  if($this->input->post('signupSubmit')){
-			   $userData = array( 'first_name' => $this->input->post('first_name'),
+			   $userData = array( 'amount' => $this->input->post('amount'),
+			    'pet' => $this->input->post('pet'),
+				'gender' => $this->input->post('gender'),
+				'cname' => $this->input->post('cname'),
+				'cgender' => $this->input->post('cgender'),
 			   'email' => strip_tags($this->input->post('email')),
 			    'phone' => $this->input->post('phone'),
-				 'age' => $this->input->post('age'),
-				  'address' => $this->input->post('address'),
-				  'product' => $this->input->post('product'),
-				   'range' => $this->input->post('range'),
-				    'pet' => $this->input->post('pet'),
-					 'brand' => $this->input->post('brand'),
-					  'delivery' => $this->input->post('delivery'),
-					   'payment' => $this->input->post('payment')
+				 'address' => $this->input->post('address'),
+					 'identification' => $this->input->post('identification'),
+					  'dob' => $this->input->post('dob'),
+					   'insurance' => $this->input->post('insurance')
 			   );
 			
-				print  $userData;
-				var_dump($userData);
+				//print  $userData;
+			//	var_dump($userData);
 				
-				$this->db->insert('food',$userData);
+				$this->db->insert('insurance',$userData);
 		
 		echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
 		  }
@@ -470,7 +549,21 @@ public function mypres()
 	public function dconsult()  
     {   if($this->input->post('signupSubmit')){
 		
-		$userData = array('date'=>$this->input->post('date'),
+		
+		
+		//$first_name = strip_tags($this->post('first_name'));
+		$date=$this->input->post('date');
+		$slot=$this->input->post('slot');
+		$confirm=$this->input->post('confirm');
+		$email=$this->input->post('email');
+		$phone=$this->input->post('phone');
+		$pet=$this->input->post('pet');
+		$gender=$this->input->post('gender');
+		$question=$this->input->post('question');
+		$location=$this->input->post('location');
+		$payment=$this->input->post('payment');
+		
+		/*$userData = array('date'=>$this->input->post('date'),
 		'slot'=>$this->input->post('slot'),
 		'confirm'=>$this->input->post('confirm'),
 		'email'=>$this->input->post('email'),
@@ -480,9 +573,25 @@ public function mypres()
 		'question'=>$this->input->post('question'),
 		'location'=>$this->input->post('location'),
 		'payment'=>$this->input->post('payment')
-		);
+		);*/
 		//print  $userData;
 			//	var_dump($userData);
+			
+				$userData = array(
+					'date' => $date,
+					'slot' => $slot,
+					'confirm' => $confirm,
+					'email' => $email,
+					'phone' => $phone,
+					'pet' => $pet,
+					'gender' => $gender,
+					'question' => $question,
+					'location' => $location,
+					'payment' => $payment,
+				);
+			$this->load->library('calendar', $date);
+			//echo $this->calendar->generate();
+			
 				$this->db->insert('dconsult',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -527,6 +636,37 @@ public function mypres()
     } 
 	public function vaccine()  
     {  
+		$data = $userData = array();
+		  if($this->input->post('signupSubmit')){
+			   $userData = array( 'first_name' => $this->input->post('first_name'),
+			   'email' => strip_tags($this->input->post('email')),
+			    'phone' => $this->input->post('phone'),
+				 'pet' => $this->input->post('pet'),
+				  'petname' => $this->input->post('petname'),
+				 'age' => $this->input->post('age'),
+				 'problem' => $this->input->post('problem'),
+				  'a' => $this->input->post('a'),
+				    'b' => $this->input->post('b'),
+					  'c' => $this->input->post('c'),
+					    'd' => $this->input->post('d'),
+						  'e' => $this->input->post('e'),
+						    'f' => $this->input->post('f'),
+							  'g' => $this->input->post('g'),
+							    'h' => $this->input->post('h'),
+								  'i' => $this->input->post('i'),
+								    'j' => $this->input->post('j'),
+									  'k' => $this->input->post('k'),  'l' => $this->input->post('l')
+			   );
+			  
+				print  $userData;
+				var_dump($userData);
+				$this->db->insert('vaccine',$userData);
+		
+				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
+		  }
+		
+	
+	
         $this->load->view('vaccine'); 
 		
     } 
