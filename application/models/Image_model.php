@@ -27,20 +27,5 @@ class Image_model extends CI_Model {
 	  return $query->result();
 
  }
- public function details($data)
- {
-	 foreach ($data as $geth_index=>$geth)
-	 { 
-	 
-							
-						 $this->db->select("Pet_Name,DOB,color");
-						$this->db->from('petinfo');
-						$this->db->where('id=$geth_index');
-					
-						$query=$this->db->get();
-						return  $query->result();
-	  
-	 }
- }
  
 }

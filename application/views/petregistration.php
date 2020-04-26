@@ -43,8 +43,8 @@ include_once "menuWithLogout.php";
 
 		   <div class="wrap-input100 validate-input" data-validate = "valid AIN is required">
 		   <label for="inputState">AIN</label>
-                <input type="number_format" name="AIN" class="input100"  placeholder="1XXCDMGSHHF453761" title="1XXCDMGSHHF453761" required pattern="[a-zA-Z0-9]{17}" maxlength="17" >
-               
+                <input type="number_format" name="AIN" class="input100" placeholder="AIN" value="<?php echo !empty($user['AIN'])?$user['AIN']:''; ?>" >
+                <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa fa-AIN" aria-hidden="true"></i>
@@ -207,14 +207,7 @@ include_once "menuWithLogout.php";
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 								</span>
 						</div>
-          <!--   <div class="form-group">
-                <input type="password" name="password" placeholder="PASSWORD" required>
-                <?php echo form_error('password','<p class="help-block">','</p>'); ?>
-            </div>
-            <div class="form-group">
-                <input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" required>
-                <?php echo form_error('conf_password','<p class="help-block">','</p>'); ?>
-            </div>            -->
+      
             <div class="input-radio100">
                 <label>Gender: </label>
                 <?php 
@@ -264,42 +257,6 @@ include_once "menuWithLogout.php";
 
 
 				<div class="input-check100">
-                <label>Special Status </label><br>
-				 <?php 
-                if(!empty($user['Special_Status']) && $user['Special_Status'] == ' Service Dog'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-
-					if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Emotional Support Animal'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }
-
-
-				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'K-9'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }
-					
-				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Other'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }
-
-                }else{ 
-                    $mcheck = 'checked="checked"'; 
-                    $fcheck = ''; 
-                } 
-                ?>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Service Dog<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>Emotional Support Animal<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="3"<?php echo $mcheck; ?>>K-9<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>Other<br>
-
-					 </label>
-                </div>            
-
-			<div class="input-check100">
                 <label>Special Status </label><br>
 				 <?php 
                 if(!empty($user['Special_Status']) && $user['Special_Status'] == ' Service Dog'){ 

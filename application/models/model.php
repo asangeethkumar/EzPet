@@ -11,29 +11,34 @@ class Model  extends CI_Model {
 		
 		$this->userTbl = 'users';
     }
-
+public  function display_records($id)
+	{
+	
+	$query=$this->db->query("select Pet_Name,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
+	return $query->result();
+	}
     /*
      * Get rows from the users table
      */
-	 
+	 public function do_upload($upload)
+	{
+					$config = array(
+					'upload_path' => "./uploads/",
+					'allowed_types' => "gif|jpg|png|jpeg|pdf",
+					'overwrite' => TRUE,
+					'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+					'max_height' => "768",
+					'max_width' => "1024"
+					);
+				$this->load->library('upload', $config);
+				return $config;
+	}
 	 
 	   public function name($first_name)
     {
-        if ( !preg_match('~^[a-zA-Z0-9 _&\-]+$~', $first_name)) 
+        if ( !preg_match('~^[a-zA-Z_&\-]+$~', $first_name)) 
         
         {
-            $this->form_validation->set_message('name', 'The %s field must not contain special characters');
-			$names="Invalid Name";
-			//echo $names;
-			//echo "<br>";
-			//echo "<br>";
-			/*$this->response([
-						'status' => false,
-						'message' => 'inval',
-					
-					], REST_Controller::HTTP_OK);
-          
-		   return response;*/
 		   return false;
         }
         else
@@ -48,11 +53,7 @@ class Model  extends CI_Model {
         if ( !preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $email)) 
         
         {
-            $this->form_validation->set_message('mails', 'invalid email');
-			$vars="Invalid Email";
-			//echo $vars;
-			//echo "<br>";
-			//echo "<br>";
+ 
             return FALSE;
         }
         else
@@ -68,11 +69,7 @@ class Model  extends CI_Model {
         if ( !preg_match('/^[6-9][0-9]{9}$/', $phone)) 
         
         {
-            $this->form_validation->set_message('number', 'enter the valid number');
-			$var="Invalid Phone Number";
-			//echo $var;
-			//echo "<br>";
-			//echo "<br>";
+        
             return FALSE;
         }
         else
@@ -82,23 +79,9 @@ class Model  extends CI_Model {
     }
 	 public function pass($password)
 	 {
-		 if(!preg_match('/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/',$password))
+		 if(!preg_match('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/',$password))
 			 {
-				 
-            $this->form_validation->set_message('password', 'enter the valid password');
-			$var="Invalid Password";
-			
-			/*echo $var;
-			echo "<br>";
-			echo "at least one lowercase char";
-			echo "<br>";
-echo"at least one uppercase char";
-echo "<br>";
-echo"at least one digit";
-echo "<br>";
-echo "at least one special sign of @#-_$%^&+=§!?";
-			echo "<br>";
-			echo "<br>";*/
+				
             return FALSE;
         }
         else
@@ -119,16 +102,78 @@ echo "at least one special sign of @#-_$%^&+=§!?";
 				return $first_name;
 			}
 	 }*/
-	 
-	 public function dates($date)
+	 public function isDate($date)
+	{
+			if(! preg_match(
+				'^(((0[1-9]|[12]\\d|3[01])\\/(0[13578]|1[02])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|[12]\\d|30)\\/(0[13456789]|1[012])\\/((19|[2-9]\\d)\\d{2}))|((0[1-9]|1\\d|2[0-8])\\/02\\/((19|[2-9]\\d)\\d{2}))|(29\\/02\\/((1[6-9]|[2-9]\\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$^',
+				$date))
+				{
+					return false;
+				}
+				else{
+					return $date;
+				}
+}
+ public function ForgotPassword($email)
+{
+    $this->db->select('email');
+    $this->db->from('users');
+    $this->db->where('email', $email);
+    $query=$this->db->get();
+    return $query->row_array();
+}
+public function sendpassword($data)
+{
+    $email = $data['email'];
+    $query1=$this->db->query("SELECT *  from users where email = '".$email."' ");
+    $row=$query1->result_array();
+    if ($query1->num_rows()>0)
+{
+        $passwordplain = "";
+        $passwordplain  = rand(999999999,9999999999);
+        $newpass['password'] = md5($passwordplain);
+        $this->db->where('email', $email);
+        $this->db->update('users', $newpass);
+        $mail_message='Dear '.$row[0]['first_name'].','. "\r\n";
+        $mail_message.='Thanks for contacting regarding to forgot password,<br> Your <b>Password</b> is <b>'.$passwordplain.'</b>'."\r\n";
+        $mail_message.='<br>Please Update your password.';
+        $mail_message.='<br>Thanks & Regards';
+        $mail_message.='<br>Your company name';
+        
+        date_default_timezone_set('Etc/UTC');
+        require FCPATH.'assets/PHPMailer/PHPMailerAutoload.php';
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->SMTPSecure = "tls"; 
+        $mail->Debugoutput = 'html';
+        $mail->Host = "localhost";
+        $mail->Port = 587;
+        $mail->SMTPAuth = true;   
+        $mail->Username = "sai.vcemanu@gmail.com";    
+        $mail->Password = "MOMdad1970";
+        $mail->setFrom('admin@site', 'admin');
+        $mail->IsHTML(true);
+        $mail->addAddress($email);
+        $mail->Subject = 'OTP from company';
+        $mail->Body    = $mail_message;
+        $mail->AltBody = $mail_message;
+		
+        if (!$mail->send()) {
+
+            echo "<script>alert('msg','Failed to send password, please try again!')</script>";
+        } else {
+
+            echo "<script>alert('msg','Password sent to your email!')</script>";
+        }
+        redirect(base_url().'forms/forgot_pass','refresh');
+    }
+    else
     {
-		if ( preg_match('/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', $date) ) {
-      list($year , $month , $day) = explode('-',$date);
-      return true;
-   } else {
-      return false;
-   }
-	}
+
+        echo "<script>alert('msg','Email not found try again!')</script>";
+        redirect(base_url().'forms/forgot_pass','refresh');
+    }
+}
 	 
 	 function getRules($params=array())
 	 {
@@ -196,16 +241,7 @@ echo "at least one special sign of @#-_$%^&+=§!?";
     }
 	
 	
-	public function display_records()
-	{
-		$this->db->select("*");
-		$this->db->from('petinfo');
-		$query=$this->db->get();
-	//$query=$this->db->query("select * from petinfo");
-	return $query->result();
 	
-	
-	}
     
     /*
      * Insert user data
