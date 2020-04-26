@@ -38,15 +38,8 @@ include_once "menuWithLogout.php";
 						<h1 align="center" >DENTAL PRODUCTS</h1>
 						<br>
 						<br>
-						<?php if($this->session->flashdata('msg')): ?>
-						<p><?php echo $this->session->flashdata('msg'); ?></p>
-						<?php else : ?>
-						<p><?php echo $this->session->flashdata('error'); ?></p>
-						<?php endif; ?>
-						<br>
-						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="ENTER YOUR  NAME" title="digits and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -58,7 +51,7 @@ include_once "menuWithLogout.php";
 				
 				
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" value="<?php echo !empty($user['email'])?$user['email']:''; ?>" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -69,8 +62,7 @@ include_once "menuWithLogout.php";
 		
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"   
-									title="Phone number with 6-9 and remaing 9 digit with 0-9"value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -143,21 +135,19 @@ include_once "menuWithLogout.php";
 		 
 		 
 		 
-						<div class="wrap-input100 validate-input" data-validate = " valid address is required">
+						<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
 								<label for="inputState">ADDRESS </label>
-								​<textarea id="txtArea" name="address" class="input100" rows="10" cols="70"></textarea>
-								<!--<input type="text" name="address"  class="input100" >-->
+								<input type="text" name="address"  class="input100" >
 								<span class="focus-input100"></span>
-								<br>
 								<span class="symbol-input100">
-									<i class="fa fa-address-card-o" aria-hidden="true"></i>
+									
 								</span>
 						</div>
 						
 						<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
 							<span class="focus-input100"></span>
 							<label for="inputState"> DELIVERY</label>
-							<select name="delivery"  id="inputState" class='input100' >
+							<select name="delivery"  id="inputState" class='input100' required >
 									<option>SELECT </option>
 									<option >delivery for one time </option>
 									<option>delivery every month</option>
@@ -174,7 +164,7 @@ include_once "menuWithLogout.php";
 				<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
 						<span class="focus-input100"></span>
 						<label for="inputState" >PAYMENT TYPE</label>
-						<select  name="payment" id="inputState" class='input100'  >
+						<select  name="payment" id="inputState" class='input100' required >
 									<option>SELECT </option>
 									<option >CREDIT/DEBIT CARD </option>
 									<option>NET BANKING</option>
