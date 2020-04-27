@@ -14,8 +14,10 @@ class Model  extends CI_Model {
 public  function display_records($id)
 	{
 	
-	$query=$this->db->query("select Pet_Name,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
+	$query=$this->db->query("select Pet_Name,image,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
 	return $query->result();
+	//$querys=$this->db->query("select image from petinfo where AIN='$id'");
+	//return $querys->result();
 	}
     /*
      * Get rows from the users table
