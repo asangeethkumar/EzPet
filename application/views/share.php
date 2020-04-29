@@ -160,6 +160,26 @@
 <br>
 <br>
 <br>
+				<!--	<?php
+					
+								 foreach($data as $row)
+								  {
+									  ?>
+									  <?php
+									     $s= $row->image;
+										?>
+										<?php
+								  }
+								  ?>
+									<img src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>">
+									<?php
+									?>-->
+									
+					
+									
+									
+									
+								
 
 <!-- Add font awesome icons -->
 <table align="center">

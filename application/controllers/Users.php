@@ -182,25 +182,18 @@ class Users extends CI_Controller {
 	
 	public function details($id)
 	{	
-		$data = array();
-		if($this->isUserLoggedIn)
-		{
-			$con = array(
-				'id' => $this->session->userdata('userId')
-			);
-			$data['user'] = $this->model->getRows($con);
-			$data2['data'] =  $this->image_model->get_otherImages($data);
-			
-			$result['data']=$this->model->display_records($id,$data2);
+		
+			$result['data']=$this->model->display_records($id);
 			$this->load->view('petdetails',$result);
-		}
+			//$this->load->view('share',$result);
+		
 				
 	}
 	
 	public function share()
 	{
-
-			$this->load->view('share',);
+			//$result['data']=$this->model->display_records($id);
+			$this->load->view('share');
 	}
 	
 	public function video()

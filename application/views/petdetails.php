@@ -74,14 +74,27 @@ h3{
 						<br>
 						
 	<!--<a  href="<?php echo base_url('users/video'); ?>""> video</a>-->
-						<img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[7]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
+	<?php
+		
+		//$b = mysql_query($query);
+		//print_r($querys);
+			
+	
+		?>
+
+						<!--<img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[7]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>-->
 						
 					<?php
 					//print_r($result);
 								 foreach($data as $row)
 								  {
 									  ?>
-								
+									  <?php
+									     $s= $row->image;
+										?>
+								<table>
+									<td align="center"><img  src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
+								</table>
 									
 												<?php echo   "<h3>" .$row->Pet_Name."</h3>"?>
 												<?php echo "<br>" ?>
