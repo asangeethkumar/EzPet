@@ -7,7 +7,7 @@ class Users extends CI_Controller {
 		
 		// Load form validation ibrary & user model
         $this->load->library('form_validation');
-        $this->load->model('model');
+        $this->load->model('EzPet_model');
 	   $this->load->model('image_model');
 	   
 
@@ -32,15 +32,19 @@ class Users extends CI_Controller {
 			$con = array(
 				'id' => $this->session->userdata('userId')
 			);
-            $data['user'] = $this->model->getRows($con);
-            
+            $data['user'] = $this->EzPet_model->getRows($con);
+            	?>
+			</br>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+<?php
 			// Pass the user data and load view
 			//$this->load->view('elements/header', $data);
 			$this->load->view('menuWithLogout');
-			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
-						 
-			//$this->load->view('users/account', $data2);
-			//$this->load->view('elements/footer');
+				$this->load->view('banner');
+
+		  $data1['data'] =  $this->image_model->get_images();
+				$this->load->view('dashboard', $data1);
         }else{
             redirect('login');
         }
@@ -73,13 +77,13 @@ class Users extends CI_Controller {
 						'status' => 1
 					)
                 );
-							$checkLogin = $this->model->getRows($con);
+							$checkLogin = $this->EzPet_model->getRows($con);
 
                 if($checkLogin){
                     $this->session->set_userdata('isUserLoggedIn', TRUE);
                     $this->session->set_userdata('userId', $checkLogin['id']);
 
-                   // redirect('users/account/');
+                    redirect('users/account/');
 
 
 					
@@ -117,7 +121,7 @@ class Users extends CI_Controller {
             );
 
             if($this->form_validation->run() == true){
-                $insert = $this->model->insert($userData);
+                $insert = $this->EzPet_model->insert($userData);
               
                     $this->session->set_userdata('success_msg', 'Your account registration has been successful. Please login to your account.');
                     redirect('users/login');
@@ -309,8 +313,6 @@ public function mypres()
 									  'k' => $this->input->post('k'),  'l' => $this->input->post('l')
 			   );
 			  
-				print  $userData;
-				var_dump($userData);
 				$this->db->insert('mypres',$userData);
 		
 				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";
@@ -1291,7 +1293,6 @@ public function mypres()
                
                   );
 		
-			print_r($userData);
 				var_dump($userData);
 				
 				$this->db->insert('petinfo',$userData);
@@ -1299,7 +1300,7 @@ public function mypres()
     {
 		$filenamekey = md5(uniqid($_FILES["image"]["name"], true)); 
 
-       if( move_uploaded_file($file_tmp, 'C:/xampp/htdocs/EzPet/assets/images/'.$filenamekey));
+       if( move_uploaded_file($file_tmp, '/var/www/html/EzPet/assets/images/'.$filenamekey));
        {
         echo 'File uploaded';
        }
@@ -1630,7 +1631,7 @@ public function mypres()
 				'email' => $str
 			)
 		);
-        $checkEmail = $this->model->getRows($con);
+        $checkEmail = $this->EzPet_model->getRows($con);
         if($checkEmail > 0){
             $this->form_validation->set_message('email_check', 'The given email already exists.');
             return FALSE;

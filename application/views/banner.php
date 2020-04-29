@@ -41,6 +41,5 @@
 </br>
 
 
-<div id="top">
-<h1><font color="white">HELLO HAI HELLO </font></h1></div>
+<div id="top"></div>
 <div id="bottom"></div>

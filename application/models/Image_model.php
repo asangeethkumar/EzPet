@@ -16,7 +16,7 @@ class Image_model extends CI_Model {
  {
   $this->db->select('*');
   $this->db->order_by('ID');
-  $query = $this->db->get('imageS');
+  $query = $this->db->get('images');
   return $query->result();
  }
  

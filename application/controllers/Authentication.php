@@ -12,7 +12,7 @@ class Authentication extends REST_Controller {
         parent::__construct();
 		
 		// Load the user model
-        $this->load->model('model');
+        $this->load->model('EzPet_model');
     }
 	
 	public function login_post() {

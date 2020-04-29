@@ -6,7 +6,7 @@ class Pet extends CI_Controller {
         parent::__construct();
 		
 		// Load form validation ibrary & user model
-        $this->load->model('model');
+        $this->load->model('EzPet_model');
 		
 		// User login status
     }

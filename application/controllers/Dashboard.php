@@ -16,7 +16,23 @@ class Dashboard extends CI_Controller {
 			$this->load->view('menu');
 			?>
 			</br>
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
 
 <?php
  			$this->load->view('banner');
