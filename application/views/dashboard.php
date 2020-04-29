@@ -70,8 +70,15 @@ body {
   <div class="column">
     <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[0]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-<?php $value = md5(base_url()."assets/images/".trim(str_replace(",", " ", $data[0]->image_path)));?>
-     <button type="button" onclick="location.href='<?php echo base_url();?>petinfo/<?php echo $value;?>'" class="button button2">Jimmy</button>
+
+     <!--<button type="button" onclick="window.location.href ="<?php echo base_url('users/details'); ?>"" class="button button2">Jimmy</button>-->
+	<!-- <a href= "<?php echo base_url('users/details'); ?>" class="button button2">Go to Google</a>-->
+	<?php
+	?>
+	
+	 <a href="<?php echo base_url('users/details/1');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Jimmy</a>
+	 <?php
+	 ?>
 	
     </div>
   </div>
@@ -79,9 +86,7 @@ body {
   <div class="column">
     <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[7]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-     <?php $value = md5(base_url()."assets/images/".trim(str_replace(",", " ", $data[7]->image_path)));?>
-
-	 <button type="button" onclick="location.href='<?php echo base_url();?>petinfo/<?php echo $value;?>'" class="button button2"> <p>Browie</p></button>
+	  <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Browie</a>
 	 
     </div>
   </div>
@@ -89,9 +94,8 @@ body {
   <div class="column">
     <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[2]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-          <?php $value = md5(base_url()."assets/images/".trim(str_replace(",", " ", $data[2]->image_path)));?>
-
-	 <button type="button" onclick="location.href='<?php echo base_url();?>petinfo/<?php echo $value;?>'" class="button button2"> <p>Tuffy</p></button>
+    
+	 	  <a href="<?php echo base_url('users/details/3');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Tuffy</a>
 	
     </div>
   </div>
@@ -99,9 +103,8 @@ body {
   <div class="column">
     <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[3]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-          <?php $value = md5(base_url()."assets/images/".trim(str_replace(",", " ", $data[3]->image_path)));?>
-
-	 <button type="button" onclick="location.href='<?php echo base_url();?>petinfo/<?php echo $value;?>'" class="button button2"> <p>scooby</p></button>
+    
+	  <a href="<?php echo base_url('users/details/4');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">scooby</a>
 	
     </div>
   </div>

@@ -207,14 +207,7 @@ include_once "menuWithLogout.php";
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 								</span>
 						</div>
-          <!--   <div class="form-group">
-                <input type="password" name="password" placeholder="PASSWORD" required>
-                <?php echo form_error('password','<p class="help-block">','</p>'); ?>
-            </div>
-            <div class="form-group">
-                <input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" required>
-                <?php echo form_error('conf_password','<p class="help-block">','</p>'); ?>
-            </div>            -->
+      
             <div class="input-radio100">
                 <label>Gender: </label>
                 <?php 

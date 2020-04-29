@@ -38,10 +38,16 @@ include_once "menuWithLogout.php";
 						<h1 align="center" >PESCRIPTION DIET</h1>
 						<br>
 						<br>
+						<?php if($this->session->flashdata('msg')): ?>
+						<p><?php echo $this->session->flashdata('msg'); ?></p>
+						<?php else : ?>
+						<p><?php echo $this->session->flashdata('error'); ?></p>
+						<?php endif; ?>
+						<br>
 						
 						
 						<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-								<input type="text" name="first_name"  class="input100" placeholder="FIRST NAME" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
+								<input type="text" name="first_name"  class="input100" placeholder="CARE TAKER  NAME"   title="digits and special characters are not allowed" value="<?php echo !empty($user['first_name'])?$user['first_name']:''; ?>" >
 								<?php echo form_error('first_name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -53,7 +59,7 @@ include_once "menuWithLogout.php";
 				
 				
 						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email" value="<?php echo !empty($user['email'])?$user['email']:''; ?>"placeholder="EMAIL"	 placeholder="EMAIL" >
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -64,7 +70,8 @@ include_once "menuWithLogout.php";
 		
 		
 						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<input type="text" name="phone"  class="input100" 
+									title="Phone number with 6-9 and remaing 9 digit with 0-9" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 								<span class="focus-input100"></span>
@@ -87,10 +94,12 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="petname"   class="input100"  placeholder="ENTER PET NAME" value="" >	
+								<input type="text" name="petname"   class="input100"  placeholder="PET NAME" value="<?php echo !empty($user['petname'])?$user['petname']:''; ?>"  >	
+								<?php echo form_error('petname','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
+								<br>
 								<span class="symbol-input100">
-									
+									<i class="fa fa-paw" aria-hidden="true"></i>
 								</span>
 						</div>
 						
@@ -128,7 +137,7 @@ include_once "menuWithLogout.php";
 
 						
 							
-						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
+						<div class="wrap-input100 validate-input" data-validate = "  valid problem  is required">
 								<label for="inputState"> </label>
 								<input type="text" name="problem"   class="input100"  placeholder="ENTER PET PROBLEM" value="">	
 								<span class="focus-input100"></span>
@@ -147,34 +156,34 @@ include_once "menuWithLogout.php";
 							 
 							<tr>
 							<td align="center"><b>Sl.No.</b></td>
-							<td align="center"><b>FOOD</b></td>
-							<td align="center"><b>BREAKFAST</b></td>
-							<td align="center"><b>LUNCH</b></td>
-							<td align="center"><b>DINNER</b></td>
+							<td align="center"><b>FOODNAME(qunatity)</b></td>
+							<td align="center"><b>(BEFORE/AFTER)BREAKFAST</b></td>
+							<td align="center"><b>(BEFORE/AFTER)LUNCH</b></td>
+							<td align="center"><b>(BEFORE/AFTER)DINNER</b></td>
 							</tr>
 							
 							<tr>
 							<td>1</td>
-							<td><input type="text" name="a" maxlength="30" /></td>
-							<td><input type="text" name="b" maxlength="30" /></td>
-							<td><input type="text" name="c" maxlength="30" /></td>
-							<td><input type="text" name="d" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="a" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="b" maxlength="30" /></td>
+							<td><input type="text"  class="input100"name="c" maxlength="30" /></td>
+							<td><input type="text"   class="input100" name="d" maxlength="30" /></td>
 							</tr>
 							 
 							<tr>
 							<td>2</td>
-							<td><input type="text" name="e" maxlength="30" /></td>
-							<td><input type="text" name="f" maxlength="30" /></td>
-							<td><input type="text" name="g" maxlength="30" /></td>
-							<td><input type="text" name="h" maxlength="30" /></td>
+							<td><input type="text"  class="input100"name="e" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="f" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="g" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="h" maxlength="30" /></td>
 							</tr>
 							 
 							<tr>
 							<td>3</td>
-							<td><input type="text" name="i" maxlength="30" /></td>
-							<td><input type="text" name="j" maxlength="30" /></td>
-							<td><input type="text" name="k" maxlength="30" /></td>
-							<td><input type="text" name="l" maxlength="30" /></td>
+							<td><input type="text"  class="input100" name="i" maxlength="30" /></td>
+							<td><input type="text" class="input100" name="j" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="k" maxlength="30" /></td>
+							<td><input type="text"   class="input100"name="l" maxlength="30" /></td>
 							</tr>
 							 
 							

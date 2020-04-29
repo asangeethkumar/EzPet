@@ -40,15 +40,48 @@ include_once "menuWithLogout.php";
             <form class="login100-form validate-form"  action="" method="post" >
             <h1 align="center" >ACCESSORIES </h1>
             <br>
-            <br>		
-			<div class="form-group">
-				<input type="text" name="pet_name"   placeholder="PET NAME" required>
-			</div>
-			<div class="form-group">
-				<input type="text" name="pet_breed"   placeholder="PET Breed"required>
-			</div>
-			<h3>
-			<!--form action="/action_page.php">
+            <br>    
+  
+                <div class="wrap-input100 validate-input" data-validate = "valid pet name is required">
+                <input type="text" name="pet_name"  class="input100" placeholder="PET NAME"pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['PET_name'])?$user['PET_name']:''; ?>" >
+                <?php echo form_error('pet_name','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate = "valid pet breed is required">
+                <input type="text" name="pet_breed"  class="input100" placeholder="PET BREED" value="<?php echo !empty($user['pet_breed'])?$user['pet_breed']:''; ?>" >
+                <?php echo form_error('pet_breed','<p class="help-block">','</p>'); ?>
+                <span class="focus-input100"></span>
+                <span class="symbol-input100">
+                  
+                </span>
+                </div>
+              
+
+      <h3>ACCESSORIES</h3>
+      <br>
+
+             
+      
+  <input type="checkbox" id="Food and water bowls" name="acces[]" value="Food and water bowls">
+  <label for="Food and water bowls">Food and water bowls</label><br>
+  <input type="checkbox" id="Collar" name="acces[]" value="Collar">
+  <label for="Collar">Collar</label><br>
+  <input type="checkbox" id="Four to six-foot leash" name="acces[]" value="Four to six-foot leash">
+  <label for="Four to six-foot leash">Four to six-foot leash</label><br>
+  
+  <input type="checkbox" id="ID tag with your phone number" name="acces[]" value="ID tag with your phone number">
+  <label for="ID tag with your phone number"> ID tag with your phone number</label><br>
+  <input type="checkbox" id="Dog bed" name="acces[]" value="Dog bed">
+  <label for="Dog bed">Dog bed</label><br>
+  <input type="checkbox" id="Doggy shampoo and conditioner" name="acces[]" value="Doggy shampoo and conditioner">
+  <label for="Doggy shampoo and conditioner">Doggy shampoo and conditioner</label><br>
+
+  
+
+      <!--form action="/action_page.php">
   <input type="checkbox" id="belt" name="belt" value="belt">
   <label for="belt">belt</label><br>
   <input type="checkbox" id="pet_house" name="pet_house" value="pet_house">
@@ -64,8 +97,8 @@ include_once "menuWithLogout.php";
 </form-->
 
 
-				<!--h3>Payment</h3>
-			<label for="cname"></label>
+        <!--h3>Payment</h3>
+      <label for="cname"></label>
             <input type="text" id="cname" name="cardname" placeholder="Name on Card"><emsp>
             <label for="ccnum"></label>
             <input type="text" id="ccnum" name="cardnumber" placeholder="Credit/Debit card number" required="">
@@ -82,14 +115,14 @@ include_once "menuWithLogout.php";
               </div>
           </div-->
 
-		      
+          
      <div class="container-login100-form-btn">
             <button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
               submit
             </button>
-			</div>
-		</form>
-	</div>
+      </div>
+    </form>
+  </div>
 </div>
 
 
