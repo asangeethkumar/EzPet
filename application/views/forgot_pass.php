@@ -2,7 +2,7 @@
 
 <html lang="en">  
 <head>
-<title>DIAGONSTIC</title>
+<title>FORGETPASSWORD</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -29,7 +29,7 @@
 			<?php echo @$error; ?>
 				
 				<form class="login100-form validate-form"  action="" method="post" >
-						<h1 align="center" >FORGETPASSWORD</h1>
+						<h1 align="center">ForgetPassword</h1>
 						<br>
 						<br>
 						
@@ -39,13 +39,13 @@
 						
 						
 		
-		<div class="wrap-input100 validate-input" data-validate = "  valid emailid  is required">
-		<div class="wrap-input100 validate-input" data-validate = "  valid emailid  is required">
+	
+		                <div class="wrap-input100 validate-input" data-validate = "  valid emailid  is required">
 								<label for="inputState"> </label>
-								<input type="email"   class="input100"  name="email" id="name" placeholder=""/><br>
+								<input type="email"   class="input100"  name="email" id="name" placeholder="EMAIL "/>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">	
-								<i class="fa fa-envelope" aria-hidden="true"></i>
+								   <i class="fa fa-envelope" aria-hidden="true"></i>
 								</span>
 						</div>
 						

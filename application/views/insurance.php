@@ -85,6 +85,16 @@ include_once "menuWithLogout.php";
 									<option>BIRDS</option>
 								</select>
 						</div>
+						<div class="wrap-input100 validate-input" data-validate = "  valid petname  is required">
+								<label for="inputState"> </label>
+								<input type="text" name="petname"  class="input100"  title="digits  and special characters are not allowed"  placeholder="ENTER PET  NAME"  value="<?php echo !empty($user['petname'])?$user['petname']:''; ?>">
+								<?php echo form_error('petname','<p class="help-block">','</p>'); ?>
+								<span class="focus-input100"></span>
+								<br>
+								<span class="symbol-input100">
+									<i class="fa fa-paw" aria-hidden="true"></i>
+								</span>
+						</div>
 						
 					<div class="wrap-input100 validate-input" data-validate = "  valid date  is required">
 								<label for="inputState">PET DOB </label>
