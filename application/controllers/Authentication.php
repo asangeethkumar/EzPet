@@ -30,7 +30,7 @@ class Authentication extends REST_Controller {
 				'password' => md5($password),
 				'status' => 1
 			);
-			$user = $this->model->getRows($con);
+			$user = $this->EzPet_model->getRows($con);
 			
 			if($user){
 				// Set the response and exit
@@ -39,14 +39,19 @@ class Authentication extends REST_Controller {
 					'message' => 'User login successful.',
 					'data' => $user
 				], REST_Controller::HTTP_OK);
-			}else{
+			}else{     
+      				$this->response([
+                                        'status' => false,
+                                        'message' => 'User login unsuccessful.',
+                                        'data' => []
+                                ], REST_Controller::HTTP_OK);
+
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
-				$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 			}
         }else{
 			// Set the response and exit
-            $this->response("Provide email and password.", REST_Controller::HTTP_BAD_REQUEST);
+            $this->response("Provide email and password.", REST_Controller::HTTP_OK);
 		}
 	}
 	
@@ -54,7 +59,7 @@ class Authentication extends REST_Controller {
 	public function registration_post() {
 		// Get the post data
 		$first_name = strip_tags($this->post('first_name'));
-		$name=$this->model->name($first_name);
+		$name=$this->EzPet_model->name($first_name);
 		if($name==false)
 		{
 				// Set the response and exit
@@ -62,13 +67,13 @@ class Authentication extends REST_Controller {
 				$this->response([
 						'status' => false,
 						'message' => 'ERROR1',
-					], REST_Controller::HTTP_BAD_REQUEST);
-				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+					], REST_Controller::HTTP_OK);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_OK);
 		}
 		//$fname=$this->model->name($first_name);
 		$last_name = strip_tags($this->post('last_name'));
 		$email = strip_tags($this->post('email'));
-		$em=$this->model->mails($email);
+		$em=$this->EzPet_model->mails($email);
 		if($em==false)
 		{
 				// Set the response and exit
@@ -76,11 +81,11 @@ class Authentication extends REST_Controller {
 				$this->response([
 						'status' => false,
 						'message' => 'ERROR2',
-					], REST_Controller::HTTP_BAD_REQUEST);
-				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+					], REST_Controller::HTTP_OK);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_OK);
 		}
 		$password = $this->post('password');
-		$pas=$this->model->pass($password);
+		$pas=$this->EzPet_model->pass($password);
 		if($pas==false)
 		{
 				// Set the response and exit
@@ -88,12 +93,12 @@ class Authentication extends REST_Controller {
 				$this->response([
 						'status' => false,
 						'message' => 'ERROR3',
-					], REST_Controller::HTTP_BAD_REQUEST);
-				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+					], REST_Controller::HTTP_OK);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_OK);
 		}
 		
 		$phone = strip_tags($this->post('phone'));
-		$ph=$this->model->number($phone);
+		$ph=$this->EzPet_model->number($phone);
 		if($ph==false)
 		{
 				// Set the response and exit
@@ -102,7 +107,7 @@ class Authentication extends REST_Controller {
 						'status' => false,
 						'message' => 'ERROR4',
 					], REST_Controller::HTTP_OK);
-				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_OK);
 		}
 		
 		// Validate the post data
@@ -113,11 +118,11 @@ class Authentication extends REST_Controller {
 			$con['conditions'] = array(
 				'email' => $email,
 			);
-			$userCount = $this->model->getRows($con);
+			$userCount = $this->EzPet_model->getRows($con);
 			
 			if($userCount > 0){
 				// Set the response and exit
-				$this->response("The given email already exists.", REST_Controller::HTTP_BAD_REQUEST);
+				$this->response("The given email already exists.", REST_Controller::HTTP_OK);
 			}else{
 				// Insert user data
 				$userData = array(
@@ -127,7 +132,7 @@ class Authentication extends REST_Controller {
 					'password' => md5($pas),
 					'phone' => $ph
 				);
-				$insert = $this->model->insert($userData);
+				$insert = $this->EzPet_model->insert($userData);
 				
 				// Check if the user data is inserted
 				if($insert){
@@ -139,12 +144,12 @@ class Authentication extends REST_Controller {
 					], REST_Controller::HTTP_OK);
 				}else{
 					// Set the response and exit
-					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_OK);
 				}
 			}
         }else{
 			// Set the response and exit
-            $this->response("Provide complete user info to add.", REST_Controller::HTTP_BAD_REQUEST);
+            $this->response("Provide complete user info to add.", REST_Controller::HTTP_OK);
 		}
 	}
 	
@@ -209,11 +214,11 @@ class Authentication extends REST_Controller {
 				], REST_Controller::HTTP_OK);
 			}else{
 				// Set the response and exit
-				$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+				$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_OK);
 			}
         }else{
 			// Set the response and exit
-            $this->response("Provide at least one user info to update.", REST_Controller::HTTP_BAD_REQUEST);
+            $this->response("Provide at least one user info to update.", REST_Controller::HTTP_OK);
 		}
 	}
 	 public function index_delete($id)

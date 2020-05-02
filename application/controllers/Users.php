@@ -503,7 +503,7 @@ class Users extends CI_Controller {
 			  
 				$this->db->insert('mypres',$userData);
 		
-				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";*/
+/*				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";*/
 				
 									if($this->form_validation->run() == true)
 									{
