@@ -44,6 +44,29 @@ include_once "menuWithLogout.php";
 						<p><?php echo $this->session->flashdata('error'); ?></p>
 						<?php endif; ?>
 						<br>
+						
+						
+						<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
+								<input type="email"   class="input100" name="email"  placeholder="EMAIL"  value="<?php echo !empty($user['email'])?$user['email']:''; ?>" >
+								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</span>
+						</div>
+		
+		
+		
+						<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
+								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER"   
+									title="Phone number with 7-9 and remaing 9 digit with 0-9" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
+						
+								<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</span>
+						</div>
 						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
 								<span class="focus-input100"></span>
 								<label class="required" >PET SPECIES</label>
@@ -107,7 +130,8 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid question  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="question"    class="input100"   placeholder=" YOUR QUESTION?" value="">
+								​<textarea id="txtArea" rows="10" name="question"    class="input100"   placeholder=" YOUR QUESTION?" cols="70"></textarea>
+								<!--<input type="text" name="question"    class="input100"   placeholder=" YOUR QUESTION?" value="">-->
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									

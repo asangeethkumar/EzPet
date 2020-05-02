@@ -53,6 +53,10 @@ h3{
 	font-family: "Times New Roman", Times, serif;
 	font-size: 45px;
 }
+img {
+  border-radius: 8px;
+  align="center" ;
+}
 
 
 </style>
@@ -61,10 +65,19 @@ h3{
 <body>
 <div class="limiter">
 		<div class="container-login100">
-	
 					
-						<a href="<?php echo base_url('users/share');  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true">share</a>
-			
+						<a href="<?php echo base_url('users/share/$');  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true">share</a>
+				<!--	<?php
+					foreach($data as $row)
+					{
+									  
+						$si=$row->AIN;
+				
+					}
+					echo 	$row->AIN;	
+		
+					?>-->
+					<!--<a  href="http://localhost:8080/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> video calling</a></td>-->
 			<div class="wrap-login100">
 		
 			
@@ -73,14 +86,9 @@ h3{
 						<hr style="width:250%;text-align:left;margin-left:0;color:black">-->
 						<br>
 						
-	<!--<a  href="<?php echo base_url('users/video'); ?>""> video</a>-->
-	<?php
-		
-		//$b = mysql_query($query);
-		//print_r($querys);
-			
 	
-		?>
+	
+	
 
 						<!--<img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[7]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>-->
 						
@@ -91,11 +99,16 @@ h3{
 									  ?>
 									  <?php
 									     $s= $row->image;
+										 $si=$row->AIN;
 										?>
-								<table>
-									<td align="center"><img  src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
-								</table>
-									
+								
+								
+									<td ><img  width="350" height="200"  src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
+								
+										
+									<!--<th><?php echo $row->AIN;	?></th>-->
+										<!--<th><?php echo $si;	?></th>-->
+												<!--<?php echo   "<h3>" .$row->AIN."</h3>"?>-->
 												<?php echo   "<h3>" .$row->Pet_Name."</h3>"?>
 												<?php echo "<br>" ?>
 													<table>

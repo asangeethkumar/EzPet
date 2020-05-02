@@ -38,6 +38,31 @@ class Users extends CI_Controller {
 			// Pass the user data and load view
 			//$this->load->view('elements/header', $data);
 			$this->load->view('menuWithLogout');
+		/*	echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+			echo"<br>";
+ 			$this->load->view('banner');
+		    $data1['data'] =  $this->image_model->get_images();
+			$this->load->view('dashboard', $data1);*/
+				
+				
+				
+			$this -> load -> view('elements/footer');
+
 			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
 						 
 			//$this->load->view('users/account', $data2);
@@ -190,10 +215,11 @@ class Users extends CI_Controller {
 				
 	}
 	
-	public function share()
+	public function share($id)
 	{
-			//$result['data']=$this->model->display_records($id);
-			$this->load->view('share');
+		
+			$result['data']=$this->model->display_records($id);
+			$this->load->view('share',$result);
 	}
 	
 	public function video()
@@ -533,10 +559,14 @@ class Users extends CI_Controller {
 							{
 									$this->form_validation->set_rules('petname', 'Pet Name', 'required|regex_match[~^[a-zA-Z_&\s-]+$~]');
 									$this->form_validation->set_rules('petage', 'Pet Age', 'required|regex_match[~^[a-zA-Z0-9_&\s-]+$~]');
+									$this->form_validation->set_rules('email', 'Email', 'required|valid_email|regex_match[/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i]');
+									$this->form_validation->set_rules('phone', 'phone', 'required|regex_match[/[6-9]{1}[0-9]{9}/]');
 										
 
 									$userData = array( 'pet' => $this->input->post('pet'),
 									'petname' => strip_tags($this->input->post('petname')),
+									'email' => strip_tags($this->input->post('email')),
+									'phone' => $this->input->post('phone'),
 								    'gender' => $this->input->post('gender'),
 									'petage' => $this->input->post('petage'),
 									'question' => $this->input->post('question'),
@@ -731,10 +761,12 @@ class Users extends CI_Controller {
 									$this->form_validation->set_rules('insurance', 'Insurance', 'required|regex_match[~^[a-zA-Z_&\s-]+$~]');
 										//$this->form_validation->set_rules('petage', 'Pet Age', 'required|regex_match[~^[a-zA-Z0-9_&\s-]+$~]');
 									$this->form_validation->set_rules('phone', 'phone', 'required|regex_match[/[6-9]{1}[0-9]{9}/]');
+									$this->form_validation->set_rules('petname', 'Pet Name', 'required|regex_match[~^[a-zA-Z_&\s-]+$~]');
 							
 								  
 								    $userData = array( 'amount' => $this->input->post('amount'),
 									'pet' => $this->input->post('pet'),
+									'petname' => $this->input->post('petname'),
 									'gender' => $this->input->post('gender'),
 									'cname' => $this->input->post('cname'),
 									'cgender' => $this->input->post('cgender'),
