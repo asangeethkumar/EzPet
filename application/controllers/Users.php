@@ -42,12 +42,9 @@ class Users extends CI_Controller {
 			// Pass the user data and load view
 			//$this->load->view('elements/header', $data);
 			$this->load->view('menuWithLogout');
-<<<<<<< HEAD
-				$this->load->view('banner');
 
 		  $data1['data'] =  $this->image_model->get_images();
 				$this->load->view('dashboard', $data1);
-=======
 		/*	echo"<br>";
 			echo"<br>";
 			echo"<br>";
@@ -218,7 +215,7 @@ class Users extends CI_Controller {
 	public function details($id)
 	{	
 		
-			$result['data']=$this->model->display_records($id);
+			$result['data']=$this->EzPet_model->display_records($id);
 			$this->load->view('petdetails',$result);
 			//$this->load->view('share',$result);
 		
@@ -228,7 +225,7 @@ class Users extends CI_Controller {
 	public function share($id)
 	{
 		
-			$result['data']=$this->model->display_records($id);
+			$result['data']=$this->EzPet_model->display_records($id);
 			$this->load->view('share',$result);
 	}
 	
@@ -2244,7 +2241,7 @@ class Users extends CI_Controller {
 				'email' => $str
 			)
 		);
-        $checkEmail = $this->model->getRows($con);
+        $checkEmail = $this->EzPet_model->getRows($con);
         if($checkEmail > 0){
             $this->form_validation->set_message('email_check', 'The given email already exists.');
             return FALSE;
