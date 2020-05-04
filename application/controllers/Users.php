@@ -10,6 +10,7 @@ class Users extends CI_Controller {
         $this->load->model('EzPet_model');
 	   $this->load->model('image_model');
 	   $this->load->library('upload');
+	     $this->load->helper(array('form', 'url'));
 	   
 
 
@@ -1815,94 +1816,76 @@ class Users extends CI_Controller {
 
 	}
 	
-	public function petregistration(){
-		$this->load->view('petregistration');
+	public function petregistration()
+	{
+			$this->load->view('petregistration',array('error' => ' ' ));
 
 		 
         // If registration request is submitted 
-        if($this->input->post('signupSubmit')) {
-			 $data = $userData = array(); 
-             $image1  = strip_tags($this->input->post('image')) ;
-			     $allowed_ext= array('jpg','jpeg','png','gif');
-				     $file_ext = strtolower( end(explode('.',$image1)));
-  $file_name =$_FILES['image'];
-    $file_ext = strtolower( end(explode('.',$file_name)));
+				if($this->input->post('signupSubmit'))
+				{
+					   if(!empty($_FILES['image']['name'])){
+                $config['upload_path'] = 'assets/images/';
+                $config['allowed_types'] = 'jpg|jpeg|png|gif';
+                $config['file_name'] = $_FILES['image']['name'];
+                
+                //Load upload library and initialize configuration
+                $this->load->library('upload',$config);
+                $this->upload->initialize($config);
+                
+                if($this->upload->do_upload('image')){
+                    $uploadData = $this->upload->data();
+                    $picture = $uploadData['file_name'];
+                }else{
+                    $picture = '';
+                }
+            }else{
+                $picture = '';
+            }
+            
+					
 
-
-    $file_size=$_FILES['image']['size'];
-    $file_tmp= $_FILES['image']['tmp_name'];
-
-    $file_size=$_FILES['image']['size'];
-    $file_tmp= $_FILES['image']['tmp_name'];
- if(in_array($file_ext,$allowed_ext) === false)
-    {
-        $errors[]='Extension not allowed';
-    }
-
-    if($file_size > 2097152)
-    {
-        $errors[]= 'File size must be under 2mb';
-
-    }
-
-			  $file_ext = strtolower( end(explode('.',$file_name)));
-
-
-    $file_size=$_FILES['image']['size'];
-    $file_tmp= $_FILES['image']['tmp_name'];
-    echo $file_tmp;echo "<br>";
-
-    $type = pathinfo($file_tmp, PATHINFO_EXTENSION);
-    $data = file_get_contents($file_tmp);
-    $base64 = 'data:image/' . $type . ';base64,' . md5($data);
-    echo "Base64 is ".$base64;
-
-			 $userData = array(
-									 'AIN' => strip_tags($this->input->post('AIN')), 
-                'Pet_Name' => strip_tags($this->input->post('Pet_Name')),
-				'DOB' => strip_tags($this->input->post('DOB')),	
-				'color' => strip_tags($this->input->post('color')),
-				'GENIUS' => strip_tags($this->input->post('GENIUS')),
-				 'weight' => strip_tags($this->input->post('weight')),
-				 'Height' => strip_tags($this->input->post('Height')),
+					$userData = array(
+					
+					'AIN' => strip_tags($this->input->post('AIN')), 
+					'Pet_Name' => strip_tags($this->input->post('Pet_Name')),
+					'DOB' => strip_tags($this->input->post('DOB')),	
+					'color' => strip_tags($this->input->post('color')),
+					'GENIUS' => strip_tags($this->input->post('GENIUS')),
+					'weight' => strip_tags($this->input->post('weight')),
+					'Height' => strip_tags($this->input->post('Height')),
 					'Microchiped_or_Tattooed' => strip_tags($this->input->post('Microchiped_or_Tattooed')),
-				 'Microchip_or_Tattoo' => strip_tags($this->input->post('Microchip_or_Tattoo')),
-				'State_License_or_Registration' => strip_tags($this->input->post('State_License_or_Registration')),
-				 'Club_or_Association_Registration' => strip_tags($this->input->post('Club_or_Association_Registration')),
-				 'Pet_Sire_Name' => strip_tags($this->input->post('Pet_Sire_Name')),
-				 'Pet_Sire_AIN' => strip_tags($this->input->post('Pet_Sire_AIN')),
-				 'Pet_Dam_Name' => strip_tags($this->input->post('Pet_Dam_Name')),
-				 'Pet_Dam_AIN' => strip_tags($this->input->post('Pet_Dam_AIN')),
+					'Microchip_or_Tattoo' => strip_tags($this->input->post('Microchip_or_Tattoo')),
+					'State_License_or_Registration' => strip_tags($this->input->post('State_License_or_Registration')),
+					'Club_or_Association_Registration' => strip_tags($this->input->post('Club_or_Association_Registration')),
+					'Pet_Sire_Name' => strip_tags($this->input->post('Pet_Sire_Name')),
+					'Pet_Sire_AIN' => strip_tags($this->input->post('Pet_Sire_AIN')),
+					'Pet_Dam_Name' => strip_tags($this->input->post('Pet_Dam_Name')),
+					'Pet_Dam_AIN' => strip_tags($this->input->post('Pet_Dam_AIN')),
 		
-               'email' => strip_tags($this->input->post('email')), 
-               // 'password' => md5($this->input->post('password')), 
+					'email' => strip_tags($this->input->post('email')), 
+             
 					'gender' => $this->input->post('gender'), 
 					'Spayed_or_Neutered' => $this->input->post('Spayed_or_Neutered'), 
-					'Special_Status' => $this->input->post('Special_Status'), 
+					'Special_Status' =>implode("|", $this->input->post('Special_Status')),					
 				
-                'phone' => strip_tags($this->input->post('phone')) ,
-                'image' => strip_tags($this->input->post('image')) ,			
+					'phone' => strip_tags($this->input->post('phone')) ,
+					'image' => $picture			
 				
                
-                  );
+					);
 		
-				var_dump($userData);
+					var_dump($userData);
+					
+					$this->db->insert('petinfo',$userData);
+					
+				  
 				
-				$this->db->insert('petinfo',$userData);
-				  if(empty($errors))
-    {
-		$filenamekey = md5(uniqid($_FILES["image"]["name"], true)); 
-
-       if( move_uploaded_file($file_tmp, '/var/www/html/EzPet/assets/images/'.$filenamekey));
-       {
-        echo 'File uploaded';
-       }
-    }
-				
-	}
+			}
 		
 		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
-		  }
+		
+	}
 		  
 	
 		

@@ -29,12 +29,16 @@ include_once "menuWithLogout.php";
 		<div class="container-login100">
 			<div class="wrap-login100">
 				
-				<form class="login100-form validate-form"  action="" method="post" >
+				
 						<h1 align="center" >PET REGISTRATION</h1>
 
 
 
+<?php echo $error; ?>
 
+
+
+<?php echo form_open_multipart('users/petregistration'); ?>
 
     
     
@@ -258,36 +262,11 @@ include_once "menuWithLogout.php";
 
 				<div class="input-check100">
                 <label>Special Status </label><br>
-				 <?php 
-                if(!empty($user['Special_Status']) && $user['Special_Status'] == ' Service Dog'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
 
-					if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Emotional Support Animal'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }
-
-
-				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'K-9'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }
-					
-				if(!empty($user['Special_Status']) && $user['Special_Status'] == 'Other'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }
-
-                }else{ 
-                    $mcheck = 'checked="checked"'; 
-                    $fcheck = ''; 
-                } 
-                ?>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="1"<?php echo $mcheck; ?>> Service Dog<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="2"<?php echo $mcheck; ?>>Emotional Support Animal<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="3"<?php echo $mcheck; ?>>K-9<br>
-					<input type="checkbox" id="checkItem" name="Special_Status" value="4"<?php echo $mcheck; ?>>Other<br>
+					<input type="checkbox" id="checkItem" name="Special_Status[]" value=" Service Dog"> Service Dog<br>
+					<input type="checkbox" id="checkItem" name="Special_Status[]" value="Emotional Support Animal">Emotional Support Animal<br>
+					<input type="checkbox" id="checkItem" name="Special_Status[]" value="K-9">K-9<br>
+					<input type="checkbox" id="checkItem" name="Special_Status[]" value="other">Other<br>
 
 					 </label>
                 </div>            
@@ -310,7 +289,7 @@ include_once "menuWithLogout.php";
 			</div>
 			
 				<div class="container-login100-form-btn">
-						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="upload" type="submit">
 							submit
 						</button>
             </div>
