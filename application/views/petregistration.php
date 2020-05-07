@@ -267,6 +267,7 @@ include_once "menuWithLogout.php";
 					<input type="checkbox" id="checkItem" name="Special_Status[]" value="Emotional Support Animal">Emotional Support Animal<br>
 					<input type="checkbox" id="checkItem" name="Special_Status[]" value="K-9">K-9<br>
 					<input type="checkbox" id="checkItem" name="Special_Status[]" value="other">Other<br>
+					
 
 					 </label>
                 </div>            

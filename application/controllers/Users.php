@@ -35,40 +35,13 @@ class Users extends CI_Controller {
 				'id' => $this->session->userdata('userId')
 			);
             $data['user'] = $this->EzPet_model->getRows($con);
-            	?>
-			</br>
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 
-<?php
 			// Pass the user data and load view
 			//$this->load->view('elements/header', $data);
 			$this->load->view('menuWithLogout');
 
 		  $data1['data'] =  $this->image_model->get_images();
 				$this->load->view('dashboard', $data1);
-		/*	echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
-			echo"<br>";
- 			$this->load->view('banner');
-		    $data1['data'] =  $this->image_model->get_images();
-			$this->load->view('dashboard', $data1);*/
-				
-				
-				
 			$this -> load -> view('elements/footer');
 
 			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
@@ -213,6 +186,7 @@ class Users extends CI_Controller {
     }
 	
 	
+	
 	public function details($id)
 	{	
 		
@@ -229,6 +203,8 @@ class Users extends CI_Controller {
 			$result['data']=$this->EzPet_model->display_records($id);
 			$this->load->view('share',$result);
 	}
+	
+
 	
 	public function video()
 	{
@@ -2093,33 +2069,42 @@ class Users extends CI_Controller {
 
 
 	
-	public function myorders(){
+	public function myorders()
+	{
 		$this->load->view('myorders');
-	
-		 
-         
+		if($this->input->post('signupSubmit'))
+		
         // If registration request is submitted 
-        if($this->input->post('signupSubmit')){
-			$data = $userData = array();
-				$userData = array(
-			'Full_Name' => strip_tags($this->input->post('Full_Name')), 
-				'email' => strip_tags($this->input->post('email')),
-                'Contact_number' => strip_tags($this->input->post('Contact_number')),
-				'my_products' => strip_tags($this->input->post('my_products')),
-			'total' => strip_tags($this->input->post('total')),
-			'billing_address' => strip_tags($this->input->post('billing_address')),
-			'Shipping_address' => strip_tags($this->input->post('Shipping_address')),
-			  ); 
-			print  $userData;
-				var_dump($userData);
-				
-				$this->db->insert('myorders',$userData);
+      
+		{
+			
+			
+			
+			//$loc=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+           // $siz=$this->input->post('size');
+			//$bre=$this->input->post('breed');
+			$gender =$this->input->post('gender');
+			//$ar=$this->input->post('age');
+			//$cl=$this->input->post('coat');
+			$c=$this->input->post('color');
+			$this->EzPet_model->displayrecords($spe,$c,$gender);
+			$result['data']=$this->EzPet_model->displayrecords($spe,$c,$gender);
+			$this->load->view('search',$result);			
+			//redirect("users/dispdata");  
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
-
-
+		
 
 	}
+	
+	
+	public function dispdata()
+	{
+	//$result['data']=$this->EzPet_model->displayrecords($spe);
+//	$this->load->view('search');
+	}
+	
+	
 	public function petlicense(){
 		$this->load->view('petlicense');
 		 
