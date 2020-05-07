@@ -2,7 +2,8 @@
 
 <?php
 include_once "menuWithLogout.php";
-?><br><br>
+?>
+<br>
 <html lang="en">  
 <head>
 <title>MY ORDERS</title>
@@ -22,7 +23,7 @@ include_once "menuWithLogout.php";
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/main.css'); ?>">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -31,85 +32,117 @@ include_once "menuWithLogout.php";
 		<div class="container-login100">
 			<div class="wrap-login100">
 				
-				<form class="login100-form validate-form"  action="" method="post" >
+				<form class="login100-form "  action="" method="post" >
 						<h1 align="center" >My Orders </h1>
 						<br>
 						<br>
+				<div class="wrap-input100">
+					<input class="input100" name="location"  type="search" placeholder="Search by location" aria-label="Search">
+					<br>
 
-
-		  <div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Full_Name" placeholder="Full NAME"  class="input100"value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" >
-                <?php echo form_error('Full_Name','<p class="help-block">','</p>'); ?>
-				<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-user" aria-hidden="true"></i>
-								</span>
-            </div>
-
-			 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
-								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
-								<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-envelope" aria-hidden="true"></i>
-								</span>
-						</div>
-		
-
-			 <div class="wrap-input100 validate-input" data-validate = "valid phone is required">
-                <input type="text" name="Contact_number" placeholder="CONTACT NUMBER"  class="input100"value="<?php echo !empty($user['Contact_number'])?$user['Contact_number']:''; ?>" >
-                <?php echo form_error('Contact_number','<p class="help-block">','</p>'); ?>
-				<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-phone" aria-hidden="true"></i>
-								</span>
-            </div>
-
-			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="my_products" placeholder="my products"  class="input100"value="<?php echo !empty($user['my_products'])?$user['my_products']:''; ?>" >
-                <?php echo form_error('my_products','<p class="help-block">','</p>'); ?>
-            </div>
-
-			<div class="wrap-input100 validate-input" data-validate = "valid number is required">
-                <input type="text" name="total" placeholder="TOTAL"  class="input100"value="<?php echo !empty($user['total'])?$user['total']:''; ?>" >
-                <?php echo form_error('total','<p class="help-block">','</p>'); ?>
-            </div>
-
-			<div class="wrap-input100 validate-input" data-validate = "valid address is required">
-                <input type="text" name="billing_address" placeholder="BILLING ADDRESS"  class="input100"value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" >
-                <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
-            </div>
-
-			<div class="input-radio100">
-                <label>	Is shipping address same as billing address?</label>
-                <?php 
-                if(!empty($user['Shipping_address']) && $user['Shipping_address'] == 'no'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }else{ 
-                    $mcheck = 'checked="checked"'; 
-                    $fcheck = ''; 
-                } 
-                ?>
-                <div class="input-radio100">
-                    <label>
-                        <input type="radio" name="Shipping_address" value="yes" <?php echo $mcheck; ?>>
-						yes
-                    </label>
-                    <label>
-                        <input type="radio" name="Shipping_address" value="no" <?php echo $fcheck; ?>>
-                        no
-                    </label>
-                </div>
-            </div>
-
-			 <div class="container-login100-form-btn">
-						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
-							submit
-						</button>
 				</div>
+					
+					
+						<div class="wrap-input100 " >
+								<span class="focus-input100"></span>
+								<label for="inputState"> SPECIES</label>
+								<select name="species" class='input100' id="inputState"   >
+									<option >Any</option>
+									<option >DOG</option>
+									<option>CAT</option>
+									<option>FISH</option>
+									<option>BIRDS</option>
+								</select>
+						</div>
+						
+					<div class="wrap-input100" >
+						<span class="focus-input100"></span>
+						<label for="inputState" >SIZE</label>
+						<select  name="size" id="inputState" class='input100'  >
+									<option>Any</option>
+									<option>Small</option>
+									<option>Medium</option>
+									<option>Large</option>
+									<option>Extra large</option>
+									
+						</select>
+					</div>
+				
+				
+				
+					<div class="wrap-input100 " >
+						<span class="focus-input100"></span>
+						<label for="inputState" >BREED</label>
+						<select  name="breed" id="inputState" class='input100'  >
+									<option>Any</option>
+									<option>Abyssinian</option>
+									<option>Degu</option>
+									<option>American Bulldog</option>
+									<option>American Buly</option>
+									
+						</select>
+					</div>
+					<div class="wrap-input100 " >
+						<span class="focus-input100"></span>
+						<label for="inputState" >GENDER</label>
+						<select  name="gender" id="inputState" class='input100'  >
+									<option>Any</option>
+									<option>Male</option>
+									<option>Female</option>
+									
+						</select>
+					</div>
+				
+				<div class="wrap-input100 " >
+						<span class="focus-input100"></span>
+						<label for="inputState" >AGE RANGE</label>
+						<select  name="age" id="inputState" class='input100' >
+									<option>Any</option>
+									<option>Puppy</option>
+									<option>Young</option>
+									<option>Adult</option>
+									<option>Senior</option>
+									
+						</select>
+					</div>
+					
+					<div class="wrap-input100 " >
+						<span class="focus-input100"></span>
+						<label for="inputState" >COAT LENGTH</label>
+						<select  name="coat" id="inputState" class='input100'>
+									<option>Any</option>
+									<option>Hairless</option>
+									<option>Short</option>
+									<option>Medium</option>
+									<option>Long</option>
+									<option>wire</option>
+									<option>Curly</option>
+									
+						</select>
+					</div>
+					<div class="wrap-input100" >
+						<span class="focus-input100"></span>
+						<label for="inputState" >COLOR</label>
+						<select  name="color" id="inputState" class='input100' >
+									<option>Any</option>
+									<option>White</option>
+									<option>Black</option>
+									<option>Brown</option>
+									<option>Light Brown</option>
+									<option>smoke</option>
+									<option>torbie</option>
+									
+						</select>
+					</div>
+				<div class="container-login100-form-btn">
+						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="upload" type="submit">
+							search
+						</button>
+
+
+			 
         </form>
-      <!--  <p>Already have an account? <a href="<?php echo base_url('users/login'); ?>">Login here</a></p> -->
+   
     </div>
 </div>
 <!--===============================================================================================-->	

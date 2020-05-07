@@ -11,7 +11,9 @@ class EzPet_model  extends CI_Model {
 		
 		$this->userTbl = 'users';
     }
-public  function display_records($id)
+	
+	
+	public  function display_records($id)
 	{
 	
 	$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
@@ -19,35 +21,19 @@ public  function display_records($id)
 	//$querys=$this->db->query("select image from petinfo where AIN='$id'");
 	//return $querys->result();
 	}
-	public  function display_record($si)
-	{
 	
-	$query=$this->db->query("select AIN,image from petinfo where AIN='$si'");
 	
-									
-		return $query->results();								
-								
-	//return $query->result();
-	//$querys=$this->db->query("select image from petinfo where AIN='$id'");
-	//return $querys->result();
-	}
-    /*
-     * Get rows from the users table
-     */
-	 public function do_upload($upload)
+
+	public function displayrecords($spe,$c,$gender)
 	{
-					$config = array(
-					'upload_path' => "./uploads/",
-					'allowed_types' => "gif|jpg|png|jpeg|pdf",
-					'overwrite' => TRUE,
-					'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
-					'max_height' => "768",
-					'max_width' => "1024"
-					);
-				$this->load->library('upload', $config);
-				return $config;
+		$query=$this->db->query("select image,Pet_Name,gender,AIN from petinfo where GENIUS='$spe' and( color='$c' or gender='$gender')");
+		
+		return $query->result();
 	}
-	 
+	
+	
+	
+
 	   public function name($first_name)
     {
         if ( !preg_match('~^[a-zA-Z_&\-]+$~', $first_name)) 

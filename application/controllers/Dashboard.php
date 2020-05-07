@@ -37,12 +37,14 @@ class Dashboard extends CI_Controller {
 <?php
  			$this->load->view('banner');
 
-		  $data1['data'] =  $this->image_model->get_images();
+		$data1['data'] =  $this->image_model->get_images();
 				$this->load->view('dashboard', $data1);
 				
 			$this -> load -> view('elements/footer');
+			
 
         		
     }  
  }  
-?>  
+?> 
+

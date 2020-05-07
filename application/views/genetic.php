@@ -3,10 +3,6 @@
 include_once "menuWithLogout.php";
 ?>
 <br>
-<br>
-<br>
-<br>
-
 <html lang="en">  
 <head>
 <title>Genetic test</title>
