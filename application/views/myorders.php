@@ -26,7 +26,14 @@ include_once "menuWithLogout.php";
 <!--===============================================================================================-->
 </head>
 <body>
+	<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
 
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>My Account </a></li>
+    <li class="breadcrumb-item active" aria-current="page">My Orders </li>
+  </ol>
+</nav>
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -38,7 +45,7 @@ include_once "menuWithLogout.php";
 
 
 		  <div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Full_Name" placeholder="Full NAME"  class="input100"value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" >
+                <input type="text" name="Full_Name" placeholder="Full NAME"  class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['Full_Name'])?$user['Full_Name']:''; ?>" >
                 <?php echo form_error('Full_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -47,7 +54,7 @@ include_once "menuWithLogout.php";
             </div>
 
 			 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-								<input type="email"   class="input100" name="email" placeholder="EMAIL" >
+								<input type="email"   class="input100" name="email" placeholder="EMAIL" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 								<?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -57,7 +64,7 @@ include_once "menuWithLogout.php";
 		
 
 			 <div class="wrap-input100 validate-input" data-validate = "valid phone is required">
-                <input type="text" name="Contact_number" placeholder="CONTACT NUMBER"  class="input100"value="<?php echo !empty($user['Contact_number'])?$user['Contact_number']:''; ?>" >
+                <input type="text" name="Contact_number" placeholder="CONTACT NUMBER"  class="input100" pattern="[6-9]{1}[0-9]{9}" title="Enter valid phone number" value="<?php echo !empty($user['Contact_number'])?$user['Contact_number']:''; ?>" >
                 <?php echo form_error('Contact_number','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">

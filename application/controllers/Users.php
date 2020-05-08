@@ -1129,7 +1129,38 @@ class Users extends CI_Controller {
 	
 // services & marchandish
 
-	 public function grooming()
+    public function best()
+    {
+
+
+        if($this->input->post('signupSubmit'))
+        {
+             $data = $userData = array(); 
+
+             $userData = array(
+                 'first_name' =>$this->input->post('first_name'), 
+                 'phone' => $this->input->post('phone'),
+                 'email' => $this->input->post('email'),
+                'pet_name' => $this->input->post('pet_name'),
+                'pet_breed' => $this->input->post('pet_breed'), 
+
+
+                'services'=>implode("|",$this->input->post('services'))
+            );
+                     print  $userData;
+                var_dump($userData);
+
+
+              $this->db->insert('best  ',$userData);
+    
+          }
+              
+    
+
+    	$this->load->view('best');
+    }
+
+ public function grooming()
     {
 
        
@@ -1152,6 +1183,8 @@ class Users extends CI_Controller {
         
             print  $userData;
                 var_dump($userData);
+
+              $this->db->insert('Grooming  ',$userData);
     
           }
             $this->load->view('Grooming');    
@@ -1160,7 +1193,6 @@ class Users extends CI_Controller {
                
 
     }
-
 
 
 
@@ -1574,7 +1606,8 @@ class Users extends CI_Controller {
                 'pet_toy' => $this->input->post('pet_toy'),
                  
                'type' => $this->input->post('type'),
-                 'toys'=>implode("|",$this->input->post('toys'))
+               'toys'=>implode("|",$this->input->post('toys'))
+                 
 
                     );
         
@@ -1653,7 +1686,7 @@ class Users extends CI_Controller {
                  'ephone' => $this->input->post('ephone'),
                 'pet_name' => $this->input->post('pet_name'),
                 'pet_breed' => $this->input->post('pet_breed'),
-                  'safety'=>implode("|",$this->input->post('safety'))
+                'safety'=>implode("|",$this->input->post('safety'))
                    );
         
             print  $userData;
@@ -1843,6 +1876,9 @@ class Users extends CI_Controller {
 					'DOB' => strip_tags($this->input->post('DOB')),	
 					'color' => strip_tags($this->input->post('color')),
 					'GENIUS' => strip_tags($this->input->post('GENIUS')),
+					'species' => $this->input->post('species'),
+					 'coat' => $this->input->post('coat'),
+
 					'weight' => strip_tags($this->input->post('weight')),
 					'Height' => strip_tags($this->input->post('Height')),
 					'Microchiped_or_Tattooed' => strip_tags($this->input->post('Microchiped_or_Tattooed')),
@@ -2183,11 +2219,51 @@ class Users extends CI_Controller {
 
 
 	
+	public function propet(){
+		$this->load->view('propet');
+
+		 if($this->input->post('signupSubmit')){
+				$data = $userData = array(); 
+         
+
+		$userData = array(
+			'first_name' => strip_tags($this->input->post('first_name')),
+
+			'middle_name' => strip_tags($this->input->post('middle_name')),
+
+			'last_name' => strip_tags($this->input->post('last_name')),
+			'gender' => strip_tags($this->input->post('gender')),
+
+			'date' => strip_tags($this->input->post('date')),
+
+			'Membershipid' => strip_tags($this->input->post('Membershipid')),
+
+			'PIJAC' => strip_tags($this->input->post('PIJAC')),
+
+			'PIJACuser' => strip_tags($this->input->post('PIJACuser')),
+
+			'address' => strip_tags($this->input->post('address')),
+
+			'email' => strip_tags($this->input->post('email')),
+
+			'phone' => strip_tags($this->input->post('phone'))
+		);
+
+				print  $userData;
+				var_dump($userData);
+				
+			$this->db->insert('propet',$userData);
+
+		}
+	
+   }
+	
 	public function ownpet(){
+
+
+
 		$this->load->view('ownpet');
 	}
-	
-   
 	
     
 	// Existing email check during validation
