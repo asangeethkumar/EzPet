@@ -155,25 +155,25 @@
 <br>
 
 
-			<!--	<?php
+						<?php
 					
 								 foreach($data as $row)
 								  {
 									  ?>
 									  <?php
 									     $s= $row->image;
-										  $si=$row->AIN;
+										 // $si=$row->AIN;
 										?>
 										<?php
 								  }
 								  ?>
-								  <?php echo $si;	?></th>
+							
 								  <table  align="center">
-									<td><img src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
+									<td><img width="350" height="200" src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
 								</table>
 									<?php
 									?>
-									-->
+									
 									
 					
 									

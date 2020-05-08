@@ -62,18 +62,19 @@ img {
 <body>
 <div class="limiter">
 		<div class="container-login100">
-					
-						<a href="<?php echo base_url('users/share/$');  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true">share</a>
-				<!--	<?php
+			<?php
 					foreach($data as $row)
 					{
 									  
 						$si=$row->AIN;
 				
 					}
-					echo 	$row->AIN;	
+					
 		
-					?>-->
+					?>
+					
+						<a href="<?php echo base_url('users/share/'.$si);  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true">share</a>
+			
 					<!--<a  href="http://localhost:8080/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> video calling</a></td>-->
 			<div class="wrap-login100">
 		

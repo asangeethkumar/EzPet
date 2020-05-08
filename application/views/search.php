@@ -90,7 +90,7 @@ img {
 										?>
 								<table>
 								
-									<td ><a href="<?php echo base_url('users/details/1');  ?>"  ><img  width="350" height="200"   src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"></a><td>
+									<td ><a href="<?php echo base_url('users/details/'.$i);  ?>"  ><img  width="350" height="200"   src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"></a><td>
 									<!--<a href="<?php echo base_url('users/searchdetails');  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><?php echo   "<h3>" .$row->Pet_Name."</h3>"?></a>-->
 									<th><?php echo "<p>&nbsp; </p>"?></th>
 									<th><?php echo "<p>&nbsp; </p>"?></th>
