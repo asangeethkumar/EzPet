@@ -26,6 +26,14 @@ include_once "menuWithLogout.php";
 <!--===============================================================================================-->
 </head>
 <body>
+		<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>My Account </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Pet veterinary chart</li>
+  </ol>
+</nav>
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -41,7 +49,7 @@ include_once "menuWithLogout.php";
 		  <label>Pet Details </label>
 			
 			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name=" Pet_Name " placeholder="Pet Name" class='input100'value="<?php echo !empty($user['Pet_Name'])?$user['Pet_Name']:''; ?>" >
+                <input type="text" name=" Pet_Name " placeholder="Pet Name" class='input100' pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['Pet_Name'])?$user['Pet_Name']:''; ?>" >
                 <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">

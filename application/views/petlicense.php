@@ -26,6 +26,14 @@ include_once "menuWithLogout.php";
 
 </head>
 <body>
+		<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>My Account </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Pet License </li>
+  </ol>
+</nav>
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -80,7 +88,7 @@ include_once "menuWithLogout.php";
             </div>
 
 			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Owners_Name" placeholder="Owners Name" class="input100"value="<?php echo !empty($user['Owners_Name'])?$user['Owners_Name']:''; ?>" >
+                <input type="text" name="Owners_Name" placeholder="Owners Name" class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['Owners_Name'])?$user['Owners_Name']:''; ?>" >
                 <?php echo form_error('Owners_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -89,7 +97,7 @@ include_once "menuWithLogout.php";
             </div>
 			
 			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Applicant_name" placeholder="Applicant name " class="input100"value="<?php echo !empty($user['Applicant_name'])?$user['Applicant_name']:''; ?>" >
+                <input type="text" name="Applicant_name" placeholder="Applicant name " class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['Applicant_name'])?$user['Applicant_name']:''; ?>" >
                 <?php echo form_error('Applicant_name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -109,7 +117,7 @@ include_once "menuWithLogout.php";
 			<label>Pet Dog Details </label>
 			
 			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Pet_Name" placeholder="Pet Name" class="input100"value="<?php echo !empty($user['Pet_Name'])?$user['Pet_Name']:''; ?>" >
+                <input type="text" name="Pet_Name" placeholder="Pet Name" class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['Pet_Name'])?$user['Pet_Name']:''; ?>" >
                 <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -164,7 +172,7 @@ include_once "menuWithLogout.php";
             </div>
 			
 			<div class="wrap-input100 validate-input" data-validate = "valid name is required">
-                <input type="text" name="Veterinary_Doctors_name" placeholder="Veterinary Doctors name" class="input100"value="<?php echo !empty($user['Veterinary_Doctors_name'])?$user['Veterinary_Doctors_name']:''; ?>">
+                <input type="text" name="Veterinary_Doctors_name" placeholder="Veterinary Doctors name" class="input100" pattern="[A-Za-z_]{1,32}" title="digits ,whitespaces and special characters are not allowed"  maxlength="32" value="<?php echo !empty($user['Veterinary_Doctors_name'])?$user['Veterinary_Doctors_name']:''; ?>">
                 <?php echo form_error('Veterinary_Doctors_name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
