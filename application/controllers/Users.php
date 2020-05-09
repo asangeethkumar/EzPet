@@ -1106,32 +1106,6 @@ class Users extends CI_Controller {
 	
 // services & marchandish
 
-    public function petmerchant()
-	{
-		$this->load->view('petmerchant');
-	}
-	public function forpros()
-	{
-		$this->load->view('forpros');
-	}
-	public function petservices()
-	{
-		$this->load->view('petservices');
-	}
-	public function pethealth()
-	{
-		$this->load->view('pethealth');
-	}
-	public function getapet()
-	{
-		$this->load->view('getapet');
-	}
-	public function foodandph()
-	{
-		$this->load->view('foodandph');
-	}
-
-
     public function best()
     {
 
