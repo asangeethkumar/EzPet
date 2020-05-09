@@ -8,7 +8,7 @@ include_once "menuWithLogout.php";
 <br>
 <html lang="en">  
 <head>
-<title>pet food</title>
+<title>pet best service</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	

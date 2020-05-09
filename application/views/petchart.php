@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once "menuWithLogout.php";
-?><br><br>
+?>
 <html lang="en">  
 <head>
 <title>Pet veterinary chart </title>
@@ -22,10 +22,11 @@ include_once "menuWithLogout.php";
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/main.css'); ?>">
 <!--===============================================================================================-->
 </head>
 <body>
+	<br><br>
 		<nav aria-label="breadcrumb">
   <ol class="breadcrumb">
 

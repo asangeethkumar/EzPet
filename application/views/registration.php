@@ -22,7 +22,15 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+		<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."dashboard/"; ?>'>Menu </a></li>
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."user/login"; ?>'>Login </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Register </li>
+  </ol>
+</nav>
 	<div class="limiter">
 
 		<div class="container-login100">

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Login </title>
@@ -22,7 +22,13 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+		<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."dashboard/"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Login </li>
+  </ol>
+</nav>
 	<div class="limiter">
 
 		<div class="container-login100">

@@ -1801,7 +1801,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('petshelter',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -1848,7 +1848,7 @@ class Users extends CI_Controller {
 
 		}
 		
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -1881,7 +1881,7 @@ class Users extends CI_Controller {
 			$this->db->insert('petfind',$userData);
 		}
 		
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -1924,6 +1924,10 @@ class Users extends CI_Controller {
 					'DOB' => strip_tags($this->input->post('DOB')),	
 					'color' => strip_tags($this->input->post('color')),
 					'GENIUS' => strip_tags($this->input->post('GENIUS')),
+					'species' => strip_tags($this->input->post('species')),
+					'coat' => strip_tags($this->input->post('coat')),
+
+
 					'weight' => strip_tags($this->input->post('weight')),
 					'Height' => strip_tags($this->input->post('Height')),
 					'Microchiped_or_Tattooed' => strip_tags($this->input->post('Microchiped_or_Tattooed')),
@@ -1955,7 +1959,7 @@ class Users extends CI_Controller {
 				
 			}
 		
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
 	}
 		  
@@ -1992,7 +1996,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('customer',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 		  
 
@@ -2014,7 +2018,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('estimation',$userData);
 		 }
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
 		}
 	public function puppy(){
@@ -2037,7 +2041,7 @@ class Users extends CI_Controller {
 				
 				$this->db->insert('puppy',$userData);
 		 }
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -2062,7 +2066,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('healthvacination',$userData);
 			}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 
@@ -2085,7 +2089,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('dietchart',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+	//	echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -2108,7 +2112,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('orderpet',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  
 		}
 	public function delv(){
@@ -2130,7 +2134,7 @@ class Users extends CI_Controller {
 				
 				$this->db->insert('delivery',$userData);
 		 }
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 
@@ -2158,7 +2162,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('expenses',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 
@@ -2236,7 +2240,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('petlicense',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+	//	echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 	
@@ -2265,7 +2269,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('petchart',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 		  
 
