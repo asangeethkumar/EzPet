@@ -104,7 +104,7 @@ class Users extends CI_Controller {
 	//	$this->load->view('elements/footer');
     }
     public function registration(){
-        $data = $userData = array();
+        $data = $userData = array();																			
 		
 		// If registration request is submitted
         if($this->input->post('signupSubmit')){
@@ -866,6 +866,7 @@ class Users extends CI_Controller {
 								'gender'=>$this->input->post('gender'),
 								'concern' => $this->input->post('concern'),
 								'question'=>$this->input->post('question'),
+								'location'=>$this->input->post('location'),
 								'payment'=>$this->input->post('payment')
 								);
 		
@@ -917,9 +918,11 @@ class Users extends CI_Controller {
 								$date=$this->input->post('date');
 								$slot=$this->input->post('slot');
 								$confirm=$this->input->post('confirm');
+								$first_name=$this->input->post('first_name');
 								$email=$this->input->post('email');
 								$phone=$this->input->post('phone');
 								$pet=$this->input->post('pet');
+								$petname=$this->input->post('petname');
 								$gender=$this->input->post('gender');
 								$question=$this->input->post('question');
 								$location=$this->input->post('location');
@@ -943,9 +946,11 @@ class Users extends CI_Controller {
 									'date' => $date,
 									'slot' => $slot,
 									'confirm' => $confirm,
+									'first_name' => $first_name,
 									'email' => $email,
 									'phone' => $phone,
 									'pet' => $pet,
+									'petname' => $petname,
 									'gender' => $gender,
 									'question' => $question,
 									'location' => $location,
@@ -1106,6 +1111,39 @@ class Users extends CI_Controller {
 	
 // services & marchandish
 
+
+
+public function petmerchant()
+	{
+		$this->load->view('petmerchant');
+	}
+	public function forpros()
+	{
+		$this->load->view('forpros');
+	}
+	public function petservices()
+	{
+		$this->load->view('petservices');
+	}
+	public function pethealth()
+	{
+		$this->load->view('pethealth');
+	}
+	public function getapet()
+	{
+		$this->load->view('getapet');
+	}
+	public function foodandph()
+	{
+		$this->load->view('foodandph');
+	}
+	public function adaption()
+	{
+		$this->load->view('adaption');
+	}
+
+
+  
     public function best()
     {
 
@@ -1137,7 +1175,7 @@ class Users extends CI_Controller {
     	$this->load->view('best');
     }
 
- public function grooming()
+public function grooming()
     {
 
        
@@ -1775,7 +1813,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('petshelter',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -1822,7 +1860,7 @@ class Users extends CI_Controller {
 
 		}
 		
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -1855,7 +1893,7 @@ class Users extends CI_Controller {
 			$this->db->insert('petfind',$userData);
 		}
 		
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -1898,6 +1936,10 @@ class Users extends CI_Controller {
 					'DOB' => strip_tags($this->input->post('DOB')),	
 					'color' => strip_tags($this->input->post('color')),
 					'GENIUS' => strip_tags($this->input->post('GENIUS')),
+					'species' => strip_tags($this->input->post('species')),
+					'coat' => strip_tags($this->input->post('coat')),
+
+
 					'weight' => strip_tags($this->input->post('weight')),
 					'Height' => strip_tags($this->input->post('Height')),
 					'Microchiped_or_Tattooed' => strip_tags($this->input->post('Microchiped_or_Tattooed')),
@@ -1929,7 +1971,7 @@ class Users extends CI_Controller {
 				
 			}
 		
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
 	}
 		  
@@ -1966,7 +2008,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('customer',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 		  
 
@@ -1988,7 +2030,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('estimation',$userData);
 		 }
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
 		}
 	public function puppy(){
@@ -2011,7 +2053,7 @@ class Users extends CI_Controller {
 				
 				$this->db->insert('puppy',$userData);
 		 }
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -2036,7 +2078,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('healthvacination',$userData);
 			}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 
@@ -2059,7 +2101,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('dietchart',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+	//	echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 
 
 
@@ -2082,7 +2124,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('orderpet',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  
 		}
 	public function delv(){
@@ -2104,7 +2146,7 @@ class Users extends CI_Controller {
 				
 				$this->db->insert('delivery',$userData);
 		 }
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 
@@ -2132,7 +2174,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('expenses',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 
@@ -2210,7 +2252,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('petlicense',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+	//	echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 
 	
@@ -2239,7 +2281,7 @@ class Users extends CI_Controller {
 				
 			$this->db->insert('petchart',$userData);
 		}
-		echo "<h3 style='color:green'>Your data recieved successfully</h3>";
+		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		  }
 		  
 
@@ -2250,8 +2292,6 @@ class Users extends CI_Controller {
 	public function ownpet(){
 		$this->load->view('ownpet');
 	}
-	
-   
 	
     
 	// Existing email check during validation

@@ -153,7 +153,7 @@
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
 					<input type="text" name="phone"  
-       title="Phone number with 7-9 and remaing 9 digit with 0-9" class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+       title="Phone number with 6-9 and remaing 9 digit with 0-9" class="input100" placeholder="PHONENUMBER" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 				<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
 						<span class="focus-input100"></span>
