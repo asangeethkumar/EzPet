@@ -14,6 +14,14 @@ include_once "menuWithLogout.php";
 <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
 </head>
 <body>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Get A Pet </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Adaption</li>
+  </ol>
+</nav>
 <h1>Adopting A Pet?</h1>
 <h2>Thinking of adding a pet to your family? Here are ten reasons to adopt your new best friend.</h2>
 <ol>

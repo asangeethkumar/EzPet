@@ -1,4 +1,8 @@
-
+<?php
+include_once "menu.php";
+?>
+<br>
+<br>
 <html lang="en">
 <head>
 	<title>Login </title>

@@ -1,3 +1,9 @@
+<?php
+include_once "menu.php";
+?>
+<br>
+<br>
+<br>
 
 <html lang="en">
 <head>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once "menuWithLogout.php";
-?><br><br>
+?>
 <html lang="en">  
 <head>
 <title>PET INFO REGISTRATION</title>
@@ -25,6 +25,17 @@ include_once "menuWithLogout.php";
 	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
 <!--===============================================================================================-->
 <body>
+<br>
+<br>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/dashboard"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>My Account </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Pet Registration</li>
+  </ol>
+</nav>
+
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -47,7 +58,7 @@ include_once "menuWithLogout.php";
 
 		   <div class="wrap-input100 validate-input" data-validate = "valid AIN is required">
 		   <label for="inputState">AIN</label>
-                <input type="number_format" name="AIN" class="input100" placeholder="AIN" value="<?php echo !empty($user['AIN'])?$user['AIN']:''; ?>" >
+                <input type="number_format" name="AIN" class="input100" placeholder="AIN" pattern="[1-9]{1,3}[A-Z]{8}[0-9]{6}" value="<?php echo !empty($user['AIN'])?$user['AIN']:''; ?>" >
                 <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -65,7 +76,7 @@ include_once "menuWithLogout.php";
             </div>
 			<div class="wrap-input100 validate-input" data-validate = "valid date is required">
 			 <label for="inputState">PET DOB</label>
-                <input type="date" name="DOB" placeholder="DOB" class="input100" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" >
+                <input type="date" name="DOB" placeholder="DOB" class="input100" pattern="(?:(?:0[1-9]|1[0-2])[\/\\-. ]?(?:0[1-9]|[12][0-9])|(?:(?:0[13-9]|1[0-2])[\/\\-. ]?30)|(?:(?:0[13578]|1[02])[\/\\-. ]?31))[\/\\-. ]?(?:19|20)[0-9]{2}" value="<?php echo !empty($user['DOB'])?$user['DOB']:''; ?>" >
                 <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -88,7 +99,38 @@ include_once "menuWithLogout.php";
 									<i class="fa fa-GENIUS" aria-hidden="true"></i>
             </div>
 			
-			 
+			 <div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
+								<span class="focus-input100"></span>
+								<label class="required" >SPECIES</label>
+								<select name="species" class='input100' id="inputState"  >
+									<option>SELECT</option>
+									<option >Dog</option>
+									<option>Cat</option>
+									<option>Fish</option>
+									<option>Birds</option>
+								</select>
+								<br>
+								<span class="symbol-input100">
+								</span>
+						</div>
+
+						<div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
+								<span class="focus-input100"></span>
+								<label class="required" >Coat length</label>
+								<select name="coat" class='input100' id="inputState"  >
+									<option>SELECT</option>
+									<option >Small</option>
+									<option>Medium</option>
+									<option>Large</option>
+									<option>XL</option>
+									<option>XXL</option>
+									<option>XXXL</option>
+								</select>
+								<br>
+								<span class="symbol-input100">
+								</span>
+						</div>
+			
 			
 			 <div class="wrap-input100 validate-input" data-validate = "valid number is required">
 			
@@ -169,11 +211,12 @@ include_once "menuWithLogout.php";
 								<span class="symbol-input100">
 									<i class="fa fa-Height" aria-hidden="true"></i>
             </div> 
-
+			
+	
 
 
 			 <div class="wrap-input100 validate-input" data-validate = "valid AIN is required">
-                <input type="text" name="Pet_Sire_AIN" placeholder="Pet Sire AIN"  class="input100"value="<?php echo !empty($user['Pet_Sire_AIN'])?$user['Pet_Sire_AIN']:''; ?>">
+                <input type="text" name="Pet_Sire_AIN" placeholder="Pet Sire AIN"  class="input100" pattern="[a-zA-Z0-9]{16}"  value="<?php echo !empty($user['Pet_Sire_AIN'])?$user['Pet_Sire_AIN']:''; ?>">
                 <?php echo form_error('Pet_Sire_AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -192,7 +235,7 @@ include_once "menuWithLogout.php";
 			
 
 			 <div class="wrap-input100 validate-input" data-validate = "valid AIN is required">
-                <input type="text" name="Pet_Dam_AIN" placeholder="Pet Dam AIN"  class="input100"value="<?php echo !empty($user['Pet_Dam_AIN'])?$user['Pet_Dam_AIN']:''; ?>">
+                <input type="text" name="Pet_Dam_AIN" placeholder="Pet Dam AIN"  class="input100"  pattern="[a-zA-Z0-9]{16}" value="<?php echo !empty($user['Pet_Dam_AIN'])?$user['Pet_Dam_AIN']:''; ?>">
                 <?php echo form_error('Pet_Dam_AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -205,7 +248,7 @@ include_once "menuWithLogout.php";
 			
 			
 			<div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
-			<input type="email" class="input100" name="email" placeholder="EMAIL" > <?php echo form_error('email','<p class="help-block">','</p>'); ?>
+			<input type="email" class="input100" name="email" placeholder="EMAIL" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" > <?php echo form_error('email','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<span class="symbol-input100">
 									<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -276,7 +319,7 @@ include_once "menuWithLogout.php";
 
 
             <div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
-                <input type="text" name="phone" placeholder="PHONENUMBER" class="input100" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
+                <input type="text" name="phone" placeholder="PHONENUMBER" class="input100" pattern="[6-9]{1}[0-9]{9}" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
                 <?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -288,6 +331,53 @@ include_once "menuWithLogout.php";
 			    <input class="input100" type="file" name="image" />
 
 			</div>
+			
+			<a href="skype:echo123?call">Skype video </a>
+
+
+<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+
+	<div id="call_32" style="width:20%;background-color:#0094ff">
+   <script type="text/javascript">
+        Skype.ui({
+            name: "call",
+            element: "call_32",
+            participants: ["EzPet"],
+            imageSize: 32,
+            imageColor: "white"
+        });
+    </script>
+</div>
+<script>
+
+// Place this code in the head section of your HTML file 
+(function(r, d, s) {
+
+	r.loadSkypeWebSdkAsync = r.loadSkypeWebSdkAsync || function(p) {
+		var js, sjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(p.id)) { return; }
+		js = d.createElement(s);
+		js.id = p.id;
+		js.src = p.scriptToLoad;
+		js.onload = p.callback
+		sjs.parentNode.insertBefore(js, sjs);
+	};
+	var p = {
+		scriptToLoad: 'https://swx.cdn.skype.com/shared/v/latest/skypewebsdk.js',
+
+		id: 'skype_web_sdk'
+	};
+	r.loadSkypeWebSdkAsync(p);
+})(window, document, 'script');
+</script>
+
+<!-- Add class skype-share and data-style attribute with value (large, small, circle, square) to get the default button style -->
+<!-- Additional attributes: data-lang='en-US' (for language) data-href='' (use '' for page URL, 'www.skype.com' for specific URL) -->
+<!-- data-text = 'some message' (to pre-fill the message to that will be shared by the user, use '' to prompt user to enter a message) -->
+<!-- Place the code of the share button where you what the share button to appear -->
+<div class='skype-share' data-href='' data-lang='' data-text='' data-style='large' ></div>
+
+</br></br></br></br></br>
 			
 				<div class="container-login100-form-btn">
 						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="upload" type="submit">

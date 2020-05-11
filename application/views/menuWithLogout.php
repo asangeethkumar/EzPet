@@ -252,7 +252,7 @@
 						Pet  Services
 					</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href='<?php echo base_url()."users/best"; ?>'>Pet Best Service</a>
+
 										<a class="dropdown-item" href='<?php echo base_url()."users/grooming"; ?>'>Grooming</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/petsitter"; ?>'>Pet Sitters</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dogwalker"; ?>'>Dog Walkers</a>
