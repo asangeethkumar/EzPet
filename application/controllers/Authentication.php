@@ -36,22 +36,22 @@ class Authentication extends REST_Controller {
 				// Set the response and exit
 				$this->response([
 					'status' => TRUE,
-					'message' => 'User login successful.',
-					'data' => $user
+					'message' => 'User login successful.'
+				//	'data' => $user
 				], REST_Controller::HTTP_OK);
 			}else{     
       				$this->response([
                                         'status' => false,
-                                        'message' => 'User login unsuccessful.',
-                                        'data' => []
-                                ], REST_Controller::HTTP_OK);
+                                        'message' => 'Invalid email /password-User login unsuccessful.'
+                              
+                                ], REST_Controller::HTTP_BAD_REQUEST);
 
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 			}
         }else{
 			// Set the response and exit
-            $this->response("Provide email and password.", REST_Controller::HTTP_OK);
+            $this->response("Provide email and password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 	}
 	
@@ -66,12 +66,23 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR1-invalid name',
+						'message' => 'ERROR-invalid first name(digits and special characters are not allowed)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		//$fname=$this->model->name($first_name);
 		$last_name = strip_tags($this->post('last_name'));
+		$lname=$this->EzPet_model->name($last_name);
+		if($lname==false)
+		{
+				// Set the response and exit
+				//BAD_REQUEST (400) being the HTTP response code
+				$this->response([
+						'status' => false,
+						'message' => 'ERROR-invalid last name(digits and special characters are not allowed)',
+					], REST_Controller::HTTP_BAD_REQUEST);
+				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+		}
 		$email = strip_tags($this->post('email'));
 		$em=$this->EzPet_model->mails($email);
 		if($em==false)
@@ -80,7 +91,7 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR2-invalid email',
+						'message' => 'ERROR-invalid email',
 					], REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$password = $this->post('password');
@@ -91,7 +102,7 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR3-invalid password',
+						'message' => 'ERROR-invalid password(Must contain at least one number,one uppercase ,lowercase letter,one special character and at least 8 or more characters)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -104,13 +115,14 @@ class Authentication extends REST_Controller {
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4-invalid phone number',
+						'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
-		
+		$gender= strip_tags($this->post('gender'));
 		// Validate the post data
-		if(!empty($name) && !empty($last_name) && !empty($em) && !empty($pas)&& !empty($ph)){
+		if(!empty($name) && !empty($lname) && !empty($em) && !empty($pas)&& !empty($ph)&& !empty($gender))
+		{
 			
 			// Check if the given email already exists
 			$con['returnType'] = 'count';
@@ -121,14 +133,15 @@ class Authentication extends REST_Controller {
 			
 			if($userCount > 0){
 				// Set the response and exit
-				$this->response("The given email already exists.", REST_Controller::HTTP_OK);
+				$this->response("The given email already exists.",  REST_Controller::HTTP_BAD_REQUEST);
 			}else{
 				// Insert user data
 				$userData = array(
 					'first_name' => $name,
-					'last_name' => $last_name,
+					'last_name' => $lname,
 					'email' => $email,
 					'password' => md5($pas),
+					'gender'=>$gender,
 					'phone' => $ph
 				);
 				$insert = $this->EzPet_model->insert($userData);
@@ -139,16 +152,20 @@ class Authentication extends REST_Controller {
 					$this->response([
 						'status' => TRUE,
 						'message' => 'The user has been added successfully.',
-						'data' => $insert
+						//'data' => $insert
 					], REST_Controller::HTTP_OK);
-				}else{
-					// Set the response and exit
-					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_OK);
 				}
+				/*else
+				{
+					// Set the response and exit
+					$this->response("Some problems occurred, please try again.",  REST_Controller::HTTP_BAD_REQUEST);
+				}*/
 			}
-        }else{
+        }
+		else
+		{
 			// Set the response and exit
-            $this->response("Provide complete user info to add.", REST_Controller::HTTP_OK);
+            $this->response("Provide complete user info to add.",  REST_Controller::HTTP_BAD_REQUEST);
 		}
 	}
 	

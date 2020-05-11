@@ -2,10 +2,7 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
-<br>
-<br>
-<br>
-<br>
+
 <html lang="en">  
 <head>
 <title>apponitment</title>
@@ -30,6 +27,8 @@ include_once "menuWithLogout.php";
 </head>
 <body>
 
+<br>
+<br>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
 

@@ -2,7 +2,7 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
-<br>
+
 <html lang="en">  
 <head>
 <title>Genetic test</title>
@@ -26,6 +26,17 @@ include_once "menuWithLogout.php";
 <!--===============================================================================================-->
 </head>
 <body>
+
+<br>
+<br>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Pet Health </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Genetic test</li>
+  </ol>
+</nav>
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">

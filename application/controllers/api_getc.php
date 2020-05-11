@@ -12,8 +12,8 @@ class api_getc extends REST_Controller
 	{ 
         parent::__construct();
 		
-		// Load the user model
-        $this->load->model('model');
+		// Load the user EzPet_model
+        $this->load->model('EzPet_model');
     }
    
 	public function getc_post()  
@@ -21,14 +21,14 @@ class api_getc extends REST_Controller
 							  $this->load->view('getc'); 
 							  $pet = $this->input->post('pet');
 							  $petname = strip_tags($this->input->post('petname'));
-							  $name=$this->model->name($petname);
+							  $name=$this->EzPet_model->name($petname);
 							  if($name==false)
 							  {
 								// Set the response and exit
 								//BAD_REQUEST (400) being the HTTP response code
 								$this->response([
 										'status' => false,
-										'message' => 'ERROR1-invalid name',
+										'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 									], REST_Controller::HTTP_BAD_REQUEST);
 								//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							   }
@@ -38,34 +38,47 @@ class api_getc extends REST_Controller
 							  $upload = $this->input->post('upload');
 							  $category = $this->input->post('category');
 								  
-							  $userData = array(
-									'pet' =>$pet,
-									'petname' => $name,
-									'gender' => $gender,
-									'petage' =>$petage ,
-									'question' =>  $question,
-									'upload' =>  $upload,
-									'category' => $category
-								);
-								// $this->db->set($userData);
-								$insert = $this->db->insert('getc',$userData);
-						
+								if(!empty($pet) &&!empty($name) && !empty($gender) && !empty($petage) && !empty($question)&& !empty($upload)&& !empty($category))
+								{
+								  
+								  
+										  $userData = array(
+												'pet' =>$pet,
+												'petname' => $name,
+												'gender' => $gender,
+												'petage' =>$petage ,
+												'question' =>  $question,
+												'upload' =>  $upload,
+												'category' => $category
+											);
+											// $this->db->set($userData);
+											$insert = $this->db->insert('getc',$userData);
+									
+											
+											 
+													if($insert)
+													{
+														// Set the response and exit
+														$this->response([
+															'status' => TRUE,
+															'message' => 'Data is submitted successfully.'
+														], REST_Controller::HTTP_OK);
+													}
+													/*else
+													{
+														// Set the response and exit
+														$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+													}*/
+								}
+								else
+								{
+										// Set the response and exit
+									$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+								}
 								
-								 
-										if($insert)
-										{
-											// Set the response and exit
-											$this->response([
-												'status' => TRUE,
-												'message' => 'The user has been added successfully.'
-											], REST_Controller::HTTP_OK);
-										}
-										else
-										{
-											// Set the response and exit
-											$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-										}
-										
+								
+								
+													
 	}
 		
 		
@@ -76,80 +89,89 @@ class api_getc extends REST_Controller
 		
 	public function vitamins_post()  
 	{ 
-								$this->load->view('vitamins'); 
+									$this->load->view('vitamins'); 
 							//$data = $userData = array();
 							 // if($this->input->post('signupSubmit')){
 								  // $userData = array( 
-								   $first_name=$this->input->post('first_name');
-								   $name=$this->model->name($first_name);
+									$first_name=$this->input->post('first_name');
+									$name=$this->EzPet_model->name($first_name);
 											if($name==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR1-invalid name',
+															'message' => 'ERROR-invalid  name(digits and special characters are not allowed)',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
-								   $email=strip_tags($this->input->post('email'));
-								   $em=$this->model->mails($email);
+									$email=strip_tags($this->input->post('email'));
+									$em=$this->EzPet_model->mails($email);
 											if($em==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR2-invalid email',
+															'message' => 'ERROR-invalid email',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
-								   $phone=$this->input->post('phone');
-								   $ph=$this->model->number($phone);
+									$phone=$this->input->post('phone');
+									$ph=$this->EzPet_model->number($phone);
 											if($ph==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR4-invaid phone number',
+															'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
-								   $vitamin=$this->input->post('vitamin');
-								   $quantity=$this->input->post('quantity');
-								   $delivery=$this->input->post('delivery');
-								   $address=$this->input->post('address');
-								   $payment=$this->input->post('payment');
+									$vitamin=$this->input->post('vitamin');
+									$quantity=$this->input->post('quantity');
+									$delivery=$this->input->post('delivery');
+									$address=$this->input->post('address');
+									$payment=$this->input->post('payment');
 								  // );
+									if(!empty($name) && !empty($em) && !empty($ph) && !empty($vitamin)&& !empty($quantity)&& !empty($address) && !empty($delivery) && !empty($payment) )
+									{
 								  
 							  
-										$userData = array(
-												'first_name' => $name,
-												'email' => $em,
-												'phone' => $ph,
-												'vitamin'=>$vitamin,
-												'quantity'=>$quantity,
-												'address'=>$address,
-												'delivery'=>$delivery,
-												'payment'=>$payment
-											);
-								//print  $userData;
-								//var_dump($userData);
-								$insert=$this->db->insert('vitamin',$userData);
-								  if($insert)
-								{
-									// Set the response and exit
-									$this->response([
-										'status' => TRUE,
-										'message' => 'The user has been added successfully.'
-									], REST_Controller::HTTP_OK);
-								}
-								else
-								{
-									// Set the response and exit
-									$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-								}
+												$userData = array(
+														'first_name' => $name,
+														'email' => $em,
+														'phone' => $ph,
+														'vitamin'=>$vitamin,
+														'quantity'=>$quantity,
+														'address'=>$address,
+														'delivery'=>$delivery,
+														'payment'=>$payment
+													);
+										//print  $userData;
+										//var_dump($userData);
+										$insert=$this->db->insert('vitamin',$userData);
+										  if($insert)
+										{
+											// Set the response and exit
+											$this->response([
+												'status' => TRUE,
+												'message' => 'Data is submitted successfully.'
+											], REST_Controller::HTTP_OK);
+										}
+									/*	else
+										{
+											// Set the response and exit
+											$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+										}*/
+									}
+									else
+									{
+										// Set the response and exit
+										$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+									}
+									
     }
 		
 				
@@ -169,38 +191,38 @@ class api_getc extends REST_Controller
 						$this->load->view('food');
 			  // $userData = array( 
 						$first_name =$this->input->post('first_name');
-						$name=$this->model->name($first_name);
+						$name=$this->EzPet_model->name($first_name);
 						if($name==false)
 						{
 								// Set the response and exit
 								//BAD_REQUEST (400) being the HTTP response code
 								$this->response([
 										'status' => false,
-										'message' => 'ERROR1-invalid name',
+										'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 									], REST_Controller::HTTP_BAD_REQUEST);
 								//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 						}
 						$email= strip_tags($this->input->post('email'));
-						$em=$this->model->mails($email);
+						$em=$this->EzPet_model->mails($email);
 						if($em==false)
 						{
 								// Set the response and exit
 								//BAD_REQUEST (400) being the HTTP response code
 								$this->response([
 										'status' => false,
-										'message' => 'ERROR2-invalid email',
+										'message' => 'ERROR-invalid email',
 									], REST_Controller::HTTP_BAD_REQUEST);
 								//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 						}
 						$phone=$this->input->post('phone');
-						$ph=$this->model->number($phone);
+						$ph=$this->EzPet_model->number($phone);
 						if($ph==false)
 						{
 								// Set the response and exit
 								//BAD_REQUEST (400) being the HTTP response code
 								$this->response([
 										'status' => false,
-										'message' => 'ERROR4-invalid phone number',
+										'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 									], REST_Controller::HTTP_BAD_REQUEST);
 								//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 						}
@@ -213,38 +235,50 @@ class api_getc extends REST_Controller
 						$delivery =$this->input->post('delivery');
 						$payment=$this->input->post('payment');
 			 //  );
-						$userData = array(
-								'first_name' => $name,
-								'email' => $em,
-								'phone' => $ph,
-								'age'=>$age,
-								'address'=>$address,
-								'product'=>$product,
-								'range'=>$range,
-								'pet'=>$pet,
-								'brand'=>$brand,
-								'delivery'=>$delivery,
-								'payment'=>$payment
-							);
-				
-				
-							$insert=$this->db->insert('food',$userData);
-					
-				
-					   if($insert)
-							{
-								// Set the response and exit
-								$this->response([
-									'status' => TRUE,
-									'message' => 'The user has been added successfully.'
-								], REST_Controller::HTTP_OK);
-							}
-							else
-							{
-								// Set the response and exit
-								$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-							}
-        
+						if(!empty($name) && !empty($em) && !empty($ph) && !empty($age)&& !empty($address)&& !empty($product) && !empty($range) && !empty($pet) && !empty($brand) && !empty($delivery) && !empty($payment))
+						{
+			 
+			 
+			 
+							 
+										$userData = array(
+												'first_name' => $name,
+												'email' => $em,
+												'phone' => $ph,
+												'age'=>$age,
+												'address'=>$address,
+												'product'=>$product,
+												'range'=>$range,
+												'pet'=>$pet,
+												'brand'=>$brand,
+												'delivery'=>$delivery,
+												'payment'=>$payment
+											);
+								
+								
+											$insert=$this->db->insert('food',$userData);
+									
+								
+									   if($insert)
+											{
+												// Set the response and exit
+												$this->response([
+													'status' => TRUE,
+													'message' => 'Data is submitted successfully.'
+												], REST_Controller::HTTP_OK);
+											}
+											else
+											{
+												// Set the response and exit
+												$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+											}
+						}
+						else
+						{
+							// Set the response and exit
+										$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+						}
+						
 	
 		  
 	
@@ -255,38 +289,38 @@ class api_getc extends REST_Controller
 					
 						   //$userData = array( 
 						   $first_name=$this->input->post('first_name');
-						   $name=$this->model->name($first_name);
+						   $name=$this->EzPet_model->name($first_name);
 							if($name==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR1-invalid name',
+											'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						   $email=strip_tags($this->input->post('email'));
-						   $em=$this->model->mails($email);
+						   $em=$this->EzPet_model->mails($email);
 							if($em==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR2-invalid email',
+											'message' => 'ERROR-invalid email',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						   $phone=$this->input->post('phone');
-						   $ph=$this->model->number($phone);
+						   $ph=$this->EzPet_model->number($phone);
 							if($ph==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR4-invalid phone number',
+											'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
@@ -297,36 +331,44 @@ class api_getc extends REST_Controller
 						   $address= $this->input->post('address');
 						   $payment = $this->input->post('payment');
 			  // );
-			  
-			  
-						  $userData = array(
-								'first_name' => $name,
-								'email' => $em,
-								'phone' => $ph,
-								'medicine'=>$medicine,
-								'quantity'=>$quantity,
-								'quant'=>$quant,
-								'delivery'=>$delivery,
-								'address'=>$address,
-								'payment'=>$payment
-							);
-						  
-							
-						$insert=	$this->db->insert('otc',$userData);
-						  if($insert)
+							if(!empty($name) && !empty($em) && !empty($ph) && !empty($medicine)&& !empty($quantity) && !empty($quant) && !empty($address) && !empty($delivery) && !empty($payment) )
 							{
-								// Set the response and exit
-								$this->response([
-									'status' => TRUE,
-									'message' => 'The user has been added successfully.'
-								], REST_Controller::HTTP_OK);
+								  
+			  
+								  $userData = array(
+										'first_name' => $name,
+										'email' => $em,
+										'phone' => $ph,
+										'medicine'=>$medicine,
+										'quantity'=>$quantity,
+										'quant'=>$quant,
+										'delivery'=>$delivery,
+										'address'=>$address,
+										'payment'=>$payment
+									);
+								  
+									
+								$insert=	$this->db->insert('otc',$userData);
+								  if($insert)
+									{
+										// Set the response and exit
+										$this->response([
+											'status' => TRUE,
+											'message' => 'Data is submitted successfully.'
+										], REST_Controller::HTTP_OK);
+									}
+									else
+									{
+										// Set the response and exit
+										$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+									}
 							}
 							else
 							{
-								// Set the response and exit
-								$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+							// Set the response and exit
+										$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
 							}
-					
+							
 					
 	
 	}
@@ -335,38 +377,38 @@ class api_getc extends REST_Controller
 	{
 						   $this->load->view('rx');
 						   $first_name=$this->input->post('first_name');
-						   $name=$this->model->name($first_name);
+						   $name=$this->EzPet_model->name($first_name);
 							if($name==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR1-invalid name',
+											'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						   $email=strip_tags($this->input->post('email'));
-						   $em=$this->model->mails($email);
+						   $em=$this->EzPet_model->mails($email);
 							if($em==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR2-invalid email',
+											'message' => 'ERROR-invalid email',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						   $phone=$this->input->post('phone');
-						   $ph=$this->model->number($phone);
+						   $ph=$this->EzPet_model->number($phone);
 							if($ph==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR4-invalid phone number',
+											'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
@@ -375,42 +417,49 @@ class api_getc extends REST_Controller
 						   $quant=$this->input->post('quant');
 						   $delivery =$this->input->post('delivery');
 						   $upload=$this->input->post('upload');
-						 //  $address= $this->input->post('address');
+						  $address= $this->input->post('address');
 						   $payment = $this->input->post('payment');
 			  // );
-			  
-			  
-						  $userData = array(
-								'first_name' => $name,
-								'email' => $em,
-								'phone' => $ph,
-								//'medicine'=>$medicine,
-								'quantity'=>$quantity,
-								'quant'=>$quant,
-								'upload'=>$upload,
-								'delivery'=>$delivery,
-								//'address'=>$address,
-								'payment'=>$payment
-							);
-						  
-			  
-							
-							$insert=	$this->db->insert('rx',$userData);
-							 
-							 if($insert)
+							if(!empty($name) && !empty($em) && !empty($ph) && !empty($upload)&& !empty($quantity) && !empty($quant) && !empty($address) && !empty($delivery) && !empty($payment) )
 							{
-								// Set the response and exit
-								$this->response([
-									'status' => TRUE,
-									'message' => 'The user has been added successfully.'
-								], REST_Controller::HTTP_OK);
+			  
+								  $userData = array(
+										'first_name' => $name,
+										'email' => $em,
+										'phone' => $ph,
+										//'medicine'=>$medicine,
+										'quantity'=>$quantity,
+										'quant'=>$quant,
+										'upload'=>$upload,
+										'delivery'=>$delivery,
+										'address'=>$address,
+										'payment'=>$payment
+									);
+								  
+					  
+									
+									$insert=	$this->db->insert('rx',$userData);
+									 
+									 if($insert)
+									{
+										// Set the response and exit
+										$this->response([
+											'status' => TRUE,
+											'message' => 'Data is submitted successfully.'
+										], REST_Controller::HTTP_OK);
+									}
+									else
+									{
+										// Set the response and exit
+										$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+									}
 							}
 							else
 							{
-								// Set the response and exit
-								$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+							// Set the response and exit
+										$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
 							}
-		
+							
 			
 		
 	}
@@ -420,44 +469,44 @@ class api_getc extends REST_Controller
 						 $this->load->view('diet'); 
 						  // $userData = array( 
 						 $first_name=$this->input->post('first_name');
-						 $name=$this->model->name($first_name);
+						 $name=$this->EzPet_model->name($first_name);
 							if($name==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR1-invalid name',
+											'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						 $email=strip_tags($this->input->post('email'));
-						  $em=$this->model->mails($email);
+						  $em=$this->EzPet_model->mails($email);
 							if($em==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR2-invalid email',
+											'message' => 'ERROR-invalid email',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						 $phone=$this->input->post('phone');
-						  $ph=$this->model->number($phone);
+						  $ph=$this->EzPet_model->number($phone);
 							if($ph==false)
 							{
 									// Set the response and exit
 									//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR4-invalid phone number',
+											'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 									//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 							}
 						 $pet=$this->input->post('pet');
 						 $petname =$this->input->post('petname');
-						  $pname=$this->model->name($petname);
+						  $pname=$this->EzPet_model->name($petname);
 							if($pname==false)
 							{
 									// Set the response and exit
@@ -512,7 +561,7 @@ class api_getc extends REST_Controller
 								// Set the response and exit
 								$this->response([
 									'status' => TRUE,
-									'message' => 'The user has been added successfully.'
+									'message' => 'Data is submitted successfully.'
 								], REST_Controller::HTTP_OK);
 							}
 							else
@@ -530,38 +579,38 @@ class api_getc extends REST_Controller
 								$this->load->view('treat');
 							  // $userData = array( 
 							   $first_name=$this->input->post('first_name');
-								$name=$this->model->name($first_name);
+								$name=$this->EzPet_model->name($first_name);
 								if($name==false)
 								{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 											'status' => false,
-											'message' => 'ERROR1-invalid name',
+											'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 										], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 								}
 							   $email=strip_tags($this->input->post('email'));
-								$em=$this->model->mails($email);
+								$em=$this->EzPet_model->mails($email);
 								if($em==false)
 								{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 									$this->response([
 												'status' => false,
-												'message' => 'ERROR2-invalid email',
+												'message' => 'ERROR-invalid email',
 												], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 								}
 							   $phone=$this->input->post('phone');
-								$ph=$this->model->number($phone);
+								$ph=$this->EzPet_model->number($phone);
 											if($ph==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR4-invalid phone number',
+															'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
@@ -573,37 +622,46 @@ class api_getc extends REST_Controller
 							   $address=$this->input->post('address');
 							   $payment =$this->input->post('payment');
 							   //);
-							  
+							  if(!empty($name) && !empty($em) && !empty($ph)  && !empty($pet)   && !empty($age) && !empty($choose)&& !empty($quantity) && !empty($address) && !empty($delivery) && !empty($payment) )
+							  {
+										
+												  $userData = array(
+														'first_name' => $name,
+														'email' => $em,
+														'phone' => $ph,
+														//'medicine'=>$medicine,
+														'pet'=>$pet,
+														'age'=>$age,
+														'choose'=>$choose,
+														'quantity'=>$quantity,
+														'delivery'=>$delivery,
+														'address'=>$address,
+														'payment'=>$payment
+													);
+										$insert=$this->db->insert('treat',$userData);
 								
-										  $userData = array(
-												'first_name' => $name,
-												'email' => $em,
-												'phone' => $ph,
-												//'medicine'=>$medicine,
-												'pet'=>$pet,
-												'age'=>$age,
-												'choose'=>$choose,
-												'quantity'=>$quantity,
-												'delivery'=>$delivery,
-												'address'=>$address,
-												'payment'=>$payment
-											);
-								$insert=$this->db->insert('treat',$userData);
-						
-								if($insert)
-									{
-										// Set the response and exit
-										$this->response([
-											'status' => TRUE,
-											'message' => 'The user has been added successfully.'
-										], REST_Controller::HTTP_OK);
-									}
-									else
-									{
-										// Set the response and exit
-										$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-									}
-		
+										if($insert)
+											{
+												// Set the response and exit
+												$this->response([
+													'status' => TRUE,
+													'message' => 'Data is submitted successfully.'
+												], REST_Controller::HTTP_OK);
+											}
+											else
+											{
+												// Set the response and exit
+												$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+											}
+							  }
+							  else
+							{
+							// Set the response and exit
+										$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+							}
+							  
+							  
+							  
 	}
 	
 	
@@ -614,7 +672,7 @@ class api_getc extends REST_Controller
 									$date=$this->input->post('date');
 									$slot=$this->input->post('slot');
 									$confirm=$this->input->post('confirm');
-									$con=$this->model->name($confirm);
+									$con=$this->EzPet_model->name($confirm);
 									if($con==false)
 									{
 											// Set the response and exit
@@ -625,68 +683,101 @@ class api_getc extends REST_Controller
 												], REST_Controller::HTTP_BAD_REQUEST);
 											//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 									}
+									 $first_name=$this->input->post('first_name');
+									$name=$this->EzPet_model->name($first_name);
+									if($name==false)
+									{
+														// Set the response and exit
+														//BAD_REQUEST (400) being the HTTP response code
+										$this->response([
+												'status' => false,
+												'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+											], REST_Controller::HTTP_BAD_REQUEST);
+														//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+									}
 									$email=$this->input->post('email');
-									$em=$this->model->mails($email);
+									$em=$this->EzPet_model->mails($email);
 											if($em==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR2-invalid email',
+															'message' => 'ERROR-invalid email',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
 									$phone=$this->input->post('phone');
-									$ph=$this->model->number($phone);
+									$ph=$this->EzPet_model->number($phone);
 											if($ph==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR4-invalid phone number',
+															'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
 									$pet=$this->input->post('pet');
-									//$petname=$this->input->post('petname');
+									$petname=$this->input->post('petname');
+									$pname=$this->EzPet_model->name($petname);
+									if($pname==false)
+									{
+														// Set the response and exit
+														//BAD_REQUEST (400) being the HTTP response code
+										$this->response([
+												'status' => false,
+												'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+											], REST_Controller::HTTP_BAD_REQUEST);
+														//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
+									}
 									$gender=$this->input->post('gender');
 									$question=$this->input->post('question');
 									$location=$this->input->post('location');
 									$payment=$this->input->post('payment');
 									//);
 									
-									$userData = array(
-												'date' =>$date,
-												'slot' =>$slot,
-												'confirm' =>$con,
-												//'first_name' =>$name,
-												'email' =>$em,
-												'phone'=>$ph,
-												'pet' =>$pet,
-												//'petname' => $pname,
-												'gender' => $gender,
-												'question' =>$question,
-												'location' =>  $location,
-												'payment' => $payment
-											);
+									 if(!empty($date) && !empty($slot) && !empty($con)  && !empty($name) && !empty($em) && !empty($ph)  && !empty($pet)  && !empty($pname)  && !empty($gender) && !empty($question)&& !empty($location) &&  !empty($payment) )
+									{
 									
-											$insert=$this->db->insert('dconsult',$userData);
-											if($insert)
-											{
-												// Set the response and exit
-												$this->response([
-													'status' => TRUE,
-													'message' => 'The user has been added successfully.'
-												], REST_Controller::HTTP_OK);
-											}
-											else
-											{
-												// Set the response and exit
-												$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-											}
-		
+									
+												
+												$userData = array(
+															'date' =>$date,
+															'slot' =>$slot,
+															'confirm' =>$con,
+															'first_name' =>$name,
+															'email' =>$em,
+															'phone'=>$ph,
+															'pet' =>$pet,
+															'petname' => $pname,
+															'gender' => $gender,
+															'question' =>$question,
+															'location' =>  $location,
+															'payment' => $payment
+														);
+												
+														$insert=$this->db->insert('dconsult',$userData);
+														if($insert)
+														{
+															// Set the response and exit
+															$this->response([
+																'status' => TRUE,
+																'message' => 'Data is submitted successfully.'
+															], REST_Controller::HTTP_OK);
+														}
+														else
+														{
+															// Set the response and exit
+															$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+														}
+									}
+								    else
+									{
+									// Set the response and exit
+												$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+									}
 		
       
 		
@@ -697,31 +788,31 @@ class api_getc extends REST_Controller
 										   $this->load->view('dental');
 										  // $userData = array(
 										   $first_name=$this->input->post('first_name');
-										   $name=$this->model->name($first_name);
+										   $name=$this->EzPet_model->name($first_name);
 											if($name==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR1-invalid name',
+															'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
 										   $email=strip_tags($this->input->post('email'));
-											$em=$this->model->mails($email);
+											$em=$this->EzPet_model->mails($email);
 											if($em==false)
 											{
 													// Set the response and exit
 													//BAD_REQUEST (400) being the HTTP response code
 													$this->response([
 															'status' => false,
-															'message' => 'ERROR2-invalid email',
+															'message' => 'ERROR-invalid email',
 														], REST_Controller::HTTP_BAD_REQUEST);
 													//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 											}
 										   $phone=$this->input->post('phone');
-										   $ph=$this->model->number($phone);
+										   $ph=$this->EzPet_model->number($phone);
 											if($ph==false)
 											{
 													// Set the response and exit
@@ -740,36 +831,48 @@ class api_getc extends REST_Controller
 										   $address=$this->input->post('address');
 										   $payment=$this->input->post('payment');
 										  // );
-			  
-										  $userData = array(
-												'first_name' => $name,
-												'email' => $em,
-												'phone' => $ph,
-												//'medicine'=>$medicine,
-												'pet'=>$pet,
-												'gender'=>$gender,
-												'choose'=>$choose,
-												'quantity'=>$quantity,
-												'delivery'=>$delivery,
-												'address'=>$address,
-												'payment'=>$payment
-											);
-												
-												$insert=$this->db->insert('dental',$userData);
-												if($insert)
-												{
-													// Set the response and exit
-													$this->response([
-														'status' => TRUE,
-														'message' => 'The user has been added successfully.'
-													], REST_Controller::HTTP_OK);
-												}
-												else
-												{
-													// Set the response and exit
-													$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-												}
-		
+											
+											if(!empty($name) && !empty($em) && !empty($ph) && !empty($pet) && !empty($gender) && !empty($choose)&& !empty($quantity)&& !empty($address) && !empty($delivery) && !empty($payment) )
+											{
+											
+											
+														
+													  $userData = array(
+															'first_name' => $name,
+															'email' => $em,
+															'phone' => $ph,
+															//'medicine'=>$medicine,
+															'pet'=>$pet,
+															'gender'=>$gender,
+															'choose'=>$choose,
+															'quantity'=>$quantity,
+															'delivery'=>$delivery,
+															'address'=>$address,
+															'payment'=>$payment
+														);
+															
+															$insert=$this->db->insert('dental',$userData);
+															if($insert)
+															{
+																// Set the response and exit
+																$this->response([
+																	'status' => TRUE,
+																	'message' => 'Data is submitted successfully.'
+																], REST_Controller::HTTP_OK);
+															}
+															else
+															{
+																// Set the response and exit
+																$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+															}
+																
+											}
+											else
+											{
+											// Set the response and exit
+														$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+											}
+							
 	
 	
 	}
@@ -779,44 +882,44 @@ class api_getc extends REST_Controller
 						$this->load->view('mypres');
 			   //$userData = array( 
 			    $first_name=$this->input->post('first_name');
-				$name=$this->model->name($first_name);
+				$name=$this->EzPet_model->name($first_name);
 				if($name==false)
 				{
 						// Set the response and exit
 						//BAD_REQUEST (400) being the HTTP response code
 						$this->response([
 								'status' => false,
-								'message' => 'ERROR1-invalid name',
+								'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 							], REST_Controller::HTTP_BAD_REQUEST);
 						//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 			    $email=strip_tags($this->input->post('email'));
-				$em=$this->model->mails($email);
+				$em=$this->EzPet_model->mails($email);
 				if($em==false)
 				{
 						// Set the response and exit
 						//BAD_REQUEST (400) being the HTTP response code
 						$this->response([
 								'status' => false,
-								'message' => 'ERROR2-invalid email',
+								'message' => 'ERROR-invalid email',
 							], REST_Controller::HTTP_BAD_REQUEST);
 						//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 			    $phone=$this->input->post('phone');
-				$ph=$this->model->number($phone);
+				$ph=$this->EzPet_model->number($phone);
 				if($ph==false)
 				{
 						// Set the response and exit
 						//BAD_REQUEST (400) being the HTTP response code
 						$this->response([
 								'status' => false,
-								'message' => 'ERROR4-invalid phone number',
+								'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 							], REST_Controller::HTTP_BAD_REQUEST);
 						//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 				$pet=$this->input->post('pet');
 				$petname=$this->input->post('petname');
-				$pname=$this->model->name($petname);
+				$pname=$this->EzPet_model->name($petname);
 				if($pname==false)
 				{
 						// Set the response and exit
@@ -870,7 +973,7 @@ class api_getc extends REST_Controller
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
+						'message' => 'Data is submitted successfully.'
 					], REST_Controller::HTTP_OK);
 				}
 				else
@@ -891,7 +994,7 @@ class api_getc extends REST_Controller
 		$date=$this->input->post('date');
 		$slot=$this->input->post('slot');
 		$confirm=$this->input->post('confirm');
-		$con=$this->model->name($confirm);
+		$con=$this->EzPet_model->name($confirm);
 		if($con==false)
 		{
 				// Set the response and exit
@@ -903,45 +1006,45 @@ class api_getc extends REST_Controller
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$first_name = $this->input->post('first_name');
-		$name=$this->model->name($first_name);
+		$name=$this->EzPet_model->name($first_name);
 		if($name==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR1-invalid name',
+						'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$email=$this->input->post('email');
-		$em=$this->model->mails($email);
+		$em=$this->EzPet_model->mails($email);
 		if($em==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR2-invalid email',
+						'message' => 'ERROR-invalid email',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$phone=$this->input->post('phone');
-		$ph=$this->model->number($phone);
+		$ph=$this->EzPet_model->number($phone);
 		if($ph==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4-invalid phone number',
+						'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		
 		$pet=$this->input->post('pet');
 		$petname=$this->input->post('petname');
-		$pname=$this->model->name($petname);
+		$pname=$this->EzPet_model->name($petname);
 		if($pname==false)
 		{
 				// Set the response and exit
@@ -956,41 +1059,62 @@ class api_getc extends REST_Controller
 		$gender=$this->input->post('gender');
 		$concern=$this->input->post('concern');
 		$question=$this->input->post('question');
+		$location=$this->input->post('location');
 		$payment=$this->input->post('payment');
 	//	);
-	$userData = array(
-					'date' =>$date,
-					'slot' =>$slot,
-					'confirm' =>$con,
-					'first_name' =>$name,
-					'email' =>$em,
-					'phone'=>$ph,
-					'pet' =>$pet,
-					'petname' => $pname,
-					'gender' => $gender,
-					'concern' =>$concern ,
-					'question' =>  $question,
-					'payment' => $payment
-				);
+	
+	
+	 if(!empty($date) && !empty($slot) && !empty($con)  && !empty($name) && !empty($em) && !empty($ph)  && !empty($pet)  && !empty($pname)  && !empty($gender) && !empty($question)&& !empty($location) &&  !empty($payment) )
+	{
+									
+	
+	
+						$userData = array(
+										'date' =>$date,
+										'slot' =>$slot,
+										'confirm' =>$con,
+										'first_name' =>$name,
+										'email' =>$em,
+										'phone'=>$ph,
+										'pet' =>$pet,
+										'petname' => $pname,
+										'gender' => $gender,
+										'concern' =>$concern ,
+										'question' =>  $question,
+										'location' =>  $location,
+										'payment' => $payment
+									);
+							
+									$insert=$this->db->insert('schedule',$userData);
+							
+									
+						  
+							if($insert)
+									{
+										// Set the response and exit
+										$this->response([
+											'status' => TRUE,
+											'message' => 'Data is submitted successfully.'
+										], REST_Controller::HTTP_OK);
+									}
+									else
+									{
+										// Set the response and exit
+										$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
+									}
+									
+									
+	}
+	
+									
+											else
+											{
+											// Set the response and exit
+														$this->response("please fill all fields.",  REST_Controller::HTTP_BAD_REQUEST);
+											}
+															
 		
-				$insert=$this->db->insert('schedule',$userData);
-		
-				
-      
-		if($insert)
-				{
-					// Set the response and exit
-					$this->response([
-						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
-					], REST_Controller::HTTP_OK);
-				}
-				else
-				{
-					// Set the response and exit
-					$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_BAD_REQUEST);
-				}
-		
+							
     } 
 	
 	
@@ -1000,7 +1124,7 @@ class api_getc extends REST_Controller
 		//$userData = array(
 		$check=$this->input->post('check');
 		$dname=$this->input->post('dname');
-		$drname=$this->model->name($dname);
+		$drname=$this->EzPet_model->name($dname);
 		if($drname==false)
 		{
 				// Set the response and exit
@@ -1012,26 +1136,26 @@ class api_getc extends REST_Controller
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$name = $this->input->post('name');
-		$cname=$this->model->name($name);
+		$cname=$this->EzPet_model->name($name);
 		if($cname==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR1-invalid name',
+						'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$phone=$this->input->post('phone');
-		$ph=$this->model->number($phone);
+		$ph=$this->EzPet_model->number($phone);
 		if($ph==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4-invalid phone number',
+						'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -1061,7 +1185,7 @@ class api_getc extends REST_Controller
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
+						'message' => 'Data is submitted successfully.'
 					], REST_Controller::HTTP_OK);
 				}
 				else
@@ -1083,7 +1207,7 @@ class api_getc extends REST_Controller
 		//$userData = array(
 		$check=$this->input->post('check');
 		$dname=$this->input->post('dname');
-		$drname=$this->model->name($dname);
+		$drname=$this->EzPet_model->name($dname);
 		if($drname==false)
 		{
 				// Set the response and exit
@@ -1095,7 +1219,7 @@ class api_getc extends REST_Controller
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$name = $this->input->post('name');
-		$cname=$this->model->name($name);
+		$cname=$this->EzPet_model->name($name);
 		if($cname==false)
 		{
 				// Set the response and exit
@@ -1107,14 +1231,14 @@ class api_getc extends REST_Controller
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$phone=$this->input->post('phone');
-		$ph=$this->model->number($phone);
+		$ph=$this->EzPet_model->number($phone);
 		if($ph==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4-invalid phone number',
+						'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -1144,7 +1268,7 @@ class api_getc extends REST_Controller
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
+						'message' => 'Data is submitted successfully.'
 					], REST_Controller::HTTP_OK);
 				}
 				else
@@ -1165,7 +1289,7 @@ class api_getc extends REST_Controller
 			//$userData = array(
 		$check=$this->input->post('check');
 		$dname=$this->input->post('dname');
-		$drname=$this->model->name($dname);
+		$drname=$this->EzPet_model->name($dname);
 		if($drname==false)
 		{
 				// Set the response and exit
@@ -1177,26 +1301,26 @@ class api_getc extends REST_Controller
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$name = $this->input->post('name');
-		$cname=$this->model->name($name);
+		$cname=$this->EzPet_model->name($name);
 		if($cname==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR1-invalid name',
+						'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
 		$phone=$this->input->post('phone');
-		$ph=$this->model->number($phone);
+		$ph=$this->EzPet_model->number($phone);
 		if($ph==false)
 		{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4-invalid phone number',
+						'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 		}
@@ -1228,7 +1352,7 @@ class api_getc extends REST_Controller
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
+						'message' => 'Data is submitted successfully.'
 					], REST_Controller::HTTP_OK);
 				}
 				else
@@ -1251,7 +1375,7 @@ class api_getc extends REST_Controller
 			   $amount=$this->input->post('amount');
 			   $pet=$this->input->post('pet');
 			   $petname=$this->input->post('petname');
-			   $pname=$this->model->name($petname);
+			   $pname=$this->EzPet_model->name($petname);
 				if($pname==false)
 				{
 						// Set the response and exit
@@ -1265,41 +1389,41 @@ class api_getc extends REST_Controller
 			    $gender=$this->input->post('gender');
 			   
 				$cname=$this->input->post('cname');
-				$name=$this->model->name($cname);
+				$name=$this->EzPet_model->name($cname);
 				if($name==false)
 				{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR1-invalid name',
+						'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 				
 				$cgender =$this->input->post('cgender');
 				$email=strip_tags($this->input->post('email'));
-				$em=$this->model->mails($email);
+				$em=$this->EzPet_model->mails($email);
 				if($em==false)
 				{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR2-invalid email',
+						'message' => 'ERROR-invalid email',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 			   
 			    $phone= $this->input->post('phone');
-				$ph=$this->model->number($phone);
+				$ph=$this->EzPet_model->number($phone);
 				if($ph==false)
 				{
 				// Set the response and exit
 				//BAD_REQUEST (400) being the HTTP response code
 				$this->response([
 						'status' => false,
-						'message' => 'ERROR4-invalid phone number',
+						'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 					], REST_Controller::HTTP_BAD_REQUEST);
 				//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
@@ -1337,7 +1461,7 @@ class api_getc extends REST_Controller
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
+						'message' => 'Data is submitted successfully.'
 					], REST_Controller::HTTP_OK);
 				}
 				else
@@ -1357,45 +1481,45 @@ class api_getc extends REST_Controller
 		
 			  // $userData = array( 
 			   $first_name = $this->input->post('first_name');
-			   $name=$this->model->name($first_name);
+			   $name=$this->EzPet_model->name($first_name);
 				if($name==false)
 				{
 						// Set the response and exit
 						//BAD_REQUEST (400) being the HTTP response code
 						$this->response([
 								'status' => false,
-								'message' => 'ERROR1-invalid name',
+								'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
 							], REST_Controller::HTTP_BAD_REQUEST);
 						//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 			   $email = strip_tags($this->input->post('email'));
 			   $email = strip_tags($this->post('email'));
-				$em=$this->model->mails($email);
+				$em=$this->EzPet_model->mails($email);
 				if($em==false)
 				{
 						// Set the response and exit
 						//BAD_REQUEST (400) being the HTTP response code
 						$this->response([
 								'status' => false,
-								'message' => 'ERROR2-invalid email',
+								'message' => 'ERROR-invalid email',
 							], REST_Controller::HTTP_BAD_REQUEST);
 						//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 			    $phone= $this->input->post('phone');
-				$ph=$this->model->number($phone);
+				$ph=$this->EzPet_model->number($phone);
 				if($ph==false)
 				{
 						// Set the response and exit
 						//BAD_REQUEST (400) being the HTTP response code
 						$this->response([
 								'status' => false,
-								'message' => 'ERROR4-invalid phone number',
+								'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
 							], REST_Controller::HTTP_BAD_REQUEST);
 						//$this->response("Wrong email or password.", REST_Controller::HTTP_BAD_REQUEST);
 				}
 				 $pet= $this->input->post('pet');
 				  $petname= $this->input->post('petname');
-				  $pname=$this->model->name($petname);
+				  $pname=$this->EzPet_model->name($petname);
 					if($pname==false)
 					{
 							// Set the response and exit
@@ -1453,7 +1577,7 @@ class api_getc extends REST_Controller
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.'
+						'message' => 'Data is submitted successfully.'
 					], REST_Controller::HTTP_OK);
 				}
 				else
