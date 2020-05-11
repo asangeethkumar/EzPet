@@ -1900,7 +1900,7 @@ public function grooming()
 
 	}
 	
-	public function petregistration()
+public function petregistration()
 	{
 			$this->load->view('petregistration',array('error' => ' ' ));
 
@@ -1936,10 +1936,6 @@ public function grooming()
 					'DOB' => strip_tags($this->input->post('DOB')),	
 					'color' => strip_tags($this->input->post('color')),
 					'GENIUS' => strip_tags($this->input->post('GENIUS')),
-					'species' => strip_tags($this->input->post('species')),
-					'coat' => strip_tags($this->input->post('coat')),
-
-
 					'weight' => strip_tags($this->input->post('weight')),
 					'Height' => strip_tags($this->input->post('Height')),
 					'Microchiped_or_Tattooed' => strip_tags($this->input->post('Microchiped_or_Tattooed')),
@@ -1952,6 +1948,8 @@ public function grooming()
 					'Pet_Dam_AIN' => strip_tags($this->input->post('Pet_Dam_AIN')),
 		
 					'email' => strip_tags($this->input->post('email')), 
+					'species' => strip_tags($this->input->post('species')), 
+					'coat' => strip_tags($this->input->post('coat')), 
              
 					'gender' => $this->input->post('gender'), 
 					'Spayed_or_Neutered' => $this->input->post('Spayed_or_Neutered'), 
@@ -1974,8 +1972,7 @@ public function grooming()
 		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
 	}
-		  
-	
+		 
 		
 
 

@@ -1,4 +1,6 @@
-
+<?php
+include_once "menu.php";
+?>
 <html lang="en">  
 <head>
 <title>FORGETPASSWORD</title>

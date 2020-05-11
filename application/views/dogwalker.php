@@ -2,13 +2,9 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
-<br>
-<br>
-<br>
-<br>
 <html lang="en">  
 <head>
-<title>pet food</title>
+<title>Dog Walker</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -25,10 +21,23 @@ include_once "menuWithLogout.php";
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/select2/select2.min.css'); ?>">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
-	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
+	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/main.css'); ?>">
 <!--===============================================================================================-->
 </head>
 <body>
+<div class="limiter">
+
+<br>
+<br>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Pet Service </a></li>
+    <li class="breadcrumb-item active" aria-current="page">Dog walker</li>
+  </ol>
+</nav>
 <div class="limiter">
 
 		<div class="container-login100">

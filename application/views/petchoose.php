@@ -15,6 +15,14 @@ include_once "menuWithLogout.php";
 </head>
 <body>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Get A pet </a></li>
+    <li class="breadcrumb-item active" aria-current="page">pet choose</li>
+  </ol>
+</nav>
 <h1>Tips for choosing a correct pet</h1>
 <ol>
 	

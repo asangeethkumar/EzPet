@@ -239,21 +239,21 @@ body {
         <div class="col-sm-4">
           <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[4]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-	  <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Puppy</a>
+	  <a href="<?php echo base_url('users/details/7893');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Puppy</a>
 	 
     </div>
         </div>
         <div class="col-sm-4">
          <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[14]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-	  <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Catty</a>
+	  <a href="<?php echo base_url('users/details/9');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Catty</a>
 	 
     </div>
         </div>
         <div class="col-sm-4">
         <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[8]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-	  <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Brownie</a>
+	  <a href="<?php echo base_url('users/details/10');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Brownie</a>
 	 
     </div>
         </div>
@@ -263,7 +263,7 @@ body {
         <div class="col-sm-4">
          <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[9]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-	  <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">snuppy</a>
+	  <a href="<?php echo base_url('users/details/11');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">snuppy</a>
 	 
     </div>
         </div>
@@ -277,7 +277,7 @@ body {
         <div class="col-sm-4">
          <div class="card">
 	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[13]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>
-	  <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">smilye</a>
+	  <a href="<?php echo base_url('users/details/12');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">smilye</a>
 	 
     </div>
         </div>
