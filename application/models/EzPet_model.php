@@ -90,17 +90,7 @@ class EzPet_model  extends CI_Model {
 	
 	}
 	 
-	/* function name($first_name)
-	 {
-		 if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
-			$nameErr = "Only letters and white space allowed";
-			return $nameErr;
-			}
-			else
-			{
-				return $first_name;
-			}
-	 }*/
+
 	 public function isDate($date)
 	{
 			if(! preg_match(

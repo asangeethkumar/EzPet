@@ -507,7 +507,7 @@ class Users extends CI_Controller {
 									'l' => $this->input->post('l')
 									);
 			  
-				$this->db->insert('mypres',$userData);
+			//	$this->db->insert('mypres',$userData);
 		
 /*				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";*/
 				
@@ -865,7 +865,7 @@ class Users extends CI_Controller {
 								'petname' => $this->input->post('petname'),
 								'gender'=>$this->input->post('gender'),
 								'concern' => $this->input->post('concern'),
-								'question'=>$this->input->post('question'),
+								//'question'=>$this->input->post('question'),
 								'location'=>$this->input->post('location'),
 								'payment'=>$this->input->post('payment')
 								);

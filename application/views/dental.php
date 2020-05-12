@@ -2,10 +2,8 @@
 <?php
 include_once "menuWithLogout.php";
 ?>
-<br>
-<br>
-<br>
-<br>
+
+
 
 <html lang="en">  
 <head>
