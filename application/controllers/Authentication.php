@@ -151,7 +151,7 @@ class Authentication extends REST_Controller {
 					// Set the response and exit
 					$this->response([
 						'status' => TRUE,
-						'message' => 'The user has been added successfully.',
+						'message' => 'The user has been added successfully.'
 						//'data' => $insert
 					], REST_Controller::HTTP_OK);
 				}

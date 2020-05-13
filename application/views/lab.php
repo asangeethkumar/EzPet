@@ -87,12 +87,12 @@ include_once "menuWithLogout.php";
 						
 						<div class="wrap-input100 validate-input" data-validate = "  valid name  is required">
 								<label for="inputState"> </label>
-								<input type="text" name="name"   class="input100"  title="digits and special characters are not allowed"  placeholder="ENTER YOUR NAME"  value="<?php echo !empty($user['name'])?$user['name']:''; ?>" >
+								<input type="text" name="name"   class="input100"  title="digits and special characters are not allowed"  placeholder="PET  NAME"  value="<?php echo !empty($user['name'])?$user['name']:''; ?>" >
 								<?php echo form_error('name','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>
 								<br>
 								<span class="symbol-input100">	
-								<i class="fa fa-user" aria-hidden="true"></i>
+								<i class="fa fa-paw" aria-hidden="true"></i>
 								</span>
 						</div>
 						

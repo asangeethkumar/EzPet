@@ -179,7 +179,7 @@ include_once "menuWithLogout.php";
 </div>
 						<div class="wrap-input100 validate-input" data-validate = "  valid location is required">
 								<label for="inputState"> </label>
-								<input type="text" name="question"    class="input100"   placeholder=" YOUR LOCATION" value="">
+								<input type="text" name="location"    class="input100"   placeholder=" YOUR LOCATION" value="">
 							
 								<span class="focus-input100"></span>
 									<br>

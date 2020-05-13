@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
 <style>
 #testimonials {
   background-color: #ef8172;
@@ -23,6 +47,7 @@
   background-color: #ef8172;
   padding-bottom: 3%;
 }
+
 .carousel-inner {
     left: 150;
 }
@@ -39,28 +64,26 @@
         <div class="carousel-item active container-fluid">
           <h2 class="testimonial-text">Find a Pet For You</h2>
           <img class="testimonial-image" src="assets/images/1.jpg" alt="dog-profile">
-        <!-- <em> <button type="button" class="btn btn-secondary">GET A PET</button></em>-->
+       
 		<em> <a href="<?php echo base_url('users/details/1');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET A PET</a></em>
         </div>
-      <!--  <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Today's featured pets</h2>
-        <img class="testimonial-image" src="assets/images/8.jpg" alt="lady-profile">
-           <em> <button type="button" class="btn btn-secondary">GET THIS PET</button></em>
-        </div>-->
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">	Take Care of Your Pet </h2>
         <img class="testimonial-image" src="assets/images/8.jpg" alt="lady-profile">
-           <em> <button type="button" class="btn btn-secondary">Schedule Veterinarian Appointment</button></em>
+         <!--  <em> <button type="button"  href="<?php echo base_url()."users/pethealth" ?>" class="btn btn-secondary">Schedule Veterinarian Appointment</button></em>-->
+		   <em> <a href="<?php echo base_url('users/pethealth');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Schedule Veterinarian Appointment</a></em>
         </div>
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">	Get The Best Service for Your Pet </h2>
         <img class="testimonial-image" src="assets/images/mainBanner.jpg" alt="lady-profile">
-           <em> <button type="button" class="btn btn-secondary">Pet Services</button></em>
+		  <em> <a href="<?php echo base_url('users/petservices');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Pet Services</a></em>
+         <!--  <em> <button type="button" class="btn btn-secondary">Pet Services</button></em>-->
         </div>
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">	Are You A Pet Industry Professional?  </h2>
         <img class="testimonial-image" src="assets/images/mainBanner1.jpg" alt="lady-profile">
-           <em> <button type="button" class="btn btn-secondary">For Pros</button></em>
+		  <em> <a href="<?php echo base_url('users/forpros');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">For Pros</a></em>
+        <!--   <em> <button type="button" class="btn btn-secondary">For Pros</button></em>-->
         </div>
       </div>
       <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
@@ -72,6 +95,8 @@
     </div>
 
   </section>
+  </body>
+  </html>
 
 
   <!-- Press -->
