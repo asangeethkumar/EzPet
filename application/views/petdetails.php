@@ -93,10 +93,10 @@ img {
 					<?php
 					//print_r($result);
 								 foreach($data as $row)
-								  {
+								 {
 									  ?>
 									  <?php
-									     $s= $row->image;
+									    echo  $s= $row->image;
 										 $si=$row->AIN;
 										?>
 								
