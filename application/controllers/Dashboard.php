@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller {
 	
 <?php
  			
-			
+			echo "<br>";
 					$this->load->view('sliders');
 						$this->load->view('filters');
 						echo "<br>";
