@@ -62,8 +62,20 @@ img {
 <body>
 <div class="limiter">
 		<div class="container-login100">
+			<?php
+					foreach($data as $row)
+					{
+									  
+						$si=$row->AIN;
+				
+					}
 					
-						
+		
+					?>
+					
+						<a href="<?php echo base_url('users/share/'.$si);  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true">share</a>
+			
+					<!--<a  href="http://localhost:8080/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"> video calling</a></td>-->
 			<div class="wrap-login100">
 		
 			
@@ -79,27 +91,88 @@ img {
 						<!--<img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $data[7]->image_path));?>" alt="" border=3 height=200 width=200 style="padding:0 15px 0 15px;"></td>-->
 						
 					<?php
-					
+					//print_r($result);
 								 foreach($data as $row)
 								  {
 									  ?>
 									  <?php
 									     $s= $row->image;
-										 $i=$row->AIN;
-										// $si=$row->AIN;
+										 $si=$row->AIN;
 										?>
-								<table>
 								
-									<td ><a href="<?php echo base_url('users/detailsearch/'.$i);  ?>"  ><img  width="350" height="200"   src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"></a><td>
-									<!--<a href="<?php echo base_url('users/searchdetails');  ?>"   class="btn btn-primary btn-lg active" role="button" aria-pressed="true"><?php echo   "<h3>" .$row->Pet_Name."</h3>"?></a>-->
-									<th><?php echo "<p>&nbsp; </p>"?></th>
-									<th><?php echo "<p>&nbsp; </p>"?></th>
-									<th><?php echo "<p>&nbsp; </p>"?></th>
-									<th><?php echo   "<h3>" .$row->Pet_Name."</h3>"?><th>
-								<!--<th><?php echo   "<h3>" .$row->AIN."</h3>"?><th>-->
+								
+									<td ><img  width="350" height="200"  src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
+								
 										
-								</table>	
-									<hr style="width:250%;text-align:left;margin-left:0;color:black">
+									<!--<th><?php echo $row->AIN;	?></th>-->
+										<!--<th><?php echo $si;	?></th>-->
+												<!--<?php echo   "<h3>" .$row->AIN."</h3>"?>-->
+												<?php echo   "<h3>" .$row->Pet_Name."</h3>"?>
+												<?php echo "<br>" ?>
+													<table>
+															<th><?php echo "<p>&nbsp; </p>"?></th>
+															<th><?php echo "<p>&nbsp; </p>"?></th>
+															<th><?php echo "<p>&nbsp; </p>"?></th>
+															<th><?php echo "<p>&nbsp; </p>"?></th>
+															<th><?php echo "<p>&nbsp; </p>"?></th>
+															<th><?php echo "<p>&nbsp; </p>"?></th>
+															<th><?php echo "<p> &#9679;</p>"?></th>
+															<th><?php echo "<h4>DOB:</h4>"?></th>
+															<?php echo "<br>" ?>
+															
+															<th><?php echo "<h4>" .$row->DOB."</h4>"?></th>
+													<table>
+												<?php echo "<br>" ?>
+										
+												<hr style="width:300%;text-align:left;margin-left:0">
+											<table>
+										
+												<th><?php echo "<h4>" .$row->gender."</h4>"?></th>
+												
+												<th><?php echo "<p>&nbsp; </p>"?></th>
+												<th><?php echo "<p>&nbsp; </p>"?></th>
+												<th><?php echo "<p> &#9679;</p>"?></th>
+												<th><?php echo "<h4>" .$row->color."</h4>"?></th>
+												<th><?php echo "<p>&nbsp; </p>"?></th>
+												<th><?php echo "<p>&nbsp; </p>"?></th>
+												<th><?php echo "<p> &#9679;</p>"?></th>
+												<th><?php echo "<h4>Height:</h4>"?></th>
+												<th><?php echo "<h4>" .$row->Height."</h4>"?></th>
+												<th><?php echo "<p>&nbsp; </p>"?></th>
+												<th><?php echo "<p>&nbsp; </p>"?></th>
+												<th><?php echo "<p> &#9679;</p>"?></th>
+												<th><?php echo "<h4>Weight:</h4>"?></th>
+												<th><?php echo "<h4>" .$row->weight."</h4>"?></th>
+			
+											</table>
+									
+									<hr style="width:300%;text-align:left;margin-left:0">
+									<?php echo "<br>" ?>
+									<?php echo "<br>" ?>
+									
+									<?php echo "<h1> <b>About<b> </h1>" ?>
+									
+									<?php echo "<br>" ?>
+									
+									<?php echo "<h4><b>Health<b></h4>" ?>
+									<table>
+								    <th><?php echo "<h5><b>Spayed / neutered.<b></h5>" .$row->Spayed_or_Neutered?></th>
+									<table>
+									<?php echo "<br>" ?>
+									<?php echo "<br>" ?>
+									<?php echo "<h4><b>Special status</h4><b>" .$row->Special_Status?>
+									<?php echo "<br>" ?>
+									<?php echo "<br>" ?>
+									<?php echo "<br>" ?>
+									
+									
+									<hr style="width:300%;text-align:left;margin-left:0">
+									<?php echo "<h1><b>Contact</h4><b>" ?>
+									<?php echo "<br>" ?>
+							
+									<?php echo "<h4>" .$row->email."</h4>"?>
+									<?php echo "<h4>" .$row->phone."</h4>"?>
+								 
 								<?PHP
 								  }
 								  

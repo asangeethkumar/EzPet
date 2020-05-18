@@ -40,7 +40,7 @@
   margin: 20px;
 }
 .carousel-item{
-	 padding: 7% 55%;
+	 padding: 7% 15%;
 }
 
 #press {

@@ -186,7 +186,7 @@ class Users extends CI_Controller {
     }
 	
 	
-	
+	//before login petdetails view
 	public function details($id)
 	{	
 		
@@ -196,7 +196,17 @@ class Users extends CI_Controller {
 		
 				
 	}
-	
+	//after login petdetails view 
+	public function detailsearch($id)
+	{	
+		
+			$result['data']=$this->EzPet_model->display_records($id);
+			$this->load->view('petviewsearch',$result);
+			//$this->load->view('share',$result);
+		
+				
+	}
+	//sharing the pet details in the social networks 
 	public function share($id)
 	{
 		

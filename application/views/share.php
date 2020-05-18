@@ -34,15 +34,6 @@
   color: white;
 }
 
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-youtube {
-  background: #bb0000;
-  color: white;
-}
 
 .fa-instagram {
   background:#132063;
@@ -65,65 +56,27 @@
   color: white;
 }
 
-.fa-android {
-  background: #a4c639;
+.fa-paw {
+  background:#132063;
   color: white;
 }
 
-.fa-dribbble {
-  background: #ea4c89;
+h3{
+  background: #132063;
+ 
+    padding: 5% 12%;
   color: white;
+  align:"center";
 }
 
-.fa-vimeo {
-  background: #45bbff;
-  color: white;
+
+img {
+
+    border-radius: 50%;
+  align="center" ;
 }
 
-.fa-tumblr {
-  background: #2c4762;
-  color: white;
-}
 
-.fa-vine {
-  background: #00b489;
-  color: white;
-}
-
-.fa-foursquare {
-  background: #45bbff;
-  color: white;
-}
-
-.fa-stumbleupon {
-  background: #eb4924;
-  color: white;
-}
-
-.fa-flickr {
-  background: #f40083;
-  color: white;
-}
-
-.fa-yahoo {
-  background: #430297;
-  color: white;
-}
-
-.fa-soundcloud {
-  background: #ff5500;
-  color: white;
-}
-
-.fa-reddit {
-  background: #ff5700;
-  color: white;
-}
-
-.fa-rss {
-  background: #ff6600;
-  color: white;
-}
 </style>
  <script> 
         var Window; 
@@ -143,7 +96,8 @@
 <body style="background-color:#132063;">
 <table align="right">
 <td><button type="button"  onclick="windowClose()" class="close" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
+  <span class="close" aria-hidden="true">&times;</span>
+  
 </button></td>
 </table>
 
@@ -151,9 +105,6 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-
 
 						<?php
 					
@@ -169,7 +120,14 @@
 								  ?>
 							
 								  <table  align="center">
-									<td><img width="350" height="200" src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"><td>
+								  <tr>
+									<th><img width="350" height="200"  style="width:200px" src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $s));?>"></th>
+									</tr>
+									<tr>
+									
+										<td><?php echo    "<h3>" ."Share" ."&nbsp;"."&nbsp;".$row->Pet_Name."</h3>" ;?></td>
+									</tr>
+						
 								</table>
 									<?php
 									?>
@@ -183,6 +141,9 @@
 
 <!-- Add font awesome icons -->
 <table align="center">
+
+<td><a href="http://localhost/testsite/" class="fa fa-paw"  ></a></td>
+<th><?php echo "<p>&nbsp; </p>"?></th>
 <td><a href="https://www.facebook.com/" class="fa fa-facebook"></a></td>
 <th><?php echo "<p>&nbsp; </p>"?></th>
 <td><a href="https://twitter.com/" class="fa fa-twitter"></a></td>

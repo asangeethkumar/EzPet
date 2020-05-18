@@ -6,13 +6,14 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
    use Restserver\Libraries\REST_Controller;
 
-class api_serv extends REST_Controller 
+class Api_serv extends REST_Controller 
 {
     public function __construct() { 
         parent::__construct();
         
         // Load the user model
-        $this->load->model('model');
+       // $this->load->model('model');
+         $this->load->model('EzPet_model');
     }
 
 
@@ -28,8 +29,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
 
@@ -39,8 +40,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
                 
         }
                 $pet_breed = $this->input->post('pet_breed'); 
@@ -51,8 +52,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
 
                     //checkbox
@@ -84,7 +85,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -101,8 +102,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -111,8 +112,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -123,8 +124,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
@@ -133,8 +134,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -142,8 +143,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_breed = $this->input->post('pet_breed'); 
                 $address = $this->input->post('address');
@@ -175,7 +176,7 @@ class api_serv extends REST_Controller
              else 
              {
              	//set responsive and exit
-             	$this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+             	$this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -193,8 +194,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                  $phone =$this->input->post('phone');
 
@@ -203,8 +204,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
                  $email =$this->input->post('email');
                                                $mails=$this->model->mails($email);
@@ -212,8 +213,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>'message' => 'ERROR-invalid email' ,
+                    ], REST_Controller::HTTP_OK);
         }
            
                  $ephone =$this->input->post('ephone');
@@ -223,8 +224,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_name =$this->input->post('pet_name');
                   $name=$this->model->name($first_name);
@@ -232,8 +233,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_breed =$this->input->post('pet_breed');
                 $pet_age =$this->input->post('pet_age');
@@ -265,7 +266,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -287,8 +288,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -297,8 +299,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -309,8 +311,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
@@ -319,8 +321,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -328,8 +330,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_breed = $this->input->post('pet_breed');
 
@@ -364,7 +366,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -383,8 +385,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_breed = $this->input->post('pet_breed');
                 $gender => $this->input->post('gender');
@@ -396,8 +399,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -406,8 +410,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -418,8 +423,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
 
 
@@ -453,7 +458,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -471,8 +476,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -481,8 +487,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -493,8 +500,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
@@ -503,8 +510,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -512,8 +520,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
                 $paddress = $this->input->post('paddress');
@@ -545,7 +554,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -563,8 +572,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
                          $pet_breed = $this->input->post('pet_breed');
@@ -595,7 +605,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -615,8 +625,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -625,8 +636,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -637,8 +649,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
@@ -647,8 +659,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -656,8 +669,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
        
@@ -691,7 +705,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -711,8 +725,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -721,8 +736,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -733,8 +749,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
            
            $pet_age = $this->input->post('pet_age');
@@ -745,8 +761,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
 
@@ -778,7 +795,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -796,8 +813,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -806,8 +824,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -818,8 +837,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
@@ -828,8 +847,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -837,8 +857,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
          $pet_breed = $this->input->post('pet_breed');
                 $passport => $this->input->post('passport');
@@ -877,7 +898,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -894,8 +915,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -904,8 +926,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -916,8 +939,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -925,8 +948,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
          $pet_breed = $this->input->post('pet_breed');
@@ -962,7 +986,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -980,8 +1004,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -990,8 +1015,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -1002,8 +1028,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -1011,8 +1037,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
             $pet_breed = $this->input->post('pet_breed');
                 $pet_size = $this->input->post('pet_size');
@@ -1049,7 +1076,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -1071,8 +1098,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
                 $pet_breed => $this->input->post('pet_breed');
@@ -1097,7 +1125,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -1116,8 +1144,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
          $pet_breed= $this->input->post('pet_breed');
                 $pet_age = $this->input->post('pet_age');
@@ -1145,7 +1174,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -1162,8 +1191,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
          $pet_breed => $this->input->post('pet_breed');
                 $bed_size = $this->input->post('bed_size');
@@ -1189,7 +1219,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -1208,8 +1238,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
@@ -1218,8 +1249,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+,
+                    ], REST_Controller::HTTP_OK);
         }
                         
 
@@ -1230,8 +1262,8 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 'message' => 'ERROR-invalid email',
+                    ], REST_Controller::HTTP_OK);
         }
                $pet_name = $this->input->post('pet_name');
                   $name=$this->model->name($pet_name);
@@ -1239,8 +1271,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)' ,
+                    ], REST_Controller::HTTP_OK);
         }
 
         $pet_breed = $this->input->post('pet_breed');
@@ -1269,7 +1302,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
@@ -1286,8 +1319,9 @@ class api_serv extends REST_Controller
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR1',
-                    ], REST_Controller::HTTP_BAD_REQUEST);
+                        'message' => 
+'ERROR-invalid name(digits and special characters are not allowed)',
+                    ], REST_Controller::HTTP_OK);
         }
 
                 $pet_breed = $this->input->post('pet_breed');
@@ -1315,7 +1349,7 @@ class api_serv extends REST_Controller
              else 
              {
                 //set responsive and exit
-                $this->response("Please try again.", REST_Controller::HTTP_BAD_REQUEST);
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 

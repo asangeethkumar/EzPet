@@ -20,24 +20,24 @@ class Dashboard extends CI_Controller {
 	
 	
 <?php
- 			//$this->load->view('banner');
+ 			
 			
-				$this->load->view('sliders');
-				$this->load->view('filters');
-				echo "<br>";
-				echo "<br>";
-				echo "<br>";
-				
-				$this->load->view('pets');
-				echo "<br>";
-								echo "<br>";
+					$this->load->view('sliders');
+						$this->load->view('filters');
+						echo "<br>";
+						echo "<br>";
+						echo "<br>";
+						
+						$this->load->view('pets');
+						echo "<br>";
+						echo "<br>";
 
-				$data1['data'] =  $this->image_model->get_images();
-	
-				$this->load->view('dashboard', $data1);
-				$this->load->view('know');
-				$this->load->view('searchfilter');
-				//$this->load->view('myorders');
+						$data1['data'] =  $this->image_model->get_images();
+			
+						$this->load->view('dashboard', $data1);
+						$this->load->view('know');
+						$this->load->view('searchfilter');
+			//	$this->load->view('serviceslider');
 				
 			$this -> load -> view('elements/footer');
 			
