@@ -210,11 +210,11 @@
 					
 				</li>
 
-				 <li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					
 								<a  href="<?php echo base_url()."users/forpros" ?>" >FOR PROS</a>
 					
-				</li>	 
+				</li>	--> 
 				
 						
 				 <li >
