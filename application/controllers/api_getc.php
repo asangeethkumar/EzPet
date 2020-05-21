@@ -88,6 +88,7 @@ class Api_getc extends REST_Controller
 														$this->response([
 															'status' => TRUE,
 															'message' => 'Data is submitted successfully.'
+															//'data' => $userData
 														], REST_Controller::HTTP_OK);
 													}
 													else

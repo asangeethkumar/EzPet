@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller {
 	
 <?php
  			
-			echo "<br>";
+			
 					$this->load->view('sliders');
 						$this->load->view('filters');
 						echo "<br>";
@@ -37,7 +37,7 @@ class Dashboard extends CI_Controller {
 						$this->load->view('dashboard', $data1);
 						$this->load->view('know');
 						$this->load->view('searchfilter');
-			//	$this->load->view('serviceslider');
+				//$this->load->view('serviceslider');
 				
 			$this -> load -> view('elements/footer');
 			

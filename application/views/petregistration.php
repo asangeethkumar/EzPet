@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<?php
-include_once "menuWithLogout.php";
-?>
+
 <html lang="en">  
 <head>
 <title>PET INFO REGISTRATION</title>
-<title>pet food</title>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -25,16 +23,15 @@ include_once "menuWithLogout.php";
 	<link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/mains.css'); ?>">
 <!--===============================================================================================-->
 <body>
-<br>
-<br>
-<nav aria-label="breadcrumb">
+
+<!--<nav aria-label="breadcrumb">
   <ol class="breadcrumb">
 
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/dashboard"; ?>'>Menu </a></li>
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>My Account </a></li>
     <li class="breadcrumb-item active" aria-current="page">Pet Registration</li>
   </ol>
-</nav>
+</nav>-->
 
 <div class="limiter">
 		<div class="container-login100">
@@ -45,7 +42,7 @@ include_once "menuWithLogout.php";
 
 
 
-<?php echo $error; ?>
+<?php echo $error; ?>-->
 
 
 
@@ -62,7 +59,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-AIN" aria-hidden="true"></i>
+									<!--<i class="fa fa-AIN" aria-hidden="true"></i>-->
 								</span>
             </div> 
 			
@@ -71,7 +68,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Pet_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Pet Name" aria-hidden="true"></i>
+									<!--<i class="fa fa-Pet Name" aria-hidden="true"></i>-->
 								</span>
             </div>
 			<div class="wrap-input100 validate-input" data-validate = "valid date is required">
@@ -80,14 +77,14 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-DOB" aria-hidden="true"></i>
+									<!--<i class="fa fa-DOB" aria-hidden="true"></i>-->
             </div>
 			  <div class="wrap-input100 validate-input" data-validate = "valid color is required">
                 <input type="text" name="color" placeholder="color" class="input100" value="<?php echo !empty($user['color'])?$user['color']:''; ?>" >
                 <?php echo form_error('color','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-color" aria-hidden="true"></i>
+									<!--<i class="fa fa-color" aria-hidden="true"></i>-->
             </div>
 			
 						  <div class="wrap-input100 validate-input" data-validate = "valid option is required">
@@ -96,7 +93,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('GENIUS','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-GENIUS" aria-hidden="true"></i>
+									<!--<i class="fa fa-GENIUS" aria-hidden="true"></i>-->
             </div>
 			
 			 <div class="wrap-input100 validate-input" data-validate  = " select valid option is required">
@@ -138,7 +135,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('weight','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-weight" aria-hidden="true"></i>
+									<!--<i class="fa fa-weight" aria-hidden="true"></i>-->
             </div> 
 			
 			 <div class="wrap-input100 validate-input" data-validate = "valid number is required">
@@ -146,7 +143,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Height','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 
 			<div class="input-radio100">
@@ -178,7 +175,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Microchip_or_Tattoo','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 
 
@@ -188,7 +185,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('State_License_or_Registration','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 
 
@@ -198,7 +195,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Club_or_Association_Registration','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 
 
@@ -209,7 +206,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Pet_Sire_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 			
 	
@@ -220,7 +217,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Pet_Sire_AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 
 
@@ -230,7 +227,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Pet_Dam_Name','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div>
 			
 
@@ -239,7 +236,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('Pet_Dam_AIN','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-Height" aria-hidden="true"></i>
+									<!--<i class="fa fa-Height" aria-hidden="true"></i>-->
             </div> 
 			
 			

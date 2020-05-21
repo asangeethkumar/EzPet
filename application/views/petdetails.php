@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include_once "menu.php";
+include_once "menuWithLogout.php";
 ?>
 <br>
 

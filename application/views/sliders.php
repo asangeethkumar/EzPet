@@ -63,28 +63,38 @@
       <div class="carousel-inner">
         <div class="carousel-item active container-fluid">
           <h2 class="testimonial-text">Find a Pet For You</h2>
-          <img class="testimonial-image" src="assets/images/1.jpg" alt="dog-profile">
+          <img class="testimonial-image" src="<?php echo base_url()."assets/images/1.jpg";?>" alt="dog-profile">
        
 		<em> <a href="<?php echo base_url('users/details/1');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET A PET</a></em>
         </div>
+		
+		
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">	Take Care of Your Pet </h2>
-        <img class="testimonial-image" src="assets/images/8.jpg" alt="lady-profile">
-         <!--  <em> <button type="button"  href="<?php echo base_url()."users/pethealth" ?>" class="btn btn-secondary">Schedule Veterinarian Appointment</button></em>-->
-		   <em> <a href="<?php echo base_url('users/pethealth');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Schedule Veterinarian Appointment</a></em>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/8.jpg";?>"  alt="lady-profile">
+        
+		   <em> <a href="<?php echo base_url('users/schedule');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Schedule Veterinarian Appointment</a></em>
         </div>
+		
+		
+		
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">	Get The Best Service for Your Pet </h2>
-        <img class="testimonial-image" src="assets/images/mainBanner.jpg" alt="lady-profile">
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/mainBanner.jpg";?>"  alt="lady-profile">
 		  <em> <a href="<?php echo base_url('users/petservices');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Pet Services</a></em>
-         <!--  <em> <button type="button" class="btn btn-secondary">Pet Services</button></em>-->
+         
         </div>
+		
+		
+		
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">	Are You A Pet Industry Professional?  </h2>
-        <img class="testimonial-image" src="assets/images/mainBanner1.jpg" alt="lady-profile">
-		  <em> <a href="<?php echo base_url('users/forpros');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">For Pros</a></em>
-        <!--   <em> <button type="button" class="btn btn-secondary">For Pros</button></em>-->
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/mainBanner1.jpg";?>"  alt="lady-profile">
+		  <em> <a href="<?php echo base_url('users/propet');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">For Pros</a></em>
+        
         </div>
+		
+		
       </div>
       <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>

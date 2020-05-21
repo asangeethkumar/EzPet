@@ -161,67 +161,93 @@
 
             <ul class="navbar-nav ml-auto">
 			  
-
-					 <li class="nav-item dropdown">
+			  
+			  
+			  
+				<li class="nav-item dropdown">
+						
+								<a  href="<?php echo base_url('dashboard');?>" >HOME</a>
+					
+				</li>
+				<!--<li class="nav-item dropdown">
+						
+								<a  href="<?php echo base_url()."users/myaccount" ?>" >MY ACCOUNT</a>
+					
+				</li>-->
+				
+				
+				
+				<li class="nav-item dropdown">
 						
 								<a  href="<?php echo base_url()."users/getapet" ?>" > GET A PET</a>
 					
 				</li>
 				
-						 <li class="nav-item dropdown">
+				<li class="nav-item dropdown">
 						
 								<a  href="<?php echo base_url()."users/pethealth" ?>" > PET HEALTH</a>
 					
 				</li>
-			
-			
+				
+				
+				
+				<li class="nav-item dropdown">
+						
+								<a  href="<?php echo base_url()."users/foodandph" ?>" >FOOD&PHARMACY </a>
+					
+				</li>
+				
+				
+				 <li class="nav-item dropdown">
+						
+								<a  href="<?php echo base_url()."users/petservices" ?>" >PET SERVICES</a>
+					
+				</li>
+				
+				 <li class="nav-item dropdown">
+					
+								<a  href="<?php echo base_url()."users/petmerchant" ?>" >PET MERCHANDISE</a>
+					
+				</li>
 
-					 <li class="nav-item dropdown">
+				 <li class="nav-item dropdown">
+					
+								<a  href="<?php echo base_url()."users/forpros" ?>" >FOR PROS</a>
+					
+				</li>	 
+				
 						
-								<a  href="<?php echo base_url()."users/foodandph" ?>" >Food&Pharmacy</a>
-					
-				</li>
-			
-				
-				 <li class="nav-item dropdown">
-						
-								<a  href="<?php echo base_url()."users/petservices" ?>" >Pet Services</a>
-					
-				</li>
-			
-			
-			
-			
-			
-				 <li class="nav-item dropdown">
-					
-								<a  href="<?php echo base_url()."users/petmerchant" ?>" >Pet  Merchandise</a>
-					
-				</li>
-			
-			
-			
-				
-				 <li class="nav-item dropdown">
-					
-								<a  href="<?php echo base_url()."users/forpros" ?>" >For Pros</a>
-					
-				</li>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-				
 				 <li >
 					
-								<a  href="<?php echo base_url()."users/login" ?>" >Login</a>
+								<a  href="<?php echo base_url()."users/login" ?>" >LOGIN</a>
 						
 				</li>
+			
+
+			
+				
+			
+			
+			
+			
+			
+				
+			
+			
+			
+				
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+				
 			
 				
 					

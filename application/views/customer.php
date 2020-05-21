@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<?php
-include_once "menuWithLogout.php";
-?><br><br>
+
 <html lang="en">  
 <head>
 <title>CUSTODIAN FORM</title>
@@ -26,14 +23,14 @@ include_once "menuWithLogout.php";
 <!--===============================================================================================-->
 </head>
 <body>
-	<nav aria-label="breadcrumb">
+<!--	<nav aria-label="breadcrumb">
   <ol class="breadcrumb">
 
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>My Account </a></li>
     <li class="breadcrumb-item active" aria-current="page">CUSTODIAN FORM </li>
   </ol>
-</nav>
+</nav>-->
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -73,7 +70,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('DOB','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-DOB" aria-hidden="true"></i>
+									<!--<i class="fa fa-DOB" aria-hidden="true"></i>-->
 								</span>
             </div>
 			<div class="wrap-input100 validate-input" data-validate = "valid address is required">
@@ -81,7 +78,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('address','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-address" aria-hidden="true"></i>
+									<!--<i class="fa fa-address" aria-hidden="true"></i>-->
 								</span>
             </div>
 			<div class="wrap-input100 validate-input" data-validate = "valid billing address is required">
@@ -89,7 +86,7 @@ include_once "menuWithLogout.php";
                 <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
-									<i class="fa fa-address" aria-hidden="true"></i>
+									<!--<i class="fa fa-address" aria-hidden="true"></i>-->
 								</span>
             </div>
            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
