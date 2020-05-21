@@ -1144,38 +1144,44 @@ class Users extends CI_Controller {
 	
 	// before login
 	public function petmerchant()
-	{
-		$this->load->view('petmerchant');
-				//$this->load->view('merchandise');
+	{	$this->load->view('menu');
+		//$this->load->view('petmerchant');
+		$this->load->view('merchandise');
 	}
 	public function forpros()
 	{
 		$this->load->view('forpros');
 	}
 	public function petservices()
-	{
-		$this->load->view('petservices');
-		//$this->load->view('menu');
-		//echo "<br>";
-		//echo "<br>";
+	{	$this->load->view('menu');
+		$this->load->view('serviceslider');
+		//$this->load->view('petservices');
 		
-		//$this->load->view('serviceslider');
+	
 	}
 	public function pethealth()
 	{
-		$this->load->view('pethealth');
-		//$this->load->view('healthservices');
+		//$this->load->view('pethealth');
+		
+		$this->load->view('menu');
+		$this->load->view('pharamacyservices');
+		
+		
 	}
 	public function getapet()
 	{
-		$this->load->view('getapet');
+		//$this->load->view('getapet');
+		$this->load->view('menu');
+		$this->load->view('getpet');
 	}
 	
 	
 	
 	public function foodandph()
 	{
-		$this->load->view('foodandph');
+		//$this->load->view('foodandph');
+		$this->load->view('menu');
+		$this->load->view('healthservices');
 		//$this->load->view('pharamacyservices');
 	}
 	public function adaption()
@@ -1203,7 +1209,8 @@ class Users extends CI_Controller {
 	public function healthservices()
 	{
 		$this->load->view('menuWithLogout');
-		$this->load->view('healthservices');
+		$this->load->view('pharamacyservices');
+		
 	}
 	public function petmerchandise()
 	{
@@ -1213,7 +1220,8 @@ class Users extends CI_Controller {
 	public function pharamacyservices()
 	{
 		$this->load->view('menuWithLogout');
-		$this->load->view('pharamacyservices');
+		//$this->load->view('pharamacyservices');
+		$this->load->view('healthservices');
 	}
 
 
