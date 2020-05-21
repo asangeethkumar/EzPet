@@ -38,13 +38,31 @@ class Users extends CI_Controller {
 
 			// Pass the user data and load view
 			//$this->load->view('elements/header', $data);
-			$this->load->view('menuWithLogout');
+				$this->load->view('menuWithLogout');
+			
+			
+			
+					$this->load->view('sliders');
+						$this->load->view('filters');
+						echo "<br>";
+						echo "<br>";
+						echo "<br>";
+						
+						$this->load->view('pets');
+						echo "<br>";
+						echo "<br>";
 
-		  $data1['data'] =  $this->image_model->get_images();
-				$this->load->view('dashboard', $data1);
+						$data1['data'] =  $this->image_model->get_images();
+			
+						$this->load->view('dashboard', $data1);
+						$this->load->view('know');
+						$this->load->view('searchfilter');
+
+			//  $data1['data'] =  $this->image_model->get_images();
+			//	$this->load->view('dashboard', $data1);
 			$this -> load -> view('elements/footer');
 
-			 	   		 $data2['data'] =  $this->image_model->get_otherImages($data);
+			 	   		// $data2['data'] =  $this->image_model->get_otherImages($data);
 						 
 			//$this->load->view('users/account', $data2);
 			//$this->load->view('elements/footer');
@@ -186,7 +204,7 @@ class Users extends CI_Controller {
     }
 	
 	
-	
+	//before login petdetails view
 	public function details($id)
 	{	
 		
@@ -196,7 +214,17 @@ class Users extends CI_Controller {
 		
 				
 	}
-	
+	//after login petdetails view 
+	public function detailsearch($id)
+	{	
+		
+			$result['data']=$this->EzPet_model->display_records($id);
+			$this->load->view('petviewsearch',$result);
+			//$this->load->view('share',$result);
+		
+				
+	}
+	//sharing the pet details in the social networks 
 	public function share($id)
 	{
 		
@@ -1112,10 +1140,13 @@ class Users extends CI_Controller {
 // services & marchandish
 
 
-
-public function petmerchant()
+	
+	
+	// before login
+	public function petmerchant()
 	{
 		$this->load->view('petmerchant');
+				//$this->load->view('merchandise');
 	}
 	public function forpros()
 	{
@@ -1124,24 +1155,91 @@ public function petmerchant()
 	public function petservices()
 	{
 		$this->load->view('petservices');
+		//$this->load->view('menu');
+		//echo "<br>";
+		//echo "<br>";
+		
+		//$this->load->view('serviceslider');
 	}
 	public function pethealth()
 	{
 		$this->load->view('pethealth');
+		//$this->load->view('healthservices');
 	}
 	public function getapet()
 	{
 		$this->load->view('getapet');
 	}
+	
+	
+	
 	public function foodandph()
 	{
 		$this->load->view('foodandph');
+		//$this->load->view('pharamacyservices');
 	}
 	public function adaption()
 	{
 		$this->load->view('adaption');
 	}
+	
+	
+	
+	
+	
+	
+	// after login
+	public function services()
+	{
+		$this->load->view('menuWithLogout');
+		$this->load->view('serviceslider');
+	}
+	
+	public function getpet()
+	{	$this->load->view('menuWithLogout');
+		$this->load->view('getpet');
+	}
+	
+	public function healthservices()
+	{
+		$this->load->view('menuWithLogout');
+		$this->load->view('healthservices');
+	}
+	public function petmerchandise()
+	{
+				$this->load->view('menuWithLogout');
+				$this->load->view('merchandise');
+	}
+	public function pharamacyservices()
+	{
+		$this->load->view('menuWithLogout');
+		$this->load->view('pharamacyservices');
+	}
 
+
+	public function myaccount()
+	{	$this->load->view('menuWithLogout');
+		$this->load->view('myaccount');
+		$this->load->view('petregistration');
+		$this->load->view('customer');
+		
+								
+						$this->load->view('pets');
+						echo "<br>";
+						echo "<br>";
+
+						$data1['data'] =  $this->image_model->get_images();
+			
+						$this->load->view('dashboard', $data1);
+						$this->load->view('articles');
+						
+		
+		
+		//$this->load->view('pets');
+		
+		
+	}
+	
 
   
     public function best()
@@ -1961,7 +2059,7 @@ public function petregistration()
                
 					);
 		
-					var_dump($userData);
+					//var_dump($userData);
 					
 					$this->db->insert('petinfo',$userData);
 					

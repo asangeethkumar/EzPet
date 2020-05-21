@@ -189,13 +189,40 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
             <ul class="navbar-nav ml-auto">
+			
+			<li class="nav-item dropdown">
+									
+								<a href='<?php echo base_url()."users/account"; ?>' >HOME</a>
+					
+			</li>
+			
+			
+			<li class="nav-item dropdown">
+					<a  href="<?php echo base_url()."users/myaccount" ?>" >
+						My Account 
+					</a>
+						<!--<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href='<?php echo base_url()."users/petregistration"; ?>'>Pet Information</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/customer"; ?>' >Owner Information</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petchart" ?>'>Pet Veterinary Chart</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/petlicense" ?>' >Pet License</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/expenses"; ?>' >My Budget & Spending Statistics </a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/myorders"; ?>' >My Orders</a>
+
+								<a class ="dropdown-item" href="<?php echo base_url()."users/logout" ?>" >LogOut</a>
+									
+					
+                
+						</div>-->
+			</li>
+			
 
       
 			  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a   href='<?php echo base_url()."users/getpet"; ?>' >
 						Get A pet
 					</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!--	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
 								<a class="dropdown-item" href='<?php echo base_url()."users/findapet"; ?>'>Find A Pet For You</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/submenu"; ?>'>Pet Shelters (Adoption)</a>
@@ -209,14 +236,14 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/adaption"; ?>'>Early Adaptation – Build a pet-owner rapport</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dietchart"; ?>'>Transition Stage Nutrition </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/orderpet"; ?>'>Initial Order for New Pet</a>
-						</div>
+						</div>-->
 				</li>
 				
 			  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a  href='<?php echo base_url()."users/healthservices"; ?>' >
 						Pet Health
 					</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<!--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
 								<a class="dropdown-item" href='<?php echo base_url()."users/getc"; ?>'>Get Veterinary Consultation Online</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/schedule"; ?>'>Schedule Veterinarian Appointment</a>
@@ -227,14 +254,14 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/insurance"; ?>'>Get Pet Insurance</a>
 
 								
-						</div>
+						</div>-->
 				</li>
 	
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Food&Pharmacy 
+					<a  href='<?php echo base_url()."users/pharamacyservices"; ?>'  >
+						FOOD&PHARMACY
 					</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<!--	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href='<?php echo base_url()."users/food"; ?>'>Pet Food</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/otc"; ?>'>OTC Medicines </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/rx"; ?>'>Rx Medicines </a>
@@ -244,16 +271,16 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/dconsult"; ?>'>Dental Care</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/mypres"; ?>'>My Prescriptions</a>
 	</div>
-				</li>
+				</li>-->
 				
 				 <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a  href='<?php echo base_url()."users/services"; ?>' >
 							
-						Pet  Services
+						PET SERVICES
 					</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<!--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-										<a class="dropdown-item" href='<?php echo base_url()."users/grooming"; ?>'>Grooming</a>
+								<a class="dropdown-item" href='<?php echo base_url()."users/grooming"; ?>'>Grooming</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/petsitter"; ?>'>Pet Sitters</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dogwalker"; ?>'>Dog Walkers</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/petdaycare"; ?>'>Pet Daycare</a>
@@ -266,7 +293,7 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/funeral"; ?>'>Funeral Services & Ceneteries</a>
 						
 								
-						</div>
+						</div>-->
 				</li>
 			
 			
@@ -274,10 +301,10 @@
 			
 			
 				 <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Pet  Merchandise
+					<a  href='<?php echo base_url()."users/petmerchandise"; ?>'>
+						PET MERCHANDISE
 					</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<!--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 										<a class="dropdown-item" href='<?php echo base_url()."users/petfashionoutlet"; ?>'>Pet Fashion Outlet </a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/pettoys"; ?>'>Pet Toys</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/dia"; ?>'>Diapers, Training Pads, etc.</a>
@@ -285,15 +312,15 @@
 								<a class="dropdown-item" href='<?php echo base_url()."users/petsafety"; ?>'>Pet Safety</a>
 								<a class="dropdown-item" href='<?php echo base_url()."users/accessories"; ?>'>Accessories</a>
 								
-						</div>
+						</div>-->
 				</li>
 			
 			
 			
 				
-				 <li class="nav-item dropdown">
+			<!--	<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Emergency!
+						EMERGENCY!
 					</a>
 						
 						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">	
@@ -304,11 +331,16 @@
 								<a class="dropdown-item" href="<?php echo base_url()."Pet/LostPet"?>">Lost and Found Pets</a>
 								
 						</div>
+				</li>-->
+			
+			
+			
+			
+				 <li class="nav-item dropdown">
+					<a  href="<?php echo base_url()."users/logout" ?>">
+						LogOut
+					</a>
 				</li>
-			
-			
-			
-			
 			
 			
 			
@@ -318,35 +350,19 @@
 			
 
 				  
-                 <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						For pros
+             <!--   <li class="nav-item dropdown">
+					<a  href='<?php echo base_url()."users/propet"; ?>' >
+						FOR PROS
 					</a>
 
 						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href='<?php echo base_url()."users/propet"; ?>'>Are You A Pet Industry Professional</a>
 
-							</div>
-						</li>
-				
-		 <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						My Account 
-					</a>
-						<div class="dropdown-menu" id="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href='<?php echo base_url()."users/petregistration"; ?>'>Pet Information</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/customer"; ?>' >Owner Information</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/petchart" ?>'>Pet Veterinary Chart</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/petlicense" ?>' >Pet License</a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/expenses"; ?>' >My Budget & Spending Statistics </a>
-								<a class="dropdown-item" href='<?php echo base_url()."users/myorders"; ?>' >My Orders</a>
-
-								<a class ="dropdown-item" href="<?php echo base_url()."users/logout" ?>" >LogOut</a>
-									
-					
-                
 						</div>
-				</li>
+							
+				</li>-->
+				
+		
 			
 				
             </ul>

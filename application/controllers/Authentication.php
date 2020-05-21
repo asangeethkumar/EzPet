@@ -32,12 +32,14 @@ class Authentication extends REST_Controller {
 			);
 			$user = $this->EzPet_model->getRows($con);
 			
+			$data=	$this->EzPet_model->getData($con);
+			
 			if($user){
 				// Set the response and exit
 				$this->response([
 					'status' => TRUE,
-					'message' => 'User login successful.'
-				//	'data' => $user
+					'message' => 'User login successful.',
+					'data' => $data
 				], REST_Controller::HTTP_OK);
 			}else{     
       				$this->response([
@@ -166,6 +168,7 @@ class Authentication extends REST_Controller {
 								//$this->response("Some problems occurred, please try again.",  REST_Controller::HTTP_OK);
 								                                  $this->response([
                                                 'status' => false,
+
                                                 'message' => 'Some problems occurred, please try again.',
                                         ], REST_Controller::HTTP_OK);
 

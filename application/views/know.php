@@ -21,7 +21,43 @@
     line-height: 1.5;
     border-radius: .3rem;
 }
-  
+
+
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem .75rem;
+    font-size: 2rem;
+    line-height: 1.25;
+    border-radius: 2rem;
+    transition: all .15s ease-in-out;
+}
+  .btn-lgs{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem .75rem;
+    font-size: 2rem;
+    line-height: 1.25;
+    border-radius: 2rem;
+    transition: all .15s ease-in-out;
+}
   </style>
 </head>
 <body>
@@ -59,6 +95,8 @@
 		  <p>euismod eu libero nec </p>
 		  <p>pretium. Morbi</p> 
 		  <p>vel sapien sem. Viva</p>
+		  <br>
+		  <br>
 		  <button type="button" class="btn-black">KNOW MORE</button>
         </div>
         
@@ -81,6 +119,8 @@
 		  <p>euismod eu libero nec </p>
 		  <p>pretium. Morbi</p> 
 		  <p>vel sapien sem. Viva</p>
+		   <br>
+		  <br>
 		  <button type="button" class="btn-black">KNOW MORE</button>
         </div>
         
@@ -103,6 +143,8 @@
 		  <p>euismod eu libero nec </p>
 		  <p>pretium. Morbi</p> 
 		  <p>vel sapien sem. Viva</p>
+		   <br>
+		  <br>
 		  <button type="button" class="btn-black">KNOW MORE</button>
         </div>
         
@@ -114,10 +156,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-9">
-      <h1>Planning to adopt a pet?</h1> 
+      <h1 align="center">Planning to adopt a pet?</h1> 
     </div>
     <div class="col-sm-3">
-	  <button class="button">GET DETAILS</button>
+	 <!-- <button class="button">GET DETAILS</button>-->
+	  <a   href='<?php echo base_url()."users/adaption"; ?>'   class="btn  btn-secondary btn-lgs active" role="btn" aria-pressed="true">CONTACT US</a>
     </div>
   </div>
 </div>
