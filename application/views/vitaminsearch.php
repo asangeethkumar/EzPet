@@ -19,7 +19,7 @@
        
 		<div class="col-sm-1">
          <div class="cards">
-			<img  class="zoom w3-circle " src="<?php echo base_url()."assets/images/".trim(str_replace(",", " ", $row->image));?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;">		
+			<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/".trim(str_replace(",", " ", $row->image));?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;">		
 			</div>
        
 		</div>

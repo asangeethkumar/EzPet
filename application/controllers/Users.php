@@ -1233,18 +1233,18 @@ class Users extends CI_Controller {
 			
 			
 			
-			//$loc=$this->input->post('location'); 
+			$loc=$this->input->post('location'); 
 			$spe=$this->input->post('species');
             $siz=$this->input->post('size');
 			$bre=$this->input->post('breed');
 			$gender =$this->input->post('gender');
 			$ar=$this->input->post('age');
 			$coat=$this->input->post('coat');
-			//$c=$this->input->post('color');
-			$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$coat);
-			$result['data']=$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$cl);
+			
+			$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
+			$result['data']=$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
 			$this->load->view('petsearch',$result);			
-			//redirect("users/dispdata");  
+			
 		}
 		
 	}
@@ -1256,6 +1256,53 @@ class Users extends CI_Controller {
 		
 		$this->load->view('menu');
 		$this->load->view('healthservices');
+		if($this->input->post('vsignupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			//$this->load->view('foodsearch');
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$brand=$this->input->post('brand');
+            $health=$this->input->post('health');
+			$volume=$this->input->post('volume');
+			$quantity=$this->input->post('quantity');
+			$com=$this->input->post('compositions');
+			
+			$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$qunatity,$com);
+			
+			$result['data']=$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$qunatity,$com);
+			$this->load->view('vitaminsearch',$result);			
+			
+		}
+		
+		if($this->input->post('msignupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$brand=$this->input->post('brand');
+            $health=$this->input->post('health');
+			$volume=$this->input->post('volume');
+			$quantity=$this->input->post('quantity');
+			
+			
+			
+			$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$qunatity);
+			
+			$result['data']=$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$qunatity);
+			$this->load->view('medicinesearch',$result);			
+			
+		}
+		
 		if($this->input->post('signupSubmit'))
 		
         // If registration request is submitted 
