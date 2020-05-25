@@ -34,7 +34,7 @@ include_once "menuWithLogout.php";
   <ol class="breadcrumb">
 
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
-    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Food and Pharamacy </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/pharamacyservices"; ?>'>Food and Pharamacy </a></li>
     <li class="breadcrumb-item active" aria-current="page">Vitamins</li>
   </ol>
 </nav>

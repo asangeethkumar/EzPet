@@ -226,6 +226,7 @@
     padding: 9% 37%;
   }
 
+ 
 
 
 
@@ -357,14 +358,6 @@
 
 
 
-
-  
-
-  
-  
-
-
-
 <div class="container-fluid">
 <h1 align="center">PET FOOD</h1> 
 <br>
@@ -403,7 +396,7 @@
 						<div class="wrap-input100" >
 						<span class="focus-input100"></span>
 						<label for="inputState" >PRODUCT TYPE</label>
-						<select  name="size" id="inputState" class='input100'  >
+						<select  name="product" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Veg</option>
 									<option>Non Veg</option>
@@ -417,7 +410,7 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >PHYSICAL FOOD FORM</label>
-						<select  name="breed" id="inputState" class='input100'  >
+						<select  name="food" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Dry</option>
 									<option>Wet</option>
@@ -432,7 +425,7 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >BRANDS</label>
-						<select  name="gender" id="inputState" class='input100'  >
+						<select  name="brand" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>9 Lives</option>
 									<option>Acana</option>
@@ -447,7 +440,7 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >SPECIAL DIETS</label>
-						<select  name="gender" id="inputState" class='input100'  >
+						<select  name="diet" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Grain free</option>
 									<option>Raw food</option>
@@ -470,9 +463,13 @@
 	  
 </form>
     </div>
-    <br>
-    
-    <div class="col-sm-9">
+<!--
+<div class="col-sm-9">
+<?php
+include "foodsearch.php";
+?>
+</div>-->
+<div class="col-sm-9">
       
 
       <div class="row">
@@ -552,7 +549,6 @@
     </div>
   </div>
 </div>
-
 
 
 <br>

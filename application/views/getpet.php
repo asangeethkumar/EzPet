@@ -6,14 +6,14 @@
   <title></title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+ 
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
+  
 
   <!-- Font Awesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+ 
 
   <!-- Bootstrap Scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -41,7 +41,6 @@
 
 <body>
 <style>
-/*slider*/
 #testimonials {
   background-color: #ef8172;
   padding: 5% 15%;
@@ -74,77 +73,6 @@
 .press-logo {
   width: 15%;
   margin: 20px 20px 50px;
-}
-
-
-
-
-
-/* Pricing Section */
-
-#pricing {
-  padding: 10% 15%;
-}
-
-.price-text {
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-.pricing-column {
-  padding: 3% 3%;
-}
-.button {
-  background-color: #ddd;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-}
-
-.button:hover {
-  background-color: #f1f1f1;
-}
-
-
-
-
-/* grooming Section */
-
-#grooming {
-  padding: 7% 10%;
-}
-
-.price-texts {
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-.pricing-columns {
-  padding: 3% 3%;
-  align:"center";
-   border-radius: 16%;
-}
-.buttons {
-  background-color: #ddd;
-  border: none;
-  color: black;
-  padding: 5% 19%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
-}
-
-.buttons:hover {
-  background-color: #f1f1f1;
 }
 .cards {
     position: relative;
@@ -221,6 +149,18 @@
     border-top-right-radius: calc(.25rem - 1px);
 }
 
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 1rem 8rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
 
 
 
@@ -236,66 +176,66 @@
 	  align:center;
 	 padding: 9% 25%;
   }
+    .container-fluid {
+    padding: 60px 50px;
+  }
 </style>
 
-  <section class="colored-section" id="testimonials">
+
+  
+    <section class="colored-section" id="testimonials">
 
     <div id="testimonial-carousel" class="carousel slide" data-ride="false">
       <div class="carousel-inner">
         <div class="carousel-item active container-fluid">
-          <h2 class="testimonial-text">Todays's featured pets </h2>
-          <img class="testimonial-image" src="<?php echo base_url()."assets/images/8.jpg";?>" alt="dog-profile">
-      <em> <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a><em>
-		<!--<em> <a   href='<?php echo base_url()."users/grooming"; ?>'  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">EXPLORE NOW</a></em>-->
+          <h2 class="testimonial-text">Todays's featured pets</h2>
+          <img class="testimonial-image" src="<?php echo base_url()."assets/images/1.jpg";?>" alt="dog-profile">
+       
+		<em> <a href="<?php echo base_url('users/details/1');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a></em>
         </div>
 		
 		
 		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">Todays's featured pets</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/1.jpg";?>" alt="lady-profile">
-        <em> <a href="<?php echo base_url('users/details/1');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a><em>
-		 <!--  <em> <a   href='<?php echo base_url()."users/petsitter"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">EXPLORE NOW</a></em>-->
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/8.jpg";?>"  alt="lady-profile">
+        
+		   <em> <a href="<?php echo base_url('users/details/5');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a></em>
         </div>
 		
 		
+		
 		<div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Todays's featured pets </h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/4.jpg";?>" alt="lady-profile">
-		 <em> <a href="<?php echo base_url('users/details/4');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a><em>
-		 <!-- <em> <a    href='<?php echo base_url()."users/dogwalker"; ?>' class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">EXPLORE NOW</a></em>-->
+          <h2 class="testimonial-text">	 Todays's featured pets</h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/4.jpg";?>"  alt="lady-profile">
+		  <em> <a href="<?php echo base_url('users/details/4');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a></em>
+         
+        </div>
+		
+		
+		
+		<div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">	Todays's featured pets </h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/5.jpg";?>"  alt="lady-profile">
+		  <em> <a href="<?php echo base_url('users/details/7893');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a></em>
+        
+        </div>
+		
+		
+		
+		<div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">	Todays's featured pets </h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/15.jpg";?>"  alt="lady-profile">
+		  <em> <a href="<?php echo base_url('users/details/9');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a></em>
         
         </div>
 		
 		
 		<div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Todays's featured pets</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/5.jpg";?>" alt="lady-profile">
-		 <em> <a href="<?php echo base_url('users/details/7893');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a><em>
-		 <!-- <em> <a   href='<?php echo base_url()."users/petdaycare"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">EXPLORE NOW</a></em>-->
-      
+          <h2 class="testimonial-text">	Todays's featured pets </h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/9.jpg";?>"  alt="lady-profile">
+		  <em> <a href="<?php echo base_url('users/details/10');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a></em>
+        
         </div>
-		
-		
-		<div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Todays's featured pets</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/15.jpg";?>" alt="lady-profile">
-		 <em> <a href="<?php echo base_url('users/details/9');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a><em>
-		<!--  <em> <a    href='<?php echo base_url()."users/pethostel"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">EXPLORE NOW</a></em>-->
-       
-        </div>
-		
-		<div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Todays's featured pets</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/images/9.jpg";?>" alt="lady-profile">
-		 <em> <a href="<?php echo base_url('users/details/10');  ?>"   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">GET THIS PET</a><em>
-		<!--  <em> <a  href='<?php echo base_url()."users/pettaxi"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">EXPLORE NOW</a></em>-->
-       
-        </div>
-		
-		
-		
-		
-		
 		
 		
       </div>
@@ -308,8 +248,6 @@
     </div>
 
   </section>
-  
-  
   
 
   
@@ -467,7 +405,7 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >AGE RANGE</label>
-						<select  name="breed" id="inputState" class='input100'  >
+						<select  name="age" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>6-12 months</option>
 									<option>1- 5 years</option>
@@ -481,7 +419,7 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >COAT LENGTH</label>
-						<select  name="gender" id="inputState" class='input100'  >
+						<select  name="coat" id="inputState" class='input100'  >
 						<option>Any</option>
 									<option >Small</option>
 									<option>Medium</option>
@@ -508,7 +446,12 @@
     <br>
     
   
-	
+	        <!--
+<div class="col-sm-9">
+<?php
+include "petsearch.php";
+?>
+</div>-->
 	    
     <div class="col-sm-9">
       
@@ -601,7 +544,7 @@
 
 
 
-  <section class="" id="">
+  <section >
  <h1 align="center">PETS VIEWED BY IN YOUR AREA</h1>
    <br>
 <br>   

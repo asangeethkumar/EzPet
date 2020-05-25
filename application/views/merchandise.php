@@ -41,7 +41,6 @@
 
 <body>
 <style>
-/*slider*/
 #testimonials {
   background-color: #ef8172;
   padding: 5% 15%;
@@ -59,7 +58,7 @@
   margin: 20px;
 }
 .carousel-item{
-   padding: 7% 15%;
+	 padding: 7% 15%;
 }
 
 #press {
@@ -75,8 +74,6 @@
   width: 15%;
   margin: 20px 20px 50px;
 }
-
-
 
 
 
@@ -238,62 +235,63 @@
   }
 </style>
 
-  <section class="colored-section" id="testimonials">
+ 
+  
+    <section class="colored-section" id="testimonials">
 
     <div id="testimonial-carousel" class="carousel slide" data-ride="false">
       <div class="carousel-inner">
         <div class="carousel-item active container-fluid">
           <h2 class="testimonial-text">Pet FashionOulet </h2>
           <img class="testimonial-image" src="<?php echo base_url()."assets/petcare/123.jpg";?>" alt="dog-profile">
-      <em> <a  href='<?php echo base_url()."users/petfashionoutlet"; ?>' class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a><em>
-   
+       
+		<em> <a href='<?php echo base_url()."users/petfashionoutlet"; ?>'    class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a></em>
         </div>
-    
-    
-    <div class="carousel-item container-fluid">
+		
+		
+		<div class="carousel-item container-fluid">
           <h2 class="testimonial-text">Pet Toys</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/121.jpg";?>" alt="lady-profile">
-        <em> <a  href='<?php echo base_url()."users/pettoys"; ?>'  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a><em>
-    
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/121.jpg";?>"  alt="lady-profile">
+        
+		   <em> <a    href='<?php echo base_url()."users/pettoys"; ?>'  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a></em>
         </div>
-    
-    
-    <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Diapers, Training Pads, etc.</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/127.jpg";?>" alt="lady-profile">
-     <em> <a href='<?php echo base_url()."users/dia"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a><em>
-       
+		
+		
+		
+		<div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">	 Diapers, Training Pads, etc.</h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/127.jpg";?>"  alt="lady-profile">
+		  <em> <a     href='<?php echo base_url()."users/dia"; ?>' class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a></em>
+         
         </div>
-    
-    
-    <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Pet Bedding</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/143.jpg";?>" alt="lady-profile">
-     <em> <a href='<?php echo base_url()."users/petbedding"; ?>'  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a><em>
-    
+		
+		
+		
+		<div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">pet Bedding</h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/143.jpg";?>"  alt="lady-profile">
+		  <em> <a    href='<?php echo base_url()."users/petbedding"; ?>' class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a></em>
+        
         </div>
-    
-    
-    <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Pet Safety</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/142.jpg";?>" alt="lady-profile">
-     <em> <a href='<?php echo base_url()."users/petsafety"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a><em>
-       
+		
+		
+		
+		<div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">	Pet Safety </h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/142.jpg";?>"  alt="lady-profile">
+		  <em> <a     href='<?php echo base_url()."users/petsafety"; ?>' class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a></em>
+        
         </div>
-    
-    <div class="carousel-item container-fluid">
-          <h2 class="testimonial-text">Pet Accessories</h2>
-        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/185.jpg";?>" alt="lady-profile">
-     <em> <a href='<?php echo base_url()."users/accessories"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a><em>
-  
+		
+		
+		<div class="carousel-item container-fluid">
+          <h2 class="testimonial-text">	Pet Accessories </h2>
+        <img class="testimonial-image"  src="<?php echo base_url()."assets/petcare/185.jpg";?>"  alt="lady-profile">
+		  <em> <a     href='<?php echo base_url()."users/accessories"; ?>'  class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">SHOP NOW</a></em>
+        
         </div>
-    
-    
-    
-    
-    
-    
-    
+		
+		
       </div>
       <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
@@ -304,6 +302,8 @@
     </div>
 
   </section>
+  
+
   
   <br>
 
@@ -348,7 +348,7 @@
       <div class="pricing-column col-lg-4 col-md-4">
         <div class="card">
     
-    <a  href='<?php echo base_url()."users/access"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">ACCESSORIES</a>
+    <a  href='<?php echo base_url()."users/accessories"; ?>'   class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">ACCESSORIES</a>
               <!--   <button class="btn btn-lg btn-block btn-outline-dark" type="button">CARE TAKERS</button>-->
          
      
@@ -475,7 +475,7 @@
 						<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >PET GENDER</label>
-						<select  name="breed" id="inputState" class='input100'  >
+						<select  name="gender" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Male</option>
 									<option>Female</option>
@@ -487,7 +487,7 @@
 						<div class="wrap-input100" >
 						<span class="focus-input100"></span>
 						<label for="inputState" >PRODUCT TYPE</label>
-						<select  name="size" id="inputState" class='input100'  >
+						<select  name="product" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Accessories</option>
 									<option>Pet toys</option>
@@ -532,7 +532,13 @@
 </form>
     </div>
     <br>
-    
+    <!--
+<div class="col-sm-9">
+<?php
+include "foodsearch.php";
+?>
+</div>-->
+
     <div class="col-sm-9">
       
 
