@@ -19,7 +19,7 @@ class EzPet_model  extends CI_Model {
 	public  function display_records($id)
 	{
 	
-	$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
+	$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
 	return $query->result();
 	//$querys=$this->db->query("select image from petinfo where AIN='$id'");
 	//return $querys->result();
@@ -43,24 +43,39 @@ class EzPet_model  extends CI_Model {
 		
 		return $query->result();
 	}
+	public function displaymedicine($name,$spe,$brand,$health,$volume,$qunatity)
+	{
+		$query=$this->db->query("select image from medicinesearch  where medicinename='$name' and species = '$spe' and( brand='$brand' or health='$health' or volume='$volume'or quantity='$quantity')");
+		
+		return $query->result();
+	}
+	
+	public function displayvitamin($name,$spe,$brand,$health,$volume,$qunatity,$com)
+	{
+		$query=$this->db->query("select image from vitaminsearch  where vitaminname='$name' and species = '$spe' and( brand='$brand' or health='$health' or volume='$volume'or quantity='$quantity' or compositions='$compositions')");
+		
+		return $query->result();
+	}
+	
+	
 	
 	public function displaymerchandise($name,$spe,$gender,$pro,$brand)
 	{
-		$query=$this->db->query("select image from merchandisesearch  where name='$name' and( species = '$spe' or brand='$brand' or gender='$gender' or product='$pro' )");
+		$query=$this->db->query("select image from merchandisesearch  where name='$name' and( gender='$gender' or brand='$brand' or species = '$spe' or product='$pro' )");
 		
 		return $query->result();
 	}
 	
 	public function displayservices($name,$distance,$spe,$need,$able,$rate)
 	{
-		$query=$this->db->query("select image from servicessearch  where name='$name' and( species = '$spe' or distance='$distance' or need='$need' or able='$able' or rate='$rate' )");
+		$query=$this->db->query("select image from servicessearch  where location='$name' and( species = '$spe' or distance='$distance' or need='$need' or able='$able' or rate='$rate' )");
 		
 		return $query->result();
 	}
 	
-	public function displaypets($spe,$siz,$bre,$gender,$ar,$coat)
+	public function displaypets($loc,$spe,$siz,$bre,$gender,$coat)
 	{
-		$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where species='$spe' and( size = '$siz' or breed='$bre' or gender='$gender' or coat='$coat' or agerange='$ar' )");
+		$query=$this->db->query("select image  from petinfo where location='$loc' and species='$spe' and(  gender='$gender' or coat='$coat'  )");
 		return $query->result();
 	
 	}
