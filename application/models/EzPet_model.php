@@ -36,7 +36,38 @@ class EzPet_model  extends CI_Model {
 	
 	
 	
-
+	//search and filters functions
+	public function displayfood($name,$spe,$pro,$food,$brand)
+	{
+		$query=$this->db->query("select image from foodsearch  where foodname='$name' and( brand='$brand' or product='$pro' or food='$food')");
+		
+		return $query->result();
+	}
+	
+	public function displaymerchandise($name,$spe,$gender,$pro,$brand)
+	{
+		$query=$this->db->query("select image from merchandisesearch  where name='$name' and( species = '$spe' or brand='$brand' or gender='$gender' or product='$pro' )");
+		
+		return $query->result();
+	}
+	
+	public function displayservices($name,$distance,$spe,$need,$able,$rate)
+	{
+		$query=$this->db->query("select image from servicessearch  where name='$name' and( species = '$spe' or distance='$distance' or need='$need' or able='$able' or rate='$rate' )");
+		
+		return $query->result();
+	}
+	
+	public function displaypets($spe,$siz,$bre,$gender,$ar,$coat)
+	{
+		$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,email,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where species='$spe' and( size = '$siz' or breed='$bre' or gender='$gender' or coat='$coat' or agerange='$ar' )");
+		return $query->result();
+	
+	}
+	
+	
+	
+//end of services
 	public function name($first_name)
     {
         if ( !preg_match('~^[a-zA-Z_&\s-]+$~', $first_name)) 

@@ -42,7 +42,7 @@
 
 
 
-<?php echo $error; ?>-->
+<?php echo $error; ?>
 
 
 

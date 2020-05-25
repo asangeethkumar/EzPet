@@ -35,7 +35,7 @@ include_once "menuWithLogout.php";
   <ol class="breadcrumb">
 
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
-    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Pet Service </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/services"; ?>'>Pet Services </a></li>
     <li class="breadcrumb-item active" aria-current="page">Pet club</li>
   </ol>
 </nav>
@@ -70,7 +70,7 @@ include_once "menuWithLogout.php";
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "valid food type is required">
-                <input type="text" name="pet_food_type"  class="input100" placeholder="PET FOOD TYPE" value="<?php echo !empty($user['pet_food_type'])?$user['pet_food_type']:''; ?>"  >
+                <input type="text" name="food"  class="input100" placeholder="PET FOOD TYPE" value="<?php echo !empty($user['pet_food_type'])?$user['pet_food_type']:''; ?>"  >
                 <?php echo form_error('pet_food_type','<p class="help-block">','</p>'); ?>
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">

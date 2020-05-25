@@ -59,8 +59,7 @@ img {
 </style>
 <!--<a data-config="commands=*;size=14;status=off;theme=logo;language=en;bgcolor=#2a92f3" id="skaip-buttons" href="http://www.skaip.org/">Skype</a><script src="//apps.skaip.org/buttons/widget/core.min.js" defer="defer"></script>-->
 </head>
-<br>
-<br>
+
 <body>
 <div class="limiter">
 		<div class="container-login100">
@@ -98,7 +97,7 @@ img {
 								 {
 									  ?>
 									  <?php
-									    echo  $s= $row->image;
+									      $s= $row->image;
 										 $si=$row->AIN;
 										?>
 								

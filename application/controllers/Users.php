@@ -249,6 +249,13 @@ class Users extends CI_Controller {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
 	// pet health and food & pharmacy
 	public function food()
 
@@ -1147,6 +1154,29 @@ class Users extends CI_Controller {
 	{	$this->load->view('menu');
 		//$this->load->view('petmerchant');
 		$this->load->view('merchandise');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$gender =$this->input->post('gender');
+            $pro=$this->input->post('product');
+			
+			$brand=$this->input->post('brand');
+			
+			
+			
+			$this->EzPet_model->displaymerchandise($name,$spe,$gender,$pro,$brand);
+			
+			$result['data']=$this->EzPet_model->displaymerchandise($name,$spe,$gender,$pro,$brand);
+			$this->load->view('merchandisesearch',$result);			
+			
+		}
 	}
 	public function forpros()
 	{
@@ -1155,7 +1185,29 @@ class Users extends CI_Controller {
 	public function petservices()
 	{	$this->load->view('menu');
 		$this->load->view('serviceslider');
-		//$this->load->view('petservices');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$distance=$this->input->post('distance');
+			$spe=$this->input->post('species');
+			$need =$this->input->post('need');
+            $able=$this->input->post('able');
+			$rate=$this->input->post('rate');
+			
+			
+			
+			$this->EzPet_model->displayservices($name,$distance,$spe,$need,$able,$rate);
+			
+			$result['data']=$this->EzPet_model->displayservices($name,$distance,$spe,$need,$able,$rate);
+			$this->load->view('servicessearch',$result);			
+			
+		}
 		
 	
 	}
@@ -1173,17 +1225,71 @@ class Users extends CI_Controller {
 		//$this->load->view('getapet');
 		$this->load->view('menu');
 		$this->load->view('getpet');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			//$loc=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $siz=$this->input->post('size');
+			$bre=$this->input->post('breed');
+			$gender =$this->input->post('gender');
+			$ar=$this->input->post('age');
+			$coat=$this->input->post('coat');
+			//$c=$this->input->post('color');
+			$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$coat);
+			$result['data']=$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$cl);
+			$this->load->view('petsearch',$result);			
+			//redirect("users/dispdata");  
+		}
+		
 	}
 	
 	
 	
 	public function foodandph()
 	{
-		//$this->load->view('foodandph');
+		
 		$this->load->view('menu');
 		$this->load->view('healthservices');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			//$this->load->view('foodsearch');
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $pro=$this->input->post('product');
+			$food=$this->input->post('food');
+			//$gender =$this->input->post('gender');
+			$brand=$this->input->post('brand');
+			$diet=$this->input->post('diet');
+			
+			
+			$this->EzPet_model->displayfood($name,$spe,$pro,$food,$brand);
+			
+			$result['data']=$this->EzPet_model->displayfood($name,$spe,$pro,$food,$brand);
+			$this->load->view('foodsearch',$result);			
+			
+		}
+		
+		
 		//$this->load->view('pharamacyservices');
 	}
+	
+	
+	
+	
+	
+	
+	
 	public function adaption()
 	{
 		$this->load->view('adaption');
@@ -1199,11 +1305,55 @@ class Users extends CI_Controller {
 	{
 		$this->load->view('menuWithLogout');
 		$this->load->view('serviceslider');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$distance=$this->input->post('distance');
+			$spe=$this->input->post('species');
+			$need =$this->input->post('need');
+            $able=$this->input->post('able');
+			$rate=$this->input->post('rate');
+			
+			
+			
+			$this->EzPet_model->displayservices($name,$distance,$spe,$need,$able,$rate);
+			
+			$result['data']=$this->EzPet_model->displayservices($name,$distance,$spe,$need,$able,$rate);
+			$this->load->view('servicessearch',$result);			
+			
+		}
 	}
 	
 	public function getpet()
 	{	$this->load->view('menuWithLogout');
 		$this->load->view('getpet');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			//$loc=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $siz=$this->input->post('size');
+			$bre=$this->input->post('breed');
+			$gender =$this->input->post('gender');
+			$ar=$this->input->post('age');
+			$coat=$this->input->post('coat');
+			//$c=$this->input->post('color');
+			$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$coat);
+			$result['data']=$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$cl);
+			$this->load->view('petsearch',$result);			
+			//redirect("users/dispdata");  
+		}
 	}
 	
 	public function healthservices()
@@ -1216,12 +1366,58 @@ class Users extends CI_Controller {
 	{
 				$this->load->view('menuWithLogout');
 				$this->load->view('merchandise');
+				if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$gender =$this->input->post('gender');
+            $pro=$this->input->post('product');
+			
+			$brand=$this->input->post('brand');
+			
+			
+			
+			$this->EzPet_model->displaymerchandise($name,$spe,$gender,$pro,$brand);
+			
+			$result['data']=$this->EzPet_model->displaymerchandise($name,$spe,$gender,$pro,$brand);
+			$this->load->view('merchandisesearch',$result);			
+			
+		}
 	}
 	public function pharamacyservices()
 	{
 		$this->load->view('menuWithLogout');
 		//$this->load->view('pharamacyservices');
 		$this->load->view('healthservices');
+		if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			//$this->load->view('foodsearch');
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $pro=$this->input->post('product');
+			$food=$this->input->post('food');
+			//$gender =$this->input->post('gender');
+			$brand=$this->input->post('brand');
+			$diet=$this->input->post('diet');
+			
+			
+			$this->EzPet_model->displayfood($name,$spe,$pro,$food,$brand);
+			
+			$result['data']=$this->EzPet_model->displayfood($name,$spe,$pro,$food,$brand);
+			$this->load->view('foodsearch',$result);			
+			
+		}
 	}
 
 
@@ -1247,6 +1443,10 @@ class Users extends CI_Controller {
 		
 		
 	}
+	
+	
+	
+	
 	
 
   
@@ -1734,7 +1934,7 @@ public function grooming()
         
             print  $userData;
                 var_dump($userData);
-                 $this->db->insert('petfashion',$userData);
+                 $this->db->insert('pettoys',$userData);
         
             }
 
@@ -1785,7 +1985,7 @@ public function grooming()
         
             print  $userData;
                 var_dump($userData);
-                $this->db->insert('dia',$userData);
+                $this->db->insert('petbedding',$userData);
         
             }
              $this->load->view('petbedding');

@@ -33,7 +33,7 @@ include_once "menuWithLogout.php";
   <ol class="breadcrumb">
 
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Menu </a></li>
-    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Pet Service </a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/services"; ?>'>Pet Services </a></li>
     <li class="breadcrumb-item active" aria-current="page">Pet taxi</li>
   </ol>
 </nav>
@@ -104,7 +104,7 @@ include_once "menuWithLogout.php";
 								<div class="wrap-input100 validate-input" data-validate = "valid adderss is required">
 			<label for="address">PICK UP ADDRESS</label>
 
-				<textarea id="address" name="address" class="input100" rows="4" cols="50">
+				<textarea id="address" name="paddress" class="input100" rows="4" cols="50">
 				</textarea>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">
@@ -115,7 +115,7 @@ include_once "menuWithLogout.php";
 							<div class="wrap-input100 validate-input" data-validate = "valid adderss is required">
 			<label for="address">DROP ADDRESS</label>
 
-				<textarea id="address" name="address" class="input100" rows="4" cols="50">
+				<textarea id="address" name="daddress" class="input100" rows="4" cols="50">
 				</textarea>
 				<span class="focus-input100"></span>
 								<span class="symbol-input100">

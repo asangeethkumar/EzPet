@@ -33,7 +33,7 @@ include_once "menuWithLogout.php";
   <ol class="breadcrumb">
 
     <li class="breadcrumb-item"><a href='<?php echo base_url()."users/dashboard"; ?>'>Menu </a></li>
-    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/account"; ?>'>Pet Merchandise</a></li>
+    <li class="breadcrumb-item"><a href='<?php echo base_url()."users/petmerchandise"; ?>'>Pet Merchandise</a></li>
     <li class="breadcrumb-item active" aria-current="page">Pet Safety</li>
   </ol>
 </nav>

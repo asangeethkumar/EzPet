@@ -41,7 +41,7 @@
 
 <body>
 <style>
-/*slider*/
+
 #testimonials {
   background-color: #ef8172;
   padding: 5% 15%;
@@ -75,9 +75,6 @@
   width: 15%;
   margin: 20px 20px 50px;
 }
-
-
-
 
 
 /* Pricing Section */
@@ -408,7 +405,7 @@
     <div class="col-sm-3">
 	<!--  <button class="btn btn-lg btn-block btn-outline-dark" type="button">SHOP NOW</button>-->
 	 <!-- <button class="button">SHOP NOW</button>-->
-	 <a   href=''   class="btn btn-secondary btn-lgs active" role="button" aria-pressed="true">SHOP NOW</a>
+	 <a   href='<?php echo base_url()."users/petmerchandise"; ?>'   class="btn btn-secondary btn-lgs active" role="button" aria-pressed="true">SHOP NOW</a>
     </div>
   </div>
 </div>
@@ -758,7 +755,7 @@
 												<div class="wrap-input100 " >
 								<span class="focus-input100"></span>
 								<label for="inputState">DISTANCE</label>
-								<select name="species" class='input100' id="inputState"   >
+								<select name="distance" class='input100' id="inputState"   >
 									<option >Any</option>
 									<option >5 miles</option>
 									<option>15 miles</option>
@@ -782,7 +779,7 @@
 						<div class="wrap-input100" >
 						<span class="focus-input100"></span>
 						<label for="inputState" >How soon do you need someone?</label>
-						<select  name="size" id="inputState" class='input100'  >
+						<select  name="need" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Right now</option>
 									<option>Within a week</option>
@@ -796,7 +793,7 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >Able to provide</label>
-						<select  name="breed" id="inputState" class='input100'  >
+						<select  name="able" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>sitting</option>
 									<option>Boarding</option>
@@ -811,9 +808,9 @@
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >Hourly Rate</label>
-						<select  name="gender" id="inputState" class='input100'  >
+						<select  name="rate" id="inputState" class='input100'  >
 									<option>Any</option>
-									<option><$10-$10</option>
+									<option> <$10-$10 </option>
 									<option>$10-$15</option>
 									<option>$20-$35</option>
 									<option>$40-$55</option>
@@ -835,7 +832,12 @@
 </form>
     </div>
     <br>
-    
+        <!--
+<div class="col-sm-9">
+<?php
+include "servicessearch.php";
+?>
+</div>-->
     <div class="col-sm-9">
       
 
