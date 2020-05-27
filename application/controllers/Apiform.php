@@ -71,13 +71,14 @@ class Apiform extends REST_Controller
                 $phone = strip_tags($this->input->post('phone'));		
                            $number=$this->EzPet_model->number($phone);
                              if($number==false)
+
         {
                 $this->response([
                         'status' => false,
                         'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
                     ], REST_Controller::HTTP_OK);
         }
-             
+             $image = strip_tags($this->input->post('image')); 
                
                 $userData = array(
 
@@ -98,6 +99,7 @@ class Apiform extends REST_Controller
 				 'Pet_Sire_AIN' => $Pet_Sire_AIN,
 				 'Pet_Dam_Name' => $Pet_Dam_Name,
 				 'Pet_Dam_AIN' => $Pet_Dam_AIN,
+
 		
                'email' => $email, 
                // 'password' => md5($this->input->post('password')), 
@@ -105,7 +107,8 @@ class Apiform extends REST_Controller
 					'Spayed_or_Neutered' => $Spayed_or_Neutered, 
 					'Special_Status' => $Special_Status, 
 				
-                'phone' => $phone
+                'phone' => $phone,
+					'image'=> $image
                 );
 
             

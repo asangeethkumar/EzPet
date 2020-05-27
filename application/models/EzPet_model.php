@@ -61,7 +61,7 @@ class EzPet_model  extends CI_Model {
 	
 	public function displaymerchandise($name,$spe,$gender,$pro,$brand)
 	{
-		$query=$this->db->query("select image from merchandisesearch  where name='$name' and( gender='$gender' or brand='$brand' or species = '$spe' or product='$pro' )");
+		$query=$this->db->query("select image from merchandisesearch  where name='$name' and species = '$spe' ( gender='$gender' or brand='$brand' or  product='$pro' )");
 		
 		return $query->result();
 	}
