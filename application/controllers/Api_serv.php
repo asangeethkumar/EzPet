@@ -61,7 +61,10 @@ class Api_serv extends REST_Controller
 
        
 
-
+                if(!empty($first_name) && !empty($pet_name) && !empty($pet_breed) && !empty($phone)&& !empty($services) )
+                                    
+        {
+                                  
 
         
              $userData = array(
@@ -90,6 +93,20 @@ class Api_serv extends REST_Controller
              }
 
     }
+    else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
+
+
+
+
+
+
+
 
 
     public function Petsitter_post()
@@ -152,6 +169,11 @@ class Api_serv extends REST_Controller
                     $alarm_ac_code = $this->input->post('alarm_ac_code');
 
        
+                if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($address)&& !empty($alarm_de_code)&& !empty($alarm_ac_code) )
+                                    
+        {
+
+
              $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -181,6 +203,17 @@ class Api_serv extends REST_Controller
              }
 
           }
+          else
+          {
+             $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+          }
+}
+           
+
+
+
+
+
 
              public function dogwalker_post()
              {   
@@ -240,7 +273,9 @@ class Api_serv extends REST_Controller
                 $pet_age =$this->input->post('pet_age');
                 $color =$this->input->post('color'); 
               
-
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($pet_age)&& !empty($color) )
+                                    
+        {
 
              $userData = array(
                  'first_name' =>$first_name, 
@@ -271,6 +306,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
   
         
     public function petdaycare_post()
@@ -342,6 +384,9 @@ class Api_serv extends REST_Controller
                 $pet_food_quantity = $this->input->post('pet_food_quantity'); 
 
 
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($address)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($gender)&& !empty($pet_food_type)&& !empty($pet_food_quantity) )
+                                    
+        {
              $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -373,6 +418,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
 
             public function pethostel_post()
@@ -433,6 +485,9 @@ class Api_serv extends REST_Controller
                  $date_j = $this->input->post('date_j');
                  $date_l = $this->input->post('date_l');
 
+                   if(!empty($pet_name) && !empty($pet_breed) && !empty($gender) && !empty($first_name)&& !empty($phone)&& !empty($email)&& !empty($date_j)&& !empty($date_l) )
+                                    
+        {
              $userData = array(
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -465,6 +520,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
            public function pettaxi_post()
     {
        
@@ -531,6 +593,9 @@ class Api_serv extends REST_Controller
                 $daddress = $this->input->post('daddress');
             
 
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($paddress)&& !empty($daddress) )
+                                    
+        {
          
              $userData = array(
 
@@ -561,6 +626,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
             public function petclub_post()
           {
@@ -584,7 +656,9 @@ class Api_serv extends REST_Controller
                             $pet_food_quantity = $this->input->post('pet_food_quantity');
                             $gender = $this->input->post('gender');
 
-
+                              if(!empty($pet_name) && !empty($pet_breed) && !empty($food) && !empty($pet_food_quantity)&& !empty($gender) )
+                                    
+        {
          
              $userData = array(
                 'pet_name' => $pet_name,
@@ -612,6 +686,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
   
 
            public function pettraining_post()
@@ -681,7 +762,9 @@ class Api_serv extends REST_Controller
                 $level = $this->input->post('level'); 
                  
 
-
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($level) )
+                                    
+        {
 
              $userData = array(
                  'first_name' =>$first_name, 
@@ -712,7 +795,13 @@ class Api_serv extends REST_Controller
              }
 
           }
-  
+   else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
            public function dogplayground_post()
            {
@@ -774,7 +863,10 @@ class Api_serv extends REST_Controller
 
 
                 $data = $userData = array(); 
-         
+            
+              if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($pet_age)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($area) )
+                                    
+        {
                  $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -802,7 +894,13 @@ class Api_serv extends REST_Controller
              }
 
           }
-        
+         else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
                 
            public function globalpet_post()
     {
@@ -871,7 +969,9 @@ class Api_serv extends REST_Controller
                 $dest =$this->input->post('dest');
 
 
-         
+           if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($passport)&& !empty($location)&& !empty($dest) )
+                                    
+        {
              $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -905,6 +1005,16 @@ class Api_serv extends REST_Controller
              }
 
           }
+
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
+       
+
             public function funeral_post()
              {
        
@@ -961,6 +1071,9 @@ class Api_serv extends REST_Controller
 
                 $death = $this->input->post('death');
 
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($pet_name)&& !empty($pet_breed)&& !empty($birth)&& !empty($death) )
+                                    
+        {
 
              $userData = array(
                  'first_name' =>$first_name, 
@@ -993,6 +1106,14 @@ class Api_serv extends REST_Controller
              }
 
           }
+
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
            public function petfashionoutlet_post    ()
     {
@@ -1049,7 +1170,9 @@ class Api_serv extends REST_Controller
                 $costume_type = $this->input->post('costume_type');
                 $costume_name = $this->input->post('costume_name');
                 
-
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($pet_name)&& !empty($pet_breed)&& !empty($pet_size)&& !empty($costume_type)&& !empty($costume_name) )
+                                    
+        {
          
              $userData = array(
                  'first_name' =>$first_name, 
@@ -1085,7 +1208,13 @@ class Api_serv extends REST_Controller
           }
 
 
+ else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
 
+}
 
           //pet toys
 
@@ -1111,6 +1240,9 @@ class Api_serv extends REST_Controller
              $toy_type = $this->input->post('toy_type');
                 $toys=$this->input->post('toys');
          
+           if(!empty($first_name) && !empty($pet_name) && !empty($pet_breed) && !empty($toy_type)&& !empty($toys) )
+                                    
+        {
              $userData = array(
                 'first_name'=>$first_name,
                 'pet_name' => $pet_name,
@@ -1137,7 +1269,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
 
+}
 
 
             public function dia_post()
@@ -1159,7 +1297,9 @@ class Api_serv extends REST_Controller
                 $pet_age = $this->input->post('pet_age');
                 $size = $this->input->post('size');
 
-
+                  if(!empty($pet_name) && !empty($pet_breed) && !empty($pet_age) && !empty($size) )
+                                    
+        {
              $userData = array(
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -1186,6 +1326,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
            public function petbedding_post()
     {
@@ -1206,6 +1353,9 @@ class Api_serv extends REST_Controller
                 $bed_size = $this->input->post('bed_size');
                 $color = $this->input->post('color');
          
+           if(!empty($pet_name) && !empty($pet_breed) && !empty($bed_size) && !empty($color) )
+                                    
+        {
              $userData = array(
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -1231,6 +1381,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
 
     public function petsafety_post()
@@ -1286,11 +1443,13 @@ class Api_serv extends REST_Controller
         $pet_breed = $this->input->post('pet_breed');
                 $safety=$this->input->post('safety');
                  
-         
+           if(!empty($first_name)&& !empty($phone)&& !empty($email) && !empty($pet_name) && !empty($pet_breed) && !empty($safety) )
+                                    
+        {
              $userData = array(
-                 'first_name' =>$this->input->post('first_name'), 
-                 'phone' => $this->input->post('phone'),
-                 'email' => $this->input->post('email'),
+                 'first_name' =>$first_name, 
+                 'phone' => $phone,
+                 'email' => $email,
                  
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -1314,6 +1473,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
    
         
     public function accessories_post()
@@ -1334,6 +1500,9 @@ class Api_serv extends REST_Controller
                 $pet_breed = $this->input->post('pet_breed');
                 $acces=$this->input->post('acces');
          
+           if(!empty($pet_name) && !empty($pet_breed) && !empty($acces)  )
+                                    
+        {
              $userData = array(
                  'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -1361,6 +1530,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
   
         
    

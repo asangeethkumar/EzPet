@@ -27,9 +27,9 @@ class Apiform extends REST_Controller
       
 			 
         
-									 $AIN => strip_tags($this->input->post('AIN')),
-                       $Pet_Name => $this->input->post('Pet_Name'),
-                  $name=$this->model->name($Pet_Name);
+									 $AIN = strip_tags($this->input->post('AIN'));
+                       $Pet_Name = $this->input->post('Pet_Name');
+                  $name=$this->EzPet_model->name($Pet_Name);
               if($name==false)
         {
                 $this->response([
@@ -38,22 +38,24 @@ class Apiform extends REST_Controller
                     ], REST_Controller::HTTP_OK);
                 
         }
-				$DOB => strip_tags($this->input->post('DOB')),	
-				$color => strip_tags($this->input->post('color')),
-				$GENIUS => strip_tags($this->input->post('GENIUS')),
-				 $weight => strip_tags($this->input->post('weight')),
-				 $Height => strip_tags($this->input->post('Height')),
-					$Microchiped_or_Tattooed => strip_tags($this->input->post('Microchiped_or_Tattooed')),
-				 $Microchip_or_Tattoo => strip_tags($this->input->post('Microchip_or_Tattoo')),
-				$State_License_or_Registration => strip_tags($this->input->post('State_License_or_Registration')),
-				 $Club_or_Association_Registration => strip_tags($this->input->post('Club_or_Association_Registration')),
-				 $Pet_Sire_Name => strip_tags($this->input->post('Pet_Sire_Name')),
-				 $Pet_Sire_AIN => strip_tags($this->input->post('Pet_Sire_AIN')),
-				 $Pet_Dam_Name => strip_tags($this->input->post('Pet_Dam_Name')),
-				 $Pet_Dam_AIN => strip_tags($this->input->post('Pet_Dam_AIN')),
+				$DOB = strip_tags($this->input->post('DOB'));	
+				$color = strip_tags($this->input->post('color'));
+				$GENIUS = strip_tags($this->input->post('GENIUS'));
+				$species=strip_tags($this->input->post('species'));
+				$coat=strip_tags($this->input->post('coat'));
+				 $weight = strip_tags($this->input->post('weight'));
+				 $Height = strip_tags($this->input->post('Height'));
+					$Microchiped_or_Tattooed = strip_tags($this->input->post('Microchiped_or_Tattooed'));
+				 $Microchip_or_Tattoo = strip_tags($this->input->post('Microchip_or_Tattoo'));
+				$State_License_or_Registration =strip_tags($this->input->post('State_License_or_Registration'));
+				 $Club_or_Association_Registration = strip_tags($this->input->post('Club_or_Association_Registration'));
+				 $Pet_Sire_Name =strip_tags($this->input->post('Pet_Sire_Name'));
+				 $Pet_Sire_AIN =strip_tags($this->input->post('Pet_Sire_AIN'));
+				 $Pet_Dam_Name =strip_tags($this->input->post('Pet_Dam_Name'));
+				 $Pet_Dam_AIN = strip_tags($this->input->post('Pet_Dam_AIN'));
 				                $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -62,12 +64,12 @@ class Apiform extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                // 'password' => md5($this->input->post('password')), 
-					$gender => $this->input->post('gender'), 
-					$Spayed_or_Neutered => $this->input->post('Spayed_or_Neutered'), 
-					$Special_Status => $this->input->post('Special_Status'), 
+					$gender =$this->input->post('gender');
+					$Spayed_or_Neutered = $this->input->post('Spayed_or_Neutered'); 
+					$Special_Status =$this->input->post('Special_Status'); 
 				
-                $phone => strip_tags($this->input->post('phone') 		
-                           $number=$this->model->number($phone);
+                $phone = strip_tags($this->input->post('phone'));		
+                           $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -84,6 +86,8 @@ class Apiform extends REST_Controller
 				'DOB' => $DOB,	
 				'color' => $color,
 				'GENIUS' => $GENIUS,
+				'species'=>$species,
+				'coat'=>$coat,
 				 'weight' => $weight,
 				 'Height' => $Height,
 					'Microchiped_or_Tattooed' => $Microchiped_or_Tattooed,
@@ -104,7 +108,7 @@ class Apiform extends REST_Controller
                 'phone' => $phone
                 );
 
-            );
+            
 			$insert= $this->db->insert('petinfo',$userData);
             
 			if($insert)
@@ -124,7 +128,7 @@ class Apiform extends REST_Controller
 		$this->load->view('customer');
 
 		             $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -134,7 +138,7 @@ class Apiform extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
              $middle_name =$this->input->post('middle_name');
-               $name=$this->model->name($middle_name);
+               $name=$this->EzPet_model->name($middle_name);
               if($name==false)
         {
                 $this->response([
@@ -144,7 +148,7 @@ class Apiform extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
 	             $last_name =$this->input->post('last_name');
-               $name=$this->model->name($last_name);
+               $name=$this->EzPet_model->name($last_name);
               if($name==false)
         {
                 $this->response([
@@ -158,7 +162,7 @@ class Apiform extends REST_Controller
 		$billing_address = strip_tags($this->input->post('billing_address'));
 		 $email = strip_tags($this->input->post('email'));                
 
-               $mails=$this->model->mails($email);
+               $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -176,7 +180,7 @@ class Apiform extends REST_Controller
 
                        $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -217,7 +221,7 @@ class Apiform extends REST_Controller
 		{
 		$this->load->view('petchart');	
 		       $Pet_Name = $this->input->post('Pet_Name');
-                  $name=$this->model->name($Pet_Name);
+                  $name=$this->EzPet_model->name($Pet_Name);
               if($name==false)
         {
                 $this->response([
@@ -270,7 +274,7 @@ class Apiform extends REST_Controller
 				$Year = strip_tags($this->input->post('Year'));
                 $Applicant_Category = strip_tags($this->input->post('Applicant_Category'));
                 $Ward_Name = strip_tags($this->input->post('Ward_Name'));
-				                  $name=$this->model->name($Ward_Name);
+				                  $name=$this->EzPet_model->name($Ward_Name);
               if($name==false)
         {
                 $this->response([
@@ -283,7 +287,7 @@ class Apiform extends REST_Controller
 
 
 		      $Qwner_Name = $this->input->post('Owner_Name');
-                  $name=$this->model->name($Owner_Name);
+                  $name=$this->EzPet_model->name($Owner_Name);
               if($name==false)
         {
                 $this->response([
@@ -298,7 +302,7 @@ class Apiform extends REST_Controller
 					$Address_Pets_Owner_Institution = strip_tags($this->input->post('Address_Pets_Owner_Institution'));
 					$Pet_Name =strip_tags($this->input->post('Pet_Name'));
 					     $Pet_Name = $this->input->post('Pet_Name');
-                  $name=$this->model->name($Pet_Name);
+                  $name=$this->EzPet_model->name($Pet_Name);
               if($name==false)
         {
                 $this->response([
@@ -380,7 +384,7 @@ class Apiform extends REST_Controller
 		{
 		$this->load->view('myorders');
 		            $Full_Name =$this->input->post('Full_Name');
-               $name=$this->model->name($Full_Name);
+               $name=$this->EzPet_model->name($Full_Name);
               if($name==false)
         {
                 $this->response([
@@ -391,12 +395,12 @@ class Apiform extends REST_Controller
         }
         $email = strip_tags($this->input->post('email'));                
 
-               $mails=$this->model->mails($email);
+               $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid email',
+                        'message' => 'message ERROR-invalid email',
                     ], REST_Controller::HTTP_OK);
         }
 
@@ -466,7 +470,7 @@ class Apiform extends REST_Controller
 			$Pet_breed = strip_tags($this->input->post('Pet_breed'));
 			 $phone = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -588,7 +592,7 @@ class Apiform extends REST_Controller
 		$this->load->view('delivery');
 
 		           $Full_Name =$this->input->post('Full_Name');
-               $name=$this->model->name($Full_Name);
+               $name=$this->EzPet_model->name($Full_Name);
               if($name==false)
         {
                 $this->response([
@@ -600,7 +604,7 @@ class Apiform extends REST_Controller
         	$address = strip_tags($this->input->post('address'));
         	               $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -612,7 +616,7 @@ class Apiform extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
