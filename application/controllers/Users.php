@@ -2332,10 +2332,10 @@ public function petregistration()
                     $uploadData = $this->upload->data();
                     $picture = $uploadData['file_name'];
                 }else{
-                    $picture = $uploadData['file_name'];
+                    $picture = '';
                 }
             }else{
-                $picture = $uploadData['file_name'];
+                $picture = '';
             }
             
 					
