@@ -73,6 +73,7 @@
 									<!--<i class="fa fa-DOB" aria-hidden="true"></i>-->
 								</span>
             </div>
+			
 			<div class="wrap-input100 validate-input" data-validate = "valid address is required">
                 <input type="text" name="address" placeholder="ADDRESS" class="input100"value="<?php echo !empty($user['address'])?$user['address']:''; ?>" >
                 <?php echo form_error('address','<p class="help-block">','</p>'); ?>
@@ -89,7 +90,7 @@
 									<!--<i class="fa fa-address" aria-hidden="true"></i>-->
 								</span>
             </div>
-           <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
+			 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: emailId@abc.com">
                 <input type="email" name="email" placeholder="EMAIL" class="input100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="<?php echo !empty($user['email'])?$user['email']:''; ?>">
                 <?php echo form_error('email','<p class="help-block">','</p>'); ?>
 				<span class="focus-input100"></span>
@@ -97,45 +98,7 @@
 									<i class="fa fa-envelope" aria-hidden="true"></i>
 								</span>
             </div>
-           <div class="wrap-input100 validate-input" data-validate = "Password is required : As@!@">
-                <input type="password" name="password" placeholder="PASSWORD" class="input100"> 
-                <?php echo form_error('password','<p class="help-block">','</p>'); ?>
-				<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-lock" aria-hidden="true"></i>
-								</span>
-            </div>
-           <div class="wrap-input100 validate-input" data-validate = "Password is required : As@!@">
-                <input type="password" name="conf_password" placeholder="CONFIRM PASSWORD" class="input100">
-                <?php echo form_error('conf_password','<p class="help-block">','</p>'); ?>
-				<span class="focus-input100"></span>
-								<span class="symbol-input100">
-									<i class="fa fa-lock" aria-hidden="true"></i>
-								</span>
-            </div>
-            <div class="input-radio100">
-                <label>Gender: </label>
-                <?php 
-                if(!empty($user['gender']) && $user['gender'] == 'Female'){ 
-                    $fcheck = 'checked="checked"'; 
-                    $mcheck = ''; 
-                }else{ 
-                    $mcheck = 'checked="checked"'; 
-                    $fcheck = ''; 
-                } 
-                ?>
-                <div class="input-radio100">
-                    <label>
-                        <input type="radio" name="gender" value="Male" <?php echo $mcheck; ?>>
-						Male
-                    </label>
-                    <label>
-                        <input type="radio" name="gender" value="Female" <?php echo $fcheck; ?>>
-                        Female
-                    </label>
-                </div>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
+			<div class="wrap-input100 validate-input" data-validate = "Valid phone is required">
 								<input type="text" name="phone"  class="input100" placeholder="PHONENUMBER" pattern="[6-9]{1}[0-9]{9}" title="Enter valid phone number" value="<?php echo !empty($user['phone'])?$user['phone']:''; ?>">
 								<?php echo form_error('phone','<p class="help-block">','</p>'); ?>
 						
@@ -144,6 +107,39 @@
 									<i class="fa fa-phone" aria-hidden="true"></i>
 								</span>
 						</div>
+						
+							<div class="wrap-input100 validate-input" data-validate = " select valid option is required">
+						<span class="focus-input100"></span>
+						<label for="inputState" >PAYMENT TYPE</label>
+						<select  name="payment" id="inputState" class='input100'  >
+									<option >SELECT </option>
+									<option >CREDIT/DEBIT CARD </option>
+									<option>NET BANKING</option>
+									<option>CASH ON DELIVERY</option>
+									<option>GOOGLE PAY</option>
+									<option>PHONE PAY</option>
+									<option>PAY PAL</option>
+					  </select>
+				</div>
+            
+						
+			<div class="wrap-input100 validate-input" data-validate = "valid billing address is required">
+                <input type="text" name="billing_address" placeholder="MY SUBSCRIPTIONS" class="input100"value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" >
+                <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<!--<i class="fa fa-address" aria-hidden="true"></i>-->
+								</span>
+            </div>
+			
+			<div class="wrap-input100 validate-input" data-validate = "valid billing address is required">
+                <input type="text" name="billing_address" placeholder="MY PETS" class="input100"value="<?php echo !empty($user['billing_address'])?$user['billing_address']:''; ?>" >
+                <?php echo form_error('billing_address','<p class="help-block">','</p>'); ?>
+				<span class="focus-input100"></span>
+								<span class="symbol-input100">
+									<!--<i class="fa fa-address" aria-hidden="true"></i>-->
+								</span>
+            </div>
            <div class="container-login100-form-btn">
 						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="SUBMIT" type="submit">
 							submit

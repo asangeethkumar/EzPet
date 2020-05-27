@@ -597,7 +597,7 @@ include "foodsearch.php";
 						<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >BRANDS</label>
-						<select  name="gender" id="inputState" class='input100'  >
+						<select  name="brand" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>Bio Groom</option>
 									<option>Intas</option>
@@ -611,8 +611,8 @@ include "foodsearch.php";
 						<div class="wrap-input100" >
 						<span class="focus-input100"></span>
 						<label for="inputState" >HEALTH CONSIDERATION</label>
-						<select  name="size" id="inputState" class='input100'  >
-									<option>any</option>
+						<select  name="health" id="inputState" class='input100'  >
+									<option>Any</option>
 									<option>Aggression control</option>
 									<option>Anti-inflammatory</option>
 									<option>Anti-Lick</option>
@@ -630,7 +630,7 @@ include "foodsearch.php";
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >VOLUME</label>
-						<select  name="breed" id="inputState" class='input100'  >
+						<select  name="volume" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>30 ml</option>
 									<option>50 ml</option>
@@ -645,7 +645,7 @@ include "foodsearch.php";
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >QUANTITY</label>
-						<select  name="gender" id="inputState" class='input100'  >
+						<select  name="quantity" id="inputState" class='input100'  >
 									<option>Any</option>
 									<option>60 tabs</option>
 									<option>160 tabs</option>
@@ -814,7 +814,7 @@ include "foodsearch.php";
 						<span class="focus-input100"></span>
 						<label for="inputState" >HEALTH CONSIDERATION</label>
 						<select  name="health" id="inputState" class='input100'  >
-									<option>any</option>
+									<option>Any</option>
 									<option>Aggression control</option>
 									<option>Anti-inflammatory</option>
 									<option>Anti-Lick</option>

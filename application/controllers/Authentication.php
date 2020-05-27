@@ -151,7 +151,8 @@ class Authentication extends REST_Controller {
 					'gender'=>$gender,
 					'phone' => $ph
 				);
-				$insert = $this->EzPet_model->insert($userData);
+				
+					$insert=$this->db->insert('users',$userData);
 				
 				// Check if the user data is inserted
 				if($insert){
@@ -159,17 +160,18 @@ class Authentication extends REST_Controller {
 					$this->response([
 						'status' => TRUE,
 						'message' => 'The user has been added successfully.'
-						//'data' => $insert
+						
 					], REST_Controller::HTTP_OK);
 				}
 				else
 				{
+					
 					// Set the response and exit
 								//$this->response("Some problems occurred, please try again.",  REST_Controller::HTTP_OK);
 								                                  $this->response([
                                                 'status' => false,
 
-                                                'message' => 'Some problems occurred, please try again.',
+                                                'message' => 'Some problems occurred, please try again.'
                                         ], REST_Controller::HTTP_OK);
 
 				}

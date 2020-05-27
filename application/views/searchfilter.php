@@ -123,7 +123,8 @@ body {
 									<option>Small</option>
 									<option>Medium</option>
 									<option>Large</option>
-									<option>Extra large</option>
+									<option>Extra Large</option>
+									
 									
 						</select>
 					</div>
@@ -134,10 +135,11 @@ body {
 						<label for="inputState" >BREED</label>
 						<select  name="breed" id="inputState" class='input100'  >
 									<option>Any</option>
-									<option>Abyssinian</option>
-									<option>Degu</option>
-									<option>American Bulldog</option>
-									<option>American Buly</option>
+									<option>German Shepherd</option>
+									<option>Golden Retriever</option>
+									<option>Bull Dog</option>
+									<option>Pug</option>
+									<option>Poddle</option>
 									
 						</select>
 					</div>
@@ -154,16 +156,15 @@ body {
 						</select>
 					</div>
 					
-					
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >AGE RANGE</label>
-						<select  name="age" id="inputState" class='input100' >
+						<select  name="age" id="inputState" class='input100'  >
 									<option>Any</option>
-									<option>Puppy</option>
-									<option>Young</option>
-									<option>Adult</option>
-									<option>Senior</option>
+									<option>6-12 months</option>
+									<option>1- 5 years</option>
+									<option>5-10 years</option>
+									
 									
 						</select>
 					</div>
@@ -172,31 +173,22 @@ body {
 					<div class="wrap-input100 " >
 						<span class="focus-input100"></span>
 						<label for="inputState" >COAT LENGTH</label>
-						<select  name="coat" id="inputState" class='input100'>
-									<option>Any</option>
-									<option>Hairless</option>
-									<option>Short</option>
+						<select  name="coat" id="inputState" class='input100'  >
+						<option>Any</option>
+									<option >Small</option>
 									<option>Medium</option>
-									<option>Long</option>
-									<option>wire</option>
-									<option>Curly</option>
+									<option>Large</option>
+									<option>XL</option>
+									<option>XXL</option>
+									<option>XXXL</option>
 									
 						</select>
 					</div>
-					<div class="wrap-input100" >
-						<span class="focus-input100"></span>
-						<label for="inputState" >COLOR</label>
-						<select  name="color" id="inputState" class='input100' >
-									<option>Any</option>
-									<option>White</option>
-									<option>Black</option>
-									<option>Brown</option>
-									<option>Light Brown</option>
-									<option>smoke</option>
-									<option>torbie</option>
-									
-						</select>
-					</div>
+					
+					
+				
+
+				
 				<div class="container-login100-form-btn">
 						<button class="login100-form-btn" onclick="change()" id="submit" name="signupSubmit"  value="upload" type="submit">
 							search
