@@ -57,6 +57,30 @@ class Users extends CI_Controller {
 						$this->load->view('dashboard', $data1);
 						$this->load->view('know');
 						$this->load->view('searchfilter');
+						
+						
+						
+						if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$loc=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $siz=$this->input->post('size');
+			$bre=$this->input->post('breed');
+			$gender =$this->input->post('gender');
+			$ar=$this->input->post('age');
+			$coat=$this->input->post('coat');
+			
+			$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
+			$result['data']=$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
+			$this->load->view('petsearch',$result);			
+			
+		}
 
 			//  $data1['data'] =  $this->image_model->get_images();
 			//	$this->load->view('dashboard', $data1);
@@ -1050,12 +1074,6 @@ class Users extends CI_Controller {
 								'k' => $this->input->post('k'),
 								'l' => $this->input->post('l')
 								);
-				  
-				/*print  $userData;
-				var_dump($userData);
-				$this->db->insert('diet',$userData);
-		
-				echo "<h3 style='color:blue'>Your data submitted successfully</h3>";*/
 				
 				
 					
@@ -1150,6 +1168,12 @@ class Users extends CI_Controller {
 	
 	
 	// before login
+
+	
+	
+	
+	
+	
 	public function petmerchant()
 	{	$this->load->view('menu');
 		//$this->load->view('petmerchant');
@@ -1257,13 +1281,8 @@ class Users extends CI_Controller {
 		$this->load->view('menu');
 		$this->load->view('healthservices');
 		if($this->input->post('vsignupSubmit'))
-		
-        // If registration request is submitted 
-      
 		{
 			
-			
-			//$this->load->view('foodsearch');
 			$name=$this->input->post('location'); 
 			$spe=$this->input->post('species');
 			$brand=$this->input->post('brand');
@@ -1272,17 +1291,16 @@ class Users extends CI_Controller {
 			$quantity=$this->input->post('quantity');
 			$com=$this->input->post('compositions');
 			
-			$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$qunatity,$com);
+			$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com);
 			
-			$result['data']=$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$qunatity,$com);
+			$result['data']=$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com);
 			$this->load->view('vitaminsearch',$result);			
 			
 		}
 		
-		if($this->input->post('msignupSubmit'))
 		
-        // If registration request is submitted 
-      
+		
+		if($this->input->post('msignupSubmit')) 
 		{
 			
 			
@@ -1296,16 +1314,16 @@ class Users extends CI_Controller {
 			
 			
 			
-			$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$qunatity);
+			$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$quantity);
 			
-			$result['data']=$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$qunatity);
+			$result['data']=$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$quantity);
 			$this->load->view('medicinesearch',$result);			
 			
 		}
 		
 		if($this->input->post('signupSubmit'))
 		
-        // If registration request is submitted 
+      
       
 		{
 			
@@ -1388,18 +1406,18 @@ class Users extends CI_Controller {
 			
 			
 			
-			//$loc=$this->input->post('location'); 
+			$loc=$this->input->post('location'); 
 			$spe=$this->input->post('species');
             $siz=$this->input->post('size');
 			$bre=$this->input->post('breed');
 			$gender =$this->input->post('gender');
 			$ar=$this->input->post('age');
 			$coat=$this->input->post('coat');
-			//$c=$this->input->post('color');
-			$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$coat);
-			$result['data']=$this->EzPet_model->displaypets($spe,$siz,$bre,$gender,$ar,$cl);
+			
+			$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
+			$result['data']=$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
 			$this->load->view('petsearch',$result);			
-			//redirect("users/dispdata");  
+			
 		}
 	}
 	
@@ -1409,6 +1427,7 @@ class Users extends CI_Controller {
 		$this->load->view('pharamacyservices');
 		
 	}
+	
 	public function petmerchandise()
 	{
 				$this->load->view('menuWithLogout');
@@ -1442,9 +1461,50 @@ class Users extends CI_Controller {
 		$this->load->view('menuWithLogout');
 		//$this->load->view('pharamacyservices');
 		$this->load->view('healthservices');
+		if($this->input->post('vsignupSubmit'))
+		{
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$brand=$this->input->post('brand');
+            $health=$this->input->post('health');
+			$volume=$this->input->post('volume');
+			$quantity=$this->input->post('quantity');
+			$com=$this->input->post('compositions');
+			
+			$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com);
+			
+			$result['data']=$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com);
+			$this->load->view('vitaminsearch',$result);			
+			
+		}
+		
+		
+		
+		if($this->input->post('msignupSubmit')) 
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$brand=$this->input->post('brand');
+            $health=$this->input->post('health');
+			$volume=$this->input->post('volume');
+			$quantity=$this->input->post('quantity');
+			
+			
+			
+			$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$quantity);
+			
+			$result['data']=$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$quantity);
+			$this->load->view('medicinesearch',$result);			
+			
+		}
+		
 		if($this->input->post('signupSubmit'))
 		
-        // If registration request is submitted 
+      
       
 		{
 			
@@ -1969,11 +2029,10 @@ public function grooming()
              $data = $userData = array(); 
          
              $userData = array(
-                'pet_name' => $this->input->post('pet_name'),
+                'first_name' => $this->input->post('first_name'),
+				 'pet_name' => $this->input->post('pet_name'),
                 'pet_breed' => $this->input->post('pet_breed'),
-                'pet_toy' => $this->input->post('pet_toy'),
-                 
-               'type' => $this->input->post('type'),
+				 'toy_type' => $this->input->post('toy_type'),
                'toys'=>implode("|",$this->input->post('toys'))
                  
 
@@ -2024,10 +2083,8 @@ public function grooming()
              $userData = array(
                 'pet_name' => $this->input->post('pet_name'),
                 'pet_breed' => $this->input->post('pet_breed'),
-                'pet_size' => $this->input->post('pet_size'),
-                'color' => $this->input->post('color'),
-                 
-
+                'bed_size' => $this->input->post('bed_size'),
+                'color' => $this->input->post('color')
                     );
         
             print  $userData;
@@ -2261,7 +2318,8 @@ public function petregistration()
         // If registration request is submitted 
 				if($this->input->post('signupSubmit'))
 				{
-					   if(!empty($_FILES['image']['name'])){
+					   if(!empty($_FILES['image']['name']))
+					   {
                 $config['upload_path'] = 'assets/images/';
                 $config['allowed_types'] = 'jpg|jpeg|png|gif';
                 $config['file_name'] = $_FILES['image']['name'];
@@ -2274,10 +2332,10 @@ public function petregistration()
                     $uploadData = $this->upload->data();
                     $picture = $uploadData['file_name'];
                 }else{
-                    $picture = '';
+                    $picture = $uploadData['file_name'];
                 }
             }else{
-                $picture = '';
+                $picture = $uploadData['file_name'];
             }
             
 					
@@ -2321,6 +2379,7 @@ public function petregistration()
 				  
 				
 			}
+			 redirect('users/myaccount');
 		
 		//echo "<h3 style='color:green'>Your data recieved successfully</h3>";
 		
