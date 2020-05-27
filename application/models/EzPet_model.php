@@ -19,7 +19,7 @@ class EzPet_model  extends CI_Model {
 	public  function display_records($id)
 	{
 	
-	$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,phone,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
+	$query=$this->db->query("select AIN,Pet_Name,image,DOB,color,phone,email,gender,Special_Status ,Spayed_or_Neutered,Height,weight from petinfo where AIN='$id'");
 	return $query->result();
 	//$querys=$this->db->query("select image from petinfo where AIN='$id'");
 	//return $querys->result();
@@ -43,16 +43,16 @@ class EzPet_model  extends CI_Model {
 		
 		return $query->result();
 	}
-	public function displaymedicine($name,$spe,$brand,$health,$volume,$qunatity)
+	public function displaymedicine($name,$spe,$brand,$health,$volume,$quantity)
 	{
 		$query=$this->db->query("select image from medicinesearch  where medicinename='$name' and species = '$spe' and( brand='$brand' or health='$health' or volume='$volume'or quantity='$quantity')");
 		
 		return $query->result();
 	}
 	
-	public function displayvitamin($name,$spe,$brand,$health,$volume,$qunatity,$com)
+	public function displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com)
 	{
-		$query=$this->db->query("select image from vitaminsearch  where vitaminname='$name' and species = '$spe' and( brand='$brand' or health='$health' or volume='$volume'or quantity='$quantity' or compositions='$compositions')");
+		$query=$this->db->query("select image from vitaminsearch  where vitaminname='$name' and species = '$spe' and( brand='$brand' or health='$health' or volume='$volume'or quantity='$quantity' or compositions='$com')");
 		
 		return $query->result();
 	}
@@ -61,7 +61,7 @@ class EzPet_model  extends CI_Model {
 	
 	public function displaymerchandise($name,$spe,$gender,$pro,$brand)
 	{
-		$query=$this->db->query("select image from merchandisesearch  where name='$name' and( gender='$gender' or brand='$brand' or species = '$spe' or product='$pro' )");
+		$query=$this->db->query("select image from merchandisesearch  where name='$name' and species = '$spe' and( gender='$gender' or brand='$brand'  or product='$pro' )");
 		
 		return $query->result();
 	}
@@ -347,7 +347,7 @@ public function sendpassword($data)
 		$insert = $this->db->insert($this->userTbl, $data);
 		
 		//return the status
-		return $insert?$this->db->insert_id():false;
+		//return $insert?$this->db->insert_id():false;
     }
       public function inserts($data){
 		

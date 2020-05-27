@@ -24,7 +24,7 @@ class Api_serv extends REST_Controller
           $this->load->view('Grooming');  
        
              $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+            $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -34,8 +34,8 @@ class Api_serv extends REST_Controller
         }
 
 
-                $pet_name => $this->input->post('pet_name'),
-                  $name=$this->model->name($pet_name);
+                $pet_name = $this->input->post('pet_name');
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -47,7 +47,7 @@ class Api_serv extends REST_Controller
                 $pet_breed = $this->input->post('pet_breed'); 
                 $phone = $this->input->post('phone');
                 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -57,11 +57,14 @@ class Api_serv extends REST_Controller
         }
 
                     //checkbox
-                $services=(implode("|",$this->input->post('services')))
+                $services=$this->input->post('services');
 
        
 
-
+                if(!empty($first_name) && !empty($pet_name) && !empty($pet_breed) && !empty($phone)&& !empty($services) )
+                                    
+        {
+                                  
 
         
              $userData = array(
@@ -71,10 +74,10 @@ class Api_serv extends REST_Controller
                 'phone' => $phone,
 
                     //checkbox
-                'services'=>(implode("|",$services)))
+                'services'=>$services
 
             );
-     $insert= $this->db->insert('grooming',$userData);
+     $insert= $this->db->insert('Grooming',$userData);
 
              if($insert)
              {
@@ -89,7 +92,21 @@ class Api_serv extends REST_Controller
 
              }
 
-          }
+    }
+    else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
+
+
+
+
+
+
+
 
 
     public function Petsitter_post()
@@ -97,17 +114,17 @@ class Api_serv extends REST_Controller
     		 $this->load->view('Petsitter');
 
                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)',
+                        'message' => 'ERROR-invalid name(digits and special characters are not allowed)'
                     ], REST_Controller::HTTP_OK);
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -119,7 +136,7 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -129,7 +146,7 @@ class Api_serv extends REST_Controller
         }
                  $ephone = $this->input->post('ephone');
 
-                         $number=$this->model->number($ephone);
+                         $number=$this->EzPet_model->number($ephone);
                              if($number==false)
         {
                 $this->response([
@@ -138,7 +155,7 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -152,6 +169,11 @@ class Api_serv extends REST_Controller
                     $alarm_ac_code = $this->input->post('alarm_ac_code');
 
        
+                if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($address)&& !empty($alarm_de_code)&& !empty($alarm_ac_code) )
+                                    
+        {
+
+
              $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -181,6 +203,17 @@ class Api_serv extends REST_Controller
              }
 
           }
+          else
+          {
+             $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+          }
+}
+           
+
+
+
+
+
 
              public function dogwalker_post()
              {   
@@ -189,7 +222,7 @@ class Api_serv extends REST_Controller
 
 
                      $first_name =$this->input->post('first_name');
-                           $name=$this->model->name($first_name);
+                           $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -199,7 +232,7 @@ class Api_serv extends REST_Controller
         }
                  $phone =$this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -208,18 +241,18 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                  $email =$this->input->post('email');
-                                               $mails=$this->model->mails($email);
+                                               $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' =>'message' => 'ERROR-invalid email' ,
+                        'message' =>'message ERROR-invalid email' ,
                     ], REST_Controller::HTTP_OK);
         }
            
                  $ephone =$this->input->post('ephone');
 
-                    $number=$this->model->number($ephone);
+                    $number=$this->EzPet_model->number($ephone);
                              if($number==false)
         {
                 $this->response([
@@ -228,7 +261,7 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                 $pet_name =$this->input->post('pet_name');
-                  $name=$this->model->name($first_name);
+                  $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -240,7 +273,9 @@ class Api_serv extends REST_Controller
                 $pet_age =$this->input->post('pet_age');
                 $color =$this->input->post('color'); 
               
-
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($pet_age)&& !empty($color) )
+                                    
+        {
 
              $userData = array(
                  'first_name' =>$first_name, 
@@ -271,6 +306,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
   
         
     public function petdaycare_post()
@@ -283,7 +325,7 @@ class Api_serv extends REST_Controller
 
             
                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -294,7 +336,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -306,17 +348,17 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid email',
+                        'message' => 'message ERROR-invalid email',
                     ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
-                         $number=$this->model->number($ephone);
+                         $number=$this->EzPet_model->number($ephone);
                              if($number==false)
         {
                 $this->response([
@@ -324,8 +366,10 @@ class Api_serv extends REST_Controller
                         'message' =>  'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
                     ], REST_Controller::HTTP_OK);
         }
+
+                 $address = $this->input->post('address'); 
                 $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -340,6 +384,9 @@ class Api_serv extends REST_Controller
                 $pet_food_quantity = $this->input->post('pet_food_quantity'); 
 
 
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($address)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($gender)&& !empty($pet_food_type)&& !empty($pet_food_quantity) )
+                                    
+        {
              $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -371,6 +418,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
 
             public function pethostel_post()
@@ -380,7 +434,7 @@ class Api_serv extends REST_Controller
                  $this->load->view('pet_hostel');
 
                                  $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -390,11 +444,11 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                 $pet_breed = $this->input->post('pet_breed');
-                $gender => $this->input->post('gender');
+                $gender = $this->input->post('gender');
 
 
                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -405,7 +459,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -418,7 +472,7 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -428,9 +482,12 @@ class Api_serv extends REST_Controller
         }
 
 
-                 $date_j => $this->input->post('date_j');
-                 $date_l => $this->input->post('date_l');
+                 $date_j = $this->input->post('date_j');
+                 $date_l = $this->input->post('date_l');
 
+                   if(!empty($pet_name) && !empty($pet_breed) && !empty($gender) && !empty($first_name)&& !empty($phone)&& !empty($email)&& !empty($date_j)&& !empty($date_l) )
+                                    
+        {
              $userData = array(
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -440,7 +497,7 @@ class Api_serv extends REST_Controller
                  'phone' => $phone,
                  'email' => $email,
                  'date_j' => $date_j,
-                 'date_l' => $date_l,
+                 'date_l' => $date_l
                  
                  
                 
@@ -463,6 +520,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
            public function pettaxi_post()
     {
        
@@ -471,7 +535,7 @@ class Api_serv extends REST_Controller
              
 
                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -482,7 +546,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -495,7 +559,7 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -505,7 +569,7 @@ class Api_serv extends REST_Controller
         }
                  $ephone = $this->input->post('ephone');
 
-                         $number=$this->model->number($ephone);
+                         $number=$this->EzPet_model->number($ephone);
                              if($number==false)
         {
                 $this->response([
@@ -515,7 +579,7 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -529,6 +593,9 @@ class Api_serv extends REST_Controller
                 $daddress = $this->input->post('daddress');
             
 
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($paddress)&& !empty($daddress) )
+                                    
+        {
          
              $userData = array(
 
@@ -559,6 +626,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
             public function petclub_post()
           {
@@ -567,7 +641,7 @@ class Api_serv extends REST_Controller
                   $this->load->view('petclub');
 
                          $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -582,7 +656,9 @@ class Api_serv extends REST_Controller
                             $pet_food_quantity = $this->input->post('pet_food_quantity');
                             $gender = $this->input->post('gender');
 
-
+                              if(!empty($pet_name) && !empty($pet_breed) && !empty($food) && !empty($pet_food_quantity)&& !empty($gender) )
+                                    
+        {
          
              $userData = array(
                 'pet_name' => $pet_name,
@@ -610,6 +686,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
   
 
            public function pettraining_post()
@@ -620,7 +703,7 @@ class Api_serv extends REST_Controller
           $this->load->view('pet_training');
 
                            $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -631,7 +714,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -644,7 +727,7 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -654,7 +737,7 @@ class Api_serv extends REST_Controller
         }
                  $ephone = $this->input->post('ephone');
 
-                         $number=$this->model->number($ephone);
+                         $number=$this->EzPet_model->number($ephone);
                              if($number==false)
         {
                 $this->response([
@@ -664,7 +747,7 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -675,11 +758,13 @@ class Api_serv extends REST_Controller
         }
 
        
-                $pet_breed => $this->input->post('pet_breed'); 
-                $level => $this->input->post('level'); 
+                $pet_breed =$this->input->post('pet_breed'); 
+                $level = $this->input->post('level'); 
                  
 
-
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($level) )
+                                    
+        {
 
              $userData = array(
                  'first_name' =>$first_name, 
@@ -688,7 +773,7 @@ class Api_serv extends REST_Controller
                  'ephone' => $ephone,
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed, 
-                'level' => $level, 
+                'level' => $level 
                  
                  
                 
@@ -710,7 +795,13 @@ class Api_serv extends REST_Controller
              }
 
           }
-  
+   else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
            public function dogplayground_post()
            {
@@ -720,7 +811,7 @@ class Api_serv extends REST_Controller
 
 
                            $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -731,7 +822,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -744,7 +835,7 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
@@ -756,7 +847,7 @@ class Api_serv extends REST_Controller
            $pet_age = $this->input->post('pet_age');
 
                 $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -767,12 +858,15 @@ class Api_serv extends REST_Controller
         }
 
 
-                $pet_breed => $this->input->post('pet_breed');
-                $area => $this->input->post('area');
+                $pet_breed = $this->input->post('pet_breed');
+                $area = $this->input->post('area');
 
 
                 $data = $userData = array(); 
-         
+            
+              if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($pet_age)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($area) )
+                                    
+        {
                  $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -800,7 +894,13 @@ class Api_serv extends REST_Controller
              }
 
           }
-        
+         else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
                 
            public function globalpet_post()
     {
@@ -808,7 +908,7 @@ class Api_serv extends REST_Controller
                 $this->load->view('globalpet');
 
                                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -819,7 +919,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -832,17 +932,17 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid email',
+                        'message' => 'message ERROR-invalid email',
                     ], REST_Controller::HTTP_OK);
         }
                  $ephone = $this->input->post('ephone');
 
-                         $number=$this->model->number($ephone);
+                         $number=$this->EzPet_model->number($ephone);
                              if($number==false)
         {
                 $this->response([
@@ -852,7 +952,7 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
                 $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -862,14 +962,16 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
          $pet_breed = $this->input->post('pet_breed');
-                $passport => $this->input->post('passport');
+                $passport =$this->input->post('passport');
                  
-                $location => $this->input->post('location');
+                $location = $this->input->post('location');
 
-                $dest => $this->input->post('dest');
+                $dest =$this->input->post('dest');
 
 
-         
+           if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($ephone)&& !empty($pet_name)&& !empty($pet_breed)&& !empty($passport)&& !empty($location)&& !empty($dest) )
+                                    
+        {
              $userData = array(
                  'first_name' =>$first_name, 
                  'phone' => $phone,
@@ -903,6 +1005,16 @@ class Api_serv extends REST_Controller
              }
 
           }
+
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
+       
+
             public function funeral_post()
              {
        
@@ -910,7 +1022,7 @@ class Api_serv extends REST_Controller
 
                 
                                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -921,12 +1033,12 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
+                        'message' => 'message ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)'
 ,
                     ], REST_Controller::HTTP_OK);
         }
@@ -934,16 +1046,16 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid email',
+                        'message' => 'message ERROR-invalid email',
                     ], REST_Controller::HTTP_OK);
         }
                $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -959,6 +1071,9 @@ class Api_serv extends REST_Controller
 
                 $death = $this->input->post('death');
 
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($pet_name)&& !empty($pet_breed)&& !empty($birth)&& !empty($death) )
+                                    
+        {
 
              $userData = array(
                  'first_name' =>$first_name, 
@@ -992,6 +1107,14 @@ class Api_serv extends REST_Controller
 
           }
 
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
+
            public function petfashionoutlet_post    ()
     {
         
@@ -999,7 +1122,7 @@ class Api_serv extends REST_Controller
 
 
                                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -1010,7 +1133,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -1023,16 +1146,16 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid email',
+                        'message' => 'message ERROR-invalid email',
                     ], REST_Controller::HTTP_OK);
         }
                $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -1047,7 +1170,9 @@ class Api_serv extends REST_Controller
                 $costume_type = $this->input->post('costume_type');
                 $costume_name = $this->input->post('costume_name');
                 
-
+                  if(!empty($first_name) && !empty($phone) && !empty($email) && !empty($pet_name)&& !empty($pet_breed)&& !empty($pet_size)&& !empty($costume_type)&& !empty($costume_name) )
+                                    
+        {
          
              $userData = array(
                  'first_name' =>$first_name, 
@@ -1083,7 +1208,13 @@ class Api_serv extends REST_Controller
           }
 
 
+ else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
 
+}
 
           //pet toys
 
@@ -1092,8 +1223,9 @@ class Api_serv extends REST_Controller
     {
        $this->load->view('pettoys');
 
+             $first_name = $this->input->post('first_name');
              $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -1103,13 +1235,20 @@ class Api_serv extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
 
-                $pet_breed => $this->input->post('pet_breed');
-                $toys=(implode("|",$this->input->post('toys')));
+                $pet_breed = $this->input->post('pet_breed');
+
+             $toy_type = $this->input->post('toy_type');
+                $toys=$this->input->post('toys');
          
+           if(!empty($first_name) && !empty($pet_name) && !empty($pet_breed) && !empty($toy_type)&& !empty($toys) )
+                                    
+        {
              $userData = array(
+                'first_name'=>$first_name,
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
-                'toys'=>(implode("|",$toys))
+                'toy_type' =>$toy_type,
+                'toys'=>$toys
                  
 
                     );
@@ -1130,7 +1269,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
 
+}
 
 
             public function dia_post()
@@ -1139,7 +1284,7 @@ class Api_serv extends REST_Controller
               $this->load->view('dia');
 
                   $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -1152,7 +1297,9 @@ class Api_serv extends REST_Controller
                 $pet_age = $this->input->post('pet_age');
                 $size = $this->input->post('size');
 
-
+                  if(!empty($pet_name) && !empty($pet_breed) && !empty($pet_age) && !empty($size) )
+                                    
+        {
              $userData = array(
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -1179,6 +1326,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
            public function petbedding_post()
     {
@@ -1186,7 +1340,7 @@ class Api_serv extends REST_Controller
         $this->load->view('petbedding');
 
                  $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -1195,10 +1349,13 @@ class Api_serv extends REST_Controller
 'ERROR-invalid name(digits and special characters are not allowed)',
                     ], REST_Controller::HTTP_OK);
         }
-         $pet_breed => $this->input->post('pet_breed');
+         $pet_breed = $this->input->post('pet_breed');
                 $bed_size = $this->input->post('bed_size');
                 $color = $this->input->post('color');
          
+           if(!empty($pet_name) && !empty($pet_breed) && !empty($bed_size) && !empty($color) )
+                                    
+        {
              $userData = array(
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
@@ -1224,6 +1381,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
 
 
     public function petsafety_post()
@@ -1233,7 +1397,7 @@ class Api_serv extends REST_Controller
 
 
                                           $first_name =$this->input->post('first_name');
-               $name=$this->model->name($first_name);
+               $name=$this->EzPet_model->name($first_name);
               if($name==false)
         {
                 $this->response([
@@ -1244,7 +1408,7 @@ class Api_serv extends REST_Controller
         }
                         $phone  = $this->input->post('phone');
 
-                         $number=$this->model->number($phone);
+                         $number=$this->EzPet_model ->number($phone);
                              if($number==false)
         {
                 $this->response([
@@ -1257,16 +1421,16 @@ class Api_serv extends REST_Controller
 
                          $email = $this->input->post('email');
 
-                                         $mails=$this->model->mails($email);
+                                         $mails=$this->EzPet_model->mails($email);
                              if($mails==false)
         {
                 $this->response([
                         'status' => false,
-                        'message' => 'message' => 'ERROR-invalid email',
+                        'message' => 'message ERROR-invalid email',
                     ], REST_Controller::HTTP_OK);
         }
                $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -1277,17 +1441,19 @@ class Api_serv extends REST_Controller
         }
 
         $pet_breed = $this->input->post('pet_breed');
-                $safety=(implode("|",$this->input->post('safety')));
+                $safety=$this->input->post('safety');
                  
-         
+           if(!empty($first_name)&& !empty($phone)&& !empty($email) && !empty($pet_name) && !empty($pet_breed) && !empty($safety) )
+                                    
+        {
              $userData = array(
-                 'first_name' =>$this->input->post('first_name'), 
-                 'phone' => $this->input->post('phone'),
-                 'email' => $this->input->post('email'),
+                 'first_name' =>$first_name, 
+                 'phone' => $phone,
+                 'email' => $email,
                  
                 'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
-                'safety'=>(implode("|",$safety))
+                'safety'=>$safety
                    );
 
 
@@ -1307,6 +1473,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
    
         
     public function accessories_post()
@@ -1314,7 +1487,7 @@ class Api_serv extends REST_Controller
          $this->load->view('accessories');
 
                $pet_name = $this->input->post('pet_name');
-                  $name=$this->model->name($pet_name);
+                  $name=$this->EzPet_model->name($pet_name);
               if($name==false)
         {
                 $this->response([
@@ -1325,12 +1498,15 @@ class Api_serv extends REST_Controller
         }
 
                 $pet_breed = $this->input->post('pet_breed');
-                $acces=(implode("|",$this->input->post('acces')));
+                $acces=$this->input->post('acces');
          
+           if(!empty($pet_name) && !empty($pet_breed) && !empty($acces)  )
+                                    
+        {
              $userData = array(
                  'pet_name' => $pet_name,
                 'pet_breed' => $pet_breed,
-                'acces'=>(implode("|",$acces))
+                'acces'=>$acces
                 //check box
 
                
@@ -1354,6 +1530,13 @@ class Api_serv extends REST_Controller
              }
 
           }
+           else
+    {
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
+    }
+
+}
   
         
    

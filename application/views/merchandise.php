@@ -35,6 +35,7 @@
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/util.css'); ?>" >
   <link rel="stylesheet" type="text/css"  href="<?php echo base_url('assets/css/main.css'); ?>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 </head>
@@ -234,7 +235,24 @@
    padding: 9% 25%;
   }
 </style>
+<script type="text/javascript">
+$(document).ready(function () {
+	$(".submit").click(function(event) {
+event.preventDefault();
+	
+    jquery.ajax({
+        type:"POST",
+        url:"<?php echo base_url(); ?>users/petmerchant",
+        data:dataString,
 
+        success:function (data) {
+            $('#users').html(data);
+        }
+
+    });
+    event.preventDefault();
+});
+</script>
  
   
     <section class="colored-section" id="testimonials">
@@ -532,14 +550,15 @@
 </form>
     </div>
     <br>
-    <!--
-<div class="col-sm-9">
-<?php
-include "foodsearch.php";
-?>
-</div>-->
+    
+		<!--	<div class="col-sm-9">
+					<?php
+						include "merchandisesearch.php";
+						
+					?>
+			</div>-->
 
-    <div class="col-sm-9">
+  <!--  <div class="col-sm-9">
       
 
       <div class="row">
@@ -616,7 +635,7 @@ include "foodsearch.php";
     </div>
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 </div>
 

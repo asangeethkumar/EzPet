@@ -838,7 +838,7 @@
 include "servicessearch.php";
 ?>
 </div>-->
-    <div class="col-sm-9">
+<div class="col-sm-9">
       
 
       <div class="row">
