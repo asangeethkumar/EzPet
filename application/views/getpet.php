@@ -446,14 +446,35 @@
     <br>
     
   
-	        <!--
+	        
 <div class="col-sm-9">
 <?php
-include "petsearch.php";
-?>
-</div>-->
-	    
-    <div class="col-sm-9">
+if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$loc=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $siz=$this->input->post('size');
+			$bre=$this->input->post('breed');
+			$gender =$this->input->post('gender');
+			$ar=$this->input->post('age');
+			$coat=$this->input->post('coat');
+			
+			$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
+			$result['data']=$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
+			$this->load->view('petsearch',$result);			
+			
+		}
+		else
+		{
+			?>
+			
+			<div class="col-sm-12">
       
 
       <div class="row">
@@ -529,6 +550,13 @@ include "petsearch.php";
         </div>
       </div>
     </div>
+			
+			<?php
+		}
+?>
+</div>
+	    
+    
 	
 	
 	

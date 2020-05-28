@@ -2,8 +2,9 @@
 .columns {
   float: left;
   width: 30%;
-  padding: 5% 55%;
-  height: 250px; /* Should be removed. Only for demonstration */
+  padding: 1% 15%;
+  
+  height: 300px; /* Should be removed. Only for demonstration */
   
 }
 
@@ -11,6 +12,7 @@
 .rows:after {
   content: "";
   display: table;
+  
   clear: both;
 }
 </style>

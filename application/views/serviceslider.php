@@ -832,13 +832,37 @@
 </form>
     </div>
     <br>
-        <!--
+        
 <div class="col-sm-9">
 <?php
-include "servicessearch.php";
-?>
-</div>-->
-<div class="col-sm-9">
+if($this->input->post('signupSubmit'))
+		
+        // If registration request is submitted 
+      
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$distance=$this->input->post('distance');
+			$spe=$this->input->post('species');
+			$need =$this->input->post('need');
+            $able=$this->input->post('able');
+			$rate=$this->input->post('rate');
+			
+			
+			
+			$this->EzPet_model->displayservices($name,$distance,$spe,$need,$able,$rate);
+			
+			$result['data']=$this->EzPet_model->displayservices($name,$distance,$spe,$need,$able,$rate);
+			$this->load->view('servicessearch',$result);			
+			
+		}
+		else
+		{
+			?>
+			
+			<div class="col-sm-12">
       
 
       <div class="row">
@@ -916,6 +940,17 @@ include "servicessearch.php";
         </div>
       </div>
     </div>
+			
+			
+			
+			
+			
+		<?php
+		}
+?>
+</div>
+
+<!---->
   </div>
 </div>
 

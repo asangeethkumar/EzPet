@@ -85,7 +85,7 @@ include_once "menuWithLogout.php";
 								</div>
 
 
-									<div class="wrap-input100 validate-input" data-validate = "valid pet name is required">
+									<div class="wrap-input100 validate-input" data-validate = "valid pet age is required">
 								<input type="text" name="pet_age"  class="input100" placeholder="PET AGE" value="<?php echo !empty($user['PET_age'])?$user['PET_age']:''; ?>" >
 								<?php echo form_error('PET_age','<p class="help-block">','</p>'); ?>
 								<span class="focus-input100"></span>

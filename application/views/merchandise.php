@@ -554,89 +554,140 @@ event.preventDefault();
 			<div class="col-sm-9">
 					<?php
 						//include "merchandisesearch.php";
-						$this->load->view('merchandisesearch',$result);			
+						//$this->load->view('merchandisesearch',$result);
+						if($this->input->post('signupSubmit'))
+		
+							// If registration request is submitted 
+      
+						{
+			
+			
+								
+								$name=$this->input->post('location'); 
+								$spe=$this->input->post('species');
+								$gender =$this->input->post('gender');
+								$pro=$this->input->post('product');
+								
+								$brand=$this->input->post('brand');
+								
+								
+								
+								$this->EzPet_model->displaymerchandise($name,$spe,$gender,$pro,$brand);
+								
+								$result['data']=$this->EzPet_model->displaymerchandise($name,$spe,$gender,$pro,$brand);
+								$this->load->view('merchandisesearch',$result);			
+			
+						}
+						
+						else
+						{
+							?>
+							
+							<div class="col-sm-12">
+      
+
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/135.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+												
+											</div>
+										</div>
+										
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/137.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+												
+											</div>
+										</div>
+										
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/140.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									 
+									 
+											</div>
+										</div>
+									</div>
+									  
+									<br>
+									<BR>
+									
+									
+									<div class="row">
+									
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/155.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									  
+											</div>
+										</div>
+										
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/132.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									  
+											</div>
+										</div>
+										
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/131.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									 
+											</div>
+										</div>
+									</div>
+									
+									<br>
+									<BR>
+									
+									<div class="row">
+									
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/151.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									
+											</div>
+										</div>
+										
+										<div class="col-sm-4">
+											<div class="card">
+												
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/147.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									 
+											</div>
+										</div>
+										
+										<div class="col-sm-4">
+											<div class="card">
+											
+												<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/145.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
+									 
+											</div>
+										</div>
+									</div>
+							</div>
+							
+							
+							
+							
+							
+							
+							
+							
+				<?php
+						}
 						
 					?>
 			</div>
 
-  <!--  <div class="col-sm-9">
-      
-
-      <div class="row">
-        <div class="col-sm-4">
-         <div class="card">
-			<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/135.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-			
-	 
-    </div>
-        </div>
-        <div class="col-sm-4">
-         <div class="card">
-	<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/137.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	 
-	 
-    </div>
-        </div>
-        <div class="col-sm-4">
-         <div class="card">
-	<img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/140.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	 
-	 
-    </div>
-        </div>
-      </div>
-	  
-	  <br>
-	  <BR>
-	   <div class="row">
-        <div class="col-sm-4">
-          <div class="card">
-	 <img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/155.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	  
-	 
-    </div>
-        </div>
-        <div class="col-sm-4">
-         <div class="card">
-	 <img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/132.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	  
-	 
-    </div>
-        </div>
-        <div class="col-sm-4">
-        <div class="card">
-	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/131.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	 
-	 
-    </div>
-        </div>
-      </div>
-	    <br>
-		  <BR>
-      <div class="row">
-        <div class="col-sm-4">
-         <div class="card">
-	  <img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/151.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	 
-	 
-    </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="card">
-	 <img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/147.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	 
-	 
-    </div>
-        </div>
-        <div class="col-sm-4">
-         <div class="card">
-	 <img  class="zoom w3-circle " src="<?php echo base_url()."assets/petcare/145.jpg";?>" alt="" border=3 height=200 width=300 style="padding:0 15px 0 15px;"></td>
-	 
-	 
-    </div>
-        </div>
-      </div>
-    </div>-->
   </div>
 </div>
 

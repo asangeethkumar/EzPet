@@ -13,7 +13,7 @@
     padding: 60px 50px;
   }
 .container-fluids {
-    padding: 9% 37%;
+    padding: 9% 35%;
   }
 .btn-lg {
     padding: .5rem 2rem;
@@ -97,7 +97,7 @@
 		  <p>vel sapien sem. Viva</p>
 		  <br>
 		  <br>
-		  <button type="button" class="btn-black">KNOW MORE</button>
+		  <button type="button" class="btns">KNOW MORE</button>
         </div>
         
       </div>      
@@ -121,7 +121,7 @@
 		  <p>vel sapien sem. Viva</p>
 		   <br>
 		  <br>
-		  <button type="button" class="btn-black">KNOW MORE</button>
+		  <button type="button" class="btns">KNOW MORE</button>
         </div>
         
       </div>      
@@ -145,7 +145,7 @@
 		  <p>vel sapien sem. Viva</p>
 		   <br>
 		  <br>
-		  <button type="button" class="btn-black">KNOW MORE</button>
+		  <button type="button" class="btns">KNOW MORE</button>
         </div>
         
       </div>      

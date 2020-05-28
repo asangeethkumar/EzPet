@@ -13,7 +13,7 @@
     padding: 60px 50px;
   }
 .container-fluids {
-    padding: 9% 33%;
+    padding: 9% 35%;
   }
 .btn-lg {
     padding: .5rem 2rem;

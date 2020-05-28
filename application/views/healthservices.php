@@ -463,13 +463,37 @@
 	  
 </form>
     </div>
-<!--
+
 <div class="col-sm-9">
 <?php
-include "foodsearch.php";
-?>
-</div>-->
-<div class="col-sm-9">
+if($this->input->post('signupSubmit'))
+		
+      
+      
+		{
+			
+			
+			//$this->load->view('foodsearch');
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+            $pro=$this->input->post('product');
+			$food=$this->input->post('food');
+			//$gender =$this->input->post('gender');
+			$brand=$this->input->post('brand');
+			$diet=$this->input->post('diet');
+			
+			
+			$this->EzPet_model->displayfood($name,$spe,$pro,$food,$brand);
+			
+			$result['data']=$this->EzPet_model->displayfood($name,$spe,$pro,$food,$brand);
+			$this->load->view('foodsearch',$result);			
+			
+		}
+		else
+		{
+			?>
+			
+			<div class="col-sm-12">
       
 
       <div class="row">
@@ -547,6 +571,14 @@ include "foodsearch.php";
         </div>
       </div>
     </div>
+			
+			
+			
+			<?php
+		}
+?>
+</div>
+
   </div>
 </div>
 
@@ -671,8 +703,31 @@ include "foodsearch.php";
 </form>
     </div>
     <br>
-    
-    <div class="col-sm-9">
+    <?php
+	if($this->input->post('msignupSubmit')) 
+		{
+			
+			
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$brand=$this->input->post('brand');
+            $health=$this->input->post('health');
+			$volume=$this->input->post('volume');
+			$quantity=$this->input->post('quantity');
+			
+			
+			
+			$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$quantity);
+			
+			$result['data']=$this->EzPet_model->displaymedicine($name,$spe,$brand,$health,$volume,$quantity);
+			$this->load->view('medicinesearch',$result);			
+			
+		}
+		else
+		{
+			?>
+			 <div class="col-sm-9">
       
 
       <div class="row">
@@ -750,6 +805,11 @@ include "foodsearch.php";
         </div>
       </div>
     </div>
+			
+			<?php
+		}
+	?>
+   
   </div>
 </div>
 
@@ -888,8 +948,28 @@ include "foodsearch.php";
 </form>
     </div>
     <br>
-    
-    <div class="col-sm-9">
+    <?php
+	if($this->input->post('vsignupSubmit'))
+		{
+			
+			$name=$this->input->post('location'); 
+			$spe=$this->input->post('species');
+			$brand=$this->input->post('brand');
+            $health=$this->input->post('health');
+			$volume=$this->input->post('volume');
+			$quantity=$this->input->post('quantity');
+			$com=$this->input->post('compositions');
+			
+			$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com);
+			
+			$result['data']=$this->EzPet_model->displayvitamin($name,$spe,$brand,$health,$volume,$quantity,$com);
+			$this->load->view('vitaminsearch',$result);			
+			
+		}
+		else
+		{
+			?>
+			<div class="col-sm-9">
       
 
       <div class="row">
@@ -967,6 +1047,11 @@ include "foodsearch.php";
         </div>
       </div>
     </div>
+			<?php
+		}
+	
+	?>
+    
   </div>
 </div>
 
