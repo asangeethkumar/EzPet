@@ -77,9 +77,12 @@ class Apiform extends REST_Controller
                         'status' => false,
                         'message' => 'ERROR-invalid phone number(Phone number with 6-9 and remaing 9 digit with 0-9)',
                     ], REST_Controller::HTTP_OK);
+
         }
              $image = strip_tags($this->input->post('image')); 
-               
+
+			   if(!empty($AIN) && !empty($Pet_Name) && !empty($DOB) && !empty($color)&& !empty($GENIUS)&& !empty($species)&& !empty($coat)&& !empty($weight)&& !empty($Height)&& !empty($Microchiped_or_Tattooed) && !empty($Microchip_or_Tattoo) && !empty($State_License_or_Registration) && !empty($Club_or_Association_Registration) && !empty($Pet_Sire_Name) && !empty($Pet_Sire_AIN) && !empty($Pet_Dam_Name)&& !empty($email)&& !empty($gender)&& !empty($Spayed_or_Neutered)&& !empty($phone)&& !empty($image))
+			{
                 $userData = array(
 
 									 'AIN' =>$AIN, 
@@ -118,12 +121,21 @@ class Apiform extends REST_Controller
 			{
 				$this->response([
 					'status'=>TRUE,
-					'message'=>'the user has been added successfully.'],REST_Controller::HTTP_OK);
+					'message'=>'the data has been added successfully.'],REST_Controller::HTTP_OK);
 			}
 			else
 	{
 			$this->response("some problem occurred,please try again.",REST_Controller::HTTP_OK);
 		}
+			}
+			else
+			{
+				$this->response([
+							'status' => False,
+							'message' => 'please fill all the fields.'
+
+						], REST_Controller::HTTP_OK);
+			}
 	 }
 
 	public function customer_post()
@@ -192,7 +204,11 @@ class Apiform extends REST_Controller
                     ], REST_Controller::HTTP_OK);
         }
 
+		  if(!empty($first_name) && !empty($middle_name) && !empty($last_name)&& !empty($DOB) && !empty($address)&& !empty($billing_address)&& !empty($email)&& !empty($password)&& !empty($conf_password)&& !empty($gender)&& !empty($phone ))
+			{
 		$userData = array( 
+
+
                 'first_name' => $first_name, 
 				'middle_name' => $middle_name,
                 'last_name' => $last_name,
@@ -212,12 +228,20 @@ class Apiform extends REST_Controller
 			{
 				$this->response([
 					'status'=>TRUE,
-					'message'=>'the user has been added successfully.'],REST_Controller::HTTP_OK);
+					'message'=>'the data has been added successfully.'],REST_Controller::HTTP_OK);
 			}
 			else
 	{
 			$this->response("some problem occurred,please try again.",REST_Controller::HTTP_OK);
 		}
+			}
+			else{
+				$this->response([
+'status' => False,
+'message' => 'please fill all the fields'
+
+], REST_Controller::HTTP_OK);
+			}
 	 }
 		
 	public function petchart_post()
