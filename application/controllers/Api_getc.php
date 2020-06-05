@@ -99,8 +99,12 @@ class Api_getc extends REST_Controller
 								}
 								else
 								{
-										// Set the response and exit
-									$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										// Set the response and exit$this->response
+									$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 								}
 								
 								
@@ -200,7 +204,12 @@ class Api_getc extends REST_Controller
 									else
 									{
 										// Set the response and exit
-										$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
+
 									}
 									
     }
@@ -306,8 +315,12 @@ class Api_getc extends REST_Controller
 						}
 						else
 						{
-							// Set the response and exit
-										$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+
+							$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 						}
 						
 	
@@ -397,7 +410,11 @@ class Api_getc extends REST_Controller
 							else
 							{
 							// Set the response and exit
-										$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 							}
 							
 					
@@ -488,7 +505,11 @@ class Api_getc extends REST_Controller
 							else
 							{
 							// Set the response and exit
-										$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 							}
 							
 			
@@ -611,7 +632,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 							// Set the response and exit
-							$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+						$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 					
    
@@ -703,7 +728,11 @@ class Api_getc extends REST_Controller
 							  else
 							{
 							// Set the response and exit
-										$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 							}
 							  
 							  
@@ -822,7 +851,11 @@ class Api_getc extends REST_Controller
 								    else
 									{
 									// Set the response and exit
-												$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+												$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 									}
 		
       
@@ -916,7 +949,11 @@ class Api_getc extends REST_Controller
 											else
 											{
 											// Set the response and exit
-														$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+														$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 											}
 							
 	
@@ -1041,7 +1078,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+					$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}							
 						
 											
@@ -1172,7 +1213,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 															
 		
@@ -1268,7 +1313,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+											$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 	
         
@@ -1358,6 +1407,8 @@ class Api_getc extends REST_Controller
 											{
 												// Set the response and exit
 												$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_OK);
+						
+												
 											}
 								
 				}
@@ -1366,7 +1417,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+												$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 				
 	
@@ -1459,6 +1514,8 @@ class Api_getc extends REST_Controller
 													{
 														// Set the response and exit
 														$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_OK);
+						
+													
 													}
 				}
 	
@@ -1466,7 +1523,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+												$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 										
 	
@@ -1581,6 +1642,7 @@ class Api_getc extends REST_Controller
 											{
 												// Set the response and exit
 												$this->response("Some problems occurred, please try again.", REST_Controller::HTTP_OK);
+												
 											}
 											
 											
@@ -1591,7 +1653,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+												$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 								
 	
@@ -1721,7 +1787,11 @@ class Api_getc extends REST_Controller
 				else
 				{
 											// Set the response and exit
-					$this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+										$this->response([
+												'status' => False,
+												'message' => 'please fill all fields.'
+
+												], REST_Controller::HTTP_OK);
 				}
 					
 
