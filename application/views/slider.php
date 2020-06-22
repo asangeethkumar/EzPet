@@ -60,46 +60,6 @@
 
 
 
-<div class="container-fluid">
-
-	<h1 align="center">WHAT BEST REPRESENTS YOU?</h1>
-	<br>
-	<br>
-  
-  <div class="row">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        
-        <div class="panel-body">
-		
-		 <a  href="<?php echo base_url()."users/petowner" ?>" > GET A PET</a>
-        </div>
-        
-      </div>      
-    </div>    
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        
-        <div class="panel-body">
-		
-		<a  href="<?php echo base_url()."users/petshelterowner" ?>" > PET SHELTER OWNER</a>
-        </div>
-        
-      </div>      
-    </div> 
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        
-        <div class="panel-body">
-		 <a  href="<?php echo base_url()."users/vet" ?>" >VETERINARIAN</a>
-		
-        </div>
-        
-      </div>      
-    </div> 	
-  
-  </div>
-</div>    
 
  
 

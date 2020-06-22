@@ -72,7 +72,7 @@
         
         <div class="panel-body">
 		
-		 <a  href="<?php echo base_url()."users/petowner" ?>" > GET A PET</a>
+		 <button class="download-button btn btn-lg btn-dark" type="button"><a  href="<?php echo base_url()."users/petowner" ?>" > GET A PET</a></button>
         </div>
         
       </div>      

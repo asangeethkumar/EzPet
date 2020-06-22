@@ -192,7 +192,7 @@
 			
 			<li class="nav-item dropdown">
 									
-								<a href='<?php echo base_url()."users/account"; ?>' >HOME</a>
+								<a href='<?php echo base_url()."users/home"; ?>' >HOME</a>
 					
 			</li>
 			

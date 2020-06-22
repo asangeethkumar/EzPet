@@ -83,7 +83,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -95,11 +95,7 @@ class Api_serv extends REST_Controller
     }
     else
     {
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -197,7 +193,7 @@ class Api_serv extends REST_Controller
              {
              	$this->response([
              		'status' => TRUE,
-             		'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+             		'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -209,12 +205,7 @@ class Api_serv extends REST_Controller
           }
           else
           {
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+             $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
           }
 }
            
@@ -305,7 +296,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -317,13 +308,7 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -423,7 +408,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -435,12 +420,7 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -530,7 +510,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -542,12 +522,7 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                             $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -641,7 +616,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -653,12 +628,7 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -706,7 +676,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -718,12 +688,8 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                        
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }
@@ -819,23 +785,19 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
                 //set responsive and exit
+                $this->response("Please try again.", REST_Controller::HTTP_OK);
 
              }
 
           }
    else
     {
-                             $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -922,26 +884,20 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
                 //set responsive and exit
-
                 $this->response("Please try again.", REST_Controller::HTTP_OK);
-                                             
 
              }
 
           }
          else
     {
-                                    $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                       
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }
@@ -1039,7 +995,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1052,12 +1008,7 @@ class Api_serv extends REST_Controller
 
            else
     {
-                                         $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields..'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -1145,7 +1096,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1158,12 +1109,8 @@ class Api_serv extends REST_Controller
 
            else
     {
-                         $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                       
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }
@@ -1249,7 +1196,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1263,12 +1210,8 @@ class Api_serv extends REST_Controller
 
  else
     {
-                                             $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                        
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }
@@ -1316,7 +1259,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1328,12 +1271,8 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                        
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }
@@ -1377,7 +1316,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1389,12 +1328,8 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                     $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                         
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }
@@ -1436,7 +1371,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1448,12 +1383,7 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                        $this->response([
-                                                 'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -1533,7 +1463,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1545,11 +1475,7 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                $this->response(['status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                               
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
                                 
     }
 
@@ -1594,7 +1520,7 @@ class Api_serv extends REST_Controller
              {
                 $this->response([
                     'status' => TRUE,
-                    'message' => 'Data has been added successfully.'],REST_Controller::HTTP_OK);
+                    'message' => 'The user has been added successfully.'],REST_Controller::HTTP_OK);
              }
              else 
              {
@@ -1606,12 +1532,8 @@ class Api_serv extends REST_Controller
           }
            else
     {
-                                 $this->response([
-                                                'status' => False,
-                                                'message' => 'please fill all fields.'
-
-                                                ], REST_Controller::HTTP_OK);
-                                                        
+        $this->response("please fill all fields.",  REST_Controller::HTTP_OK);
+                                
     }
 
 }

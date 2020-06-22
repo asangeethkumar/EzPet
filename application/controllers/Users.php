@@ -38,7 +38,44 @@ class Users extends CI_Controller {
 
 			// Pass the user data and load view
 			//$this->load->view('elements/header', $data);
-				$this->load->view('menuWithLogout');
+				
+					$this->load->view('menuWithLogout');
+					$this->load->view('sliders');
+						//$this->load->view('filters');
+						echo "<br>";
+						echo "<br>";
+						echo "<br>";
+						
+						$this->load->view('pets');
+						echo "<br>";
+						echo "<br>";
+
+						$data1['data'] =  $this->image_model->get_images();
+			
+						$this->load->view('dashboard', $data1);
+						$this->load->view('know');
+				
+					//$this->load->view('bestrepresents');
+					//load here
+						
+						
+
+			//  $data1['data'] =  $this->image_model->get_images();
+			//	$this->load->view('dashboard', $data1);
+			$this -> load -> view('elements/footer');
+
+			 	   		// $data2['data'] =  $this->image_model->get_otherImages($data);
+						 
+			//$this->load->view('users/account', $data2);
+			//$this->load->view('elements/footer');
+        }else{
+            redirect('login');
+        }
+    }
+	public function home()
+	{
+		$this->load->view('menuWithLogout');
+					//$this->load->view('bestrepresents');
 					$this->load->view('sliders');
 						//$this->load->view('filters');
 						echo "<br>";
@@ -54,43 +91,8 @@ class Users extends CI_Controller {
 						$this->load->view('dashboard', $data1);
 						$this->load->view('know');
 						//$this->load->view('searchfilter');
-						
-						
-						
-						if($this->input->post('signupSubmit'))
-		
-        // If registration request is submitted 
-      
-		{
-			
-			
-			
-			$loc=$this->input->post('location'); 
-			$spe=$this->input->post('species');
-            $siz=$this->input->post('size');
-			$bre=$this->input->post('breed');
-			$gender =$this->input->post('gender');
-			$ar=$this->input->post('age');
-			$coat=$this->input->post('coat');
-			
-			$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
-			$result['data']=$this->EzPet_model->displaypets($loc,$spe,$siz,$bre,$gender,$ar,$coat);
-			$this->load->view('petsearch',$result);			
-			
-		}
 
-			//  $data1['data'] =  $this->image_model->get_images();
-			//	$this->load->view('dashboard', $data1);
-			$this -> load -> view('elements/footer');
-
-			 	   		// $data2['data'] =  $this->image_model->get_otherImages($data);
-						 
-			//$this->load->view('users/account', $data2);
-			//$this->load->view('elements/footer');
-        }else{
-            redirect('login');
-        }
-    }
+	}
 
     public function login(){
         $data = array();
@@ -2449,7 +2451,97 @@ public function petregistration()
 	public function ownpet(){
 		$this->load->view('ownpet');
 	}
+
+	// GET A PET  dashboard
+	public function yourpets(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('yourpets');
+	}
+	public function petowner(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('petowner');
+	}
+	public function shelter(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('shelter');
+	}
+	public function upcome(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('upcome');
+	}
+	public function medicines(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('medicines');
+	}
+	public function history(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('history');
+	}
+	public function recent(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('recent');
+	}
+	public function orders(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('orders');
+	}
+	//petshelter owner dashboard
 	
+	public function petshelterowner(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('petshelterowner');
+	}
+	public function capacity(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('capacity');
+	}
+	public function hosting(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('hosting');
+	}
+	public function hosthistory(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('hosthistory');
+	}
+	public function inventory(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('inventory');
+	}
+	public function transaction(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('transaction');
+	}
+	public function manage(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('manage');
+	}
+
+	//veterinarian dashboard
+	
+	public function vet(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('vet');
+	}
+	public function upcomeappt(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('upcomeappt');
+	}
+	public function managesec(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('managesec');
+	}
+	public function active(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('active');
+	}
+	public function payment(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('payment');
+	}
+	public function conhistory(){
+		$this->load->view('menuWithLogout');
+		$this->load->view('conhistory');
+	}
     
 	// Existing email check during validation
    /* public function email_check($str){
